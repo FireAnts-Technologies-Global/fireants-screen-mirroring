@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="@dimen/_40sdp"
+        app:cardElevation="0dp"
+        app:rippleColor="#10000000"
+        app:strokeColor="@android:color/transparent"
+        app:strokeWidth="@dimen/_1sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_13sdp"
+            android:paddingVertical="@dimen/_8sdp">
+
+            <ImageView
+                android:id="@+id/imgFlag"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_vietnamese" />
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbLanguageSelected"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:buttonTint="@color/radio_button_language"
+                android:checked="true"
+                android:clickable="false"
+                android:scaleX="1.15"
+                android:scaleY="1.15" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:id="@+id/tvLanguageName"
+                android:layout_toStartOf="@+id/rbLanguageSelected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imgFlag"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                tools:text="English" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
