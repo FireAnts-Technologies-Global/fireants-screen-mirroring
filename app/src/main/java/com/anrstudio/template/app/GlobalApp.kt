@@ -66,10 +66,10 @@ class GlobalApp : AdsMultiDexApplication() {
             if (BuildConfig.DEBUG) ANRAdSdkConfig.ENVIRONMENT_DEVELOP else ANRAdSdkConfig.ENVIRONMENT_PRODUCTION
         mANRAdSdkConfig = ANRAdSdkConfig(this, environment)
         mANRAdSdkConfig.listDeviceTest = listOf("E7E351334096B4438C0A70C135BDDBF2")
-        val adjustConf AdjustConfig(
+        val adjustConfig  = AdjustConfig(
             true,
             resources.getString(R.string.adjust_token)
-        )   )
+        )
         mANRAdSdkConfig.adjustConfig = adjustConfig
         mANRAdSdkConfig.facebookClientToken =
             resources.getString(R.string.facebook_client_token)

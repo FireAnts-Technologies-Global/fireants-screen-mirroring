@@ -87,9 +87,8 @@ android {
         dataBinding = true
         viewBinding = true
         buildConfig = true
-        compose = true
     }
-    namespace 'com.hyper.artis.ai.art.generator'
+    namespace 'com.anrstudio.template'
 }
 
 dependencies {
