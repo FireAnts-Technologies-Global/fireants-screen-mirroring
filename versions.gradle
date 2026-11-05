@@ -19,11 +19,11 @@ ext {
     androidx_multidex_version = '2.0.1'
     
     // AndroidX Lifecycle
-    androidx_lifecycle_version = '2.6.1'
-    androidx_fragment_ktx_version = '1.6.1'
+    androidx_lifecycle_version = '2.9.4'
+    androidx_fragment_ktx_version = '1.8.7'
     
     // Hilt
-    hilt_version = '2.56'
+    hilt_version = '2.57.2'
     
     // Retrofit & OkHttp
     okhttp_bom_version = '4.9.0'

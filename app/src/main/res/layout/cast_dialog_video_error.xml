@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.genesys.shape.layout.ShapeRelativeLayout
+                app:shape_strokeColor="#525252"
+                app:shape_strokeSize="1dp"
+                app:shape_solidColor="#202020"
+                app:shape_radius="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/cast_border_dialog"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_16sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgError"
+                        android:layout_width="@dimen/_64sdp"
+                        android:layout_height="@dimen/_64sdp"
+                        android:src="@drawable/cast_ic_out_offservice"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tvLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/cast_text_medium_14"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="@string/cast_out_of_service"
+                        app:layout_constraintTop_toBottomOf="@id/imgError"/>
+
+                    <TextView
+                        android:id="@+id/tvDes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/cast_text_regular_10"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textColor="@color/cast_textSecondary"
+                        android:text="@string/cast_out_of_service_des"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabel"/>
+
+                    <TextView
+                        android:id="@+id/btnCancel"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/cast_button_height_small"
+                        android:text="@string/cast_cancel"
+                        android:background="@drawable/cast_bg_btn_primary"
+                        android:backgroundTint="#282828"
+                        android:gravity="center"
+                        style="@style/cast_text_medium_12"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:paddingHorizontal="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:layout_constraintTop_toBottomOf="@id/tvDes"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnNext"/>
+
+                    <TextView
+                        android:id="@+id/btnNext"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/cast_button_height_small"
+                        android:text="@string/cast_next_channel"
+                        android:textColor="@color/cast_white"
+                        android:background="@drawable/cast_bg_import_upload_icon"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        style="@style/cast_text_medium_12"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:paddingHorizontal="@dimen/_4sdp"
+                        app:layout_constraintTop_toTopOf="@id/btnCancel"
+                        app:layout_constraintStart_toEndOf="@id/btnCancel"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.genesys.shape.layout.ShapeRelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

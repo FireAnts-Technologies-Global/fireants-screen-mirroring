@@ -3,12 +3,20 @@ package com.anrstudio.template.ui.bases
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancelChildren
 
 open class BaseViewModel : ViewModel() {
+
+    protected fun <T> Flow<T>.stateWhileSubscribed(initialValue: T): StateFlow<T> =
+        stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), initialValue)
 
     //init ViewModel Scope
     var viewModelJob = SupervisorJob()

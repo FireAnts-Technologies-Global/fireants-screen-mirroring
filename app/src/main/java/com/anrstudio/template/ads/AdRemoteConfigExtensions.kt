@@ -62,3 +62,15 @@ val AdRemoteConfig.Companion.native_welcome: AdUnitConfig
 
 val AdRemoteConfig.Companion.inter_welcome: AdUnitConfig
     get() = getInstance().inter_welcome
+
+val AdRemoteConfig.Companion.native_home: AdUnitConfig
+    get() = getInstance().native_home
+
+val AdRemoteConfig.Companion.banner_all: AdUnitConfig
+    get() = getInstance().banner_all
+
+val AdRemoteConfig.Companion.inter_home: AdUnitConfig
+    get() = getInstance().inter_home
+
+val AdRemoteConfig.Companion.inter_back: AdUnitConfig
+    get() = getInstance().inter_back

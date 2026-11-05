@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cast_black"
+    android:paddingHorizontal="@dimen/_12sdp"
+    android:paddingVertical="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:src="@drawable/cast_ic_back" />
+
+    <com.anrstudio.template.ui.component.custom.GradientTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tvTitleHome"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/cast_poppins_bold"
+        android:text="@string/cast_home_title"
+        android:textSize="@dimen/_17ssp" />
+
+    <LinearLayout
+        android:id="@+id/lnActionHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imgPremium"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/cast_ic_premium" />
+        <ImageView
+            android:id="@+id/imgSetting"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/cast_ic_setting" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:visibility="visible"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/cast_poppins_medium"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textColor="@color/cast_white"
+        android:textSize="@dimen/_13ssp"
+        tools:text="Cast" />
+
+    <ImageView
+        android:id="@+id/imgSwap"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:src="@drawable/cast_ic_swap" />
+
+    <ImageView
+        android:id="@+id/imgCast"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:visibility="visible"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/cast_ic_cast" />
+</RelativeLayout>

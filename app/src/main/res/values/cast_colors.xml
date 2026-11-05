@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cast_color_FF000000">#FF000000</color>
+    <color name="cast_color_FFFFFFFF">#FFFFFFFF</color>
+    <color name="cast_color_51A2FE">#51A2FE</color>
+    <color name="cast_color_0452F7">#0452F7</color>
+    <color name="cast_color_B6CCFD">#B6CCFD</color>
+    <color name="cast_color_DEEEFE">#DEEEFE</color>
+    <color name="cast_color_EAE4FE">#EAE4FE</color>
+    <color name="cast_color_E8F7E2">#E8F7E2</color>
+    <color name="cast_color_E4E4E4">#E4E4E4</color>
+    <color name="cast_color_B3B5B9">#B3B5B9</color>
+    <color name="cast_color_343944">#343944</color>
+    <color name="cast_color_263238">#263238</color>
+    <color name="cast_color_9A9A9A">#9A9A9A</color>
+    <color name="cast_color_E4E5E5">#E4E5E5</color>
+    <color name="cast_color_error">#D32F2F</color>
+    <color name="cast_color_999CA1">#999CA1</color>
+    <color name="cast_color_DFDFDF">#DFDFDF</color>
+    <color name="cast_gray_text">#999CA1</color>
+    <color name="cast_color_0F000000">#5C000000</color>
+    <color name="cast_color_5C646464">#5C646464</color>
+
+    <color name="cast_purple_200">#FFBB86FC</color>
+    <color name="cast_purple_500">#FF6200EE</color>
+    <color name="cast_purple_700">#FF3700B3</color>
+    <color name="cast_teal_200">#FF03DAC5</color>
+    <color name="cast_teal_700">#FF018786</color>
+    <color name="cast_black">#FF000000</color>
+    <color name="cast_white">#FFFFFFFF</color>
+
+    <color name="cast_color_main">#0573B8</color>
+    <color name="cast_color_bg_main">#F4F4F4</color>
+    <color name="cast_color_3346F1">#3346f1</color>
+    <color name="cast_color_FFA510">#FFA510</color>
+    <color name="cast_color_9E9E9E">#9E9E9E</color>
+    <color name="cast_colorBackground">#ffffff</color>
+    <color name="cast_colorDisable">#bcbcbc</color>
+    <color name="cast_color_background">#FFFFFF</color>
+    <color name="cast_color_main_orange">#D23535</color>
+
+    <color name="cast_main_color_ad">#5722C3</color>
+
+    <color name="cast_color_import_hint">#61FFFFFF</color>
+    <color name="cast_color_empty_subtitle">#70FFFFFF</color>
+    <color name="cast_color_how_to_use_bg">#00000D</color>
+    <color name="cast_color_how_to_use_back_bg">#0D0F12</color>
+    <color name="cast_color_how_to_use_back_border">#202020</color>
+    <color name="cast_color_how_to_use_card_bg">#101622</color>
+    <color name="cast_color_how_to_use_card_border">#1FFFFFFF</color>
+    <color name="cast_color_how_to_use_step_text">#919191</color>
+    <color name="cast_color_how_to_use_badge_start">#D894FF</color>
+    <color name="cast_color_how_to_use_badge_end">#7334ED</color>
+
+    <color name="cast_color_bottom_nav_bg">#090F1B</color>
+    <color name="cast_color_bottom_nav_border">#1FFFFFFF</color>
+    <color name="cast_color_tab_inactive">#7AFFFFFF</color>
+    <color name="cast_color_setting_item_border">#3D494949</color>
+    <color name="cast_color_home_cast_banner_border">#F18FFF</color>
+    <color name="cast_color_home_how_to_use_border">#36FFFFFF</color>
+    <color name="cast_color_home_feature_card_bg">#69101622</color>
+    <color name="cast_color_home_feature_card_border">#33FFFFFF</color>
+
+    <color name="cast_nav_item_selected_bg">#36E4A2</color>
+    <color name="cast_nav_item_selected_text">#36E4A2</color>
+    <color name="cast_nav_item_selected_icon">#36E4A2</color>
+    <color name="cast_nav_item_unselected_text">#B3B3B3</color>
+    <color name="cast_nav_item_unselected_icon">#B3B3B3</color>
+    <color name="cast_nav_item_unselected_stroke">#33B3B3B3</color>
+    <color name="cast_nav_bar_bg">#090F1B</color>
+
+    <color name="cast_transparent">#00FFFFFF</color>
+    <color name="cast_bgMain">#000000</color>
+    <color name="cast_bgDialog">#0D0D0D</color>
+    <color name="cast_rippleCommon">#B1B1B1</color>
+    <color name="cast_textPrimary">#FFFFFF</color>
+    <color name="cast_textSecondary">#B3B3B3</color>
+    <color name="cast_textOnAd">#FFFFFF</color>
+    <color name="cast_playerPrimary">#FFFFFF</color>
+    <color name="cast_playerSecondary">#B7B7B7</color>
+    <color name="cast_main_text_color">#36E4A2</color>
+    <color name="cast_color_button_disable">#B336E4A2</color>
+    <color name="cast_color_button_enable">#36E4A2</color>
+    <color name="cast_color_primary">#36E4A2</color>
+    <color name="cast_fab_shadow_color">#888888</color>
+    <color name="cast_fab_item_bg">#121212</color>
+    <color name="cast_input_text_color">#6EFFFFFF</color>
+    <color name="cast_input_border_color">#707070</color>
+    <color name="cast_button_secondary_bg">#FF5512</color>
+    <color name="cast_channel_item_bg">#0F0F0F</color>
+    <color name="cast_channel_item_thumbnail_bg">#1D1D1D</color>
+    <color name="cast_tab_unselected_bg">#282828</color>
+    <color name="cast_color_light_red">#1A36E4A2</color>
+    <color name="cast_color_7777">#777777</color>
+    <color name="cast_color_7086FFF">#00D886</color>
+    <color name="cast_color_086FFF">#1A00D886</color>
+    <color name="cast_color_919191">#33919191</color>
+
+</resources>

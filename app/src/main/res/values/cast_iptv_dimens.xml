@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cast_button_height">@dimen/_44sdp</dimen>
+    <dimen name="cast_padding_button_height">@dimen/_12sdp</dimen>
+
+    <dimen name="cast_button_height_small">@dimen/_36sdp</dimen>
+    <dimen name="cast_padding_button_height_small">@dimen/_8sdp</dimen>
+
+    <dimen name="cast_border_button">@dimen/_16sdp</dimen>
+    <dimen name="cast_border_dialog">@dimen/_8sdp</dimen>
+
+    <dimen name="cast_space_horizontal_common">@dimen/_10sdp</dimen>
+</resources>

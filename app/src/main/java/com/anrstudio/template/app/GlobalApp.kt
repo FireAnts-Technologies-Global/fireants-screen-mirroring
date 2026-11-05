@@ -9,7 +9,6 @@ import com.anrstudio.ads.ads.ANRAdSdk
 import com.anrstudio.ads.application.AdsMultiDexApplication
 import com.anrstudio.ads.config.ANRAdSdkConfig
 import com.anrstudio.ads.config.AdjustConfig
-import com.anrstudio.ads.config.AppsFlyerConfig
 import com.anrstudio.config.ANRConfig
 import com.anrstudio.template.BuildConfig
 import com.anrstudio.template.R
@@ -18,8 +17,6 @@ import com.anrstudio.template.ads.RemoteConfigUtils
 import com.anrstudio.template.ui.component.language.LanguageActivity
 import com.anrstudio.template.ui.component.onboarding.OnBoardingActivity
 import com.anrstudio.template.ui.component.splash.SplashActivity
-import com.anrstudio.template.ui.component.uninstall.ConfirmUninstallActivity
-import com.anrstudio.template.ui.component.uninstall.SurveyActivity
 import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
@@ -32,7 +29,11 @@ class GlobalApp : AdsMultiDexApplication() {
 
         @SuppressLint("StaticFieldLeak")
         var currentActivity: Activity? = null
+
+        var isInPIP = false
     }
+
+    @javax.inject.Inject lateinit var castRuntime: com.anrstudio.template.app.CastRuntime
 
     override fun onCreate() {
         super.onCreate()
@@ -45,6 +46,7 @@ class GlobalApp : AdsMultiDexApplication() {
         MobileAds.initialize(this) {}
 
         instance = this
+        castRuntime.start()
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }

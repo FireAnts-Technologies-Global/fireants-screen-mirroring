@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cast_bg_home_feature_card"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="9dp"
+    android:paddingVertical="16dp">
+
+    <ImageView
+        android:id="@+id/imgFeatureIcon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:contentDescription="@null"
+        tools:src="@drawable/cast_ic_home_feature_photo" />
+
+    <TextView
+        android:id="@+id/tvFeatureTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cast_poppins_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/cast_white"
+        android:textSize="14sp"
+        tools:text="Cast Photos" />
+
+    <TextView
+        android:id="@+id/tvFeatureDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/cast_poppins_regular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="4dp"
+        android:textColor="@color/cast_color_tab_inactive"
+        android:textSize="12sp"
+        tools:text="Show your photos and albums on big screens." />
+</LinearLayout>

@@ -17,6 +17,7 @@ import com.anrstudio.ads.billing.AppPurchase
 import com.anrstudio.ads.funtion.AdCallback
 import com.anrstudio.ads.util.AppConstant
 import com.anrstudio.template.ui.bases.ext.goneView
+import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 import timber.log.Timber
@@ -44,6 +45,8 @@ object AdsManager {
     val nativeOnboardingFullAfterPage3AdStateLive = MutableLiveData(NativeAdLoadState.IDLE)
     val nativeSurveyAdLive = MutableLiveData<ApNativeAd?>()
     val nativeConfirmUninstallAdLive = MutableLiveData<ApNativeAd?>()
+    val nativeHomeAdLive = MutableLiveData<ApNativeAd?>()
+    val nativeHomeAdStateLive = MutableLiveData(NativeAdLoadState.IDLE)
     val nativeWelcomeAdLive = MutableLiveData<ApNativeAd?>()
     val nativeWelcomeAdStateLive = MutableLiveData(NativeAdLoadState.IDLE)
 
@@ -63,6 +66,7 @@ object AdsManager {
         stateLiveData: MutableLiveData<NativeAdLoadState>? = null,
     ) {
         if (!config.isEnable
+            || config.id.isBlank()
             || AppPurchase.getInstance().isPurchased(activity)
             || !activity.isNetworkAvailable()
             || !shouldDisplay
@@ -171,6 +175,18 @@ object AdsManager {
             activity, config, layoutRes, nativeOnboardingFullAfterPage3AdLive,
             ANRAdSdk.getInstance().shouldDisplayNativeOnboardingFull2,
             nativeOnboardingFullAfterPage3AdStateLive
+        )
+    }
+
+    fun loadNativeHome(activity: Activity, layoutRes: Int) {
+        nativeHomeAdLive.value?.let { ad ->
+            adConfigMap.remove(ad)
+            ad.admobNativeAd?.destroy()
+        }
+        nativeHomeAdLive.value = null
+        loadNativeInternal(
+            activity, AdRemoteConfig.native_home, layoutRes, nativeHomeAdLive,
+            stateLiveData = nativeHomeAdStateLive
         )
     }
 
@@ -285,13 +301,42 @@ object AdsManager {
         }
     }
 
+    /** Loads a placement and continues the screen action once, including ad failures. */
+    fun loadAndShowInterstitial(activity: Activity, config: AdUnitConfig, onAction: () -> Unit) {
+        if (!config.isEnable || config.id.isBlank()
+            || AppPurchase.getInstance().isPurchased(activity)
+            || !activity.isNetworkAvailable()
+        ) {
+            onAction()
+            return
+        }
+        var completed = false
+        fun next() {
+            if (completed) return
+            completed = true
+            if (!activity.isFinishing && !activity.isDestroyed) onAction()
+        }
+        ANRAdSdk.getInstance().getInterstitialAds(activity, config.id, object : AdCallback() {
+            override fun onApInterstitialLoad(ad: ApInterstitialAd?) {
+                if (activity.isFinishing || activity.isDestroyed) return
+                if (ad == null) { next(); return }
+                ANRAdSdk.getInstance().forceShowInterstitial(activity, ad, object : AdCallback() {
+                    override fun onNextAction() { next() }
+                    override fun onAdFailedToShow(error: AdError?) { next() }
+                }, false)
+            }
+            override fun onAdFailedToLoad(error: LoadAdError?) { next() }
+        })
+    }
+
     fun loadBanner(
         activity: AppCompatActivity,
         adUnitConfig: AdUnitConfig,
         frAds: FrameLayout,
         isCollapse: Boolean,
     ) {
-        if (adUnitConfig.isEnable) {
+        if (adUnitConfig.isEnable && adUnitConfig.id.isNotBlank()
+            && !AppPurchase.getInstance().isPurchased(activity)) {
             removeBannerView(activity, frAds)
             if (isCollapse) ANRAdSdk.getInstance().loadCollapsibleBanner(
                 activity,
@@ -306,7 +351,7 @@ object AdsManager {
                     }
                 })
             else ANRAdSdk.getInstance()
-                .loadBanner(activity, adUnitConfig.id, object : AdCallback() {
+                .loadBannerFragment(activity, adUnitConfig.id, frAds, object : AdCallback() {
                     override fun onAdFailedToLoad(i: LoadAdError?) {
                         super.onAdFailedToLoad(i)
                         frAds.goneView()
@@ -357,6 +402,12 @@ object AdsManager {
         nativeOnboardingFullAfterPage3AdStateLive.postValue(NativeAdLoadState.IDLE)
         nativeSurveyAdLive.postValue(null)
         nativeConfirmUninstallAdLive.postValue(null)
+        nativeHomeAdLive.value?.let { ad ->
+            adConfigMap.remove(ad)
+            ad.admobNativeAd?.destroy()
+        }
+        nativeHomeAdLive.postValue(null)
+        nativeHomeAdStateLive.postValue(NativeAdLoadState.IDLE)
         nativeWelcomeAdLive.postValue(null)
         nativeWelcomeAdStateLive.postValue(NativeAdLoadState.IDLE)
         interSplashAd = null

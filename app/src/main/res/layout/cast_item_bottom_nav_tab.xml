@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|bottom"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgTabIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="@null"
+        tools:src="@drawable/cast_ic_tab_home_selected" />
+
+    <com.anrstudio.template.ui.component.custom.GradientTextView
+        android:id="@+id/tvTabLabelGradient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/cast_poppins_semi_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxLines="1"
+        android:paddingHorizontal="4dp"
+        android:singleLine="true"
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:text="Home"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvTabLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/cast_poppins_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/cast_color_tab_inactive"
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:text="Channels"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/viewTabIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/cast_bg_tab_indicator_selected"
+        android:visibility="invisible" />
+</LinearLayout>

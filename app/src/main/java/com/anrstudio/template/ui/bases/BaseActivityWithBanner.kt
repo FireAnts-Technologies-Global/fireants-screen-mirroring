@@ -113,7 +113,7 @@ abstract class BaseActivityWithBanner<VB : ViewDataBinding> : BaseActivity<VB>()
         }
     }
 
-    private fun shouldShowBanner(): Boolean {
+    protected open fun shouldShowBanner(): Boolean {
         val isAdEnabled = bannerConfig.adUnitConfig.isEnable
                 && !AppPurchase.getInstance().isPurchased
         val frAds = findViewById<FrameLayout>(R.id.fr_banner)

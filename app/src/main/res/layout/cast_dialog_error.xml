@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_48sdp"
+                app:cardCornerRadius="@dimen/cast_border_dialog"
+                app:cardBackgroundColor="@color/cast_transparent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_16sdp"
+                    android:background="@drawable/cast_bg_dialog">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lotError"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:lottie_fileName="error.json"
+                        app:lottie_autoPlay="false"
+                        app:lottie_loop="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintWidth_percent="0.8"
+                        app:layout_constraintDimensionRatio="1:1"/>
+
+                    <TextView
+                        android:id="@+id/tvDes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        style="@style/cast_text_regular_12"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:text="@string/cast_error_common"
+                        app:layout_constraintTop_toBottomOf="@id/lotError"/>
+
+                    <TextView
+                        android:id="@+id/btnConfirmError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/cast_button_height_small"
+                        android:text="@string/cast_got_it"
+                        android:background="@drawable/cast_bg_btn_primary"
+                        android:gravity="center"
+                        style="@style/cast_text_medium_14"
+                        android:paddingHorizontal="@dimen/_32sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:layout_constraintTop_toBottomOf="@id/tvDes"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

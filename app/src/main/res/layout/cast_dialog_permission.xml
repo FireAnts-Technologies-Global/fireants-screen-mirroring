@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cast_bg_radius_20"
+    android:orientation="vertical"
+    android:padding="@dimen/_16sdp">
+
+    <ImageView
+        android:id="@+id/imgPermission"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/tvPermissionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/cast_poppins_semi_bold"
+        android:gravity="center"
+        android:textColor="@color/cast_color_263238"
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:id="@+id/tvPermissionMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/cast_poppins_regular"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_2sdp"
+        android:textColor="@color/cast_color_B3B5B9"
+        android:textSize="@dimen/_11ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:orientation="horizontal">
+
+        <com.anrstudio.template.ui.component.custom.GradientTextView
+            android:id="@+id/btnPermissionDeny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cast_bg_cancel"
+            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_12sdp"
+            android:textColor="@color/cast_color_343944"
+            android:textSize="@dimen/_11ssp" />
+
+        <Space
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/btnPermissionAllow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cast_bg_radius_34"
+            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_12sdp"
+            android:textColor="@color/cast_color_FFFFFFFF"
+            android:textSize="@dimen/_11ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>

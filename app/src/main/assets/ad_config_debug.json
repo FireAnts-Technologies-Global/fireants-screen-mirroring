@@ -249,5 +249,17 @@
       "media",
       "cta"
     ]
+  },
+  "banner_all": {
+    "id": "ca-app-pub-3940256099942544/6300978111",
+    "isEnable": true
+  },
+  "inter_home": {
+    "id": "ca-app-pub-3940256099942544/1033173712",
+    "isEnable": true
+  },
+  "inter_back": {
+    "id": "ca-app-pub-3940256099942544/1033173712",
+    "isEnable": true
   }
 }

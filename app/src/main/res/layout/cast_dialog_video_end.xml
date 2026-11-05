@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.genesys.shape.layout.ShapeRelativeLayout
+                app:shape_radius="32dp"
+                app:shape_solidColor="#202020"
+                app:shape_strokeSize="1dp"
+                app:shape_strokeColor="#525252"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_32sdp"
+                app:cardCornerRadius="@dimen/cast_border_dialog"
+                app:cardBackgroundColor="#202020"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_16sdp">
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tvLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/cast_text_medium_14"
+                        android:textAlignment="center"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="@string/cast_channel_has_ended"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tvDes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/cast_text_regular_10"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textColor="@color/cast_textSecondary"
+                        android:text="@string/cast_channel_has_ended_des"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabel"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        app:layout_constraintTop_toBottomOf="@id/tvDes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.genesys.shape.view.ShapeTextView
+                            app:shape_radius="@dimen/_50sdp"
+                            app:shape_solidColor="#282828"
+                            android:id="@+id/btnCancel"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/cast_button_height_small"
+                            android:text="@string/cast_cancel"
+                            android:gravity="center"
+                            style="@style/cast_text_medium_12"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:lines="1"
+                            android:ellipsize="end"
+                            app:layout_constraintTop_toBottomOf="@id/tvDes"
+                            app:layout_constraintEnd_toStartOf="@id/btnNext"/>
+
+                        <com.genesys.shape.view.ShapeTextView
+                            android:id="@+id/btnNext"
+                            style="@style/cast_text_bold_12"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/cast_button_height_small"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:lines="1"
+                            android:textColor="@color/cast_black"
+                            android:paddingHorizontal="@dimen/_12sdp"
+                            android:text="@string/cast_next_channel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/btnCancel"
+                            app:shape_radius="@dimen/_50sdp"
+                            app:shape_solidColor="#36E4A2" />
+
+                    </LinearLayout>
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.genesys.shape.layout.ShapeRelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

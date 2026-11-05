@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.genesys.shape.layout.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        app:shape_solidColor="#1F1F1F"
+        app:shape_radius="16dp"
+        android:orientation="vertical"
+        android:gravity="start"
+        app:shape_strokeColor="#525252"
+        app:shape_strokeSize="1dp"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/layout_edit"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/cast_ic_drawable"/>
+
+            <TextView
+                android:layout_marginStart="4dp"
+                android:textColor="@color/cast_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:fontFamily="@font/cast_medium"
+                android:text="@string/cast_edit_channel"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:id="@+id/layout_delete"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/cast_ic_delete"/>
+
+            <TextView
+                android:layout_marginStart="4dp"
+                android:textColor="#FC1C1C"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:fontFamily="@font/cast_medium"
+                android:text="@string/cast_delete_channel"/>
+
+        </LinearLayout>
+
+    </com.genesys.shape.layout.ShapeLinearLayout>
+</layout>

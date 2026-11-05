@@ -18,6 +18,12 @@ import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.viewbinding.ViewBinding
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 import com.anrstudio.template.R
 import com.anrstudio.template.app.AppConstants
 import com.anrstudio.template.data.pref.AppSharedPref
@@ -47,7 +53,7 @@ data class ImeConfig(
     val resizeWhenKeyboardVisible: Boolean = false
 )
 
-abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     @Inject
     lateinit var appSharedPref: AppSharedPref
@@ -79,9 +85,9 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
         requestWindow()
 
-        val layoutView = getLayoutActivity()
-        mBinding = DataBindingUtil.setContentView(this, layoutView)
-        mBinding.lifecycleOwner = this
+        mBinding = inflateBinding(layoutInflater)
+        setContentView(mBinding.root)
+        (mBinding as? ViewDataBinding)?.lifecycleOwner = this
 
         setupSystemBars()
         registerBackPressedCallback()
@@ -95,6 +101,16 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
 
     protected abstract fun getLayoutActivity(): Int
+
+    @Suppress("UNCHECKED_CAST")
+    protected open fun inflateBinding(inflater: LayoutInflater): VB =
+        DataBindingUtil.inflate<ViewDataBinding>(inflater, getLayoutActivity(), null, false) as VB
+
+    protected fun <T> collectState(flow: Flow<T>, collector: (T) -> Unit) {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) { flow.collect(collector) }
+        }
+    }
 
     protected open fun getRootView(): View = mBinding.root
     protected open fun onActivityBackPressed() {

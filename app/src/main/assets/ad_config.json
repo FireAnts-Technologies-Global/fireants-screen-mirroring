@@ -249,5 +249,17 @@
       "media",
       "cta"
     ]
+  },
+  "banner_all": {
+    "id": "",
+    "isEnable": false
+  },
+  "inter_home": {
+    "id": "",
+    "isEnable": false
+  },
+  "inter_back": {
+    "id": "",
+    "isEnable": false
   }
 }

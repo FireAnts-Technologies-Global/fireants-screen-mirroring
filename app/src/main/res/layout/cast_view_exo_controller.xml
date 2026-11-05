@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/exo_controller"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:background="@drawable/cast_bg_video_player_top"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/_10sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cast_ic_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnClose"
+            app:layout_constraintEnd_toStartOf="@id/btnFavorite"
+            style="@style/cast_text_bold_12"
+            android:gravity="center"
+            android:text="Chanel name"
+            android:lines="1"
+            android:ellipsize="end"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/tvIndex"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingVertical="@dimen/_2sdp"/>
+
+        <TextView
+            android:id="@+id/tvIndex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            app:layout_constraintStart_toEndOf="@id/btnClose"
+            app:layout_constraintEnd_toStartOf="@id/btnFavorite"
+            style="@style/cast_text_regular_10"
+            android:textColor="@color/cast_textSecondary"
+            android:gravity="center"
+            android:text="Chanel name"
+            android:lines="1"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="@id/btnClose"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingVertical="@dimen/_2sdp"/>
+
+        <ImageButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:padding="@dimen/_10sdp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/cast_ic_favorite"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/btnPrev"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/cast_ic_prev"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnToggle"
+        android:layout_marginEnd="@dimen/_32sdp"/>
+
+    <ImageButton
+        android:id="@+id/btnToggle"
+        android:layout_width="@dimen/_48sdp"
+        android:layout_height="@dimen/_48sdp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Play/Pause"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cast_ic_toggle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/transparent"
+        android:src="@drawable/cast_ic_next"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnToggle"
+        android:layout_marginStart="@dimen/_32sdp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:background="@drawable/cast_bg_video_player_bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.media3.ui.DefaultTimeBar
+            android:id="@id/exo_progress"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            app:bar_gravity="center"
+            android:layout_marginBottom="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnCast" />
+
+        <LinearLayout
+            android:id="@+id/btnCast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnPip"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <FrameLayout
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp">
+
+                <androidx.mediarouter.app.MediaRouteButton
+                    android:id="@+id/mediaRouteButton"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/cast_ic_video_cast"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cast_cast"
+                android:lines="1"
+                android:ellipsize="end"
+                android:paddingVertical="@dimen/_2sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                style="@style/cast_text_regular_8"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btnCast"
+            app:layout_constraintEnd_toStartOf="@id/btnTimer"
+            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/cast_ic_video_pip"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cast_pip"
+                android:lines="1"
+                android:ellipsize="end"
+                android:paddingVertical="@dimen/_2sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                style="@style/cast_text_regular_8"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnTimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btnPip"
+            app:layout_constraintEnd_toStartOf="@id/btnLock"
+            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/cast_ic_video_timer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cast_timer"
+                android:lines="1"
+                android:ellipsize="end"
+                android:paddingVertical="@dimen/_2sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                style="@style/cast_text_regular_8"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnLock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btnTimer"
+            app:layout_constraintEnd_toStartOf="@id/btnFullScreen"
+            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/cast_ic_video_unlock"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cast_lock"
+                android:lines="1"
+                android:ellipsize="end"
+                android:paddingVertical="@dimen/_2sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                style="@style/cast_text_regular_8"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnFullScreen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btnLock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/cast_ic_video_fullscreen"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cast_fullscreen"
+                android:lines="1"
+                android:ellipsize="end"
+                android:paddingVertical="@dimen/_2sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                style="@style/cast_text_regular_8"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

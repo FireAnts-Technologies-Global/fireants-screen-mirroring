@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/cast_layout_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_24sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDeviceInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/cast_bg_channel"
+                android:padding="@dimen/_16sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgCastIcon"
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:src="@drawable/cast_ic_cast"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCastingTo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/cast_poppins_regular"
+                    android:text="@string/cast_casting_to"
+                    android:textColor="@color/cast_color_9A9A9A"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imgCastIcon"
+                    app:layout_constraintTop_toTopOf="@id/imgCastIcon" />
+
+                <TextView
+                    android:id="@+id/tvDeviceName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/cast_poppins_semi_bold"
+                    android:textColor="@color/cast_color_263238"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/imgCastIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imgCastIcon"
+                    tools:text="Living Room TV" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:cardCornerRadius="@dimen/_12sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintTop_toBottomOf="@id/clDeviceInfo">
+
+                <ImageView
+                    android:id="@+id/imgThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cast_img_error" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvVideoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cast_poppins_semi_bold"
+                android:maxLines="2"
+                android:textColor="@color/cast_color_263238"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@id/cardThumbnail"
+                tools:text="Video Title Goes Here" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPlaybackControls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:background="@drawable/cast_bg_channel"
+                android:padding="@dimen/_16sdp"
+                app:layout_constraintTop_toBottomOf="@id/tvVideoTitle">
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/cast_MySeekBar"
+                    android:max="100"
+                    android:progress="0"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCurrentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/cast_poppins_regular"
+                    android:text="00:00"
+                    android:textColor="@color/cast_color_9A9A9A"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seekBar" />
+
+                <TextView
+                    android:id="@+id/tvDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/cast_poppins_regular"
+                    android:text="00:00"
+                    android:textColor="@color/cast_color_9A9A9A"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seekBar" />
+
+                <ImageView
+                    android:id="@+id/btnPlayPause"
+                    android:layout_width="@dimen/_56sdp"
+                    android:layout_height="@dimen/_56sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/cast_bg_radius_34"
+                    android:padding="@dimen/_16sdp"
+                    android:src="@drawable/cast_ic_play"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCurrentTime" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clVolumeControl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/cast_bg_channel"
+                android:padding="@dimen/_16sdp"
+                app:layout_constraintTop_toBottomOf="@id/clPlaybackControls">
+
+                <TextView
+                    android:id="@+id/tvVolumeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cast_poppins_semi_bold"
+                    android:text="@string/cast_volume"
+                    android:textColor="@color/cast_color_263238"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/seekBarVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/cast_MySeekBar"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:max="100"
+                    android:progress="50"
+                    app:layout_constraintTop_toBottomOf="@id/tvVolumeLabel" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/btnStop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/cast_bg_radius_34"
+                android:fontFamily="@font/cast_poppins_semi_bold"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_8sdp"
+                android:textColor="@color/cast_color_FFFFFFFF"
+                android:text="@string/cast_stop_casting"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toBottomOf="@id/clVolumeControl" />
+
+            <com.anrstudio.template.ui.component.custom.GradientTextView
+                android:id="@+id/btnDisconnect"
+                android:background="@drawable/cast_bg_cancel"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:paddingVertical="@dimen/_8sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/cast_poppins_semi_bold"
+                android:text="@string/cast_disconnect"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toBottomOf="@id/btnStop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

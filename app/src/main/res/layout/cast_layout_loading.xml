@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#B3111111">
+    
+    <com.genesys.shape.layout.ShapeLinearLayout
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="40dp"
+        app:shape_radius="16dp"
+        app:shape_solidColor="#232323"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/cast_anim_loading" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cast_loading"
+            android:textSize="18sp"
+            android:fontFamily="@font/cast_medium"
+            android:textColor="@color/cast_main_text_color"/>
+        
+    </com.genesys.shape.layout.ShapeLinearLayout>
+
+</RelativeLayout>

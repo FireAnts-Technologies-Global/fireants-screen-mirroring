@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tab_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginHorizontal="@dimen/_1sdp"
+    android:background="@drawable/cast_tab_item_background_selector"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/iv_tab_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/cast_ic_tab_all"
+        android:contentDescription="@string/cast_home" />
+
+    <TextView
+        android:id="@+id/tv_tab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="#B3B3B3"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/cast_bold" />
+
+</LinearLayout>
+

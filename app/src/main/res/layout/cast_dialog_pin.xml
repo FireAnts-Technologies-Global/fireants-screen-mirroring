@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/cast_bg_radius_20"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/_12sdp">
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/cast_ic_pin" />
+
+    <TextView
+        android:id="@+id/tvPinTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:fontFamily="@font/cast_poppins_semi_bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/cast_pin_dialog_title"
+        android:textColor="@color/cast_white"
+        android:textSize="@dimen/_13ssp" />
+
+    <TextView
+        android:id="@+id/tvPinSubtitle"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/cast_poppins_regular"
+        android:gravity="center"
+        android:text="@string/cast_pin_dialog_message"
+        android:textColor="@color/cast_color_999CA1"
+        android:textSize="@dimen/_11ssp" />
+
+    <EditText
+        android:id="@+id/etPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/cast_bg_pin_box"
+        android:fontFamily="@font/cast_poppins_regular"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:gravity="start"
+        android:inputType="number"
+        android:maxLength="4"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingVertical="@dimen/_14sdp"
+        android:textColor="@color/cast_white"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/tvPinError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:fontFamily="@font/cast_poppins_regular"
+        android:gravity="center"
+        android:textColor="@color/cast_color_error"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="horizontal">
+
+        <com.genesys.shape.view.ShapeTextView
+            app:shape_solidGradientStartColor="#1FD894FF"
+            app:shape_solidGradientEndColor="#1F7334ED"
+            app:shape_radius="@dimen/_50sdp"
+            app:shape_textStartColor="#D894FF"
+            app:shape_textEndColor="#7334ED"
+            android:id="@+id/btnPinCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="@string/cast_pin_dialog_cancel"
+            android:textSize="@dimen/_11ssp" />
+
+        <Space
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="1dp" />
+
+        <com.genesys.shape.view.ShapeTextView
+            app:shape_solidGradientStartColor="#D894FF"
+            app:shape_solidGradientEndColor="#7334ED"
+            app:shape_radius="@dimen/_50sdp"
+            android:id="@+id/btnPinConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="@string/cast_pin_dialog_confirm"
+            android:textColor="@color/cast_black"
+            android:textSize="@dimen/_11ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>
