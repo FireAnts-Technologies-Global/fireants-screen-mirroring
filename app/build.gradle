@@ -95,7 +95,9 @@ dependencies {
     implementation "com.github.anr-2609:anr-studio-config:$anr_config"
     implementation "com.github.anr-2609:anr-studio-consent:$anr_consent"
     implementation "com.github.anr-2609:anr-studio-ads:$anr_ads_sdk"
-
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":youtubeExtractor"))
     // Local AAR modules
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
 

@@ -1,0 +1,9 @@
+<resources>
+    <string name="error">Error!</string>
+    <string name="notifications_channel">Recording notifications</string>
+    <string name="notifications_stop">Stop</string>
+    <string name="recording_started_title">Recording screen</string>
+    <string name="recording_started_text">Screen recording in process</string>
+    <string name="recording_finished_title">Recording finished</string>
+    <string name="recording_finished_text">Screen recording complete</string>
+</resources>

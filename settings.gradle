@@ -1,2 +1,6 @@
 include ':app'
 rootProject.name = "fireants-screen-mirroring"
+include ':youtubeExtractor'
+include ':connectsdk'
+include ':data'
+include ':domain'
