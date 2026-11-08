@@ -4,9 +4,9 @@
     <string name="cast_home_no_devices">No devices found</string>
     <string name="cast_cast_title">Cast</string>
     <string name="cast_cast_searching_devices">Searching for nearby devices…</string>
-    <string name="cast_cast_available_devices">Available Devices</string>
+    <string name="cast_cast_available_devices">Available devices</string>
     <string name="cast_cast_no_devices">No device available</string>
-    <string name="cast_cast_lost_connection">Lost Connection</string>
+    <string name="cast_cast_lost_connection">Connection lost</string>
     <string name="cast_available_device">Available device (%d)</string>
     <string name="cast_screen_mirror">Screen Mirror</string>
     <string name="cast_share_your_phone_screen_on_the_tv">Share your phone screen on the TV.</string>
@@ -29,6 +29,14 @@
     <string name="cast_pin_error_incomplete">Please enter the 4-digit PIN</string>
     <string name="cast_pin_error_invalid">Incorrect PIN. Please check your TV screen</string>
     <string name="cast_pin_hint">—</string>
+    <string name="cast_pin_code_hint">PIN code</string>
+    <string name="cast_rewarded_dialog_title">Screen Mirroring</string>
+    <string name="cast_rewarded_dialog_message">Watch a short ad to start mirroring your screen.</string>
+    <string name="cast_rewarded_dialog_watch">Watch ad to mirror</string>
+    <string name="cast_rewarded_dialog_later">Maybe later</string>
+    <string name="cast_open_wifi_settings">Open Wi-Fi settings</string>
+    <string name="cast_cast_alternative_connection">Alternative connection</string>
+    <string name="cast_cast_web_browser_subtitle">Cast to a browser on your TV or computer</string>
     <string name="cast_connecting_to_device">Connecting to %s…</string>
     <string name="cast_notification_casting_title">Casting to %s</string>
     <string name="cast_notification_casting_content">Tap to manage your cast session</string>
@@ -49,7 +57,7 @@
     <string name="cast_screen_mirror_disconnect">Disconnect</string>
     <string name="cast_screen_mirror_connected_to">Connected to %s</string>
     <string name="cast_screen_mirror_wait">Starting mirror…</string>
-    <string name="cast_title_br1">Make sure your phone and cast device are connected to the same Wi-Fi.</string>
+    <string name="cast_title_br1">Make sure your phone and TV are on the same Wi-Fi network.</string>
     <string name="cast_title_br2">Open this website on the other device:</string>
     <string name="cast_click_on">Click on “Start Screen Mirror”.</string>
     <string name="cast_one">1</string>

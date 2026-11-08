@@ -4,40 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp">
+    android:layout_marginBottom="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rlCast"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/cast_bg_cast_device_item"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="14dp"
+        android:layout_height="54dp"
+        android:background="@drawable/cast_bg_cast_device"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:id="@+id/flDeviceIcon"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:background="@drawable/cast_bg_cast_device_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/cast_bg_cast_device_icon_tile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imgCast"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:contentDescription="@null"
-                android:src="@drawable/cast_ic_cast_tv" />
+                android:src="@drawable/cast_ic_figma_tv" />
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -47,31 +48,33 @@
 
             <TextView
                 android:id="@+id/tvDeviceName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:fontFamily="@font/cast_poppins_semi_bold"
+                android:fontFamily="@font/inter_bold"
+                android:includeFontPadding="false"
                 android:maxLines="1"
-                android:textColor="@color/cast_white"
+                android:textColor="@color/cast_cast_primary_text"
                 android:textSize="14sp"
-                tools:text="Samsung S5" />
+                tools:text="Living room TV" />
 
             <TextView
                 android:id="@+id/tvModelName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:fontFamily="@font/cast_poppins_regular"
+                android:fontFamily="@font/inter_regular"
+                android:includeFontPadding="false"
                 android:maxLines="1"
-                android:textColor="@color/cast_color_how_to_use_step_text"
+                android:textColor="@color/cast_cast_secondary_text"
                 android:textSize="12sp"
-                tools:text="192.168.1.1" />
+                tools:text="192.168.1.24" />
         </LinearLayout>
 
         <FrameLayout
             android:id="@+id/flConnectStatus"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -81,13 +84,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@null"
-                android:src="@drawable/cast_ic_cast_arrow_right" />
+                android:src="@drawable/cast_ic_figma_chevron" />
 
             <ProgressBar
                 android:id="@+id/progressConnecting"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:indeterminateTint="@color/cast_color_home_cast_banner_border"
+                android:indeterminateTint="@color/cast_cast_accent"
                 android:visibility="gone" />
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

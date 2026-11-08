@@ -10,7 +10,10 @@ import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.LinearInterpolator
+import android.view.WindowManager
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anrstudio.template.R
 import com.anrstudio.template.navigation.AppNavigator
@@ -61,6 +64,7 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
 
     override fun initViews() {
         super.initViews()
+        applyCastSystemBars()
         networkMonitor.attach()
         setupViews()
         setupClicks()
@@ -75,6 +79,12 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
         mBinding.recyclerView.layoutManager = LinearLayoutManager(this)
         mBinding.recyclerView.adapter = deviceAdapter
         mBinding.recyclerView.itemAnimator = null
+    }
+
+    private fun applyCastSystemBars() {
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.cast_cast_background_start)
+        WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = true
     }
 
     private fun setupClicks() {
@@ -156,13 +166,15 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
         }
         mBinding.tvStatus.text = getString(R.string.cast_cast_available_devices)
         fadeIn(mBinding.imgSearching)
-        fadeOut(mBinding.tvSearchingTitle, mBinding.tvSearchingSubtitle, mBinding.emptyDeviceContainer)
+        fadeIn(mBinding.tvSearchingTitle, mBinding.tvSearchingSubtitle)
+        fadeOut(mBinding.emptyDeviceContainer)
         fadeIn(mBinding.tvStatus, mBinding.recyclerView)
     }
 
     private fun transitionToEmpty() {
-        mBinding.tvTitleError.text = getString(R.string.cast_no_device_available)
-        mBinding.tvMessageError.text = getString(R.string.cast_please_check_your_wifi_connection_devices)
+        mBinding.imgNoDevice.setImageResource(R.drawable.cast_img_state_no_device)
+        mBinding.tvTitleError.text = getString(R.string.cast_home_no_devices)
+        mBinding.tvMessageError.text = getString(R.string.cast_title_br1)
         mBinding.tvActionErrorLabel.text = getString(R.string.cast_refresh)
         fadeOut(mBinding.imgSearching, mBinding.tvSearchingTitle, mBinding.tvSearchingSubtitle)
         fadeOut(mBinding.tvStatus, mBinding.recyclerView)
@@ -170,8 +182,10 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
     }
 
     private fun transitionToLostConnection() {
+        mBinding.imgNoDevice.setImageResource(R.drawable.cast_img_state_lost_connection)
         mBinding.tvTitleError.text = getString(R.string.cast_cast_lost_connection)
-        mBinding.tvActionErrorLabel.text = getString(R.string.cast_go_to_setting)
+        mBinding.tvMessageError.text = getString(R.string.cast_title_br1)
+        mBinding.tvActionErrorLabel.text = getString(R.string.cast_open_wifi_settings)
         fadeOut(mBinding.imgSearching, mBinding.tvSearchingTitle, mBinding.tvSearchingSubtitle)
         fadeOut(mBinding.tvStatus, mBinding.recyclerView)
         fadeIn(mBinding.emptyDeviceContainer)

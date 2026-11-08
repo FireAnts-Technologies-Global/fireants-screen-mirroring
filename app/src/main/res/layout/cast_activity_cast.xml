@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cast_color_how_to_use_bg"
+        android:background="@drawable/cast_bg_cast_screen"
         android:fitsSystemWindows="true">
 
         <FrameLayout
@@ -29,7 +29,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/toolbar"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -38,9 +38,9 @@
 
                 <FrameLayout
                     android:id="@+id/btnBack"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/cast_bg_how_to_use_back_btn"
+                    android:layout_width="@dimen/cast_cast_icon_button_size"
+                    android:layout_height="@dimen/cast_cast_icon_button_size"
+                    android:background="@drawable/cast_bg_cast_toolbar_button"
                     android:clickable="true"
                     android:focusable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -48,22 +48,23 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_gravity="center"
                         android:contentDescription="@null"
-                        android:src="@drawable/cast_ic_how_to_use_back_arrow" />
+                        android:src="@drawable/cast_ic_figma_back" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/tvTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cast_poppins_semi_bold"
+                    android:fontFamily="@font/inter_bold"
                     android:gravity="center"
+                    android:includeFontPadding="false"
                     android:text="@string/cast_cast_title"
-                    android:textColor="@color/cast_white"
-                    android:textSize="14sp"
+                    android:textColor="@color/cast_cast_primary_text"
+                    android:textSize="@dimen/cast_cast_text_22"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/btnRefresh"
                     app:layout_constraintStart_toEndOf="@id/btnBack"
@@ -71,9 +72,9 @@
 
                 <FrameLayout
                     android:id="@+id/btnRefresh"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/cast_bg_how_to_use_back_btn"
+                    android:layout_width="@dimen/cast_cast_icon_button_size"
+                    android:layout_height="@dimen/cast_cast_icon_button_size"
+                    android:background="@drawable/cast_bg_cast_toolbar_button"
                     android:clickable="true"
                     android:focusable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -82,11 +83,11 @@
 
                     <ImageView
                         android:id="@+id/imgRefresh"
-                        android:layout_width="13dp"
-                        android:layout_height="13dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_gravity="center"
-                        android:contentDescription="@null"
-                        android:src="@drawable/cast_ic_cast_reload" />
+                        android:contentDescription="@string/cast_refresh"
+                        android:src="@drawable/cast_ic_figma_refresh" />
                 </FrameLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -94,274 +95,269 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:clipToPadding="false"
+                android:fillViewport="false"
                 android:overScrollMode="never"
-                android:paddingBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp">
 
-                    <ImageView
-                        android:id="@+id/imgSearching"
-                        android:layout_width="170dp"
-                        android:layout_height="170dp"
-                        android:layout_marginTop="8dp"
-                        android:contentDescription="@null"
-                        android:src="@drawable/cast_img_cast_searching"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvSearchingTitle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/cast_poppins_semi_bold"
-                        android:gravity="center"
-                        android:text="@string/cast_cast_searching_devices"
-                        android:textColor="@color/cast_white"
-                        android:textSize="14sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgSearching" />
-
-                    <TextView
-                        android:id="@+id/tvSearchingSubtitle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/cast_poppins_regular"
-                        android:gravity="center"
-                        android:text="@string/cast_title_br1"
-                        android:textColor="@color/cast_color_how_to_use_step_text"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvSearchingTitle" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <!-- Searching and empty/error content share one card position. -->
+                    <FrameLayout
                         android:id="@+id/clCast"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        app:layout_constraintTop_toBottomOf="@id/tvSearchingSubtitle">
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/tvStatus"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="16dp"
-                            android:fontFamily="@font/cast_poppins_semi_bold"
-                            android:text="@string/cast_cast_available_devices"
-                            android:textColor="@color/cast_color_how_to_use_step_text"
-                            android:textSize="12sp"
-                            android:visibility="gone"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:visibility="visible" />
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView"
+                        <FrameLayout
+                            android:id="@+id/searchStatusCard"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginTop="12dp"
-                            android:nestedScrollingEnabled="false"
-                            android:overScrollMode="never"
-                            android:visibility="gone"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvStatus"
-                            tools:itemCount="2"
-                            tools:listitem="@layout/cast_item_device"
-                            tools:visibility="visible" />
+                            android:layout_height="@dimen/cast_cast_status_height"
+                            android:background="@drawable/cast_bg_cast_status">
 
+                            <FrameLayout
+                                android:layout_width="@dimen/cast_cast_signal_size"
+                                android:layout_height="@dimen/cast_cast_signal_size"
+                                android:layout_gravity="top|center_horizontal"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/cast_bg_cast_signal">
+
+                                <ImageView
+                                    android:id="@+id/imgSearching"
+                                    android:layout_width="84dp"
+                                    android:layout_height="84dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@null"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/cast_img_state_searching" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/tvSearchingTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginTop="136dp"
+                                android:fontFamily="@font/inter_bold"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:text="@string/cast_cast_searching_devices"
+                                android:textColor="@color/cast_cast_primary_text"
+                                android:textSize="@dimen/cast_cast_text_16" />
+
+                            <TextView
+                                android:id="@+id/tvSearchingSubtitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginTop="163dp"
+                                android:fontFamily="@font/inter_regular"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:lineSpacingExtra="2dp"
+                                android:maxLines="2"
+                                android:text="@string/cast_title_br1"
+                                android:textColor="@color/cast_cast_secondary_text"
+                                android:textSize="@dimen/cast_cast_text_12" />
+                        </FrameLayout>
+
+                        <!-- This overlay is shown by the existing Empty/LostConnection states. -->
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/emptyDeviceContainer"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="262dp"
+                            android:background="@android:color/transparent"
                             android:visibility="gone"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
                             tools:visibility="visible">
 
                             <ImageView
                                 android:id="@+id/imgNoDevice"
-                                android:layout_width="86dp"
-                                android:layout_height="86dp"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:layout_marginTop="34dp"
                                 android:contentDescription="@null"
-                                android:src="@drawable/cast_ic_cast_no_device"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/cast_img_state_no_device"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tvTitleError"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:fontFamily="@font/cast_poppins_medium"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginTop="136dp"
+                                android:fontFamily="@font/inter_bold"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
                                 android:text="@string/cast_no_device_available"
-                                android:textColor="@color/cast_white"
-                                android:textSize="16sp"
+                                android:textColor="@color/cast_cast_primary_text"
+                                android:textSize="@dimen/cast_cast_text_16"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/imgNoDevice" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tvMessageError"
-                                android:layout_width="210dp"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:fontFamily="@font/cast_poppins_regular"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginTop="163dp"
+                                android:fontFamily="@font/inter_regular"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
-                                android:lineSpacingExtra="3dp"
+                                android:lineSpacingExtra="2dp"
+                                android:maxLines="2"
                                 android:text="@string/cast_please_check_your_wifi_connection_devices"
-                                android:textColor="@color/cast_color_how_to_use_step_text"
-                                android:textSize="12sp"
+                                android:textColor="@color/cast_cast_secondary_text"
+                                android:textSize="@dimen/cast_cast_text_12"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/tvTitleError" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <FrameLayout
                                 android:id="@+id/tvActionError"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:background="@drawable/cast_bg_cast_refresh_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="49dp"
+                                android:layout_marginTop="213dp"
+                                android:background="@drawable/cast_bg_cast_action"
                                 android:clickable="true"
                                 android:focusable="true"
-                                android:minHeight="52dp"
-                                android:paddingHorizontal="20dp"
-                                android:paddingVertical="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/tvMessageError">
+                                app:layout_constraintTop_toTopOf="parent">
 
                                 <TextView
                                     android:id="@+id/tvActionErrorLabel"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:fontFamily="@font/cast_poppins_regular"
+                                    android:fontFamily="@font/inter_bold"
                                     android:includeFontPadding="false"
-                                    android:letterSpacing="0.015"
                                     android:text="@string/cast_refresh"
-                                    android:textColor="@color/cast_black"
+                                    android:textColor="@color/cast_white"
                                     android:textSize="14sp" />
                             </FrameLayout>
 
+                            <!-- Kept for the existing settings callback; not shown in the selected states. -->
                             <FrameLayout
                                 android:id="@+id/btnOpenWirelessDisplay"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:background="@drawable/cast_bg_cast_wireless_display_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="49dp"
+                                android:layout_marginTop="270dp"
+                                android:background="@drawable/cast_bg_cast_action"
                                 android:clickable="true"
                                 android:focusable="true"
-                                android:minHeight="52dp"
-                                android:paddingHorizontal="20dp"
-                                android:paddingVertical="16dp"
+                                android:visibility="gone"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/tvActionError">
-
+                                app:layout_constraintTop_toTopOf="parent">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:fontFamily="@font/cast_poppins_regular"
-                                    android:includeFontPadding="false"
-                                    android:letterSpacing="0.015"
+                                    android:fontFamily="@font/inter_bold"
                                     android:text="@string/cast_open_wireless_display"
                                     android:textColor="@color/cast_white"
                                     android:textSize="14sp" />
                             </FrameLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/cast_cast_available_devices"
+                        android:textColor="@color/cast_cast_secondary_text"
+                        android:textSize="13sp"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        android:visibility="gone"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/cast_item_device"
+                        tools:visibility="visible" />
 
                     <TextView
                         android:id="@+id/tvAlternativeConnect"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginTop="24dp"
-                        android:fontFamily="@font/cast_poppins_semi_bold"
-                        android:text="@string/cast_alternative_connect"
-                        android:textColor="@color/cast_color_how_to_use_step_text"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/clCast" />
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/cast_cast_alternative_connection"
+                        android:textColor="@color/cast_cast_secondary_text"
+                        android:textSize="13sp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/rlBrowserCast"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_marginTop="12dp"
-                        android:background="@drawable/cast_bg_cast_device_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="69dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/cast_bg_cast_device"
                         android:clickable="true"
                         android:focusable="true"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="14dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvAlternativeConnect">
+                        android:padding="8dp">
 
                         <FrameLayout
                             android:id="@+id/flWebIcon"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:background="@drawable/cast_bg_cast_device_icon"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/cast_bg_cast_device_icon_tile"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
-
                             <ImageView
                                 android:layout_width="20dp"
-                                android:layout_height="17dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 android:contentDescription="@null"
-                                android:src="@drawable/cast_ic_cast_web" />
+                                android:src="@drawable/cast_ic_figma_browser" />
                         </FrameLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
                             android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/imgWebArrow"
                             app:layout_constraintStart_toEndOf="@id/flWebIcon"
                             app:layout_constraintTop_toTopOf="parent">
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/cast_poppins_semi_bold"
+                                android:fontFamily="@font/inter_bold"
+                                android:includeFontPadding="false"
                                 android:text="@string/cast_web_browser"
-                                android:textColor="@color/cast_white"
+                                android:textColor="@color/cast_cast_primary_text"
                                 android:textSize="14sp" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/cast_poppins_regular"
-                                android:text="@string/cast_other"
-                                android:textColor="@color/cast_color_how_to_use_step_text"
+                                android:fontFamily="@font/inter_regular"
+                                android:includeFontPadding="false"
+                                android:text="@string/cast_cast_web_browser_subtitle"
+                                android:textColor="@color/cast_cast_secondary_text"
                                 android:textSize="12sp" />
                         </LinearLayout>
 
@@ -370,12 +366,12 @@
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/cast_ic_cast_arrow_right"
+                            android:src="@drawable/cast_ic_figma_chevron"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

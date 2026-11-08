@@ -1,110 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/cast_bg_radius_20"
+    android:background="@drawable/cast_bg_pin_dialog"
     android:orientation="vertical"
-    android:paddingVertical="@dimen/_12sdp">
+    android:padding="16dp">
 
     <ImageView
+        android:id="@+id/imgPinArtwork"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/cast_ic_pin" />
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cast_img_pin_verification" />
 
     <TextView
         android:id="@+id/tvPinTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_12sdp"
-        android:fontFamily="@font/cast_poppins_semi_bold"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/inter_bold"
         android:gravity="center"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:includeFontPadding="false"
         android:text="@string/cast_pin_dialog_title"
-        android:textColor="@color/cast_white"
-        android:textSize="@dimen/_13ssp" />
+        android:textColor="@color/cast_cast_primary_text"
+        android:textSize="19sp"
+        tools:text="Enter verification code" />
 
     <TextView
         android:id="@+id/tvPinSubtitle"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="@dimen/_12sdp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:fontFamily="@font/cast_poppins_regular"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/inter_regular"
         android:gravity="center"
-        android:text="@string/cast_pin_dialog_message"
-        android:textColor="@color/cast_color_999CA1"
-        android:textSize="@dimen/_11ssp" />
+        android:includeFontPadding="false"
+        android:textColor="@color/cast_cast_secondary_text"
+        android:textSize="13sp"
+        tools:text="Enter the code shown on your TV." />
 
     <EditText
         android:id="@+id/etPin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:background="@drawable/cast_bg_pin_box"
-        android:fontFamily="@font/cast_poppins_regular"
-        android:layout_marginHorizontal="@dimen/_12sdp"
-        android:gravity="start"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/cast_bg_pin_dialog_input_empty"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center_vertical"
+        android:hint="@string/cast_pin_code_hint"
+        android:imeOptions="actionDone"
+        android:includeFontPadding="false"
         android:inputType="number"
+        android:importantForAutofill="no"
         android:maxLength="4"
-        android:paddingHorizontal="@dimen/_16sdp"
-        android:paddingVertical="@dimen/_14sdp"
-        android:textColor="@color/cast_white"
-        android:textSize="@dimen/_12ssp" />
+        android:paddingHorizontal="12dp"
+        android:singleLine="true"
+        android:textColor="@color/cast_cast_input_text"
+        android:textColorHint="@color/cast_cast_secondary_text"
+        android:textSize="15sp"
+        tools:ignore="TextFields" />
 
     <TextView
         android:id="@+id/tvPinError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_12sdp"
-        android:fontFamily="@font/cast_poppins_regular"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/inter_regular"
         android:gravity="center"
+        android:includeFontPadding="false"
         android:textColor="@color/cast_color_error"
-        android:textSize="@dimen/_11ssp"
-        android:visibility="gone" />
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:text="Please enter the PIN"
+        tools:visibility="visible" />
 
     <LinearLayout
+        android:id="@+id/dialogActions"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
         android:orientation="horizontal">
 
-        <com.genesys.shape.view.ShapeTextView
-            app:shape_solidGradientStartColor="#1FD894FF"
-            app:shape_solidGradientEndColor="#1F7334ED"
-            app:shape_radius="@dimen/_50sdp"
-            app:shape_textStartColor="#D894FF"
-            app:shape_textEndColor="#7334ED"
+        <TextView
             android:id="@+id/btnPinCancel"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:background="@drawable/cast_bg_pin_dialog_button_outline"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/inter_bold"
             android:gravity="center"
-            android:paddingVertical="@dimen/_12sdp"
+            android:includeFontPadding="false"
             android:text="@string/cast_pin_dialog_cancel"
-            android:textSize="@dimen/_11ssp" />
+            android:textColor="@color/cast_cast_button_secondary_text"
+            android:textSize="14sp" />
 
         <Space
-            android:layout_width="@dimen/_12sdp"
+            android:layout_width="8dp"
             android:layout_height="1dp" />
 
-        <com.genesys.shape.view.ShapeTextView
-            app:shape_solidGradientStartColor="#D894FF"
-            app:shape_solidGradientEndColor="#7334ED"
-            app:shape_radius="@dimen/_50sdp"
+        <TextView
             android:id="@+id/btnPinConfirm"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:background="@drawable/cast_bg_pin_dialog_button_outline"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/inter_bold"
             android:gravity="center"
-            android:paddingVertical="@dimen/_12sdp"
+            android:includeFontPadding="false"
             android:text="@string/cast_pin_dialog_confirm"
-            android:textColor="@color/cast_black"
-            android:textSize="@dimen/_11ssp" />
+            android:textColor="@color/cast_cast_input_text"
+            android:textSize="14sp" />
 
     </LinearLayout>
 

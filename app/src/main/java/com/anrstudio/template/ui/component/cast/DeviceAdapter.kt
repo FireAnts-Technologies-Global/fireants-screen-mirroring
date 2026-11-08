@@ -51,8 +51,8 @@ class DeviceAdapter(
             binding.tvModelName.text = device.modelName
 
             binding.rlCast.setBackgroundResource(
-                if (isSelected) R.drawable.cast_bg_cast_device_item_selected
-                else R.drawable.cast_bg_cast_device_item
+                if (isSelected) R.drawable.cast_bg_cast_device_selected
+                else R.drawable.cast_bg_cast_device
             )
 
             if (isConnecting) {
@@ -62,7 +62,7 @@ class DeviceAdapter(
                 binding.progressConnecting.visibility = View.GONE
                 binding.imgIsConnect.visibility = View.VISIBLE
                 binding.imgIsConnect.setImageResource(
-                    if (device.isConnected) R.drawable.cast_ic_cast_tick else R.drawable.cast_ic_cast_arrow_right
+                    if (device.isConnected) R.drawable.cast_ic_figma_check else R.drawable.cast_ic_figma_chevron
                 )
             }
 

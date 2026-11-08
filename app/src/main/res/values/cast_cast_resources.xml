@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cast_cast_background_start">#EAF2FF</color>
+    <color name="cast_cast_background_end">#FFFFFF</color>
+    <color name="cast_cast_primary_text">#162234</color>
+    <color name="cast_cast_secondary_text">#475467</color>
+    <color name="cast_cast_accent">#1460E6</color>
+    <color name="cast_cast_action_start">#0071E8</color>
+    <color name="cast_cast_action_end">#2454EF</color>
+    <color name="cast_cast_panel">#EAF2FF</color>
+    <color name="cast_cast_signal">#CFECFC</color>
+    <color name="cast_cast_surface">#FFFFFFFF</color>
+    <color name="cast_cast_border">#DCE6F8</color>
+    <color name="cast_cast_toolbar_border">#7B96C6</color>
+    <color name="cast_cast_modal_scrim">#94101828</color>
+    <color name="cast_cast_button_secondary_text">#183C87</color>
+    <color name="cast_cast_input_border">#7889A5</color>
+    <color name="cast_cast_input_text">#475569</color>
+    <color name="cast_cast_input_active_border">#1460E6</color>
+    <color name="cast_cast_button_secondary_border">#A1AEC0</color>
+</resources>

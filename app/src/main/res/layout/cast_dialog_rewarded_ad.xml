@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialogRewardedContainer"
+    android:layout_width="320dp"
+    android:layout_height="295dp"
+    android:background="@drawable/cast_bg_rewarded_dialog"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivRewardedArtwork"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cast_img_rewarded_ad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRewardedTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/cast_rewarded_dialog_title"
+        android:textColor="@color/cast_cast_primary_text"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRewardedArtwork" />
+
+    <TextView
+        android:id="@+id/tvRewardedMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="1dp"
+        android:text="@string/cast_rewarded_dialog_message"
+        android:textColor="@color/cast_cast_secondary_text"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRewardedTitle" />
+
+    <TextView
+        android:id="@+id/btnWatchAdToMirror"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/cast_bg_rewarded_primary"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/cast_rewarded_dialog_watch"
+        android:textColor="@color/cast_cast_surface"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRewardedMessage" />
+
+    <TextView
+        android:id="@+id/btnRewardedMaybeLater"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/cast_bg_rewarded_secondary"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/cast_rewarded_dialog_later"
+        android:textColor="@color/cast_cast_button_secondary_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnWatchAdToMirror" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
