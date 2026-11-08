@@ -64,7 +64,7 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
                 lifecycleScope.launch {
                     delay(400)
                     showLoading(false)
-                    ImportStateHelper.showSuccessToast(
+                    ImportStateHelper.showSuccessDialog(
                         this@AddChannelUrlFragment,
                         channelCount,
                         groupCount
@@ -87,14 +87,6 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
     }
 
     private fun setupClickListeners() {
-        mBinding.icClearPlaylistName.setOnClickListener {
-            mBinding.etPlaylistName.setText("")
-        }
-
-        mBinding.icClearPlaylistUrl.setOnClickListener {
-            mBinding.etPlaylistUrl.setText("")
-        }
-
         mBinding.btnAddPlaylist.setOnClickListener {
             val playlistName = mBinding.etPlaylistName.text?.toString()?.trim().orEmpty()
             val playlistUrl = mBinding.etPlaylistUrl.text?.toString()?.trim().orEmpty()
@@ -110,8 +102,6 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
         mBinding.etPlaylistName.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                mBinding.icClearPlaylistName.visibility =
-                    if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
             }
             override fun afterTextChanged(s: Editable?) {}
         })
@@ -119,8 +109,6 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
         mBinding.etPlaylistUrl.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                mBinding.icClearPlaylistUrl.visibility =
-                    if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
 
                 if (s.toString().isYouTubeLink()) {
                     requireContext().showToastById(R.string.cast_youtube_link)

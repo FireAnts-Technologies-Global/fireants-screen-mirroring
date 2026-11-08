@@ -5,23 +5,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cast_color_how_to_use_bg">
+        android:background="@drawable/cast_bg_import_page">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/topAppBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <FrameLayout
                 android:id="@+id/icBack"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="@drawable/cast_bg_how_to_use_back_btn"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/cast_bg_import_back"
                 android:clickable="true"
                 android:focusable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -29,23 +29,25 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:contentDescription="@null"
-                    android:src="@drawable/cast_ic_how_to_use_back_arrow" />
+                    android:src="@drawable/cast_ic_how_to_use_back_arrow"
+                    app:tint="@color/cast_import_blue" />
             </FrameLayout>
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/cast_poppins_semi_bold"
-                android:gravity="center"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center_vertical"
+                android:layout_marginStart="12dp"
                 android:includeFontPadding="false"
                 android:text="@string/cast_import_channels"
-                android:textColor="@color/cast_white"
-                android:textSize="14sp"
+                android:textColor="@color/cast_home_text_primary"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/headerSpacer"
                 app:layout_constraintStart_toEndOf="@id/icBack"
@@ -53,8 +55,8 @@
 
             <View
                 android:id="@+id/headerSpacer"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -64,10 +66,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tabSwitcher"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/cast_bg_channel_tab_track"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/cast_bg_import_tabs"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/topAppBar">
@@ -75,8 +77,9 @@
             <View
                 android:id="@+id/viewTabIndicator"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@drawable/cast_bg_channel_tab_selected"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/cast_bg_import_tab_selected"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -86,12 +89,12 @@
                 android:id="@+id/btnTabUrl"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:fontFamily="@font/cast_poppins_medium"
+                android:fontFamily="@font/inter_bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/cast_import_url"
                 android:textColor="@color/cast_white"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btnTabFile"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,12 +104,12 @@
                 android:id="@+id/btnTabFile"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:fontFamily="@font/cast_poppins_medium"
+                android:fontFamily="@font/inter_bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/cast_import_file"
                 android:textColor="@color/cast_color_tab_inactive"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnTabUrl"
@@ -117,8 +120,8 @@
             android:id="@+id/viewPager"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toTopOf="@id/fr_banner"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tabSwitcher" />
@@ -127,6 +130,7 @@
             android:id="@+id/fr_banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <include

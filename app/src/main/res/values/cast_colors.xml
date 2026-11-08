@@ -81,6 +81,12 @@
     <color name="cast_color_home_feature_card_bg">#69101622</color>
     <color name="cast_color_home_feature_card_border">#33FFFFFF</color>
 
+    <color name="cast_import_blue">#1460E6</color>
+    <color name="cast_import_border">#7889A5</color>
+    <color name="cast_import_remove">#A52838</color>
+    <color name="cast_import_remove_border">#BE7080</color>
+    <color name="cast_import_scrim">#8C101828</color>
+    <color name="cast_import_dashed_border">#525252</color>
     <color name="cast_nav_item_selected_bg">#36E4A2</color>
     <color name="cast_nav_item_selected_text">#36E4A2</color>
     <color name="cast_nav_item_selected_icon">#36E4A2</color>

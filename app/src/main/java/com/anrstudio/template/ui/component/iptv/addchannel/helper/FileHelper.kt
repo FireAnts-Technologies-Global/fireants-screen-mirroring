@@ -47,12 +47,12 @@ object FileHelper {
     }
 
     fun formatFileSize(bytes: Long): String {
-        if (bytes <= 0L) return "0 mb"
+        if (bytes <= 0L) return "0 MB"
         val kilobytes = bytes / 1024.0
         if (kilobytes < 1024) {
-            return String.format(Locale.US, "%.1f kb", kilobytes)
+            return String.format(Locale.US, "%.1f KB", kilobytes)
         }
         val megabytes = kilobytes / 1024.0
-        return String.format(Locale.US, "%.1f mb", megabytes)
+        return String.format(Locale.US, "%.1f MB", megabytes)
     }
 }

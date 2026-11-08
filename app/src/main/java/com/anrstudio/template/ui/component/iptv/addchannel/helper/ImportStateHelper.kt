@@ -3,6 +3,8 @@ package com.anrstudio.template.ui.component.iptv.addchannel.helper
 
 import android.view.View
 import android.widget.Toast
+import android.app.Dialog
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -58,13 +60,26 @@ object ImportStateHelper {
         }
     }
 
-    fun showSuccessToast(fragment: Fragment, channelCount: Int, groupCount: Int = 0) {
-        var message = fragment.getString(R.string.cast_txt_playlist_added_successfully)
-        Toast.makeText(fragment.requireContext(), message, Toast.LENGTH_SHORT).show()
-
+    fun showSuccessDialog(fragment: Fragment, channelCount: Int, groupCount: Int = 0) {
         val activity = fragment.requireActivity()
-        activity.setResult(android.app.Activity.RESULT_OK)
-        activity.finish()
+        val dialog = Dialog(activity)
+        val content = LayoutInflater.from(activity).inflate(R.layout.cast_dialog_import_success, null)
+        content.findViewById<View>(R.id.btnViewChannels).setOnClickListener {
+            dialog.dismiss()
+            activity.setResult(android.app.Activity.RESULT_OK)
+            activity.finish()
+        }
+        dialog.setContentView(content)
+        dialog.setCancelable(false)
+        dialog.window?.let { window ->
+            window.setBackgroundDrawableResource(android.R.color.transparent)
+            window.setDimAmount(0f)
+        }
+        dialog.show()
+        dialog.window?.setLayout(
+            android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+            android.view.ViewGroup.LayoutParams.MATCH_PARENT
+        )
     }
 
     fun showErrorToast(fragment: Fragment, message: String) {

@@ -54,7 +54,7 @@ class AddChannelFileFragment : BaseFragment<CastFragmentAddChannelFileBinding>()
                 lifecycleScope.launch {
                     delay(400)
                     showLoading(false)
-                    ImportStateHelper.showSuccessToast(this@AddChannelFileFragment, channelCount)
+                    ImportStateHelper.showSuccessDialog(this@AddChannelFileFragment, channelCount)
                 }
             },
             onError = { message ->
@@ -125,14 +125,9 @@ class AddChannelFileFragment : BaseFragment<CastFragmentAddChannelFileBinding>()
 
     private fun updateAddButtonState() {
         val hasFile = selectedFileUri != null
-        mBinding.btnAddPlaylist.isEnabled = hasFile
-        mBinding.btnAddPlaylist.isClickable = hasFile
-        mBinding.btnAddPlaylist.setBackgroundResource(
-            if (hasFile) {
-                R.drawable.cast_bg_import_add_playlist_enabled
-            } else {
-                R.drawable.cast_bg_import_add_playlist_disabled
-            }
-        )
+        mBinding.btnAddPlaylist.isEnabled = true
+        mBinding.btnAddPlaylist.isClickable = true
+        mBinding.icAddPlaylistPlus.visibility = if (hasFile) View.GONE else View.VISIBLE
+        mBinding.btnAddPlaylist.setBackgroundResource(R.drawable.cast_bg_import_primary)
     }
 }

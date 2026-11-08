@@ -206,7 +206,7 @@
     <string name="cast_import_file">Import File</string>
     <string name="cast_import_channels">Import Channels</string>
     <string name="cast_choose_m3u_file">Choose M3U File</string>
-    <string name="cast_supported_m3u_formats">Supported formats: .m3u, m3u8</string>
+    <string name="cast_supported_m3u_formats">Supported formats: .m3u and .m3u8</string>
     <string name="cast_enter_playlist_name_hint">Enter playlist name here...</string>
     <string name="cast_paste_url_here">Paste URL here</string>
     <string name="cast_index_value" translatable="false">%1$s/%2$s</string>
@@ -446,4 +446,8 @@
     <string name="cast_no_ads_no_interruptions">No ads, no interruptions</string>
     <string name="cast_unlock_unlimited_iptv_access">Unlock Unlimited IPTV Access</string>
 
+    <string name="cast_remove_file">Remove file</string>
+    <string name="cast_import_success_title">Import successful</string>
+    <string name="cast_import_success_description">Your channels are ready to watch.</string>
+    <string name="cast_view_channels">View channels</string>
 </resources>
