@@ -5,30 +5,29 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/cast_bg_channel_card_figma"
+        android:layout_height="68dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/cast_bg_channels_list_card"
         android:clickable="true"
         android:focusable="true"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="10dp">
+        android:padding="12dp">
 
         <FrameLayout
             android:id="@+id/folderContainer"
-            android:layout_width="79dp"
-            android:layout_height="79dp"
-            android:background="@drawable/cast_bg_playlist_folder_icon"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/cast_bg_channels_playlist_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/ivCategoryIcon"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:contentDescription="@null"
-                android:src="@drawable/cast_ic_playlist_folder" />
+                android:src="@drawable/cast_ic_playlist_folder_figma" />
         </FrameLayout>
 
         <LinearLayout
@@ -36,57 +35,45 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginEnd="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@id/folderContainer"
-            app:layout_constraintEnd_toStartOf="@id/btnMore"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/folderContainer"
             app:layout_constraintTop_toTopOf="@id/folderContainer">
 
             <TextView
                 android:id="@+id/tvCategoryName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="17dp"
                 android:ellipsize="end"
-                android:fontFamily="@font/cast_poppins_medium"
+                android:fontFamily="@font/inter_bold"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:textColor="@color/cast_white"
-                android:textSize="16sp"
-                tools:text="Sport" />
+                android:textColor="@color/cast_home_text_primary"
+                android:textSize="14sp"
+                tools:text="Sports" />
 
             <TextView
                 android:id="@+id/tvChannelCount"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="4dp"
                 android:ellipsize="end"
-                android:fontFamily="@font/cast_poppins_regular"
+                android:fontFamily="@font/inter_regular"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:textColor="@color/cast_color_tab_inactive"
-                android:textSize="14sp"
+                android:textColor="@color/cast_home_text_secondary"
+                android:textSize="12sp"
                 tools:text="26 channels" />
         </LinearLayout>
 
         <FrameLayout
             android:id="@+id/btnMore"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="@drawable/cast_bg_playlist_more_button"
-            android:clickable="true"
-            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="4dp"
-                android:layout_gravity="center"
-                android:contentDescription="@null"
-                android:src="@drawable/cast_ic_playlist_more" />
-        </FrameLayout>
-
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

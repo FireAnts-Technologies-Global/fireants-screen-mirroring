@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cast_settings_text_primary">#162234</color>
+    <color name="cast_settings_text_secondary">#475467</color>
+    <color name="cast_settings_background_start">#EAF2FF</color>
+    <color name="cast_settings_background_end">#FFFFFF</color>
+    <color name="cast_settings_card">#FFFFFF</color>
+    <color name="cast_settings_card_border">#DAE6FF</color>
+    <color name="cast_settings_icon_tile">#EAF2FF</color>
+    <color name="cast_settings_accent">#1460E6</color>
+    <color name="cast_how_to_use_banner_start">#0071E8</color>
+    <color name="cast_how_to_use_banner_end">#2454EF</color>
+    <color name="cast_how_to_use_back_border">#CADAF7</color>
+
+    <string name="cast_how_to_use_guide_quick_start" translatable="false">QUICK START</string>
+    <string name="cast_how_to_use_guide_from_phone_to_tv" translatable="false">From phone\nto TV</string>
+    <string name="cast_how_to_use_guide_caption" translatable="false">Get casting in 3 simple steps.</string>
+    <string name="cast_how_to_use_guide_back" translatable="false">Back</string>
+    <string name="cast_how_to_use_guide_step_1_title" translatable="false">Connect to your TV</string>
+    <string name="cast_how_to_use_guide_step_1_desc" translatable="false">Use the same Wi-Fi on both devices. Select your TV and enter the code if prompted.</string>
+    <string name="cast_how_to_use_guide_step_2_title" translatable="false">Choose what to cast</string>
+    <string name="cast_how_to_use_guide_step_2_desc" translatable="false">Mirror your screen, share photos or videos, or open an imported channel.</string>
+    <string name="cast_how_to_use_guide_step_3_title" translatable="false">Start casting</string>
+    <string name="cast_how_to_use_guide_step_3_desc" translatable="false">Play your content on the TV and control playback from your phone.</string>
+</resources>

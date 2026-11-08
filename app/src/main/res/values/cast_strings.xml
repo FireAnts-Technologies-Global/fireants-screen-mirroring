@@ -117,7 +117,7 @@
     <string name="cast_tab_channels">Channels</string>
     <string name="cast_channel_tab_playlist">Playlist</string>
     <string name="cast_watch_now">Watch Now</string>
-    <string name="cast_tab_setting">Setting</string>
+    <string name="cast_tab_setting">Settings</string>
 
     <string name="cast_home_cast_banner_title">Screen mirroring</string>
     <string name="cast_home_cast_banner_desc">Share content effortlessly with real-time phone screen mirroring to enhance connectivity.</string>
@@ -255,6 +255,13 @@
     <string name="cast_add_playlist_button">Add Playlist</string>
     <string name="cast_import_playlist_to_discover_new_channels">Import playlist to discover new channels</string>
     <string name="cast_add_channel">Add Channel</string>
+    <string name="cast_channels_header_title">Screen Mirroring</string>
+    <string name="cast_channels_empty_title">No channels yet</string>
+    <string name="cast_playlists_empty_title">No playlists yet</string>
+    <string name="cast_channels_empty_subtitle">Import an M3U file or playlist URL to begin.</string>
+    <string name="cast_channels_add_action">Add channel</string>
+    <string name="cast_playlists_add_action">Add playlist</string>
+    <string name="cast_channel_tab_playlists">Playlists</string>
     <string name="cast_edit_playlist">Edit Playlist</string>
     <string name="cast_delete_playlist">Delete Playlist</string>
     <string name="cast_edit_channel">Edit Channel</string>

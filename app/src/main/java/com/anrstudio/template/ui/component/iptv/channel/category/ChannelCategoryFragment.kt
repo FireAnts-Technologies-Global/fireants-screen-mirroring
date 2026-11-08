@@ -6,13 +6,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anrstudio.template.R
 import com.anrstudio.template.databinding.CastFragmentChannelCategoryBinding
-import com.anrstudio.template.data.iptv.model.TVChannelSourceType
 import com.anrstudio.template.ui.bases.BaseFragment
 import com.anrstudio.template.ui.component.iptv.channel.adapter.CategoryAdapter
 import com.anrstudio.template.ui.component.iptv.IptvAppConstants
-import com.anrstudio.template.data.iptv.model.TVChannel
 import com.anrstudio.template.ui.component.iptv.viewmodel.IptvHomeViewModel
 import com.anrstudio.template.ui.component.iptv.IptvRoutes
+import com.anrstudio.template.data.iptv.model.TVChannelSourceType
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -37,7 +36,10 @@ class ChannelCategoryFragment : BaseFragment<CastFragmentChannelCategoryBinding>
             onItemClick = { position ->
                 val categoryItem = categoryAdapter.currentList[position]
                 navigateToAllChannels(categoryItem)
-            }
+            },
+            onAddClick = {
+                IptvRoutes.startAddChannelActivity(requireActivity(), TVChannelSourceType.URL.value)
+            },
         )
 
         mBinding.rvChannels.layoutManager = LinearLayoutManager(requireContext())
@@ -46,14 +48,24 @@ class ChannelCategoryFragment : BaseFragment<CastFragmentChannelCategoryBinding>
 
     private fun setupEmptyState() {
         mBinding.layoutEmpty.btnAddChannel.setOnClickListener {
-            IptvRoutes.startAddChannelActivity(requireActivity(), TVChannelSourceType.URL.value)
+            IptvRoutes.startAddChannelActivity(
+                requireActivity(),
+                TVChannelSourceType.URL.value
+            )
         }
     }
 
     private fun observeCategories() {
         lifecycleScope.launch {
-            viewModel.allChannels.collect { channels ->
-                allCategories = loadCategories(channels)
+            viewModel.allSourcesByImport.collect { sources ->
+                allCategories = sources.map { item ->
+                    CategoryAdapter.CategoryItem(
+                        id = item.group.sourceId,
+                        name = item.group.displayName.ifEmpty { item.group.name },
+                        channelCount = item.channelCount,
+                        groupId = item.group.sourceId.toString(),
+                    )
+                }
                 applySearchFilter()
             }
         }
@@ -68,7 +80,17 @@ class ChannelCategoryFragment : BaseFragment<CastFragmentChannelCategoryBinding>
             allCategories
         }
         showEmptyState(filteredCategories.isEmpty(), searchQuery.isNotEmpty())
-        categoryAdapter.submitList(filteredCategories)
+        val listWithAddRow = if (filteredCategories.isNotEmpty()) {
+            filteredCategories + CategoryAdapter.CategoryItem(
+                id = Long.MIN_VALUE,
+                name = "",
+                channelCount = 0,
+                isAddPlaylist = true,
+            )
+        } else {
+            filteredCategories
+        }
+        categoryAdapter.submitList(listWithAddRow)
     }
     
     fun updateSearchQuery(query: String) {
@@ -77,46 +99,6 @@ class ChannelCategoryFragment : BaseFragment<CastFragmentChannelCategoryBinding>
             searchQuery = newQuery
             applySearchFilter()
         }
-    }
-
-    private suspend fun loadCategories(channels: List<TVChannel>): List<CategoryAdapter.CategoryItem> {
-        val allGroups = viewModel.getAllChannelGroups()
-        val channelsByCategory = channels.groupBy { channel ->
-            if (channel.groupId.isNotEmpty()) {
-                val group = allGroups.find { it.name == channel.groupId }
-                group?.displayName?.takeIf { it.isNotEmpty() }
-                    ?: group?.name?.takeIf { it.isNotEmpty() }
-                    ?: channel.groupTitle.takeIf { it.isNotEmpty() }
-                    ?: channel.groupId
-            } else {
-                channel.groupTitle.takeIf { it.isNotEmpty() } ?: "Uncategorized"
-            }
-        }
-        val categoryItems = mutableListOf<CategoryAdapter.CategoryItem>()
-        var categoryId = 1L
-        
-        channelsByCategory.forEach { (categoryName, channelList) ->
-            if (categoryName.isNotEmpty() && channelList.isNotEmpty() && categoryName != "Uncategorized") {
-                val firstChannel = channelList.first()
-                val categoryGroupId = firstChannel.groupId.ifEmpty {
-                    val group = allGroups.find {
-                        it.displayName == categoryName || it.name == categoryName
-                    }
-                    group?.name ?: ""
-                }
-                
-                categoryItems.add(
-                    CategoryAdapter.CategoryItem(
-                        id = categoryId++,
-                        name = categoryName,
-                        channelCount = channelList.size,
-                        groupId = categoryGroupId
-                    )
-                )
-            }
-        }
-
-        return categoryItems.sortedBy { it.name }
     }
 
     private fun showEmptyState(isShow: Boolean, isSearch: Boolean = false) {
@@ -140,7 +122,7 @@ class ChannelCategoryFragment : BaseFragment<CastFragmentChannelCategoryBinding>
             requireActivity(),
             categoryItem.name,
             categoryItem.groupId,
-            IptvAppConstants.GROUP_TYPE_CATEGORY
+            IptvAppConstants.GROUP_TYPE_SOURCE
         )
     }
 

@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import com.anrstudio.template.BuildConfig
 import com.anrstudio.template.R
@@ -35,12 +37,15 @@ import timber.log.Timber
 @AndroidEntryPoint
 class MainActivity : BaseActivity<CastActivityHomeBinding>() {
 
-    override val statusBarConfig = StatusBarConfig(
-        isVisible = true,
-        applyPadding = false,
-        barColor = Color.TRANSPARENT,
-        lightIcons = false,
-    )
+    private var selectedHomeTab = HomeTab.HOME
+
+    override val statusBarConfig: StatusBarConfig
+        get() = StatusBarConfig(
+            isVisible = true,
+            applyPadding = false,
+            barColor = Color.TRANSPARENT,
+            lightIcons = selectedHomeTab == HomeTab.CHANNELS,
+        )
 
     override fun requestWindow() {
         super.requestWindow()
@@ -168,6 +173,12 @@ class MainActivity : BaseActivity<CastActivityHomeBinding>() {
     }
 
     private fun updateBottomNav(selectedTab: HomeTab) {
+        selectedHomeTab = selectedTab
+        ViewCompat.requestApplyInsets(mBinding.root)
+        mBinding.root.post {
+            WindowInsetsControllerCompat(window, mBinding.root)
+                .isAppearanceLightStatusBars = selectedTab == HomeTab.CHANNELS
+        }
         bindTab(
             tabBinding = mBinding.bottomNav.tabHome,
             isSelected = selectedTab == HomeTab.HOME,
@@ -179,12 +190,18 @@ class MainActivity : BaseActivity<CastActivityHomeBinding>() {
             isSelected = selectedTab == HomeTab.CHANNELS,
             icon = R.drawable.ic_nav_channels_figma,
             labelRes = R.string.cast_tab_channels,
+            selectedBackground = R.drawable.cast_bg_channels_nav_selected,
+            selectedColor = R.color.cast_white,
         )
         bindTab(
             tabBinding = mBinding.bottomNav.tabSetting,
             isSelected = selectedTab == HomeTab.SETTING,
             icon = R.drawable.ic_nav_settings_figma,
-            labelRes = R.string.cast_tab_setting,
+            labelRes = if (selectedTab == HomeTab.CHANNELS) {
+                R.string.cast_settings
+            } else {
+                R.string.cast_tab_setting
+            },
         )
     }
 
@@ -193,24 +210,26 @@ class MainActivity : BaseActivity<CastActivityHomeBinding>() {
         isSelected: Boolean,
         icon: Int,
         labelRes: Int,
+        selectedBackground: Int = R.drawable.cast_bg_home_nav_selected,
+        selectedColor: Int = R.color.cast_color_nav_selected,
     ) {
         tabBinding.root.setBackgroundResource(
-            if (isSelected) R.drawable.cast_bg_home_nav_selected else android.R.color.transparent,
+            if (isSelected) selectedBackground else android.R.color.transparent,
         )
         tabBinding.imgTabIcon.setImageResource(icon)
         tabBinding.imgTabIcon.imageTintList = android.content.res.ColorStateList.valueOf(
             ContextCompat.getColor(
                 this,
-                if (isSelected) R.color.cast_color_nav_selected else R.color.cast_color_tab_inactive,
+                if (isSelected) selectedColor else R.color.cast_color_tab_inactive,
             ),
         )
         tabBinding.tvTabLabelGradient.setText(labelRes)
         tabBinding.tvTabLabelGradient.setGradientColors(
-            R.color.cast_color_nav_selected,
-            R.color.cast_color_nav_selected,
+            selectedColor,
+            selectedColor,
         )
         tabBinding.tvTabLabelGradient.setTextColor(
-            ContextCompat.getColor(this, R.color.cast_color_nav_selected),
+            ContextCompat.getColor(this, selectedColor),
         )
         tabBinding.tvTabLabel.setText(labelRes)
         tabBinding.tvTabLabelGradient.visibility = if (isSelected) View.VISIBLE else View.GONE

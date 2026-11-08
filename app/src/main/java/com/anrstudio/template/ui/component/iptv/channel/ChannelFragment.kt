@@ -1,15 +1,12 @@
 package com.anrstudio.template.ui.component.iptv.channel
 
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import androidx.core.content.res.ResourcesCompat
 import com.anrstudio.template.R
 import com.anrstudio.template.databinding.CastFragmentChannelBinding
-import com.anrstudio.template.data.iptv.model.TVChannelSourceType
 import com.anrstudio.template.ui.bases.BaseFragment
-import com.anrstudio.template.ui.component.iptv.IptvRoutes
 import com.anrstudio.template.ui.component.iptv.channel.all.ChannelAllFragment
 import com.anrstudio.template.ui.component.iptv.channel.category.ChannelCategoryFragment
 
@@ -23,7 +20,6 @@ class ChannelFragment : BaseFragment<CastFragmentChannelBinding>() {
         super.initViews()
         setupViewPager()
         setupTabSwitcher()
-        setupClickListeners()
     }
 
     private fun setupViewPager() {
@@ -52,31 +48,28 @@ class ChannelFragment : BaseFragment<CastFragmentChannelBinding>() {
 
     private fun updateTabSelection(position: Int) {
         val isChannelsTab = position == 0
-        val activeColor = ContextCompat.getColor(requireContext(), R.color.cast_white)
-        val inactiveColor = ContextCompat.getColor(requireContext(), R.color.cast_color_tab_inactive)
-        val activeFont = ResourcesCompat.getFont(requireContext(), R.font.cast_poppins_semi_bold)
-        val inactiveFont = ResourcesCompat.getFont(requireContext(), R.font.cast_poppins_medium)
+        val activeColor = requireContext().getColor(R.color.cast_white)
+        val inactiveColor = requireContext().getColor(R.color.cast_home_text_secondary)
+        val activeFont = ResourcesCompat.getFont(requireContext(), R.font.inter_bold)
+        val inactiveFont = ResourcesCompat.getFont(requireContext(), R.font.inter_semibold)
 
         mBinding.btnTabChannels.setTextColor(if (isChannelsTab) activeColor else inactiveColor)
         mBinding.btnTabPlaylist.setTextColor(if (isChannelsTab) inactiveColor else activeColor)
         mBinding.btnTabChannels.typeface = if (isChannelsTab) activeFont else inactiveFont
         mBinding.btnTabPlaylist.typeface = if (isChannelsTab) inactiveFont else activeFont
 
+        mBinding.tabSwitcher.layoutParams = mBinding.tabSwitcher.layoutParams.apply {
+            height = requireContext().resources.getDimensionPixelSize(
+                if (isChannelsTab) R.dimen.cast_channels_tab_height
+                else R.dimen.cast_playlists_tab_height
+            )
+        }
         mBinding.tabSwitcher.post {
-            val halfWidth = mBinding.tabSwitcher.width / 2f
+            val selectedOffset = mBinding.tabSwitcher.width / 2f - 2f
             mBinding.viewTabIndicator.animate()
-                .translationX(if (isChannelsTab) 0f else halfWidth)
+                .translationX(if (isChannelsTab) 0f else selectedOffset)
                 .setDuration(200L)
                 .start()
-        }
-    }
-
-    private fun setupClickListeners() {
-        mBinding.fabAddChannel.setOnClickListener {
-            IptvRoutes.startAddChannelActivity(
-                requireActivity(),
-                TVChannelSourceType.URL.value
-            )
         }
     }
 

@@ -5,29 +5,28 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/cast_bg_channel_card_figma"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="10dp">
+        android:layout_height="82dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/cast_bg_channels_list_card"
+        android:padding="8dp">
 
         <com.genesys.shape.view.ShapeImageView
             android:id="@+id/ivThumbnail"
-            android:layout_width="131dp"
-            android:layout_height="79dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:contentDescription="@null"
             android:scaleType="centerCrop"
             android:src="@drawable/cast_bg_channel_thumb"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shape_radius="12dp"
-            app:shape_solidColor="@color/cast_white" />
+            app:shape_radius="8dp"
+            app:shape_solidColor="@color/cast_home_panel" />
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmerThumbnail"
-            android:layout_width="131dp"
-            android:layout_height="79dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
             app:layout_constraintEnd_toEndOf="@id/ivThumbnail"
@@ -45,30 +44,32 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivThumbnail"
-            app:layout_constraintTop_toTopOf="@id/ivThumbnail">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tvChannelName"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:ellipsize="end"
-                android:fontFamily="@font/cast_poppins_medium"
+                android:fontFamily="@font/inter_bold"
                 android:includeFontPadding="false"
-                android:maxLines="2"
-                android:textColor="@color/cast_white"
+                android:maxLines="1"
+                android:textColor="@color/cast_home_text_primary"
                 android:textSize="14sp"
                 tools:text="Football Match" />
 
             <FrameLayout
                 android:id="@+id/btnWatchNow"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cast_bg_channel_watch_now"
+                android:layout_width="83dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/cast_bg_channels_watch_now"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -76,11 +77,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/cast_poppins_medium"
+                    android:fontFamily="@font/inter_semibold"
                     android:includeFontPadding="false"
                     android:text="@string/cast_watch_now"
                     android:textColor="@color/cast_white"
-                    android:textSize="12sp" />
+                    android:textSize="11sp" />
             </FrameLayout>
         </LinearLayout>
 
@@ -99,6 +100,5 @@
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

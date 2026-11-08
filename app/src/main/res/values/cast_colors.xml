@@ -70,6 +70,11 @@
     <color name="cast_home_feature_photo">#00A654</color>
     <color name="cast_home_feature_import">#893AF2</color>
     <color name="cast_home_feature_browser">#1460E6</color>
+    <color name="cast_channels_card_border">#EAF2FF</color>
+    <color name="cast_channels_empty_ring">#CFECFC</color>
+    <color name="cast_channels_empty_icon_bg">#EEF7FF</color>
+    <color name="cast_channels_playlist_icon_bg">#F3E8FF</color>
+    <color name="cast_channels_playlist_icon">#702FD0</color>
     <color name="cast_color_setting_item_border">#3D494949</color>
     <color name="cast_color_home_cast_banner_border">#F18FFF</color>
     <color name="cast_color_home_how_to_use_border">#36FFFFFF</color>
