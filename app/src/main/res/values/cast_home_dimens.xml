@@ -1,0 +1,20 @@
+<resources>
+    <dimen name="cast_home_photo_height">144dp</dimen>
+    <dimen name="cast_home_photo_fade_height">45dp</dimen>
+    <dimen name="cast_home_photo_fade_top">99dp</dimen>
+    <dimen name="cast_home_content_padding">12dp</dimen>
+    <dimen name="cast_home_gap">12dp</dimen>
+    <dimen name="cast_home_mirror_height">84dp</dimen>
+    <dimen name="cast_home_tutorial_height">76dp</dimen>
+    <dimen name="cast_home_section_height">119dp</dimen>
+    <dimen name="cast_home_feature_row_height">77dp</dimen>
+    <dimen name="cast_home_nav_height">72dp</dimen>
+    <dimen name="cast_home_nav_item_height">47dp</dimen>
+    <dimen name="cast_home_nav_gap">8dp</dimen>
+    <dimen name="cast_home_button_height">44dp</dimen>
+    <dimen name="cast_home_icon_tile_size">34dp</dimen>
+    <dimen name="cast_home_radius_button">12dp</dimen>
+    <dimen name="cast_home_radius_section">14dp</dimen>
+    <dimen name="cast_home_radius_tutorial">16dp</dimen>
+    <dimen name="cast_home_radius_mirror">20dp</dimen>
+</resources>

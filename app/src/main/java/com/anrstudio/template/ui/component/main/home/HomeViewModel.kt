@@ -1,14 +1,16 @@
 package com.anrstudio.template.ui.component.main.home
 
-import com.anrstudio.template.ui.bases.BaseViewModel
 import com.anrstudio.template.domain.model.ConnectionState
+import com.anrstudio.template.domain.usecase.DisconnectDeviceUseCase
 import com.anrstudio.template.domain.usecase.GetChannelsUseCase
 import com.anrstudio.template.domain.usecase.ObserveConnectionStateUseCase
 import com.anrstudio.template.domain.usecase.ObserveDevicesUseCase
 import com.anrstudio.template.domain.usecase.ObserveMirroringStateUseCase
+import com.anrstudio.template.ui.bases.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,6 +19,7 @@ class HomeViewModel @Inject constructor(
     observeDevicesUseCase: ObserveDevicesUseCase,
     observeMirroringStateUseCase: ObserveMirroringStateUseCase,
     getChannelsUseCase: GetChannelsUseCase,
+    private val disconnectDeviceUseCase: DisconnectDeviceUseCase,
 ) : BaseViewModel() {
 
     private val channels = getChannelsUseCase()
@@ -41,4 +44,8 @@ class HomeViewModel @Inject constructor(
         }
         HomeUiState.Content(isConnected, connectedDeviceName, isMirroring, channels)
     }.stateWhileSubscribed(HomeUiState.Content(false, null, false, channels))
+
+    fun disconnect() {
+        uiScope.launch { disconnectDeviceUseCase() }
+    }
 }

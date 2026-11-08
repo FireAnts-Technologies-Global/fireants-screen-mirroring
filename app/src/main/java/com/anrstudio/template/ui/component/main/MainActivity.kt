@@ -1,35 +1,56 @@
 package com.anrstudio.template.ui.component.main
 
+import android.graphics.Color
+import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.anrstudio.template.BuildConfig
-import com.anrstudio.template.ads.RemoteConfigUtils
-import com.anrstudio.template.data.model.ForceUpdateConfig
-import com.anrstudio.template.ui.bases.ConsentHandler
-import com.anrstudio.template.ui.component.main.dialog.ForceUpdateDialog
-import com.anrstudio.template.utils.Routes
-import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import com.anrstudio.template.ui.component.main.home.HomeFragment
-import com.anrstudio.template.ui.component.main.setting.SettingFragment
-
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowManager
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.anrstudio.template.BuildConfig
 import com.anrstudio.template.R
-import com.anrstudio.template.ui.bases.UiState
-import com.anrstudio.template.ui.bases.BaseActivity
+import com.anrstudio.template.ads.RemoteConfigUtils
+import com.anrstudio.template.data.model.ForceUpdateConfig
 import com.anrstudio.template.databinding.CastActivityHomeBinding
 import com.anrstudio.template.databinding.CastItemBottomNavTabBinding
-import com.anrstudio.template.ui.component.iptv.channel.ChannelFragment
+import com.anrstudio.template.ui.bases.BaseActivity
+import com.anrstudio.template.ui.bases.ConsentHandler
+import com.anrstudio.template.ui.bases.StatusBarConfig
+import com.anrstudio.template.ui.bases.UiState
 import com.anrstudio.template.ui.bases.ext.click
+import com.anrstudio.template.ui.component.iptv.channel.ChannelFragment
+import com.anrstudio.template.ui.component.main.dialog.ForceUpdateDialog
+import com.anrstudio.template.ui.component.main.home.HomeFragment
+import com.anrstudio.template.ui.component.main.setting.SettingFragment
+import com.anrstudio.template.utils.Routes
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<CastActivityHomeBinding>() {
+
+    override val statusBarConfig = StatusBarConfig(
+        isVisible = true,
+        applyPadding = false,
+        barColor = Color.TRANSPARENT,
+        lightIcons = false,
+    )
+
+    override fun requestWindow() {
+        super.requestWindow()
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            @Suppress("DEPRECATION")
+            window.isStatusBarContrastEnforced = false
+        }
+    }
 
 
     private lateinit var consentHandler: ConsentHandler
@@ -115,19 +136,6 @@ class MainActivity : BaseActivity<CastActivityHomeBinding>() {
         mBinding.bottomNav.tabChannels.root.click { switchTab(HomeTab.CHANNELS) }
         mBinding.bottomNav.tabSetting.root.click { switchTab(HomeTab.SETTING) }
 
-        mBinding.bottomNav.tabHome.tvTabLabelGradient.setGradientColors(
-            R.color.cast_color_how_to_use_badge_start,
-            R.color.cast_color_how_to_use_badge_end,
-        )
-        mBinding.bottomNav.tabChannels.tvTabLabelGradient.setGradientColors(
-            R.color.cast_color_how_to_use_badge_start,
-            R.color.cast_color_how_to_use_badge_end,
-        )
-        mBinding.bottomNav.tabSetting.tvTabLabelGradient.setGradientColors(
-            R.color.cast_color_how_to_use_badge_start,
-            R.color.cast_color_how_to_use_badge_end,
-        )
-
         updateBottomNav(HomeTab.HOME)
     }
 
@@ -163,22 +171,19 @@ class MainActivity : BaseActivity<CastActivityHomeBinding>() {
         bindTab(
             tabBinding = mBinding.bottomNav.tabHome,
             isSelected = selectedTab == HomeTab.HOME,
-            selectedIcon = R.drawable.cast_ic_tab_home_selected,
-            unselectedIcon = R.drawable.cast_ic_tab_home_unselected,
+            icon = R.drawable.ic_nav_home_figma,
             labelRes = R.string.cast_tab_home,
         )
         bindTab(
             tabBinding = mBinding.bottomNav.tabChannels,
             isSelected = selectedTab == HomeTab.CHANNELS,
-            selectedIcon = R.drawable.cast_ic_tab_channel_selected,
-            unselectedIcon = R.drawable.cast_ic_tab_channel_unselected,
+            icon = R.drawable.ic_nav_channels_figma,
             labelRes = R.string.cast_tab_channels,
         )
         bindTab(
             tabBinding = mBinding.bottomNav.tabSetting,
             isSelected = selectedTab == HomeTab.SETTING,
-            selectedIcon = R.drawable.cast_ic_tab_setting_selected,
-            unselectedIcon = R.drawable.cast_ic_tab_setting_unselected,
+            icon = R.drawable.ic_nav_settings_figma,
             labelRes = R.string.cast_tab_setting,
         )
     }
@@ -186,19 +191,31 @@ class MainActivity : BaseActivity<CastActivityHomeBinding>() {
     private fun bindTab(
         tabBinding: CastItemBottomNavTabBinding,
         isSelected: Boolean,
-        selectedIcon: Int,
-        unselectedIcon: Int,
+        icon: Int,
         labelRes: Int,
     ) {
-        tabBinding.imgTabIcon.setImageResource(
-            if (isSelected) selectedIcon else unselectedIcon,
+        tabBinding.root.setBackgroundResource(
+            if (isSelected) R.drawable.cast_bg_home_nav_selected else android.R.color.transparent,
+        )
+        tabBinding.imgTabIcon.setImageResource(icon)
+        tabBinding.imgTabIcon.imageTintList = android.content.res.ColorStateList.valueOf(
+            ContextCompat.getColor(
+                this,
+                if (isSelected) R.color.cast_color_nav_selected else R.color.cast_color_tab_inactive,
+            ),
         )
         tabBinding.tvTabLabelGradient.setText(labelRes)
-        tabBinding.tvTabLabelGradient.isSelected = isSelected
+        tabBinding.tvTabLabelGradient.setGradientColors(
+            R.color.cast_color_nav_selected,
+            R.color.cast_color_nav_selected,
+        )
+        tabBinding.tvTabLabelGradient.setTextColor(
+            ContextCompat.getColor(this, R.color.cast_color_nav_selected),
+        )
         tabBinding.tvTabLabel.setText(labelRes)
         tabBinding.tvTabLabelGradient.visibility = if (isSelected) View.VISIBLE else View.GONE
         tabBinding.tvTabLabel.visibility = if (isSelected) View.GONE else View.VISIBLE
-        tabBinding.viewTabIndicator.visibility = if (isSelected) View.VISIBLE else View.INVISIBLE
+        tabBinding.viewTabIndicator.visibility = View.GONE
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

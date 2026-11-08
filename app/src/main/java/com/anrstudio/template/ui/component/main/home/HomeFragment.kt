@@ -1,8 +1,5 @@
 package com.anrstudio.template.ui.component.main.home
 
-import com.anrstudio.template.ads.AdsManager
-import com.anrstudio.template.ads.AdRemoteConfig
-import com.anrstudio.template.ads.inter_home
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,20 +8,17 @@ import android.os.Build
 import android.provider.Settings
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import com.anrstudio.template.ui.bases.BaseFragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.anrstudio.template.R
-import com.anrstudio.template.navigation.AppNavigator
 import com.anrstudio.template.databinding.CastFragmentHomeBinding
 import com.anrstudio.template.databinding.CastItemHomeFeatureBinding
 import com.anrstudio.template.domain.model.MediaType
+import com.anrstudio.template.navigation.AppNavigator
+import com.anrstudio.template.ui.bases.BaseFragment
 import com.anrstudio.template.ui.bases.ext.click
-import com.anrstudio.template.ui.bases.ext.goneView
-import com.anrstudio.template.ui.bases.ext.visibleView
-import com.anrstudio.template.ads.populateNativeAdView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -65,30 +59,29 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
 
     override fun initViews() {
         super.initViews()
-        loadNative()
         bindFeatureCard(
             itemBinding = mBinding.cardFeaturePhoto,
-            iconRes = R.drawable.cast_ic_home_feature_photo,
-            titleRes = R.string.cast_home_cast_photos,
-            descRes = R.string.cast_home_cast_photos_desc,
+            iconRes = R.drawable.home_photo,
+            titleRes = R.string.cast_home_photo,
+            tileColor = ContextCompat.getColor(requireContext(), R.color.cast_home_feature_photo),
         )
         bindFeatureCard(
             itemBinding = mBinding.cardFeatureVideo,
-            iconRes = R.drawable.cast_ic_home_feature_video,
-            titleRes = R.string.cast_home_cast_videos,
-            descRes = R.string.cast_home_cast_videos_desc,
+            iconRes = R.drawable.home_video,
+            titleRes = R.string.cast_home_video,
+            tileColor = ContextCompat.getColor(requireContext(), R.color.cast_home_feature_video),
         )
         bindFeatureCard(
             itemBinding = mBinding.cardFeatureImport,
-            iconRes = R.drawable.cast_ic_home_feature_import,
-            titleRes = R.string.cast_home_import_channel,
-            descRes = R.string.cast_home_import_channel_desc,
+            iconRes = R.drawable.home_file,
+            titleRes = R.string.cast_home_import_m3u,
+            tileColor = ContextCompat.getColor(requireContext(), R.color.cast_home_feature_import),
         )
         bindFeatureCard(
             itemBinding = mBinding.cardFeatureCast,
-            iconRes = R.drawable.cast_ic_home_feature_mirror,
-            titleRes = R.string.cast_cast_tv,
-            descRes = R.string.cast_home_screen_mirroring_desc,
+            iconRes = R.drawable.home_web,
+            titleRes = R.string.cast_home_browser_cast,
+            tileColor = ContextCompat.getColor(requireContext(), R.color.cast_home_feature_browser),
         )
     }
 
@@ -96,11 +89,14 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
         itemBinding: CastItemHomeFeatureBinding,
         iconRes: Int,
         titleRes: Int,
-        descRes: Int,
+        tileColor: Int,
     ) {
         itemBinding.imgFeatureIcon.setImageResource(iconRes)
+        itemBinding.imgFeatureIcon.background = android.graphics.drawable.GradientDrawable().apply {
+            setColor(tileColor)
+            cornerRadius = 10f * resources.displayMetrics.density
+        }
         itemBinding.tvFeatureTitle.setText(titleRes)
-        itemBinding.tvFeatureDesc.setText(descRes)
     }
 
     private fun observeUiState() {
@@ -113,33 +109,67 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
 
     private fun renderState(state: HomeUiState) {
         when (state) {
-            is HomeUiState.Content -> renderMirrorBanner(state.isMirroring)
+            is HomeUiState.Content -> renderHomeState(state)
         }
     }
 
-    private fun renderMirrorBanner(isMirroring: Boolean) {
-        if (isMirroring) {
-            mBinding.tvCastBannerDesc.setText(R.string.cast_status_connected)
-            mBinding.tvCastBannerDesc.setTextColor(
-                ContextCompat.getColor(requireContext(), R.color.cast_color_primary),
+    private fun renderHomeState(state: HomeUiState.Content) {
+        mBinding.tvConnectionTitle.text = if (state.isConnected) {
+            state.connectedDeviceName ?: getString(R.string.cast_status_connected)
+        } else {
+            getString(R.string.cast_home_no_tv)
+        }
+        mBinding.tvConnectionSubtitle.text = if (state.isConnected) {
+            getString(R.string.cast_home_connected_ready)
+        } else {
+            getString(R.string.cast_home_choose_device)
+        }
+        mBinding.tvConnectionSubtitle.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                if (state.isConnected) R.color.cast_home_connected_green else R.color.cast_home_text_secondary,
+            ),
+        )
+        mBinding.btnConnectionAction.text = getString(
+            if (state.isConnected) R.string.cast_disconnect else R.string.cast_connect,
+        )
+        mBinding.btnConnectionAction.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                if (state.isConnected) R.color.cast_home_connected_red else R.color.cast_color_nav_selected,
+            ),
+        )
+        mBinding.btnConnectionAction.setBackgroundResource(
+            if (state.isConnected) {
+                R.drawable.cast_bg_home_connection_action_connected
+            } else {
+                R.drawable.cast_bg_home_connection_action
+            },
+        )
+        mBinding.tvCastBannerDesc.text = if (state.isConnected) {
+            getString(
+                R.string.cast_home_start_mirroring,
+                state.connectedDeviceName ?: getString(R.string.cast_home_tv)
             )
         } else {
-            mBinding.tvCastBannerDesc.setText(R.string.cast_home_cast_banner_desc)
-            mBinding.tvCastBannerDesc.setTextColor(
-                ContextCompat.getColor(requireContext(), R.color.cast_color_tab_inactive),
-            )
+            getString(R.string.cast_home_share_screen)
         }
     }
 
     override fun onClickViews() {
         super.onClickViews()
+        mBinding.btnConnectionAction.click {
+            if (viewModel.uiState.value.let { it is HomeUiState.Content && it.isConnected }) {
+                viewModel.disconnect()
+            } else {
+                openCastScreen()
+            }
+        }
         mBinding.cardMirrorBanner.click {
-            openWebCast()
+            openCastScreen()
         }
         mBinding.cardHowToUse.click {
-            AdsManager.loadAndShowInterstitial(requireActivity(), AdRemoteConfig.inter_home) {
-                navigator.openHowToUse(requireContext())
-            }
+            navigator.openHowToUse(requireContext())
         }
         mBinding.cardFeaturePhoto.root.click {
             openMediaWithPermission(MediaType.IMAGE)
@@ -156,29 +186,7 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
     }
 
     private fun openCastScreen() {
-        AdsManager.loadAndShowInterstitial(requireActivity(), AdRemoteConfig.inter_home) {
-            navigator.openCastScreen(requireContext())
-        }
-    }
-
-    private fun openWebCast() {
-        AdsManager.loadAndShowInterstitial(requireActivity(), AdRemoteConfig.inter_home) {
-            navigator.openWebCast(requireContext())
-        }
-    }
-
-    private fun loadNative() {
-        AdsManager.nativeHomeAdLive.observe(viewLifecycleOwner) { ad ->
-            if (ad != null) {
-                mBinding.frAdsNative.visibleView()
-                populateNativeAdView(requireActivity(), ad, mBinding.frAdsNative,
-                    mBinding.shimmerContainerNative.shimmerNativeSmall)
-            }
-        }
-        AdsManager.nativeHomeAdStateLive.observe(viewLifecycleOwner) { state ->
-            if (state == AdsManager.NativeAdLoadState.FAILED) mBinding.frAdsNative.goneView()
-        }
-        AdsManager.loadNativeHome(requireActivity(), R.layout.cast_layout_native_home)
+        navigator.openCastScreen(requireContext())
     }
 
     private fun checkPermissions() {
@@ -203,9 +211,7 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
                 ContextCompat.checkSelfPermission(requireContext(), it) ==
                     PackageManager.PERMISSION_GRANTED
             } -> {
-                AdsManager.loadAndShowInterstitial(requireActivity(), AdRemoteConfig.inter_home) {
-                    navigator.openMediaPicker(requireContext(), type)
-                }
+                navigator.openMediaPicker(requireContext(), type)
             }
 
             permissions.any { isPermanentlyDenied(it) } -> showMediaSettingsDialog()

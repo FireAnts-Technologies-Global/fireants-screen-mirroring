@@ -52,9 +52,24 @@
     <color name="cast_color_how_to_use_badge_start">#D894FF</color>
     <color name="cast_color_how_to_use_badge_end">#7334ED</color>
 
-    <color name="cast_color_bottom_nav_bg">#090F1B</color>
-    <color name="cast_color_bottom_nav_border">#1FFFFFFF</color>
-    <color name="cast_color_tab_inactive">#7AFFFFFF</color>
+    <color name="cast_color_bottom_nav_bg">#FFFFFF</color>
+    <color name="cast_color_bottom_nav_border">#D6DDE8</color>
+    <color name="cast_color_tab_inactive">#475467</color>
+    <color name="cast_color_nav_selected">#1460E6</color>
+    <color name="cast_home_text_primary">#162234</color>
+    <color name="cast_home_text_secondary">#475467</color>
+    <color name="cast_home_text_tutorial">#142B2B</color>
+    <color name="cast_home_text_tutorial_secondary">#47605C</color>
+    <color name="cast_home_background">#FFFFFF</color>
+    <color name="cast_home_panel">#F6F8FC</color>
+    <color name="cast_home_tutorial_background">#F0F5FF</color>
+    <color name="cast_home_selected_tab_background">#EAF2FF</color>
+    <color name="cast_home_connected_green">#00B934</color>
+    <color name="cast_home_connected_red">#FF0004</color>
+    <color name="cast_home_feature_video">#E48000</color>
+    <color name="cast_home_feature_photo">#00A654</color>
+    <color name="cast_home_feature_import">#893AF2</color>
+    <color name="cast_home_feature_browser">#1460E6</color>
     <color name="cast_color_setting_item_border">#3D494949</color>
     <color name="cast_color_home_cast_banner_border">#F18FFF</color>
     <color name="cast_color_home_how_to_use_border">#36FFFFFF</color>

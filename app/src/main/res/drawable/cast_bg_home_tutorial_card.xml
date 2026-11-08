@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/cast_home_tutorial_background" />
+    <corners android:radius="@dimen/cast_home_radius_tutorial" />
+</shape>

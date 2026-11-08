@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cast_black"
-    android:fitsSystemWindows="true">
+    android:background="@color/cast_home_background">
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
@@ -19,9 +18,7 @@
         android:id="@+id/bottomNavContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="16dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

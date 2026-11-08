@@ -3,18 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/cast_bg_home_feature_card"
+    android:background="@drawable/cast_bg_home_action_tile"
     android:clickable="true"
     android:focusable="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingHorizontal="9dp"
-    android:paddingVertical="16dp">
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
 
     <ImageView
         android:id="@+id/imgFeatureIcon"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="@dimen/cast_home_icon_tile_size"
+        android:layout_height="@dimen/cast_home_icon_tile_size"
+        android:padding="4dp"
         android:contentDescription="@null"
         tools:src="@drawable/cast_ic_home_feature_photo" />
 
@@ -22,24 +23,24 @@
         android:id="@+id/tvFeatureTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/cast_poppins_medium"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:textColor="@color/cast_white"
-        android:textSize="14sp"
+        android:textColor="@color/cast_home_text_primary"
+        android:textSize="12sp"
         tools:text="Cast Photos" />
 
     <TextView
         android:id="@+id/tvFeatureDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/cast_poppins_regular"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="#475467"
         android:gravity="center"
         android:includeFontPadding="false"
         android:lineSpacingExtra="4dp"
-        android:textColor="@color/cast_color_tab_inactive"
+        android:visibility="gone"
         android:textSize="12sp"
         tools:text="Show your photos and albums on big screens." />
 </LinearLayout>

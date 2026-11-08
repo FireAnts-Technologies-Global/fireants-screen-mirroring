@@ -1,247 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/cast_color_how_to_use_bg">
+<layout xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:paddingBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cast_home_background">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="12dp">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:paddingBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/cast_ic_setting_header_cast" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:fontFamily="@font/cast_poppins_bold"
-                    android:includeFontPadding="false"
-                    android:text="@string/app_name"
-                    android:textColor="@color/cast_white"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cardMirrorBanner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/cast_bg_home_cast_banner"
-                android:clickable="true"
-                android:clipChildren="true"
-                android:clipToOutline="true"
-                android:focusable="true">
-
-                <FrameLayout
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginBottom="20dp"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/tv_cast_tv"
-                    android:background="@drawable/cast_bg_home_cast_icon_circle"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@null"
-                        android:src="@drawable/cast_ic_home_cast_white" />
-                </FrameLayout>
-
-                <com.genesys.shape.view.ShapeImageView
-                    android:id="@+id/icon_top"
-                    android:layout_width="66dp"
-                    android:layout_height="40dp"
-                    android:contentDescription="@null"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/cast_img_home_banner_action"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_cast_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="13dp"
-                    android:fontFamily="@font/cast_poppins_semi_bold"
-                    android:includeFontPadding="false"
-                    android:text="@string/cast_home_cast_banner_title"
-                    android:textColor="@color/cast_white"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@id/tvCastBannerDesc"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintVertical_bias="0.58" />
-
-                <TextView
-                    android:layout_marginBottom="20dp"
-                    android:id="@+id/tvCastBannerDesc"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginEnd="13dp"
-                    android:fontFamily="@font/cast_poppins_regular"
-                    android:includeFontPadding="false"
-                    android:lineSpacingExtra="4dp"
-                    android:text="@string/cast_home_cast_banner_desc"
-                    android:textColor="@color/cast_color_tab_inactive"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-            <FrameLayout
-                android:id="@+id/frAdsNative"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:visibility="gone">
-
-                <include
-                    android:id="@+id/shimmerContainerNative"
-                    layout="@layout/cast_layout_shimmer_native_small" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:id="@+id/cardHowToUse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/cast_bg_home_how_to_use"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="25dp"
-                android:paddingVertical="18dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/cast_ic_home_how_to_use" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/cast_poppins_semi_bold"
-                        android:includeFontPadding="false"
-                        android:text="@string/cast_how_to_use_title"
-                        android:textColor="@color/cast_white"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/cast_poppins_regular"
-                        android:includeFontPadding="false"
-                        android:text="@string/cast_home_how_to_use_subtitle"
-                        android:textColor="@color/cast_color_tab_inactive"
-                        android:textSize="12sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/cast_poppins_regular"
-                android:includeFontPadding="false"
-                android:text="@string/cast_home_features"
-                android:textColor="@color/cast_white"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="@dimen/cast_home_photo_height">
 
-                    <include
-                        android:id="@+id/cardFeaturePhoto"
-                        layout="@layout/cast_item_home_feature"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="6dp"
-                        android:layout_weight="1" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/home_living_room" />
 
-                    <include
-                        android:id="@+id/cardFeatureVideo"
-                        layout="@layout/cast_item_home_feature"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1" />
-                </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cast_home_photo_fade_height"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/cast_bg_home_photo_fade" />
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:padding="@dimen/cast_home_content_padding">
 
-                    <include
-                        android:id="@+id/cardFeatureImport"
-                        layout="@layout/cast_item_home_feature"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="6dp"
-                        android:layout_weight="1" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                    <include
-                        android:id="@+id/cardFeatureCast"
-                        layout="@layout/cast_item_home_feature"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvConnectionTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/cast_home_text_primary"
+                                android:textSize="16sp"
+                                tools:text="No TV connected" />
+
+                            <TextView
+                                android:id="@+id/tvConnectionSubtitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/regular"
+                                android:includeFontPadding="false"
+                                android:textColor="#475467"
+                                android:textSize="12sp"
+                                tools:text="Choose a device to get started" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/btnConnectionAction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="44dp"
+                            android:background="@drawable/cast_bg_home_connection_action"
+                            android:fontFamily="@font/inter_bold"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:minWidth="85dp"
+                            android:paddingHorizontal="12dp"
+                            android:textColor="@color/cast_color_nav_selected"
+                            android:textSize="14sp"
+                            tools:text="Connect" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/cardMirrorBanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cast_home_mirror_height"
+                        android:layout_marginTop="@dimen/cast_home_gap"
+                        android:background="@drawable/cast_bg_home_mirror_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_bold"
+                                android:includeFontPadding="false"
+                                android:text="Screen Mirroring"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/tvCastBannerDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/inter_regular"
+                                android:includeFontPadding="false"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                tools:text="Share your phone screen on TV" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/home_mirror" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/cardHowToUse"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cast_home_tutorial_height"
+                        android:layout_marginTop="@dimen/cast_home_gap"
+                        android:background="@drawable/cast_bg_home_tutorial_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="12dp">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/cast_bg_home_tutorial_icon"
+                            android:contentDescription="@null"
+                            android:padding="8dp"
+                            android:src="@drawable/home_video" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_semibold"
+                                android:includeFontPadding="false"
+                                android:text="Tutorial"
+                                android:textColor="@color/cast_home_text_tutorial"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/inter_regular"
+                                android:includeFontPadding="false"
+                                android:text="Learn how to connect and cast to your TV"
+                                android:textColor="@color/cast_home_text_tutorial_secondary"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_chevron_right_figma" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cast_home_section_height"
+                        android:layout_marginTop="@dimen/cast_home_gap"
+                        android:background="@drawable/cast_bg_home_section"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:includeFontPadding="false"
+                            android:text="Cast Media"
+                            android:textColor="@color/cast_home_text_primary"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/cast_home_feature_row_height"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <include
+                                android:id="@+id/cardFeatureVideo"
+                                layout="@layout/cast_item_home_feature"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <include
+                                android:id="@+id/cardFeaturePhoto"
+                                layout="@layout/cast_item_home_feature"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cast_home_section_height"
+                        android:layout_marginTop="@dimen/cast_home_gap"
+                        android:background="@drawable/cast_bg_home_section"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:includeFontPadding="false"
+                            android:text="Cast Web &amp; Channels"
+                            android:textColor="@color/cast_home_text_primary"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/cast_home_feature_row_height"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <include
+                                android:id="@+id/cardFeatureCast"
+                                layout="@layout/cast_item_home_feature"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <include
+                                android:id="@+id/cardFeatureImport"
+                                layout="@layout/cast_item_home_feature"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

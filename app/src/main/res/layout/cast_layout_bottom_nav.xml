@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/cast_bg_bottom_nav"
-    android:minHeight="71dp"
-    android:paddingHorizontal="8dp">
+    android:minHeight="@dimen/cast_home_nav_height"
+    android:paddingHorizontal="12dp">
 
     <include
         android:id="@+id/tabHome"
         layout="@layout/cast_item_bottom_nav_tab"
         android:layout_width="0dp"
-        android:layout_height="71dp"
+        android:layout_height="@dimen/cast_home_nav_item_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tabChannels"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -24,7 +24,8 @@
         android:id="@+id/tabChannels"
         layout="@layout/cast_item_bottom_nav_tab"
         android:layout_width="0dp"
-        android:layout_height="71dp"
+        android:layout_height="@dimen/cast_home_nav_item_height"
+        android:layout_marginStart="@dimen/cast_home_nav_gap"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tabSetting"
         app:layout_constraintHorizontal_weight="1"
@@ -35,7 +36,8 @@
         android:id="@+id/tabSetting"
         layout="@layout/cast_item_bottom_nav_tab"
         android:layout_width="0dp"
-        android:layout_height="71dp"
+        android:layout_height="@dimen/cast_home_nav_item_height"
+        android:layout_marginStart="@dimen/cast_home_nav_gap"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"

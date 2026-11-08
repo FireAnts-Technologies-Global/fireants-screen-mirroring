@@ -132,6 +132,17 @@
     <string name="cast_home_screen_mirroring">Screen Mirroring</string>
     <string name="cast_cast_tv">Cast to TV</string>
     <string name="cast_home_screen_mirroring_desc">Cast from your phone screen in real time.</string>
+    <string name="cast_home_no_tv">No TV connected</string>
+    <string name="cast_home_connected_ready">Connected and ready to cast</string>
+    <string name="cast_home_choose_device">Choose a device to get started</string>
+    <string name="cast_home_start_mirroring">Start mirroring on %1$s</string>
+    <string name="cast_home_share_screen">Share your phone screen on TV</string>
+    <string name="cast_connect">Connect</string>
+    <string name="cast_home_photo">Photo</string>
+    <string name="cast_home_video">Video</string>
+    <string name="cast_home_browser_cast">Browser Cast</string>
+    <string name="cast_home_import_m3u">Import M3U</string>
+    <string name="cast_home_tv">TV</string>
 
     <string name="cast_accepted_file_format">Accepted file format: .m3u</string>
     <string name="cast_added_to_favorites">Added to favorites.</string>
