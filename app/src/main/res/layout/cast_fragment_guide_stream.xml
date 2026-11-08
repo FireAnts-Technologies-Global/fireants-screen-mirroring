@@ -5,7 +5,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cast_nav_bar_bg"
+        android:background="@drawable/cast_bg_home_screen"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,13 +23,16 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/cast_bg_guide_step_card"
+                android:padding="12dp"
+                >
 
                 <FrameLayout
                     android:id="@+id/step1Number"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:background="@drawable/cast_bg_step_number"
+                    android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -39,9 +42,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/cast_semi_bold"
+                        android:fontFamily="@font/inter_semibold"
                         android:text="1"
-                        android:textColor="@color/cast_white"
+                        android:textColor="@color/cast_home_text_primary"
                         android:textSize="14sp" />
                 </FrameLayout>
 
@@ -50,10 +53,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/cast_regular"
+                    android:fontFamily="@font/inter_regular"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/cast_guide_stream_new_step1_text"
-                    android:textColor="@color/cast_white"
+                    android:textColor="@color/cast_home_text_primary"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/step1Number"
@@ -69,13 +72,16 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/step1Container">
+                app:layout_constraintTop_toBottomOf="@id/step1Container"
+                android:background="@drawable/cast_bg_guide_step_card"
+                android:padding="12dp"
+                >
 
                 <FrameLayout
                     android:id="@+id/step2Number"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:background="@drawable/cast_bg_step_number"
+                    android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -85,9 +91,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/cast_semi_bold"
+                        android:fontFamily="@font/inter_semibold"
                         android:text="2"
-                        android:textColor="@color/cast_white"
+                        android:textColor="@color/cast_home_text_primary"
                         android:textSize="14sp" />
                 </FrameLayout>
 
@@ -96,10 +102,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/cast_regular"
+                    android:fontFamily="@font/inter_regular"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/cast_guide_stream_new_step2_text"
-                    android:textColor="@color/cast_white"
+                    android:textColor="@color/cast_home_text_primary"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/step2Number"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -116,13 +122,16 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/step2Container">
+                app:layout_constraintTop_toBottomOf="@id/step2Container"
+                android:background="@drawable/cast_bg_guide_step_card"
+                android:padding="12dp"
+                >
 
                 <FrameLayout
                     android:id="@+id/step3Number"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:background="@drawable/cast_bg_step_number"
+                    android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -132,9 +141,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/cast_semi_bold"
+                        android:fontFamily="@font/inter_semibold"
                         android:text="3"
-                        android:textColor="@color/cast_white"
+                        android:textColor="@color/cast_home_text_primary"
                         android:textSize="14sp" />
                 </FrameLayout>
 
@@ -143,10 +152,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/cast_regular"
+                    android:fontFamily="@font/inter_regular"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/cast_guide_stream_new_step3_text"
-                    android:textColor="@color/cast_white"
+                    android:textColor="@color/cast_home_text_primary"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/step3Number"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -163,13 +172,16 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/step3Container">
+                app:layout_constraintTop_toBottomOf="@id/step3Container"
+                android:background="@drawable/cast_bg_guide_step_card"
+                android:padding="12dp"
+                >
 
                 <FrameLayout
                     android:id="@+id/step4Number"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:background="@drawable/cast_bg_step_number"
+                    android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -179,9 +191,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/cast_semi_bold"
+                        android:fontFamily="@font/inter_semibold"
                         android:text="4"
-                        android:textColor="@color/cast_white"
+                        android:textColor="@color/cast_home_text_primary"
                         android:textSize="14sp" />
                 </FrameLayout>
 
@@ -190,10 +202,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/cast_regular"
+                    android:fontFamily="@font/inter_regular"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/cast_guide_stream_new_step4_text"
-                    android:textColor="@color/cast_white"
+                    android:textColor="@color/cast_home_text_primary"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/step4Number"
@@ -204,10 +216,10 @@
             <!-- Search Bar -->
             <com.genesys.shape.layout.ShapeLinearLayout
                 app:layout_constraintTop_toBottomOf="@+id/step4Container"
-                app:shape_strokeColor="#36E4A2"
+                app:shape_strokeColor="@color/cast_cast_border"
                 app:shape_strokeSize="1dp"
-                app:shape_radius="@dimen/_60sdp"
-                app:shape_solidColor="#1A36E4A2"
+                app:shape_radius="12dp"
+                app:shape_solidColor="@color/cast_cast_surface"
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:id="@+id/btnSearch"
@@ -230,7 +242,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/cast_ic_search"
-                    android:tint="@color/cast_nav_item_selected_text"
+                    android:tint="@color/cast_cast_accent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -243,7 +255,7 @@
                     android:fontFamily="@font/cast_medium"
                     android:lineSpacingMultiplier="1.25"
                     android:text="@string/cast_guide_stream_new_search_placeholder"
-                    android:textColor="@color/cast_nav_item_selected_text"
+                    android:textColor="@color/cast_cast_accent"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

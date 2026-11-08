@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_120sdp"
-        android:background="@drawable/cast_bg_radius_20"
+        android:background="@drawable/cast_bg_iptv_dialog"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
-            android:indeterminateTint="@color/cast_color_0452F7" />
+            android:indeterminateTint="@color/cast_cast_accent" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

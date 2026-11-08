@@ -10,10 +10,10 @@
         <com.genesys.shape.layout.ShapeRelativeLayout
             android:paddingBottom="@dimen/_20sdp"
             app:shape_radius="12dp"
-            app:shape_strokeColor="#525252"
+            app:shape_strokeColor="@color/cast_cast_border"
             app:shape_strokeSize="1dp"
 
-            app:shape_solidColor="#202020"
+            app:shape_solidColor="@color/cast_cast_surface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="@dimen/cast_border_dialog"
@@ -31,6 +31,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/cast_text_medium_14"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@color/cast_home_text_primary"
                     android:gravity="center"
                     android:paddingVertical="@dimen/_4sdp"
                     android:layout_marginTop="@dimen/_12sdp"
@@ -43,10 +45,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/cast_text_regular_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/cast_home_text_secondary"
                     android:gravity="center"
                     android:paddingVertical="@dimen/_4sdp"
                     android:paddingHorizontal="@dimen/_12sdp"
-                    android:textColor="@color/cast_textSecondary"
                     android:text="@string/cast_sleep_timer_value"
                     app:layout_constraintTop_toBottomOf="@id/tvLabel"/>
 
@@ -56,6 +59,7 @@
                     android:layout_height="@dimen/_40sdp"
                     android:padding="@dimen/_10sdp"
                     android:src="@drawable/cast_ic_close_2"
+                    app:tint="@color/cast_home_text_secondary"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -77,7 +81,8 @@
                         android:layout_marginEnd="20dp"
                         app:shape_radius="20sp"
                         app:shape_strokeSize="1dp"
-                        app:shape_strokeColor="#414141"
+                        app:shape_solidColor="@color/cast_cast_surface"
+                        app:shape_strokeColor="@color/cast_cast_border"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:gravity="center"
@@ -88,6 +93,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             style="@style/cast_text_bold_12"
+                            android:fontFamily="@font/inter_semibold"
+                            android:textColor="@color/cast_home_text_primary"
                             android:text="@string/cast_hour"/>
 
                         <com.anrstudio.template.ui.component.custom.numberpicker.NumberPicker
@@ -102,7 +109,7 @@
                             app:np_min="0"
                             app:np_orientation="vertical"
                             app:np_textColor="@color/cast_textSecondary"
-                            app:np_selectedTextColor="#9E2BCC"
+                            app:np_selectedTextColor="@color/cast_cast_accent"
                             app:np_selectedTextSize="@dimen/_20ssp"
                             app:np_textSize="@dimen/_20ssp"
                             app:np_value="8"
@@ -117,7 +124,8 @@
                         android:paddingVertical="14sp"
                         app:shape_radius="20sp"
                         app:shape_strokeSize="1dp"
-                        app:shape_strokeColor="#414141"
+                        app:shape_solidColor="@color/cast_cast_surface"
+                        app:shape_strokeColor="@color/cast_cast_border"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
@@ -128,6 +136,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             style="@style/cast_text_bold_12"
+                            android:fontFamily="@font/inter_semibold"
+                            android:textColor="@color/cast_home_text_primary"
                             android:text="@string/cast_minute"/>
 
                         <com.anrstudio.template.ui.component.custom.numberpicker.NumberPicker
@@ -141,7 +151,7 @@
                             app:np_min="0"
                             app:np_dividerLength="@dimen/_24sdp"
                             app:np_orientation="vertical"
-                            app:np_selectedTextColor="#9E2BCC"
+                            app:np_selectedTextColor="@color/cast_cast_accent"
                             app:np_selectedTextSize="@dimen/_20ssp"
                             app:np_textColor="@color/cast_textSecondary"
                             app:np_value="30"
@@ -161,7 +171,7 @@
                     android:layout_height="@dimen/cast_button_height_small"
                     android:text="@string/cast_set"
                     android:textColor="@color/cast_white"
-                    android:background="@drawable/cast_bg_import_upload_icon"
+                    android:background="@drawable/cast_bg_iptv_dialog_primary_action"
                     android:gravity="center"
                     android:layout_marginHorizontal="@dimen/_12sdp"
                     style="@style/cast_text_medium_12"
@@ -180,13 +190,13 @@
                     android:layout_marginHorizontal="@dimen/_12sdp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="12dp"
-                    android:background="@drawable/cast_bg_import_upload_icon"
+                    android:background="@drawable/cast_bg_dialog_secondary_action"
                     android:ellipsize="end"
                     android:gravity="center"
                     android:lines="1"
                     android:paddingHorizontal="@dimen/_4sdp"
-                    android:text="@string/cast_set"
-                    android:textColor="@color/cast_black"
+                    android:text="@string/cast_clear"
+                    android:textColor="@color/cast_home_text_primary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layoutNumber" />
 

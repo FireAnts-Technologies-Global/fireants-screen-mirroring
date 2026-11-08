@@ -25,7 +25,7 @@
             android:layout_width="@dimen/_250sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/rounded_dialog"
+            android:background="@drawable/cast_bg_force_update_dialog"
             android:padding="@dimen/_16sdp">
 
             <com.airbnb.lottie.LottieAnimationView
@@ -63,6 +63,7 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:gravity="center"
                 android:text="@string/we_re_better_than_ever"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/textPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +77,7 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:gravity="center"
                 android:text="@string/force_update_message"
+                android:fontFamily="@font/inter_regular"
                 android:textColor="@color/textPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -88,12 +90,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:backgroundTint="@color/color_button"
+                android:fontFamily="@font/inter_semibold"
                 android:gravity="center"
+                android:minHeight="49dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:text="@string/update_now"
                 android:textColor="@color/white"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:cornerRadius="12dp"
                 app:layout_constraintTop_toBottomOf="@id/txtForceUpdateDescription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

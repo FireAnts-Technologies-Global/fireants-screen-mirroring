@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.genesys.shape.layout.ShapeConstraintLayout
-        app:shape_strokeColor="#1AFFFFFF"
+        app:shape_strokeColor="@color/cast_cast_border"
         app:shape_strokeSize="1dp"
-        app:shape_radius="24dp"
-        app:shape_solidColor="#0F0F0F"
+        app:shape_radius="22dp"
+        app:shape_solidColor="@color/cast_cast_surface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent">
@@ -34,7 +34,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/cast_ic_close_rate"/>
+                android:src="@drawable/cast_ic_close_2"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,10 +64,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/cast_do_you_like_our_app"
-                        android:textColor="@color/cast_white"
+                        android:textColor="@color/cast_home_text_primary"
                         android:textSize="20sp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/cast_font_bold"/>
+                        android:fontFamily="@font/inter_bold"/>
 
                     <TextView
                         android:id="@+id/sub_title"
@@ -76,10 +76,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/cast_if_you_like_this_app_please_rate_our_app_5_stars_in_store"
-                        android:textColor="#99FFFFFF"
+                        android:textColor="@color/cast_home_text_secondary"
                         android:textAlignment="center"
                         android:textSize="16sp"
-                        android:fontFamily="@font/cast_font_regular"/>
+                        android:fontFamily="@font/inter_regular"/>
 
                 </LinearLayout>
 
@@ -94,7 +94,7 @@
                     android:fontFamily="@font/cast_font_medium"
                     android:paddingHorizontal="5dp"
                     android:text="@string/cast_tv_start_1"
-                    android:textColor="@color/cast_white"
+                    android:textColor="@color/cast_home_text_primary"
                     android:textSize="16sp" />
 
                 <com.anrstudio.template.ui.component.custom.CustomRatingBar

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/cast_bg_radius_20"
+    android:background="@drawable/cast_bg_iptv_dialog"
     android:orientation="vertical"
     android:padding="@dimen/_16sdp">
 
@@ -17,21 +17,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
-        android:fontFamily="@font/cast_poppins_semi_bold"
+        android:fontFamily="@font/inter_semibold"
         android:gravity="center"
-        android:textColor="@color/cast_color_263238"
-        android:textSize="@dimen/_14ssp" />
+        android:textColor="@color/cast_home_text_primary"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvPermissionMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
-        android:fontFamily="@font/cast_poppins_regular"
+        android:fontFamily="@font/inter_regular"
         android:gravity="center"
         android:lineSpacingExtra="@dimen/_2sdp"
-        android:textColor="@color/cast_color_B3B5B9"
-        android:textSize="@dimen/_11ssp" />
+        android:textColor="@color/cast_home_text_secondary"
+        android:textSize="14sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,12 +44,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/cast_bg_cancel"
-            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:background="@drawable/cast_bg_dialog_secondary_action"
+            android:fontFamily="@font/inter_semibold"
             android:gravity="center"
             android:paddingVertical="@dimen/_12sdp"
-            android:textColor="@color/cast_color_343944"
-            android:textSize="@dimen/_11ssp" />
+            android:textColor="@color/cast_home_text_primary"
+            android:textSize="14sp" />
 
         <Space
             android:layout_width="@dimen/_12sdp"
@@ -60,12 +60,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/cast_bg_radius_34"
-            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:background="@drawable/cast_bg_iptv_dialog_primary_action"
+            android:fontFamily="@font/inter_semibold"
             android:gravity="center"
             android:paddingVertical="@dimen/_12sdp"
-            android:textColor="@color/cast_color_FFFFFFFF"
-            android:textSize="@dimen/_11ssp" />
+            android:textColor="@color/cast_white"
+            android:textSize="14sp" />
 
     </LinearLayout>
 

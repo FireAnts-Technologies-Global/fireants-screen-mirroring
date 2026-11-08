@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cast_color_how_to_use_bg"
+    android:background="@drawable/cast_bg_home_screen"
     android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,11 +39,11 @@
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/cast_poppins_semi_bold"
+            android:fontFamily="@font/inter_semibold"
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="@string/cast_web_browser"
-            android:textColor="@color/cast_white"
+            android:textColor="@color/cast_home_text_primary"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/toolbarSpacer"
@@ -96,7 +96,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/cast_bg_how_to_use_card"
+                    android:background="@drawable/cast_bg_webcast_step_card"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
@@ -105,12 +105,12 @@
                     <TextView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:background="@drawable/cast_bg_how_to_use_step_badge"
-                        android:fontFamily="@font/cast_poppins_medium"
+                        android:background="@drawable/cast_bg_webcast_step_badge"
+                        android:fontFamily="@font/inter_semibold"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="@string/cast_one"
-                        android:textColor="@color/cast_white"
+                        android:textColor="@color/cast_cast_accent"
                         android:textSize="14sp" />
 
                     <TextView
@@ -118,11 +118,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/cast_poppins_regular"
+                        android:fontFamily="@font/inter_regular"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="2dp"
                         android:text="@string/cast_title_br1"
-                        android:textColor="@color/cast_color_how_to_use_step_text"
+                        android:textColor="@color/cast_home_text_primary"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -130,7 +130,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cast_bg_how_to_use_card"
+                    android:background="@drawable/cast_bg_webcast_step_card"
                     android:orientation="vertical"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="12dp">
@@ -144,12 +144,12 @@
                         <TextView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:background="@drawable/cast_bg_how_to_use_step_badge"
-                            android:fontFamily="@font/cast_poppins_medium"
+                            android:background="@drawable/cast_bg_webcast_step_badge"
+                            android:fontFamily="@font/inter_semibold"
                             android:gravity="center"
                             android:includeFontPadding="false"
                             android:text="@string/cast_two"
-                            android:textColor="@color/cast_white"
+                            android:textColor="@color/cast_cast_accent"
                             android:textSize="14sp" />
 
                         <TextView
@@ -157,11 +157,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/cast_poppins_regular"
+                            android:fontFamily="@font/inter_regular"
                             android:includeFontPadding="false"
                             android:lineSpacingExtra="2dp"
                             android:text="@string/cast_open_this"
-                            android:textColor="@color/cast_color_how_to_use_step_text"
+                            android:textColor="@color/cast_home_text_primary"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -180,9 +180,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:fontFamily="@font/cast_poppins_medium"
+                            android:fontFamily="@font/inter_semibold"
                             android:includeFontPadding="false"
-                            android:textColor="@color/cast_white"
+                            android:textColor="@color/cast_home_text_primary"
                             android:textSize="14sp" />
                     </FrameLayout>
                 </LinearLayout>
@@ -191,7 +191,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cast_bg_how_to_use_card"
+                    android:background="@drawable/cast_bg_webcast_step_card"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
@@ -200,12 +200,12 @@
                     <TextView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:background="@drawable/cast_bg_how_to_use_step_badge"
-                        android:fontFamily="@font/cast_poppins_medium"
+                        android:background="@drawable/cast_bg_webcast_step_badge"
+                        android:fontFamily="@font/inter_semibold"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="@string/cast_three"
-                        android:textColor="@color/cast_white"
+                        android:textColor="@color/cast_cast_accent"
                         android:textSize="14sp" />
 
                     <TextView
@@ -213,11 +213,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/cast_poppins_regular"
+                        android:fontFamily="@font/inter_regular"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="2dp"
                         android:text="@string/cast_click_on"
-                        android:textColor="@color/cast_color_how_to_use_step_text"
+                        android:textColor="@color/cast_home_text_primary"
                         android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -239,7 +239,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/cast_poppins_bold"
+                    android:fontFamily="@font/inter_semibold"
                     android:includeFontPadding="false"
                     android:text="@string/cast_screen_mirror_start"
                     android:textColor="@color/cast_white"
@@ -251,10 +251,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:fontFamily="@font/cast_poppins_regular"
+                android:fontFamily="@font/inter_regular"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:textColor="@color/cast_color_how_to_use_step_text"
+                android:textColor="@color/cast_home_text_secondary"
                 android:textSize="12sp"
                 android:visibility="gone" />
         </LinearLayout>

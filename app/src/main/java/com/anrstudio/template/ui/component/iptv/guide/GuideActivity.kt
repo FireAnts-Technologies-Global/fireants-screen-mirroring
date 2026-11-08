@@ -49,8 +49,8 @@ class GuideActivity : IptvBaseActivity<CastActivityGuideBinding>() {
         val sourceType = intent.getStringExtra(EXTRA_SOURCE_TYPE) ?: TVChannelSourceType.URL.value
         initialTabPosition = when (sourceType) {
             TVChannelSourceType.URL.value -> 0
-            TVChannelSourceType.FILE.value -> 1
-            TVChannelSourceType.STREAM.value -> 2
+            TVChannelSourceType.STREAM.value -> 1
+            TVChannelSourceType.FILE.value -> 2
             else -> 0
         }
     }
@@ -97,8 +97,8 @@ class GuideActivity : IptvBaseActivity<CastActivityGuideBinding>() {
 
         override fun createFragment(position: Int): Fragment = when (position) {
             0 -> GuideUrlFragment()
-            1 -> GuideFileFragment()
-            2 -> GuideStreamFragment()
+            1 -> GuideStreamFragment()
+            2 -> GuideFileFragment()
             else -> GuideUrlFragment()
         }
     }

@@ -5,20 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
-    android:paddingHorizontal="@dimen/_12sdp"
-    android:paddingVertical="@dimen/_10sdp">
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp">
 
-    <ImageView
+    <com.genesys.shape.view.ShapeImageView
         android:id="@+id/imgVideoThumb"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
         android:scaleType="centerCrop"
         android:padding="@dimen/_12sdp"
         android:src="@drawable/cast_img_thumb"
+        app:shape_radius="12dp"
+        app:shape_solidColor="@color/cast_cast_panel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/cast_color_E4E5E5" />
+        android:background="@color/cast_cast_panel" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -36,10 +38,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:fontFamily="@font/cast_poppins_medium"
+            android:fontFamily="@font/inter_semibold"
             android:maxLines="1"
-            android:textColor="@color/cast_color_263238"
-            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/cast_home_text_primary"
+            android:textSize="14sp"
             tools:text="Sample Video TitSample Video TitlSample Video TitlSample Video TitlSample Video TitlSample Video Titlle" />
 
         <TextView
@@ -47,10 +49,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
-            android:fontFamily="@font/cast_poppins_regular"
+            android:fontFamily="@font/inter_regular"
             android:maxLines="1"
-            android:textColor="@color/cast_color_9A9A9A"
-            android:textSize="@dimen/_9sdp"
+            android:textColor="@color/cast_home_text_secondary"
+            android:textSize="12sp"
             tools:text="1080p • MP4" />
     </LinearLayout>
 
@@ -59,6 +61,7 @@
         android:layout_width="@dimen/_16sdp"
         android:layout_height="@dimen/_16sdp"
         android:src="@drawable/cast_ic_arrow_right"
+        app:tint="@color/cast_cast_accent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +69,7 @@
     <View
         android:layout_width="0dp"
         android:layout_height="@dimen/_1sdp"
-        android:background="@color/cast_color_E4E5E5"
+        android:background="@color/cast_cast_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/cast_color_FFFFFFFF"
+    android:background="@drawable/cast_bg_iptv_sheet"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="@dimen/_8sdp">
@@ -12,18 +12,19 @@
         android:id="@+id/tvVideoSheetTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/cast_poppins_semi_bold"
+        android:fontFamily="@font/inter_semibold"
         android:gravity="center"
-        android:paddingHorizontal="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_8sdp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp"
         android:text="@string/cast_found_videos"
-        android:textColor="@color/cast_color_263238"
-        android:textSize="@dimen/_12sdp" />
+        android:textColor="@color/cast_home_text_primary"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
-        android:background="@color/cast_color_E4E5E5" />
+        android:background="@color/cast_cast_border" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewVideos"
