@@ -17,15 +17,13 @@ abstract class BaseBottomSheetDialogFragment<VB : ViewDataBinding> : BottomSheet
         savedInstanceState: Bundle?
     ): View? {
         val layoutView = getLayoutFragment()
-        if (!::mBinding.isInitialized) {
-            mBinding = DataBindingUtil.inflate(inflater, layoutView, container, false)
-        }
-        mBinding.lifecycleOwner = viewLifecycleOwner
+        mBinding = DataBindingUtil.inflate(inflater, layoutView, container, false)
         return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mBinding.lifecycleOwner = viewLifecycleOwner
         initViews()
         onResizeViews()
         onClickViews()
