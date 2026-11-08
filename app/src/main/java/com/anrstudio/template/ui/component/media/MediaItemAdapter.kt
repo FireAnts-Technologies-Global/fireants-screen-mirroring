@@ -51,10 +51,13 @@ class MediaItemAdapter(
         private fun updateAspectRatio(type: MediaType) {
             val layoutParams = binding.flThumbnail.layoutParams as androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
             layoutParams.dimensionRatio = when (type) {
-                MediaType.IMAGE -> "H,3:4"
-                MediaType.VIDEO -> "H,4:5"
-                MediaType.AUDIO -> "H,3:4"
+                MediaType.IMAGE -> "H,101:112"
+                MediaType.VIDEO -> "H,79:90"
+                MediaType.AUDIO -> "H,101:112"
             }
+            layoutParams.height = binding.root.resources.getDimensionPixelSize(
+                if (type == MediaType.VIDEO) R.dimen.cast_media_tile_video_height else R.dimen.cast_media_tile_photo_height
+            )
             binding.flThumbnail.layoutParams = layoutParams
         }
 
@@ -73,6 +76,7 @@ class MediaItemAdapter(
         private fun bindVideo(item: MediaItem) {
             binding.flThumbnail.setBackgroundColor(0)
             binding.imgThumbnail.scaleType = android.widget.ImageView.ScaleType.CENTER_CROP
+            binding.imgPlay.setColorFilter(android.graphics.Color.WHITE)
             Glide.with(binding.imgThumbnail)
                 .load(item.uri.toUri())
                 .centerCrop()

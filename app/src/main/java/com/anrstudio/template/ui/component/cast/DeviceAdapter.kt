@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.core.content.ContextCompat
 import com.anrstudio.template.R
 import com.anrstudio.template.databinding.CastItemDeviceBinding
 import com.anrstudio.template.domain.model.CastDevice
@@ -13,6 +14,7 @@ import com.anrstudio.template.domain.model.CastDevice
 class DeviceAdapter(
     private val onDeviceClick: (CastDevice) -> Unit,
     private val onDeviceLongClick: ((CastDevice) -> Unit)? = null,
+    private val mediaPickerStyle: Boolean = false,
 ) : ListAdapter<CastDevice, DeviceAdapter.ViewHolder>(DiffCallback()) {
 
     var connectingId: String? = null
@@ -51,9 +53,42 @@ class DeviceAdapter(
             binding.tvModelName.text = device.modelName
 
             binding.rlCast.setBackgroundResource(
-                if (isSelected) R.drawable.cast_bg_cast_device_selected
-                else R.drawable.cast_bg_cast_device
+                when {
+                    mediaPickerStyle && isSelected -> R.drawable.cast_bg_media_device_selected
+                    mediaPickerStyle -> R.drawable.cast_bg_media_device_default
+                    isSelected -> R.drawable.cast_bg_cast_device_selected
+                    else -> R.drawable.cast_bg_cast_device
+                }
             )
+
+            if (mediaPickerStyle) {
+                binding.rlCast.layoutParams = binding.rlCast.layoutParams.apply {
+                    height = itemView.resources.getDimensionPixelSize(R.dimen.cast_media_device_row_height)
+                }
+                binding.flDeviceIcon.layoutParams = binding.flDeviceIcon.layoutParams.apply {
+                    val iconTileSize = itemView.resources.getDimensionPixelSize(R.dimen.cast_media_device_icon_tile)
+                    width = iconTileSize
+                    height = iconTileSize
+                }
+                binding.imgCast.layoutParams = binding.imgCast.layoutParams.apply {
+                    val iconSize = itemView.resources.getDimensionPixelSize(R.dimen.cast_media_device_icon)
+                    width = iconSize
+                    height = iconSize
+                }
+                binding.flDeviceIcon.setBackgroundResource(
+                    if (isSelected) R.drawable.cast_bg_media_device_icon_selected
+                    else R.drawable.cast_bg_media_device_icon_idle
+                )
+                binding.imgCast.setColorFilter(
+                    ContextCompat.getColor(itemView.context, if (isSelected) android.R.color.white else R.color.cast_cast_secondary_text)
+                )
+                (binding.root.layoutParams as? RecyclerView.LayoutParams)?.let { params ->
+                    params.bottomMargin = if (bindingAdapterPosition < itemCount - 1) {
+                        itemView.resources.getDimensionPixelSize(R.dimen.cast_media_device_row_gap)
+                    } else 0
+                    binding.root.layoutParams = params
+                }
+            }
 
             if (isConnecting) {
                 binding.imgIsConnect.visibility = View.INVISIBLE

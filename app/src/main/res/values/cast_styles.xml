@@ -5,6 +5,28 @@
         <item name="cornerSize">@dimen/_16sdp</item>
     </style>
 
+    <style name="cast_MediaPreviewShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/cast_media_preview_radius</item>
+    </style>
+
+    <style name="cast_MediaTileShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/cast_media_tile_radius</item>
+    </style>
+
+    <style name="cast_MediaTab">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/cast_bg_media_nav_item_selected</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/cast_cast_secondary_text</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="cast_text_regular">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

@@ -26,4 +26,17 @@
     <dimen name="cast_cast_text_16">16sp</dimen>
     <dimen name="cast_cast_text_19">19sp</dimen>
     <dimen name="cast_cast_text_22">22sp</dimen>
+    <dimen name="cast_media_tile_photo_height">112dp</dimen>
+    <dimen name="cast_media_tile_video_height">180dp</dimen>
+    <dimen name="cast_media_tile_radius">12dp</dimen>
+    <dimen name="cast_media_grid_spacing">12dp</dimen>
+    <dimen name="cast_media_grid_horizontal_padding">16dp</dimen>
+    <dimen name="cast_media_nav_height">60dp</dimen>
+    <dimen name="cast_media_nav_item_height">44dp</dimen>
+    <dimen name="cast_media_preview_radius">22dp</dimen>
+    <dimen name="cast_media_preview_button_height">49dp</dimen>
+    <dimen name="cast_media_device_row_height">56dp</dimen>
+    <dimen name="cast_media_device_icon_tile">40dp</dimen>
+    <dimen name="cast_media_device_icon">24dp</dimen>
+    <dimen name="cast_media_device_row_gap">4dp</dimen>
 </resources>

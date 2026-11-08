@@ -84,14 +84,18 @@ class MediaPickerViewModel @Inject constructor(
     }
 
     fun loadMedia(type: MediaType) {
+        loadMedia(type.toMediaTab())
+    }
+
+    fun loadMedia(tab: MediaTab) {
         viewModelScope.launch {
             _uiState.value = MediaUiState.Loading
-            when (val result = getMediaByTypeUseCase(type.toMediaTab())) {
+            when (val result = getMediaByTypeUseCase(tab)) {
                 is DataResult.Success -> {
                     _uiState.value = if (result.data.isEmpty()) {
                         MediaUiState.Empty
                     } else {
-                        MediaUiState.Content(result.data, type)
+                        MediaUiState.Content(result.data, tab.toMediaType())
                     }
                 }
                 is DataResult.Error -> _uiState.value = MediaUiState.Empty
@@ -184,5 +188,11 @@ class MediaPickerViewModel @Inject constructor(
         MediaType.VIDEO -> MediaTab.VIDEOS
         MediaType.IMAGE -> MediaTab.PHOTOS
         MediaType.AUDIO -> MediaTab.AUDIO
+    }
+
+    private fun MediaTab.toMediaType() = when (this) {
+        MediaTab.VIDEOS -> MediaType.VIDEO
+        MediaTab.AUDIO -> MediaType.AUDIO
+        else -> MediaType.IMAGE
     }
 }

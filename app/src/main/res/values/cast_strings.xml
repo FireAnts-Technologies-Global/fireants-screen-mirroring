@@ -51,6 +51,15 @@
     <string name="cast_permission_media_title">Access Media Files</string>
     <string name="cast_permission_media_message">Allow Cast to TV to access your photos, videos, and audio so you can cast them directly to your TV.</string>
     <string name="cast_media_empty">No media found</string>
+    <string name="cast_media_photos">Photos</string>
+    <string name="cast_media_videos">Videos</string>
+    <string name="cast_media_recent">Recent</string>
+    <string name="cast_media_favorites">Favorites</string>
+    <string name="cast_media_portrait">Portrait</string>
+    <string name="cast_media_cast_photo">Cast photo</string>
+    <string name="cast_media_photo_preview">Selected photo preview</string>
+    <string name="cast_media_title_photos">Cast Image</string>
+    <string name="cast_media_title_videos">Cast Video</string>
     <string name="cast_cast_connecting">Casting…</string>
     <string name="cast_screen_mirror_start">Start Screen Mirror</string>
     <string name="cast_screen_mirror_stop">Stop Mirror</string>
