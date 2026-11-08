@@ -33,7 +33,8 @@ class GlobalApp : AdsMultiDexApplication() {
         var isInPIP = false
     }
 
-    @javax.inject.Inject lateinit var castRuntime: com.anrstudio.template.app.CastRuntime
+    @javax.inject.Inject
+    lateinit var castRuntime: CastRuntime
 
     override fun onCreate() {
         super.onCreate()

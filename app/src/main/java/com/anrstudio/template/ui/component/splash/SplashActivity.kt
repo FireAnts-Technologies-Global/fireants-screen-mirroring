@@ -23,6 +23,7 @@ import com.anrstudio.template.ui.bases.StatusBarConfig
 import com.anrstudio.template.ui.bases.ext.goneView
 import com.anrstudio.template.ui.bases.ext.isNetwork
 import com.anrstudio.template.utils.Routes
+import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")
@@ -50,6 +51,7 @@ class SplashActivity : BaseActivityWithBanner<ActivitySplashBinding>(), RemoteCo
 
     override fun initViews() {
         super.initViews()
+        Glide.with(this).load(R.drawable.bg_splash).centerCrop().into(mBinding.imgBg)
         AdsManager.clearAll()
         RemoteConfigUtils.init(this, this)
         consentHandler = ConsentHandler(

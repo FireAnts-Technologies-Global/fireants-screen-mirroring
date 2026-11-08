@@ -8,6 +8,11 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
+        <ImageView
+            android:id="@+id/imgBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
         <com.genesys.shape.view.ShapeImageView
             android:id="@+id/img_splash"
             android:layout_width="100dp"
@@ -19,6 +24,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/rounded_corner" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_23sdp"
+            app:layout_constraintTop_toBottomOf="@id/img_splash" />
 
         <com.anrstudio.template.ui.component.custom.LoadingDotsTextView
             android:id="@+id/txtAds"

@@ -9,7 +9,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_bg_main"
+        android:background="#FFFFFF"
         tools:context=".ui.component.language.LanguageActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
