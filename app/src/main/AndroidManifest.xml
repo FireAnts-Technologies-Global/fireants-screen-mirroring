@@ -75,18 +75,6 @@
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name=".ui.component.uninstall.ConfirmUninstallActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
-            android:name=".ui.component.uninstall.SurveyActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
             android:name=".ui.component.welcome.WelcomeActivity"
             android:exported="true"
             android:screenOrientation="portrait"

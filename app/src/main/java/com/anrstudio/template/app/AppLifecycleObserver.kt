@@ -8,7 +8,6 @@ import com.anrstudio.ads.billing.AppPurchase
 import com.anrstudio.template.ui.component.language.LanguageActivity
 import com.anrstudio.template.ui.component.onboarding.OnBoardingActivity
 import com.anrstudio.template.ui.component.splash.SplashActivity
-import com.anrstudio.template.ui.component.uninstall.SurveyActivity
 import com.anrstudio.template.ui.component.welcome.WelcomeActivity
 import com.anrstudio.template.utils.Routes
 
@@ -19,7 +18,6 @@ class AppLifecycleObserver : DefaultLifecycleObserver {
         LanguageActivity::class.java,
         OnBoardingActivity::class.java,
         WelcomeActivity::class.java,
-        SurveyActivity::class.java,
     )
 
     override fun onStart(owner: LifecycleOwner) {

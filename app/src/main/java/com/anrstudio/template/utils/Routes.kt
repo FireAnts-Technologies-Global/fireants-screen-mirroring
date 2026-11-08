@@ -9,7 +9,6 @@ import com.anrstudio.template.ui.component.main.MainActivity
 import com.anrstudio.template.ui.component.onboarding.OnBoardingActivity
 import com.anrstudio.template.ui.component.setting.SettingActivity
 import com.anrstudio.template.ui.component.splash.SplashActivity
-import com.anrstudio.template.ui.component.uninstall.SurveyActivity
 import com.anrstudio.template.ui.component.welcome.WelcomeActivity
 
 object Routes {
@@ -17,7 +16,6 @@ object Routes {
         Intent(fromActivity, MainActivity::class.java).apply {
             putExtra(AppConstants.KEY_TRACKING_SCREEN_FROM, fromActivity::class.java.simpleName)
             fromActivity.startActivity(this)
-            fromActivity.applyOpenTransition()
         }
 
     fun startWelcomeActivity(fromActivity: Activity) {
@@ -30,7 +28,6 @@ object Routes {
         Intent(fromActivity, OnBoardingActivity::class.java).apply {
             putExtra(AppConstants.KEY_TRACKING_SCREEN_FROM, fromActivity::class.java.simpleName)
             fromActivity.startActivity(this)
-            fromActivity.applyOpenTransition()
         }
 
     fun startLanguageActivity(fromActivity: Activity, bundle: Bundle?) =
@@ -38,7 +35,6 @@ object Routes {
             putExtra(AppConstants.KEY_TRACKING_SCREEN_FROM, fromActivity::class.java.simpleName)
             bundle?.let { putExtras(it) }
             fromActivity.startActivity(this)
-            fromActivity.applyOpenTransition()
         }
 
     fun startSplashActivity(fromActivity: Activity) =
@@ -47,31 +43,15 @@ object Routes {
             fromActivity.startActivity(this)
         }
 
-    fun startSurveyActivity(fromActivity: Activity) =
-        Intent(fromActivity, SurveyActivity::class.java).apply {
-            putExtra(AppConstants.KEY_TRACKING_SCREEN_FROM, fromActivity::class.java.simpleName)
-            fromActivity.startActivity(this)
-            fromActivity.applyOpenTransition()
-        }
 
     fun startSettingActivity(fromActivity: Activity) =
         Intent(fromActivity, SettingActivity::class.java).apply {
             putExtra(AppConstants.KEY_TRACKING_SCREEN_FROM, fromActivity::class.java.simpleName)
             fromActivity.startActivity(this)
-            fromActivity.applyOpenTransition()
         }
 
     fun addTrackingMoveScreen(fromActivity: String, toActivity: String) {
         ANRTrackingHelper.fromScreenToScreen(fromActivity, toActivity)
     }
 
-}
-
-fun Activity.applyOpenTransition() {
-//    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-//        overrideActivityTransition(Activity.OVERRIDE_TRANSITION_OPEN, R.anim.slide_in_right, R.anim.slide_out_left)
-//    } else {
-//        @Suppress("DEPRECATION")
-//        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-//    }
 }
