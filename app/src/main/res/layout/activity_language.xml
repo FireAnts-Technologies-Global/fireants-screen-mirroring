@@ -39,23 +39,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="HardcodedText" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/tvDone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_11sdp"
-                android:background="@drawable/bg_done_selector"
-                android:fontFamily="@font/bold"
-                android:paddingHorizontal="@dimen/_12sdp"
-                android:textAllCaps="true"
-                android:paddingVertical="@dimen/_5sdp"
-                android:text="Next"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_11sdp"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/cast_ic_figma_check"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvTitle"
-                tools:ignore="HardcodedText" />
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

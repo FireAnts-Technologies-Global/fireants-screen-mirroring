@@ -1,5 +1,6 @@
 package com.hyper.castwave.ui.component.language
 
+import androidx.core.view.isVisible
 import com.anrstudio.ads.ads.wrapper.ApNativeAd
 import com.hyper.castwave.R
 import com.hyper.castwave.ads.AdRemoteConfig
@@ -98,14 +99,12 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
     }
 
     private fun initLayout() {
-        mBinding.tvDone.visibleView()
-
         if (fromSetting) {
-            mBinding.tvDone.isEnabled = true
+            mBinding.tvDone.visibleView()
             timeDelayDoneButton = 0
             mBinding.imgBack.visibleView()
         } else {
-            mBinding.tvDone.isEnabled = false
+            mBinding.tvDone.invisibleView()
             mBinding.imgBack.goneView()
         }
     }
@@ -198,14 +197,14 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
     }
 
     private fun enableDoneButton() {
-        if (mBinding.tvDone.isEnabled) return
+        if (mBinding.tvDone.isVisible) return
 
         if (shouldDelayDoneButton && timeDelayDoneButton > 0) {
             mBinding.tvDone.postDelayed({
-                mBinding.tvDone.isEnabled = true
+                mBinding.tvDone.visibleView()
             }, timeDelayDoneButton)
         } else {
-            mBinding.tvDone.isEnabled = true
+            mBinding.tvDone.visibleView()
         }
     }
 
