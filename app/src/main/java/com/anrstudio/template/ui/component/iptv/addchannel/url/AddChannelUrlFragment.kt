@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
 
     private val viewModel: AddChannelViewModel by activityViewModels()
+    private var suggestedPlaylistName: String = ""
 
     override fun getLayoutFragment(): Int = R.layout.cast_fragment_add_channel_url
 
@@ -35,12 +36,7 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
         super.observerData()
         lifecycleScope.launch {
             viewModel.allChannelNames.collect { names ->
-                val listName = names.distinct()
-                if (listName.isEmpty()) {
-                    mBinding.etPlaylistName.setText(getString(R.string.cast_playlist_1))
-                } else {
-                    mBinding.etPlaylistName.setText(generateNextPlaylistName(listName))
-                }
+                suggestedPlaylistName = generateNextPlaylistName(names.distinct())
             }
         }
     }
@@ -89,6 +85,7 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
     private fun setupClickListeners() {
         mBinding.btnAddPlaylist.setOnClickListener {
             val playlistName = mBinding.etPlaylistName.text?.toString()?.trim().orEmpty()
+                .ifBlank { suggestedPlaylistName.ifBlank { getString(R.string.cast_playlist_1) } }
             val playlistUrl = mBinding.etPlaylistUrl.text?.toString()?.trim().orEmpty()
 
             if (!ValidationHelper.validatePlaylistName(this, playlistName)) return@setOnClickListener

@@ -14,24 +14,34 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/_4sdp"
         android:paddingBottom="@dimen/_12sdp"
-        android:background="@drawable/cast_bg_video_player_top"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="64dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/cast_bg_player_controller_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btnCloseFull"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
             android:background="@android:color/transparent"
-            android:padding="@dimen/_10sdp"
-            android:scaleType="centerCrop"
+            android:padding="8dp"
+            android:scaleType="centerInside"
             android:src="@drawable/cast_ic_close"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNameFull"
+            android:visibility="gone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -50,6 +60,7 @@
 
         <TextView
             android:id="@+id/tvIndexFull"
+            android:visibility="gone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_40sdp"
@@ -68,47 +79,50 @@
 
         <ImageButton
             android:id="@+id/btnFavoriteFull"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:padding="@dimen/_10sdp"
             android:background="@android:color/transparent"
             android:src="@drawable/cast_ic_favorite"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnListFull"/>
-
-        <ImageButton
-            android:id="@+id/btnListFull"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:padding="@dimen/_10sdp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/cast_ic_list"
+            android:visibility="gone"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/btnListFull"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/cast_ic_list"
+            android:scaleType="centerInside"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@id/btnCloseFull"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/btnPrevFull"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/cast_ic_prev"
-        android:scaleType="centerCrop"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/cast_bg_player_control_button"
+        android:src="@drawable/cast_ic_player_seek_back"
+        android:scaleType="centerInside"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnToggleFull"
-        android:layout_marginEnd="@dimen/_32sdp"/>
+        android:layout_marginEnd="12dp" />
 
     <ImageButton
         android:id="@+id/btnToggleFull"
-        android:layout_width="@dimen/_48sdp"
-        android:layout_height="@dimen/_48sdp"
-        android:background="@android:color/transparent"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/cast_bg_player_control_button"
         android:contentDescription="Play/Pause"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         android:src="@drawable/cast_ic_toggle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,32 +131,37 @@
 
     <ImageButton
         android:id="@+id/btnNextFull"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:scaleType="centerCrop"
-        android:background="@android:color/transparent"
-        android:src="@drawable/cast_ic_next"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:scaleType="centerInside"
+        android:background="@drawable/cast_bg_player_control_button"
+        android:src="@drawable/cast_ic_player_seek_forward"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnToggleFull"
-        android:layout_marginStart="@dimen/_32sdp" />
+        android:layout_marginStart="12dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutBottomFull"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/_8sdp"
-        android:paddingTop="@dimen/_12sdp"
-        android:background="@drawable/cast_bg_video_player_bottom"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.media3.ui.DefaultTimeBar
             android:id="@id/exo_progress"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_16sdp"
-            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_height="28dp"
+            android:layout_marginHorizontal="16dp"
             app:bar_gravity="center"
-            android:layout_marginBottom="@dimen/_12sdp"
+            app:bar_height="4dp"
+            app:buffered_color="#FFFFFFFF"
+            app:played_color="#FFFFFFFF"
+            app:scrubber_disabled_size="0dp"
+            app:scrubber_dragged_size="0dp"
+            app:scrubber_enabled_size="0dp"
+            app:unplayed_color="#FFFFFFFF"
+            android:layout_marginBottom="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/btnCastFull" />
@@ -153,6 +172,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnPipFull"
             app:layout_constraintBottom_toBottomOf="parent">
@@ -192,6 +212,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@id/btnCastFull"
             app:layout_constraintEnd_toStartOf="@id/btnTimerFull"
             app:layout_constraintBottom_toBottomOf="@id/btnCastFull">
@@ -219,6 +240,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@id/btnPipFull"
             app:layout_constraintEnd_toStartOf="@id/btnLockFull"
             app:layout_constraintBottom_toBottomOf="@id/btnCastFull">
@@ -246,6 +268,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@id/btnTimerFull"
             app:layout_constraintEnd_toStartOf="@id/btnFullScreenFull"
             app:layout_constraintBottom_toBottomOf="@id/btnCastFull">
@@ -269,18 +292,20 @@
 
         <LinearLayout
             android:id="@+id/btnFullScreenFull"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/cast_bg_player_control_button"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_constraintStart_toEndOf="@id/btnLockFull"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/btnCastFull">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:src="@drawable/cast_ic_video_window"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/cast_ic_player_fullscreen"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -290,7 +315,8 @@
                 android:ellipsize="end"
                 android:paddingVertical="@dimen/_2sdp"
                 android:paddingHorizontal="@dimen/_4sdp"
-                style="@style/cast_text_regular_8"/>
+                style="@style/cast_text_regular_8"
+                android:visibility="gone" />
 
         </LinearLayout>
 

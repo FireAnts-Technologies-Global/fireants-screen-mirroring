@@ -3,11 +3,11 @@
     android:shape="rectangle">
     <gradient
         android:angle="270"
-        android:endColor="@color/cast_color_how_to_use_badge_end"
-        android:startColor="@color/cast_color_how_to_use_badge_start"
+        android:endColor="@color/cast_cast_action_end"
+        android:startColor="@color/cast_cast_action_start"
         android:type="linear" />
     <stroke
         android:width="0.25dp"
-        android:color="#CCFFFFFF" />
-    <corners android:radius="12dp" />
+        android:color="#00FFFFFF" />
+    <corners android:radius="8dp" />
 </shape>

@@ -9,6 +9,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.graphics.Color
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -34,6 +35,7 @@ import com.anrstudio.template.databinding.CastActivityPlayListBinding
 import com.anrstudio.template.data.iptv.model.DataState
 import com.anrstudio.template.data.iptv.model.TVChannel
 import com.anrstudio.template.ui.component.iptv.IptvBaseActivity
+import com.anrstudio.template.ui.bases.StatusBarConfig
 import com.anrstudio.template.ui.bases.ext.observeFlow
 import com.anrstudio.template.ui.bases.ext.parcelable
 import com.anrstudio.template.ui.component.iptv.player.adapter.TVChannelAdapter
@@ -79,6 +81,18 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
     VideoTimerDialog.VideoTimerDialogListener {
 
     override fun getLayoutActivity() = R.layout.cast_activity_play_list
+
+    override val statusBarConfig = StatusBarConfig(
+        barColor = Color.rgb(234, 242, 255),
+        lightIcons = true,
+    )
+
+    override fun requestWindow() {
+        super.requestWindow()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            window.isStatusBarContrastEnforced = false
+        }
+    }
 
     companion object {
         private const val TAG = "PlayListActivity"
@@ -177,17 +191,20 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
 
     private var runnableController = Runnable {
         try {
-            mBinding.playerView.hideController()
-            mBinding.playerView.useController = false
-
-            mBinding.playerViewFull.hideController()
-            mBinding.playerViewFull.useController = false
+            if (!isFullScreen) {
+                btnCast?.goneView()
+                mBinding.playerView.findViewById<View>(androidx.media3.ui.R.id.exo_progress)?.goneView()
+                updateStateVideoController(false)
+                mBinding.root.findViewById<ImageButton>(R.id.btnPlayOverlay)?.visibleView()
+                mBinding.btnFullScreenPersistent.visibleView()
+            }
         } catch (_: Exception) {}
     }
 
     private var showLockJob: Job? = null
 
     private var isFullScreen = false
+    private var playerRootPaddingTop = 0
 
     private var castHelper: CastHelper? = null
     private var mediaRouteButton: MediaRouteButton? = null
@@ -225,7 +242,13 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
         groupType = intent.getStringExtra(EXTRA_GROUP_TYPE) ?: IptvAppConstants.GROUP_TYPE_CATEGORY
         filterType = intent.getStringExtra(EXTRA_FILTER_TYPE) ?: ""
         val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-        windowInsetsController.hide(android.view.WindowInsets.Type.statusBars() or android.view.WindowInsets.Type.navigationBars())
+        window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        windowInsetsController.hide(android.view.WindowInsets.Type.navigationBars())
+        windowInsetsController.isAppearanceLightStatusBars = true
+        window.statusBarColor = getColor(R.color.cast_cast_background_start)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            window.isStatusBarContrastEnforced = false
+        }
         windowInsetsController.systemBarsBehavior =
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         if (tvChanel == null) {
@@ -442,17 +465,25 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
             mBinding.playerViewFull.showController()
 
             mBinding.playerView.setControllerVisibilityListener(PlayerView.ControllerVisibilityListener { visibility ->
-                handlerController?.removeCallbacksAndMessages(null)
+                handlerController?.removeCallbacks(runnableController)
+                mBinding.btnFullScreenPersistent.visibility = if (visibility == View.VISIBLE || isFullScreen) {
+                    View.GONE
+                } else {
+                    View.VISIBLE
+                }
                 if (visibility == View.VISIBLE) {
+                    updateStateVideoController(true)
+                    mBinding.root.findViewById<ImageButton>(R.id.btnPlayOverlay)?.goneView()
+                    btnCast?.visibleView()
+                    mBinding.playerView.findViewById<View>(androidx.media3.ui.R.id.exo_progress)?.visibleView()
                     handlerController?.postDelayed(runnableController, TIME_SHOW_CONTROLLER)
                 }
             })
             mBinding.playerViewFull.setControllerVisibilityListener(PlayerView.ControllerVisibilityListener { visibility ->
-                handlerController?.removeCallbacksAndMessages(null)
-                if (visibility == View.VISIBLE) {
-                    handlerController?.postDelayed(runnableController, TIME_SHOW_CONTROLLER)
-                }
             })
+            if (!isFullScreen) {
+                handlerController?.postDelayed(runnableController, TIME_SHOW_CONTROLLER)
+            }
 
             updateStateVideoController(false)
             player = ExoPlayer.Builder(this).setMediaSourceFactory(mediaSourceFactory).build()
@@ -484,6 +515,10 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
 
                             initActionForController(true)
                             updateStateVideoController(true)
+                            if (!isFullScreen) {
+                                handlerController?.removeCallbacks(runnableController)
+                                handlerController?.postDelayed(runnableController, TIME_SHOW_CONTROLLER)
+                            }
                         }
 
                         Player.STATE_ENDED -> {
@@ -576,6 +611,15 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
         btnFullScreenFull = mBinding.playerViewFull.findViewById(R.id.btnFullScreenFull)
 
         btnListFull = mBinding.playerViewFull.findViewById(R.id.btnListFull)
+
+        mBinding.root.findViewById<ImageButton>(R.id.btnPlayOverlay)?.setOnClickListener {
+            togglePlayer()
+            mBinding.playerView.showController()
+        }
+
+        mBinding.btnFullScreenPersistent.setOnClickListener {
+            switchPlayerView(true)
+        }
 
         btnClose?.click {
             onActivityBackPressed()
@@ -823,9 +867,33 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
                     helper.updatePlayerView(toView, newMediaRouteButton)
                 }
                 val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-                windowInsetsController.hide(android.view.WindowInsets.Type.statusBars() or android.view.WindowInsets.Type.navigationBars())
+                if (isFullScreen) {
+                    windowInsetsController.hide(android.view.WindowInsets.Type.statusBars() or android.view.WindowInsets.Type.navigationBars())
+                    windowInsetsController.isAppearanceLightStatusBars = false
+                } else {
+                    windowInsetsController.show(android.view.WindowInsets.Type.statusBars())
+                    windowInsetsController.hide(android.view.WindowInsets.Type.navigationBars())
+                    windowInsetsController.isAppearanceLightStatusBars = true
+                    window.statusBarColor = getColor(R.color.cast_cast_background_start)
+                }
                 windowInsetsController.systemBarsBehavior =
                     WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                if (isFullScreen) {
+                    playerRootPaddingTop = mBinding.root.paddingTop
+                    mBinding.root.setPadding(
+                        mBinding.root.paddingLeft,
+                        0,
+                        mBinding.root.paddingRight,
+                        mBinding.root.paddingBottom,
+                    )
+                } else {
+                    mBinding.root.setPadding(
+                        mBinding.root.paddingLeft,
+                        playerRootPaddingTop,
+                        mBinding.root.paddingRight,
+                        mBinding.root.paddingBottom,
+                    )
+                }
 
                 mBinding.playerView.controllerShowTimeoutMs = 0
                 mBinding.playerView.useController = true

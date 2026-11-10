@@ -24,4 +24,5 @@
     <color name="cast_media_scrim">#66000000</color>
     <color name="cast_media_preview_border">#D7F0E1</color>
     <color name="cast_media_device_icon_idle">#C4CBD3</color>
+    <color name="cast_player_control_overlay">#C709101F</color>
 </resources>

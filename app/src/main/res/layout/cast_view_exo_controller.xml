@@ -14,24 +14,26 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/_4sdp"
         android:paddingBottom="@dimen/_12sdp"
-        android:background="@drawable/cast_bg_video_player_top"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/btnClose"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:background="@android:color/transparent"
             android:padding="@dimen/_10sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/cast_ic_close"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvName"
+            android:visibility="gone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -49,6 +51,7 @@
 
         <TextView
             android:id="@+id/tvIndex"
+            android:visibility="gone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/tvName"
@@ -72,6 +75,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/cast_ic_favorite"
             android:scaleType="centerCrop"
+            android:visibility="gone"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -79,23 +83,23 @@
 
     <ImageButton
         android:id="@+id/btnPrev"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/cast_ic_prev"
-        android:scaleType="centerCrop"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/cast_bg_player_control_button"
+        android:src="@drawable/cast_ic_player_seek_back"
+        android:scaleType="centerInside"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnToggle"
-        android:layout_marginEnd="@dimen/_32sdp"/>
+        android:layout_marginEnd="12dp" />
 
     <ImageButton
         android:id="@+id/btnToggle"
-        android:layout_width="@dimen/_48sdp"
-        android:layout_height="@dimen/_48sdp"
-        android:background="@android:color/transparent"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/cast_bg_player_control_button"
         android:contentDescription="Play/Pause"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         android:src="@drawable/cast_ic_toggle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,45 +108,55 @@
 
     <ImageButton
         android:id="@+id/btnNext"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:scaleType="centerCrop"
-        android:background="@android:color/transparent"
-        android:src="@drawable/cast_ic_next"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:scaleType="centerInside"
+        android:background="@drawable/cast_bg_player_control_button"
+        android:src="@drawable/cast_ic_player_seek_forward"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnToggle"
-        android:layout_marginStart="@dimen/_32sdp" />
+        android:layout_marginStart="12dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutBottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/_8sdp"
-        android:paddingTop="@dimen/_12sdp"
-        android:background="@drawable/cast_bg_video_player_bottom"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.media3.ui.DefaultTimeBar
             android:id="@id/exo_progress"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_16sdp"
-            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_height="28dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="0dp"
             app:bar_gravity="center"
-            android:layout_marginBottom="@dimen/_12sdp"
+            app:bar_height="4dp"
+            app:buffered_color="#FFFFFFFF"
+            app:played_color="#FFFFFFFF"
+            app:scrubber_disabled_size="0dp"
+            app:scrubber_dragged_size="0dp"
+            app:scrubber_enabled_size="0dp"
+            app:unplayed_color="#FFFFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btnCast" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <LinearLayout
             android:id="@+id/btnCast"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/cast_bg_player_controller_toolbar_portrait"
             android:orientation="vertical"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnPip"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <FrameLayout
                 android:layout_width="@dimen/_20sdp"
@@ -169,7 +183,8 @@
                 android:ellipsize="end"
                 android:paddingVertical="@dimen/_2sdp"
                 android:paddingHorizontal="@dimen/_4sdp"
-                style="@style/cast_text_regular_8"/>
+                style="@style/cast_text_regular_8"
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -179,9 +194,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_constraintStart_toEndOf="@id/btnCast"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnTimer"
-            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/_20sdp"
@@ -206,9 +222,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@id/btnPip"
             app:layout_constraintEnd_toStartOf="@id/btnLock"
-            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/_20sdp"
@@ -233,9 +250,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@id/btnTimer"
             app:layout_constraintEnd_toStartOf="@id/btnFullScreen"
-            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/_20sdp"
@@ -256,18 +274,20 @@
 
         <LinearLayout
             android:id="@+id/btnFullScreen"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/cast_bg_player_control_button"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_constraintStart_toEndOf="@id/btnLock"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/btnCast">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:src="@drawable/cast_ic_video_fullscreen"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/cast_ic_player_fullscreen"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -277,7 +297,8 @@
                 android:ellipsize="end"
                 android:paddingVertical="@dimen/_2sdp"
                 android:paddingHorizontal="@dimen/_4sdp"
-                style="@style/cast_text_regular_8"/>
+                style="@style/cast_text_regular_8"
+                android:visibility="gone" />
 
         </LinearLayout>
 

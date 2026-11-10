@@ -23,7 +23,7 @@
     <string name="cast_other">Browser on TV,PC, PS4 and other boxes.</string>
     <string name="cast_please_check_your_wifi_connection_devices">Please check your Wi-Fi connection &amp; devices</string>
     <string name="cast_pin_dialog_title">Enter verification code</string>
-    <string name="cast_pin_dialog_subtitle">Enter the PIN displayed on your TV screen to connect to %s</string>
+    <string name="cast_pin_dialog_subtitle">Enter the six-digit code shown on your TV.</string>
     <string name="cast_pin_dialog_confirm">Verify</string>
     <string name="cast_pin_dialog_cancel">Cancel</string>
     <string name="cast_pin_error_incomplete">Please enter the 4-digit PIN</string>
@@ -204,11 +204,11 @@
     <string name="cast_import_stream_link">Import Stream Link</string>
     <string name="cast_import_url">Import URL</string>
     <string name="cast_import_file">Import File</string>
-    <string name="cast_import_channels">Import Channels</string>
-    <string name="cast_choose_m3u_file">Choose M3U File</string>
+    <string name="cast_import_channels">Import channels</string>
+    <string name="cast_choose_m3u_file">Choose M3U file</string>
     <string name="cast_supported_m3u_formats">Supported formats: .m3u and .m3u8</string>
-    <string name="cast_enter_playlist_name_hint">Enter playlist name here...</string>
-    <string name="cast_paste_url_here">Paste URL here</string>
+    <string name="cast_enter_playlist_name_hint">Enter playlist name</string>
+    <string name="cast_paste_url_here">Paste playlist URL</string>
     <string name="cast_index_value" translatable="false">%1$s/%2$s</string>
     <string name="cast_network_error">Network error</string>
     <string name="cast_pip_not_support">Your device does not support picture-in-picture mode.</string>
@@ -239,6 +239,7 @@
     <string name="cast_add_channel_to_playlist">Add channel to playlist</string>
 
     <string name="cast_search">Search</string>
+    <string name="cast_player_search_channels">Search channels</string>
 
     <string name="cast_instruction">Instruction</string>
 

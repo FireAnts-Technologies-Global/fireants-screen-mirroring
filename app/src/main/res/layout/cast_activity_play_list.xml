@@ -6,12 +6,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cast_color_how_to_use_bg">
+        android:background="@drawable/cast_bg_media_screen">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginBottom="0dp"
             app:layout_constraintBottom_toTopOf="@id/fr_banner"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -19,10 +19,13 @@
                 android:id="@+id/playerViewFull"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@android:color/black"
                 android:keepScreenOn="true"
                 android:orientation="horizontal"
                 android:visibility="gone"
                 app:controller_layout_id="@layout/cast_view_exo_controller_full"
+                app:resize_mode="zoom"
+                app:surface_type="texture_view"
                 app:show_buffering="always" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,20 +66,20 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/toolbar"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginTop="3dp"
                 android:paddingHorizontal="16dp"
-                android:paddingVertical="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <FrameLayout
                     android:id="@+id/btnToolbarBack"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/cast_bg_how_to_use_back_btn"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/cast_bg_player_back_button"
                     android:clickable="true"
                     android:focusable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +91,7 @@
                         android:layout_height="16dp"
                         android:layout_gravity="center"
                         android:contentDescription="@null"
-                        android:src="@drawable/cast_ic_how_to_use_back_arrow" />
+                        android:src="@drawable/cast_ic_figma_back" />
                 </FrameLayout>
 
                 <TextView
@@ -96,14 +99,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:fontFamily="@font/cast_poppins_semi_bold"
-                    android:gravity="center"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="start|center_vertical"
                     android:includeFontPadding="false"
                     android:maxLines="1"
-                    android:textColor="@color/cast_white"
-                    android:textSize="14sp"
+                    android:textColor="@color/cast_cast_primary_text"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/toolbarSpacer"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintStart_toEndOf="@id/btnToolbarBack"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Football_Match" />
@@ -121,13 +125,44 @@
             <androidx.media3.ui.PlayerView
                 android:id="@+id/playerView"
                 android:layout_width="0dp"
-                android:layout_height="211dp"
+                android:layout_height="184dp"
+                android:background="@drawable/cast_bg_player_video_frame"
+                android:clipToOutline="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="16dp"
                 android:keepScreenOn="true"
                 app:controller_layout_id="@layout/cast_view_exo_controller"
+                app:surface_type="texture_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/toolbar"
                 app:show_buffering="always" />
+
+            <ImageButton
+                android:id="@+id/btnPlayOverlay"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/cast_play_video"
+                android:src="@drawable/cast_ic_player_play_overlay"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/playerView"
+                app:layout_constraintEnd_toEndOf="@id/playerView"
+                app:layout_constraintStart_toStartOf="@id/playerView"
+                app:layout_constraintTop_toTopOf="@id/playerView" />
+
+            <ImageButton
+                android:id="@+id/btnFullScreenPersistent"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/cast_bg_player_control_button"
+                android:contentDescription="@string/cast_fullscreen"
+                android:src="@drawable/cast_ic_player_fullscreen"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/playerView"
+                app:layout_constraintEnd_toEndOf="@id/playerView" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutLockPlayerView"
@@ -170,7 +205,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:paddingHorizontal="16dp"
-                android:paddingTop="16dp"
+                android:paddingTop="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -189,61 +224,62 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:contentDescription="@null"
+                        android:visibility="gone"
                         android:src="@drawable/cast_ic_playlist_more_channels" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/cast_poppins_medium"
+                        android:layout_marginStart="0dp"
+                        android:fontFamily="@font/inter_bold"
                         android:includeFontPadding="false"
                         android:text="@string/cast_more_channel"
-                        android:textColor="@color/cast_white"
-                        android:textSize="16sp" />
+                        android:textColor="@color/cast_cast_primary_text"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/searchBar"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/cast_bg_playlist_search_bar"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="12dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cast_bg_player_search"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btnAllChanel">
 
                     <ImageView
                         android:id="@+id/icSearch"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
                         android:contentDescription="@null"
                         android:src="@drawable/cast_ic_search"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:tint="#707070" />
+                        app:tint="@color/cast_cast_secondary_text" />
 
                     <EditText
                         android:id="@+id/etSearch"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="8dp"
                         android:background="@android:color/transparent"
                         android:ellipsize="end"
-                        android:fontFamily="@font/cast_poppins_regular"
-                        android:hint="@string/cast_search"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="@string/cast_player_search_channels"
                         android:imeOptions="actionSearch"
                         android:includeFontPadding="false"
                         android:inputType="text"
                         android:maxLength="32"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:textColor="@color/cast_white"
-                        android:textColorHint="#707070"
-                        android:textSize="14sp"
+                        android:textColor="@color/cast_cast_primary_text"
+                        android:textColorHint="@color/cast_cast_secondary_text"
+                        android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/icSearch"
@@ -255,7 +291,7 @@
                     android:id="@+id/rcvChannel"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:clipToPadding="false"
                     android:orientation="vertical"
                     android:paddingBottom="16dp"
@@ -310,14 +346,14 @@
                 android:id="@+id/layoutChanelFull"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@color/cast_color_how_to_use_bg"
-                android:paddingHorizontal="16dp"
-                android:paddingTop="16dp"
+                android:background="@color/cast_cast_surface"
+                android:paddingHorizontal="12dp"
+                android:paddingTop="12dp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_percent="0.5">
+                app:layout_constraintWidth_percent="0.315">
 
                 <LinearLayout
                     android:id="@+id/btnAllChanelFull"
@@ -332,61 +368,62 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:contentDescription="@null"
+                        android:visibility="gone"
                         android:src="@drawable/cast_ic_playlist_more_channels" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/cast_poppins_medium"
+                        android:layout_marginStart="0dp"
+                        android:fontFamily="@font/inter_bold"
                         android:includeFontPadding="false"
                         android:text="@string/cast_more_channel"
-                        android:textColor="@color/cast_white"
-                        android:textSize="16sp" />
+                        android:textColor="@color/cast_cast_primary_text"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/searchBarFull"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/cast_bg_playlist_search_bar"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="12dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/cast_bg_player_search"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btnAllChanelFull">
 
                     <ImageView
                         android:id="@+id/icSearchFull"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
                         android:contentDescription="@null"
                         android:src="@drawable/cast_ic_search"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:tint="#707070" />
+                        app:tint="@color/cast_cast_secondary_text" />
 
                     <EditText
                         android:id="@+id/etSearchFull"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="8dp"
                         android:background="@android:color/transparent"
                         android:ellipsize="end"
-                        android:fontFamily="@font/cast_poppins_regular"
-                        android:hint="@string/cast_search"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="@string/cast_player_search_channels"
                         android:imeOptions="actionSearch"
                         android:includeFontPadding="false"
                         android:inputType="text"
                         android:maxLength="32"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:textColor="@color/cast_white"
-                        android:textColorHint="#707070"
-                        android:textSize="14sp"
+                        android:textColor="@color/cast_cast_primary_text"
+                        android:textColorHint="@color/cast_cast_secondary_text"
+                        android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/icSearchFull"
@@ -398,7 +435,7 @@
                     android:id="@+id/rcvChannelFull"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:clipToPadding="false"
                     android:orientation="vertical"
                     android:paddingBottom="16dp"
@@ -413,7 +450,7 @@
                     android:id="@+id/layoutEmptyFull"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"

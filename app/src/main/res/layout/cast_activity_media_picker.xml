@@ -44,7 +44,7 @@
                 android:id="@+id/viewOverlay"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@color/cast_media_scrim"
+                android:background="@android:color/transparent"
                 android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/topBar"
                 app:layout_constraintBottom_toTopOf="@id/mediaTypeSelector"
