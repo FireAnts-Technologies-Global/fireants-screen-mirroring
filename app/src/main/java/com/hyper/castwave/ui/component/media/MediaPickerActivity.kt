@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.hyper.castwave.R
@@ -20,7 +19,7 @@ import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.ads.banner_cast_image_collage
 import com.hyper.castwave.ads.banner_cast_video_collage
 import com.hyper.castwave.databinding.CastActivityMediaPickerBinding
-import com.hyper.castwave.domain.model.MediaTab
+import com.hyper.castwave.domain.model.MediaItem
 import com.hyper.castwave.domain.model.MediaType
 import com.hyper.castwave.navigation.AppNavigator
 import com.hyper.castwave.ui.bases.BaseActivity
@@ -55,11 +54,17 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         MediaType.valueOf(intent.getStringExtra(EXTRA_MEDIA_TYPE) ?: MediaType.IMAGE.name)
     }
 
-    private var previewItem: com.hyper.castwave.domain.model.MediaItem? = null
-    private var currentTab: MediaTab = MediaTab.PHOTOS
-    private val mediaAdapter = MediaItemAdapter { item ->
-        if (item.type == MediaType.IMAGE) showPhotoPreview(item) else castMediaItem(item)
+    @Suppress("DEPRECATION")
+    private val pickedUri: Uri by lazy {
+        val uri = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra(EXTRA_PICKED_URI, Uri::class.java)
+        } else {
+            intent.getParcelableExtra(EXTRA_PICKED_URI)
+        }
+        requireNotNull(uri) { "MediaPickerActivity requires EXTRA_PICKED_URI" }
     }
+
+    private var previewItem: MediaItem? = null
 
     private val deviceAdapter = DeviceAdapter(
         onDeviceClick = { device ->
@@ -77,7 +82,6 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
 
     private var pinDialog: PinDialog? = null
     private var shouldDisconnectAfterConnect = false
-    private var currentItemDecoration: androidx.recyclerview.widget.RecyclerView.ItemDecoration? = null
 
     override fun getLayoutActivity(): Int = R.layout.cast_activity_media_picker
 
@@ -86,27 +90,20 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         networkMonitor.attach()
         setupViews()
         setupClicks()
-        collectState(stateFlow(), ::renderState)
     }
 
     override fun inflateBinding(inflater: LayoutInflater) =
         CastActivityMediaPickerBinding.inflate(inflater)
 
-    private fun stateFlow() = viewModel.uiState
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         collectState(viewModel.events, ::handleEvent)
         collectState(castViewModel.uiState, ::renderCastState)
-        collectState(viewModel.castingItemId) { id -> mediaAdapter.castingItemId = id }
         collectState(viewModel.isCasting) { isCasting ->
-
-                if (isCasting || viewModel.uiState.value is MediaUiState.Loading) showLoadingDialog() else loadingDialog?.dismiss()
+            if (isCasting) showLoadingDialog() else loadingDialog?.dismiss()
         }
         onBackPressedDispatcher.addCallback(this) {
-            if (mBinding.previewContainer.isVisible) {
-                hidePhotoPreview()
-            } else if (mBinding.flDevices.visibility == View.VISIBLE) {
+            if (mBinding.flDevices.visibility == View.VISIBLE) {
                 hideDevicesPanel()
             } else {
                 finish()
@@ -115,18 +112,29 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     }
 
     private fun setupViews() {
-        currentTab = mediaType.toMediaTab()
         window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.statusBarColor = getColor(R.color.cast_cast_background_start)
         loadBanner()
         setupTopBar()
         setupDevicesPanel()
-        setupMediaTypeSelector()
-        setupRecyclerView()
-        viewModel.loadMedia(mediaType)
+        showPhotoPreview(buildPickedMediaItem(pickedUri))
     }
 
-    fun loadBanner(){
+    private fun buildPickedMediaItem(uri: Uri): MediaItem {
+        val uriString = uri.toString()
+        return MediaItem(
+            id = uriString,
+            name = uri.lastPathSegment ?: "",
+            uri = uriString,
+            thumbnailUri = uriString,
+            type = mediaType,
+            duration = null,
+            dateAdded = 0L,
+            isFavorite = false,
+        )
+    }
+
+    private fun loadBanner() {
         val config = if (mediaType == MediaType.VIDEO)
             AdRemoteConfig.banner_cast_video_collage
         else
@@ -137,71 +145,25 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     private fun setupTopBar() {
         mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.CENTERED_ACTIONS)
         mBinding.topBar.setBackIconSize(resources.getDimensionPixelSize(SdpR.dimen._14sdp))
-        mBinding.topBar.setTitle(
-            getString(
-            if (mediaType == MediaType.VIDEO) R.string.cast_media_title_videos else R.string.cast_media_title_photos
-            )
-        )
+        mBinding.topBar.setTitle(getString(R.string.cast_media_cast_photo))
         mBinding.topBar.setOnBackClickListener(animated = true) {
             AdsManager.loadAndShowInterBack(this@MediaPickerActivity) {
                 onBackPressed()
             }
         }
-        showCastAction()
+        mBinding.topBar.setEndAction(
+            R.drawable.cast_ic_home_cast_white,
+            getString(R.string.cast_cast_title),
+            {
+                if (hasAvailableDevices()) toggleDevicesPanel() else navigator.openCastScreen(this)
+            },
+            R.drawable.cast_bg_media_cast_button,
+        )
     }
 
     private fun setupDevicesPanel() {
         mBinding.recyclerViewDevices.layoutManager = LinearLayoutManager(this)
         mBinding.recyclerViewDevices.adapter = deviceAdapter
-    }
-
-    private fun setupMediaTypeSelector() {
-        mBinding.mediaTypeSelector.setSelectedTab(mediaType.toMediaTab())
-        mBinding.mediaTypeSelector.setOnTabSelectedListener { tab ->
-            currentTab = tab
-            resetTopBarTitle()
-            hideDevicesPanel()
-            mBinding.recyclerView.animate()
-                .alpha(0f)
-                .setDuration(150)
-                .withEndAction {
-                    mediaAdapter.submitList(emptyList())
-                    applyGridColumns(tab)
-                    viewModel.loadMedia(tab)
-                    mBinding.recyclerView.animate()
-                        .alpha(1f)
-                        .setDuration(150)
-                        .start()
-                }
-                .start()
-        }
-    }
-
-    private fun setupRecyclerView() {
-        mBinding.recyclerView.itemAnimator = null
-        applyGridColumns(mediaType.toMediaTab())
-        mBinding.recyclerView.adapter = mediaAdapter
-    }
-
-    private fun applyGridColumns(tab: MediaTab) {
-        val spanCount = when (tab) {
-            MediaTab.VIDEOS -> 2
-            else -> 3
-        }
-        
-        currentItemDecoration?.let { mBinding.recyclerView.removeItemDecoration(it) }
-
-        val spacing = resources.getDimensionPixelSize(SdpR.dimen._10sdp)
-        val newDecoration = GridSpacingItemDecoration(spanCount, spacing, includeEdge = false)
-        mBinding.recyclerView.addItemDecoration(newDecoration)
-        currentItemDecoration = newDecoration
-        
-        val lm = mBinding.recyclerView.layoutManager
-        if (lm is GridLayoutManager) {
-            lm.spanCount = spanCount
-        } else {
-            mBinding.recyclerView.layoutManager = GridLayoutManager(this, spanCount)
-        }
     }
 
     private fun setupClicks() {
@@ -219,17 +181,6 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         else -> false
     }
 
-    private fun showCastAction() {
-        mBinding.topBar.setEndAction(
-            R.drawable.cast_ic_home_cast_white,
-            getString(R.string.cast_cast_title),
-            {
-                if (hasAvailableDevices()) toggleDevicesPanel() else navigator.openCastScreen(this)
-            },
-            R.drawable.cast_bg_media_cast_button,
-        )
-    }
-
     private fun toggleDevicesPanel() {
         if (mBinding.flDevices.isVisible) {
             hideDevicesPanel()
@@ -239,7 +190,6 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     }
 
     private fun showDevicesPanel() {
-        mBinding.topBar.setTitle(getString(R.string.cast_cast_title))
         val panel = mBinding.flDevices
 
         mBinding.viewOverlay.visibility = View.VISIBLE
@@ -287,80 +237,25 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
                 panel.alpha = 1f
             }
             .start()
-        if (!mBinding.previewContainer.isVisible) resetTopBarTitle()
     }
 
-    private fun showPhotoPreview(item: com.hyper.castwave.domain.model.MediaItem) {
+    private fun showPhotoPreview(item: MediaItem) {
         previewItem = item
-        hideDevicesPanel()
-        mBinding.recyclerView.visibility = View.GONE
-        mBinding.tvEmpty.visibility = View.GONE
-        mBinding.mediaTypeSelector.visibility = View.GONE
         mBinding.previewContainer.visibility = View.VISIBLE
-        mBinding.topBar.clearEndAction()
-        mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.STANDARD)
-        mBinding.topBar.setTitle(getString(R.string.cast_media_cast_photo))
         Glide.with(this).load(Uri.parse(item.uri)).centerCrop().into(mBinding.imgPhotoPreview)
     }
 
-    private fun hidePhotoPreview() {
-        previewItem = null
-        Glide.with(this).clear(mBinding.imgPhotoPreview)
-        mBinding.previewContainer.visibility = View.GONE
-        showCastAction()
-        mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.CENTERED_ACTIONS)
-        resetTopBarTitle()
-        val state = viewModel.uiState.value
-        mBinding.recyclerView.visibility = if (state is MediaUiState.Content) View.VISIBLE else View.GONE
-        mBinding.tvEmpty.visibility = if (state is MediaUiState.Empty) View.VISIBLE else View.GONE
-        mBinding.mediaTypeSelector.visibility = View.VISIBLE
-    }
-
-    private fun castMediaItem(item: com.hyper.castwave.domain.model.MediaItem) {
+    private fun castMediaItem(item: MediaItem) {
         val isConnected = castViewModel.uiState.value.let { state ->
             state is CastUiState.Connected || (state is CastUiState.HasDevices && state.devices.any { it.isConnected })
         }
-        hidePhotoPreview()
         hideDevicesPanel()
         viewModel.onMediaItemClicked(item, isConnected)
     }
 
-    private fun resetTopBarTitle() {
-        mBinding.topBar.setTitle(
-            getString(
-            if (currentTab == MediaTab.VIDEOS) R.string.cast_media_title_videos else R.string.cast_media_title_photos
-            )
-        )
-    }
-
-    private fun MediaType.toMediaTab(): MediaTab = when (this) {
-        MediaType.IMAGE -> MediaTab.PHOTOS
-        MediaType.VIDEO -> MediaTab.VIDEOS
-        MediaType.AUDIO -> MediaTab.AUDIO
-    }
-
-    private fun renderState(state: MediaUiState) {
-            if (state is MediaUiState.Loading || viewModel.isCasting.value) showLoadingDialog() else loadingDialog?.dismiss()
-        mBinding.recyclerView.visibility =
-            if (state is MediaUiState.Content) View.VISIBLE else View.GONE
-        mBinding.tvEmpty.visibility = if (state is MediaUiState.Empty) View.VISIBLE else View.GONE
-        if (state is MediaUiState.Content) {
-            mediaAdapter.submitList(state.items) {
-                mBinding.recyclerView.scrollToPosition(0)
-            }
-        }
-    }
-
     private fun renderCastState(state: CastUiState) {
-        val isConnected = when (state) {
-            is CastUiState.HasDevices -> state.devices.any { it.isConnected }
-            is CastUiState.Connected -> true
-            else -> false
-        }
-        mBinding.topBar.setEndActionIcon(R.drawable.cast_ic_home_cast_white)
         if (state !is CastUiState.PinRequired) dismissPinDialog()
         when (state) {
-
             CastUiState.Loading -> {
                 deviceAdapter.selectedId = null
                 deviceAdapter.submitList(emptyList())
@@ -377,7 +272,6 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
                     castViewModel.disconnect()
                     return
                 }
-                
                 deviceAdapter.submitList(state.devices)
                 deviceAdapter.connectingId = null
                 deviceAdapter.selectedId = state.connectedDevice.id
@@ -416,11 +310,11 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
 
     private fun showLoadingDialog() {
         if (loadingDialog?.isShowing == true) return
-        loadingDialog = LoadingDialog(
-            this
-        ).also { it.show() }
+        loadingDialog = LoadingDialog(this).also { it.show() }
     }
+
     companion object {
         const val EXTRA_MEDIA_TYPE = "extra_media_type"
+        const val EXTRA_PICKED_URI = "extra_picked_uri"
     }
 }

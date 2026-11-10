@@ -3,8 +3,8 @@
     android:shape="rectangle">
     <gradient
         android:angle="270"
-        android:endColor="@color/cast_color_how_to_use_badge_end"
-        android:startColor="@color/cast_color_how_to_use_badge_start"
+        android:endColor="@color/cast_cast_accent"
+        android:startColor="@color/cast_cast_action_end"
         android:type="linear" />
     <corners android:radius="@dimen/_20sdp" />
 </shape>

@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -45,14 +46,13 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
         if (!granted) showNotificationRationale()
     }
 
-    private val mediaPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions(),
-    ) { results ->
+    private val pickVisualMediaLauncher = registerForActivityResult(
+        ActivityResultContracts.PickVisualMedia(),
+    ) { uri ->
         val type = pendingMediaType ?: return@registerForActivityResult
         pendingMediaType = null
-        if (results.values.all { it }) {
-            navigator.openMediaPicker(requireContext(), type)
-        }
+        uri ?: return@registerForActivityResult
+        navigator.openMediaPicker(requireContext(), type, uri)
     }
 
     override fun getLayoutFragment(): Int = R.layout.cast_fragment_home
@@ -224,10 +224,10 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
             navigator.openHowToUse(requireContext())
         }
         mBinding.cardFeaturePhoto.root.click {
-            openMediaWithPermission(MediaType.IMAGE)
+            launchVisualMediaPicker(MediaType.IMAGE)
         }
         mBinding.cardFeatureVideo.root.click {
-            openMediaWithPermission(MediaType.VIDEO)
+            launchVisualMediaPicker(MediaType.VIDEO)
         }
         mBinding.cardFeatureImport.root.click {
             (requireActivity() as? com.hyper.castwave.ui.component.main.MainActivity)?.openChannelsTab()
@@ -256,35 +256,14 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
         }
     }
 
-    private fun openMediaWithPermission(type: MediaType) {
-        val permissions = mediaPermissionsFor(type)
-        when {
-            permissions.all {
-                ContextCompat.checkSelfPermission(requireContext(), it) ==
-                    PackageManager.PERMISSION_GRANTED
-            } -> {
-                navigator.openMediaPicker(requireContext(), type)
-            }
-
-            permissions.any { isPermanentlyDenied(it) } -> showMediaSettingsDialog()
-            else -> {
-                pendingMediaType = type
-                permissions.forEach { markAsked(it) }
-                mediaPermissionLauncher.launch(permissions)
-            }
+    private fun launchVisualMediaPicker(type: MediaType) {
+        pendingMediaType = type
+        val mediaType = when (type) {
+            MediaType.IMAGE -> ActivityResultContracts.PickVisualMedia.ImageOnly
+            MediaType.VIDEO -> ActivityResultContracts.PickVisualMedia.VideoOnly
+            MediaType.AUDIO -> ActivityResultContracts.PickVisualMedia.ImageAndVideo
         }
-    }
-
-    private fun mediaPermissionsFor(type: MediaType): Array<String> = when {
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU -> arrayOf(
-            when (type) {
-                MediaType.IMAGE -> Manifest.permission.READ_MEDIA_IMAGES
-                MediaType.VIDEO -> Manifest.permission.READ_MEDIA_VIDEO
-                MediaType.AUDIO -> Manifest.permission.READ_MEDIA_AUDIO
-            },
-        )
-
-        else -> arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+        pickVisualMediaLauncher.launch(PickVisualMediaRequest(mediaType))
     }
 
     private fun showNotificationRationale() {
@@ -310,19 +289,6 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
                     notificationPermissionLauncher.launch(permission)
                 }
             },
-            onDeny = {},
-        ).show()
-    }
-
-    private fun showMediaSettingsDialog() {
-        PermissionRationaleDialog(
-            context = requireContext(),
-            iconRes = R.drawable.cast_ic_image,
-            title = getString(R.string.cast_permission_media_title),
-            message = getString(R.string.cast_permission_media_message),
-            allowText = getString(R.string.cast_go_to_setting),
-            denyText = getString(R.string.cast_permission_not_now),
-            onAllow = { openAppSettings() },
             onDeny = {},
         ).show()
     }

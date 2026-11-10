@@ -1,145 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/cast_bg_home_screen"
-    android:fitsSystemWindows="true">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/_13sdp"
-        android:paddingVertical="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cast_bg_home_screen"
+        android:fitsSystemWindows="true">
 
-        <FrameLayout
-            android:id="@+id/btnBack"
-            android:layout_width="@dimen/_27sdp"
-            android:layout_height="@dimen/_27sdp"
-            android:background="@drawable/cast_bg_how_to_use_back_btn"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="@dimen/_13sdp"
-                android:layout_height="@dimen/_13sdp"
-                android:layout_gravity="center"
-                android:contentDescription="@null"
-                android:src="@drawable/cast_ic_how_to_use_back_arrow" />
-        </FrameLayout>
-
-        <TextView
-            android:id="@+id/tvTitle"
+        <com.hyper.castwave.ui.component.custom.FigmaTopBarView
+            android:id="@+id/toolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_semibold"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/cast_web_browser"
-            android:textColor="@color/cast_home_text_primary"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/toolbarSpacer"
-            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:figmaTopBarTitle="@string/cast_web_browser"
+            app:figmaTopBarVariant="centered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/toolbarSpacer"
-            android:layout_width="@dimen/_27sdp"
-            android:layout_height="@dimen/_27sdp"
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:paddingHorizontal="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:fillViewport="true"
-        android:overScrollMode="never"
-        android:paddingHorizontal="@dimen/_13sdp"
-        android:paddingBottom="@dimen/_20sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/img_anim_loading"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_150sdp"
-                android:layout_marginTop="@dimen/_7sdp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/cast_screen_mirroring" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <LinearLayout
-                android:id="@+id/lnContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_13sdp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/img_anim_loading"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cast_bg_webcast_step_card"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="@dimen/_13sdp"
-                    android:paddingVertical="@dimen/_10sdp">
-
-                    <TextView
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:background="@drawable/cast_bg_webcast_step_badge"
-                        android:fontFamily="@font/inter_semibold"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/cast_one"
-                        android:textColor="@color/cast_cast_accent"
-                        android:textSize="@dimen/_12sdp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/inter_regular"
-                        android:includeFontPadding="false"
-                        android:lineSpacingExtra="@dimen/_2sdp"
-                        android:text="@string/cast_title_br1"
-                        android:textColor="@color/cast_home_text_primary"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/cast_screen_mirroring" />
 
                 <LinearLayout
+                    android:id="@+id/lnContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/cast_bg_webcast_step_card"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="@dimen/_13sdp"
-                    android:paddingVertical="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_13sdp"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/cast_bg_webcast_step_card"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_13sdp"
+                        android:paddingVertical="@dimen/_10sdp">
 
                         <TextView
                             android:layout_width="@dimen/_20sdp"
@@ -148,7 +68,7 @@
                             android:fontFamily="@font/inter_semibold"
                             android:gravity="center"
                             android:includeFontPadding="false"
-                            android:text="@string/cast_two"
+                            android:text="@string/cast_one"
                             android:textColor="@color/cast_cast_accent"
                             android:textSize="@dimen/_12sdp" />
 
@@ -160,103 +80,143 @@
                             android:fontFamily="@font/inter_regular"
                             android:includeFontPadding="false"
                             android:lineSpacingExtra="@dimen/_2sdp"
-                            android:text="@string/cast_open_this"
+                            android:text="@string/cast_title_br1"
                             android:textColor="@color/cast_home_text_primary"
                             android:textSize="@dimen/_12sdp" />
                     </LinearLayout>
 
-                    <FrameLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_28sdp"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:background="@drawable/cast_bg_import_input"
-                        android:minHeight="@dimen/_43sdp"
+                        android:background="@drawable/cast_bg_webcast_step_card"
+                        android:orientation="vertical"
                         android:paddingHorizontal="@dimen/_13sdp"
-                        android:paddingVertical="@dimen/_12sdp">
+                        android:paddingVertical="@dimen/_10sdp">
 
-                        <TextView
-                            android:id="@+id/tv_ip_wifi"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:background="@drawable/cast_bg_webcast_step_badge"
+                                android:fontFamily="@font/inter_semibold"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:text="@string/cast_two"
+                                android:textColor="@color/cast_cast_accent"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/inter_regular"
+                                android:includeFontPadding="false"
+                                android:lineSpacingExtra="@dimen/_2sdp"
+                                android:text="@string/cast_open_this"
+                                android:textColor="@color/cast_home_text_primary"
+                                android:textSize="@dimen/_12sdp" />
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_28sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/cast_bg_import_input"
+                            android:minHeight="@dimen/_43sdp"
+                            android:paddingHorizontal="@dimen/_13sdp"
+                            android:paddingVertical="@dimen/_12sdp">
+
+                            <TextView
+                                android:id="@+id/tv_ip_wifi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/inter_semibold"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/cast_home_text_primary"
+                                android:textSize="@dimen/_12sdp" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/cast_bg_webcast_step_card"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_13sdp"
+                        android:paddingVertical="@dimen/_10sdp">
+
+                        <TextView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:background="@drawable/cast_bg_webcast_step_badge"
                             android:fontFamily="@font/inter_semibold"
+                            android:gravity="center"
                             android:includeFontPadding="false"
+                            android:text="@string/cast_three"
+                            android:textColor="@color/cast_cast_accent"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:includeFontPadding="false"
+                            android:lineSpacingExtra="@dimen/_2sdp"
+                            android:text="@string/cast_click_on"
                             android:textColor="@color/cast_home_text_primary"
                             android:textSize="@dimen/_12sdp" />
-                    </FrameLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
+                <FrameLayout
+                    android:id="@+id/tvStartScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/cast_bg_import_add_playlist_enabled"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minHeight="@dimen/_43sdp"
+                    android:paddingHorizontal="@dimen/_17sdp"
+                    android:paddingVertical="@dimen/_13sdp">
+
+                    <TextView
+                        android:id="@+id/tvStartScreenLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/inter_semibold"
+                        android:includeFontPadding="false"
+                        android:text="@string/cast_screen_mirror_start"
+                        android:textColor="@color/cast_white"
+                        android:textSize="@dimen/_13sdp" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvConnectedDevice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/cast_bg_webcast_step_card"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="@dimen/_13sdp"
-                    android:paddingVertical="@dimen/_10sdp">
-
-                    <TextView
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:background="@drawable/cast_bg_webcast_step_badge"
-                        android:fontFamily="@font/inter_semibold"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/cast_three"
-                        android:textColor="@color/cast_cast_accent"
-                        android:textSize="@dimen/_12sdp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/inter_regular"
-                        android:includeFontPadding="false"
-                        android:lineSpacingExtra="@dimen/_2sdp"
-                        android:text="@string/cast_click_on"
-                        android:textColor="@color/cast_home_text_primary"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/tvStartScreen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@drawable/cast_bg_import_add_playlist_enabled"
-                android:clickable="true"
-                android:focusable="true"
-                android:minHeight="@dimen/_43sdp"
-                android:paddingHorizontal="@dimen/_17sdp"
-                android:paddingVertical="@dimen/_13sdp">
-
-                <TextView
-                    android:id="@+id/tvStartScreenLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/inter_semibold"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
                     android:includeFontPadding="false"
-                    android:text="@string/cast_screen_mirror_start"
-                    android:textColor="@color/cast_white"
-                    android:textSize="@dimen/_13sdp" />
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/tvConnectedDevice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/inter_regular"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:textColor="@color/cast_home_text_secondary"
-                android:textSize="@dimen/_10sdp"
-                android:visibility="gone" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textColor="@color/cast_home_text_secondary"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

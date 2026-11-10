@@ -1,6 +1,5 @@
 package com.hyper.castwave.ui.component.webcast
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.media.projection.MediaProjectionManager
@@ -49,7 +48,7 @@ class WebCastActivity : BaseActivity<CastActivityWebCastBinding>() {
     private fun setupViews() = Unit
 
     private fun setupClicks() {
-        mBinding.btnBack.setOnClickListener { onBackPressed() }
+        mBinding.toolbar.setOnBackClickListener(animated = true) { onBackPressed() }
         mBinding.tvStartScreen.setOnClickListener {
             if (viewModel.uiState.value.isMirroring) {
                 viewModel.stop()

@@ -1,20 +1,18 @@
 package com.hyper.castwave.ui.component.media
 
 import androidx.lifecycle.viewModelScope
-import com.hyper.castwave.ui.bases.BaseViewModel
+import com.hyper.castwave.casting.mirroring.ScreenMirrorManager
 import com.hyper.castwave.domain.model.CastDevice
 import com.hyper.castwave.domain.model.ConnectionState
 import com.hyper.castwave.domain.model.DataResult
 import com.hyper.castwave.domain.model.MediaItem
-import com.hyper.castwave.domain.model.MediaTab
-import com.hyper.castwave.domain.model.MediaType
 import com.hyper.castwave.domain.usecase.CastMediaUseCase
 import com.hyper.castwave.domain.usecase.ConnectDeviceUseCase
-import com.hyper.castwave.domain.usecase.GetMediaByTypeUseCase
 import com.hyper.castwave.domain.usecase.ObserveConnectionStateUseCase
 import com.hyper.castwave.domain.usecase.ObserveDevicesUseCase
-import com.hyper.castwave.casting.mirroring.ScreenMirrorManager
+import com.hyper.castwave.ui.bases.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -25,22 +23,17 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class MediaPickerViewModel @Inject constructor(
-    private val getMediaByTypeUseCase: GetMediaByTypeUseCase,
     private val castMediaUseCase: CastMediaUseCase,
     private val observeConnectionStateUseCase: ObserveConnectionStateUseCase,
     private val observeDevicesUseCase: ObserveDevicesUseCase,
     private val connectDeviceUseCase: ConnectDeviceUseCase,
     private val screenMirrorManager: ScreenMirrorManager,
 ) : BaseViewModel() {
-
-    private val _uiState = MutableStateFlow<MediaUiState>(MediaUiState.Loading)
-    val uiState: StateFlow<MediaUiState> = _uiState.asStateFlow()
 
     private val _events = MutableSharedFlow<MediaEvent>()
     val events: SharedFlow<MediaEvent> = _events.asSharedFlow()
@@ -79,26 +72,6 @@ class MediaPickerViewModel @Inject constructor(
                 if (conn is ConnectionState.Connected || conn is ConnectionState.Connecting) return@collect
                 val target = devs.firstOrNull { it.isConnected } ?: return@collect
                 connectDeviceUseCase(target.id)
-            }
-        }
-    }
-
-    fun loadMedia(type: MediaType) {
-        loadMedia(type.toMediaTab())
-    }
-
-    fun loadMedia(tab: MediaTab) {
-        viewModelScope.launch {
-            _uiState.value = MediaUiState.Loading
-            when (val result = getMediaByTypeUseCase(tab)) {
-                is DataResult.Success -> {
-                    _uiState.value = if (result.data.isEmpty()) {
-                        MediaUiState.Empty
-                    } else {
-                        MediaUiState.Content(result.data, tab.toMediaType())
-                    }
-                }
-                is DataResult.Error -> _uiState.value = MediaUiState.Empty
             }
         }
     }
@@ -182,17 +155,5 @@ class MediaPickerViewModel @Inject constructor(
         } else {
             _events.emit(MediaEvent.NavigateToCast)
         }
-    }
-
-    private fun MediaType.toMediaTab() = when (this) {
-        MediaType.VIDEO -> MediaTab.VIDEOS
-        MediaType.IMAGE -> MediaTab.PHOTOS
-        MediaType.AUDIO -> MediaTab.AUDIO
-    }
-
-    private fun MediaTab.toMediaType() = when (this) {
-        MediaTab.VIDEOS -> MediaType.VIDEO
-        MediaTab.AUDIO -> MediaType.AUDIO
-        else -> MediaType.IMAGE
     }
 }

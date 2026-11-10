@@ -22,16 +22,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/frAdsBanner">
 
-            <ImageView
-                android:id="@+id/imgBackground"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:visibility="gone"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
             <com.hyper.castwave.ui.component.custom.FigmaTopBarView
                 android:id="@+id/topBar"
                 android:layout_width="match_parent"
@@ -48,7 +38,7 @@
                 android:background="@android:color/transparent"
                 android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/topBar"
-                app:layout_constraintBottom_toTopOf="@id/mediaTypeSelector"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -71,43 +61,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </FrameLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:clipToPadding="false"
-                android:paddingStart="@dimen/_13sdp"
-                android:paddingTop="@dimen/_3sdp"
-                android:paddingEnd="@dimen/_13sdp"
-                android:paddingBottom="@dimen/_13sdp"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/topBar"
-                app:layout_constraintBottom_toTopOf="@id/mediaTypeSelector"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvEmpty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:text="@string/cast_media_empty"
-                android:textColor="@color/cast_cast_primary_text"
-                android:textSize="@dimen/_13sdp"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/topBar"
-                app:layout_constraintBottom_toTopOf="@id/mediaTypeSelector"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <com.hyper.castwave.ui.component.custom.MediaTypeSelector
-                android:id="@+id/mediaTypeSelector"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_50sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
 
             <LinearLayout
                 android:id="@+id/previewContainer"
