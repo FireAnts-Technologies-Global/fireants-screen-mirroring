@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">एक अनपेक्षित त्रुटि हुई।\nअसुविधा के लिए खेद है।</string>
+    <string name="restart_app">ऐप पुनः प्रारंभ करें</string>
+    <string name="close_app">ऐप बंद करें</string>
+    <string name="error_details">त्रुटि विवरण</string>
+    <string name="error_details_title">त्रुटि विवरण</string>
+    <string name="error_details_close">बंद करें</string>
+    <string name="error_details_copy">क्लिपबोर्ड पर कॉपी करें</string>
+    <string name="error_details_copied">क्लिपबोर्ड पर कॉपी किया गया</string>
+    <string name="error_details_clipboard_label">त्रुटि जानकारी</string>
+    <string name="error_share">त्रुटि साझा करें</string>
+</resources>

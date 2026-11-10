@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Terjadi kesalahan yang tidak terduga.\nMaaf atas ketidaknyamanannya.</string>
+    <string name="restart_app">Mulai Ulang Aplikasi</string>
+    <string name="close_app">Tutup Aplikasi</string>
+    <string name="error_details">Detail kesalahan</string>
+    <string name="error_details_title">Detail kesalahan</string>
+    <string name="error_details_close">Tutup</string>
+    <string name="error_details_copy">Salin ke papan klip</string>
+    <string name="error_details_copied">Disalin ke papan klip</string>
+    <string name="error_details_clipboard_label">Informasi kesalahan</string>
+    <string name="error_share">Bagikan kesalahan</string>
+</resources>

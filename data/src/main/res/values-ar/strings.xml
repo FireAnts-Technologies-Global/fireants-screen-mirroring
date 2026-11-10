@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">خطأ!</string>
+    <string name="notifications_channel">إشعارات التسجيل</string>
+    <string name="notifications_stop">إيقاف</string>
+    <string name="recording_started_title">تسجيل الشاشة</string>
+    <string name="recording_started_text">جارٍ تسجيل الشاشة</string>
+    <string name="recording_finished_title">اكتمل التسجيل</string>
+    <string name="recording_finished_text">اكتمل تسجيل الشاشة</string>
+</resources>

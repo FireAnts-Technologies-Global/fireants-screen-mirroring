@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Lỗi!</string>
+    <string name="notifications_channel">Thông báo ghi màn hình</string>
+    <string name="notifications_stop">Dừng</string>
+    <string name="recording_started_title">Đang ghi màn hình</string>
+    <string name="recording_started_text">Đang ghi màn hình</string>
+    <string name="recording_finished_title">Đã ghi màn hình xong</string>
+    <string name="recording_finished_text">Đã hoàn tất ghi màn hình</string>
+</resources>

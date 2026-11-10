@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="ads_are_about_to_be_shown">โฆษณาจะแสดงเร็ว ๆ นี้...</string>
     <string name="please_select_language">เลือกภาษาของคุณ</string>
-    <string name="txt_request_record_permission">แอปต้องได้รับอนุญาตให้บันทึกหน้าจอจึงจะทำงานได้</string>
     <string name="txt_thanks_you_for_rating">ขอบคุณสำหรับการให้คะแนน!</string>
     <string name="onboarding_title_1">สะท้อนหน้าจอโทรศัพท์</string>
     <string name="onboarding_des_1">ดูเนื้อหาบนโทรศัพท์ของคุณผ่านหน้าจอขนาดใหญ่</string>
@@ -12,13 +11,7 @@
     <string name="onboarding_des_3">แชร์รูปภาพและวิดีโอที่ชอบจากโทรศัพท์ไปยังทีวี</string>
     <string name="onboarding_title_4">รับชมช่องของคุณ</string>
     <string name="onboarding_des_4">นำเข้าไฟล์ M3U หรือลิงก์เพลย์ลิสต์เพื่อรับชมช่อง</string>
-    <string name="text_restart_app">รีสตาร์ทแอป</string>
-    <string name="crash_info_title">ข้อมูลข้อขัดข้อง</string>
     <string name="ad_config_invalid_message">การกำหนดค่าโฆษณาไม่ถูกต้อง โปรดตรวจสอบ ad_config.json</string>
-    <string name="content_confirm_uninstall">ทำไมคุณจึงถอนการติดตั้งแอป</string>
-    <string name="try_again">ลองอีกครั้ง</string>
-    <string name="still_want_to_uninstall">ยังต้องการถอนการติดตั้งหรือไม่</string>
-    <string name="issues_encountered_during_usage">ปัญหาที่พบระหว่างใช้งาน</string>
     <string name="txt_uninstall">ถอนการติดตั้ง</string>
     <string name="survey_1">ฟีเจอร์ไม่ทำงาน</string>
     <string name="survey_2">โฆษณามากเกินไป</string>
@@ -29,28 +22,18 @@
     <string name="open_settings">เปิดการตั้งค่า</string>
     <string name="force_update_message">มีเวอร์ชันใหม่ โปรดอัปเดตเพื่อใช้งานต่อ</string>
     <string name="update_now">อัปเดตตอนนี้</string>
-    <string name="update_later">ไว้ภายหลัง</string>
     <string name="feedback">ความคิดเห็น</string>
     <string name="share_with_friend">แชร์กับเพื่อน</string>
     <string name="let_me_recommend">แนะนำแอปนี้</string>
     <string name="share_to">แชร์ไปยัง</string>
     <string name="we_re_better_than_ever">แอปพัฒนาดีขึ้นเรื่อย ๆ</string>
-    <string name="dont_miss">ก่อนถอนการติดตั้ง ลองเก็บเครื่องมือและการตั้งค่าที่คุณตั้งไว้</string>
-    <string name="over92">ผู้ใช้จำนวนมากยังคงเห็นว่าแอปนี้มีประโยชน์ในระยะยาว</string>
     <string name="get_started">@string/cast_get_started</string>
     <string name="next">@string/cast_next</string>
-    <string name="txt_continue">@string/cast_continue_</string>
-    <string name="txt_denie">@string/cast_txt_denie</string>
     <string name="close">@string/cast_close_</string>
-    <string name="txt_cancel">@string/cast_pin_dialog_cancel</string>
     <string name="no_internet_title">@string/cast_no_internet_connection</string>
     <string name="setting">@string/cast_setting</string>
     <string name="rate">@string/cast_rate</string>
     <string name="privacy_policy">@string/cast_privacy_policy</string>
-    <string name="feature_does_not_working">@string/survey_1</string>
     <string name="too_many_ads">@string/survey_2</string>
-    <string name="i_don_t_need_it">@string/survey_3</string>
-    <string name="other">@string/survey_4</string>
-    <string name="uninstall_text">@string/txt_uninstall</string>
     <string name="start">@string/get_started</string>
 </resources>

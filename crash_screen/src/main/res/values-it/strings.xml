@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Si è verificato un errore imprevisto.\nCi scusiamo per il disagio.</string>
+    <string name="restart_app">Riavvia app</string>
+    <string name="close_app">Chiudi app</string>
+    <string name="error_details">Dettagli errore</string>
+    <string name="error_details_title">Dettagli errore</string>
+    <string name="error_details_close">Chiudi</string>
+    <string name="error_details_copy">Copia negli appunti</string>
+    <string name="error_details_copied">Copiato negli appunti</string>
+    <string name="error_details_clipboard_label">Informazioni errore</string>
+    <string name="error_share">Condividi errore</string>
+</resources>

@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="ads_are_about_to_be_shown">Les publicités vont bientôt s’afficher...</string>
     <string name="please_select_language">Choisissez votre langue</string>
-    <string name="txt_request_record_permission">L’autorisation d’enregistrement est nécessaire au fonctionnement de l’application</string>
     <string name="txt_thanks_you_for_rating">Merci pour votre avis !</string>
     <string name="onboarding_title_1">Recopiez l’écran de votre téléphone</string>
     <string name="onboarding_des_1">Affichez le contenu de votre téléphone sur grand écran.</string>
@@ -12,13 +11,7 @@
     <string name="onboarding_des_3">Partagez vos photos et vidéos préférées de votre téléphone sur votre téléviseur.</string>
     <string name="onboarding_title_4">Regardez vos chaînes</string>
     <string name="onboarding_des_4">Importez un fichier M3U ou un lien de playlist pour regarder vos chaînes.</string>
-    <string name="text_restart_app">Redémarrer l’application</string>
-    <string name="crash_info_title">Informations sur le plantage</string>
     <string name="ad_config_invalid_message">Configuration publicitaire invalide. Vérifiez ad_config.json.</string>
-    <string name="content_confirm_uninstall">Pourquoi désinstallez-vous l’application ?</string>
-    <string name="try_again">Réessayer</string>
-    <string name="still_want_to_uninstall">Voulez-vous toujours la désinstaller ?</string>
-    <string name="issues_encountered_during_usage">Problèmes rencontrés lors de l’utilisation</string>
     <string name="txt_uninstall">Désinstaller</string>
     <string name="survey_1">Une fonctionnalité ne fonctionne pas</string>
     <string name="survey_2">Trop de publicités</string>
@@ -29,28 +22,18 @@
     <string name="open_settings">Ouvrir les paramètres</string>
     <string name="force_update_message">Une nouvelle version est disponible. Mettez à jour l’application pour continuer.</string>
     <string name="update_now">Mettre à jour</string>
-    <string name="update_later">Peut-être plus tard</string>
     <string name="feedback">Commentaires</string>
     <string name="share_with_friend">Partager avec des amis</string>
     <string name="let_me_recommend">Recommander cette application</string>
     <string name="share_to">Partager avec</string>
     <string name="we_re_better_than_ever">L’application ne cesse de s’améliorer</string>
-    <string name="dont_miss">Avant de désinstaller l’application, pensez à conserver les outils et réglages déjà configurés.</string>
-    <string name="over92">De nombreux utilisateurs trouvent l’application utile sur la durée.</string>
     <string name="get_started">@string/cast_get_started</string>
     <string name="next">@string/cast_next</string>
-    <string name="txt_continue">@string/cast_continue_</string>
-    <string name="txt_denie">@string/cast_txt_denie</string>
     <string name="close">@string/cast_close_</string>
-    <string name="txt_cancel">@string/cast_pin_dialog_cancel</string>
     <string name="no_internet_title">@string/cast_no_internet_connection</string>
     <string name="setting">@string/cast_setting</string>
     <string name="rate">@string/cast_rate</string>
     <string name="privacy_policy">@string/cast_privacy_policy</string>
-    <string name="feature_does_not_working">@string/survey_1</string>
     <string name="too_many_ads">@string/survey_2</string>
-    <string name="i_don_t_need_it">@string/survey_3</string>
-    <string name="other">@string/survey_4</string>
-    <string name="uninstall_text">@string/txt_uninstall</string>
     <string name="start">@string/get_started</string>
 </resources>

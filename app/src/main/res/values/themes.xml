@@ -1,4 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Main" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color -->
@@ -13,31 +14,20 @@
         <item name="android:windowBackground">#F4F4F4</item>
         <!-- Optional: Disable layout animations -->
         <item name="android:animateLayoutChanges">false</item>
-
         <item name="android:includeFontPadding">false</item>
     </style>
-
-
     <!--Theme Dialog-->
     <style name="ThemeDialog" parent="android:Theme.Holo.Dialog">
         <item name="android:windowMinWidthMajor">85%</item>
         <item name="android:windowMinWidthMinor">85%</item>
         <item name="android:backgroundDimAmount">0.5</item>
     </style>
-
-    <style name="ThemeDialogFullscreen" parent="android:Theme.Holo.Dialog">
-        <item name="android:backgroundDimAmount">0.5</item>
-        <item name="android:windowMinWidthMajor">100%</item>
-    </style>
-
     <style name="ThemeBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/StyleBottomSheetDialog</item>
     </style>
-
     <style name="StyleBottomSheetDialog" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
     </style>
-
     <style name="AppTheme.Ads2" parent="@style/AdsAppTheme">
         <item name="android:textSize">11.0sp</item>
         <item name="android:textColor">#ffffff</item>
@@ -52,16 +42,13 @@
         <item name="android:minHeight">15.0px</item>
         <item name="android:text">Ad</item>
     </style>
-
     <style name="BaseDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
-
     <style name="RadioButtonMain" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">#9E9E9E</item>
         <item name="colorControlActivated">#303030</item>
     </style>
-
     <!-- Splash Screen Theme -->
     <style name="Theme.Splash" parent="Theme.Main">
         <item name="android:windowBackground">@color/white</item>
@@ -70,5 +57,4 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowActionBar">false</item>
     </style>
-
 </resources>

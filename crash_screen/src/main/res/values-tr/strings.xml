@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Beklenmeyen bir hata oluştu.\nVerdiğimiz rahatsızlıktan dolayı özür dileriz.</string>
+    <string name="restart_app">Uygulamayı yeniden başlat</string>
+    <string name="close_app">Uygulamayı kapat</string>
+    <string name="error_details">Hata ayrıntıları</string>
+    <string name="error_details_title">Hata ayrıntıları</string>
+    <string name="error_details_close">Kapat</string>
+    <string name="error_details_copy">Panoya kopyala</string>
+    <string name="error_details_copied">Panoya kopyalandı</string>
+    <string name="error_details_clipboard_label">Hata bilgileri</string>
+    <string name="error_share">Hatayı paylaş</string>
+</resources>

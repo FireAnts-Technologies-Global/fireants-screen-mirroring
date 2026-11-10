@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="ads_are_about_to_be_shown">広告がまもなく表示されます...</string>
     <string name="please_select_language">言語を選択してください</string>
-    <string name="txt_request_record_permission">アプリの利用には画面録画の許可が必要です</string>
     <string name="txt_thanks_you_for_rating">評価ありがとうございます！</string>
     <string name="onboarding_title_1">スマートフォンの画面をミラーリング</string>
     <string name="onboarding_des_1">スマートフォンの画面を大画面で表示します。</string>
@@ -12,13 +11,7 @@
     <string name="onboarding_des_3">お気に入りの写真や動画をスマートフォンからテレビに共有します。</string>
     <string name="onboarding_title_4">チャンネルを視聴</string>
     <string name="onboarding_des_4">M3Uファイルまたはプレイリストのリンクを読み込んでチャンネルを視聴します。</string>
-    <string name="text_restart_app">アプリを再起動</string>
-    <string name="crash_info_title">クラッシュ情報</string>
     <string name="ad_config_invalid_message">広告設定が無効です。ad_config.jsonを確認してください。</string>
-    <string name="content_confirm_uninstall">アプリをアンインストールする理由を教えてください</string>
-    <string name="try_again">もう一度試す</string>
-    <string name="still_want_to_uninstall">本当にアンインストールしますか？</string>
-    <string name="issues_encountered_during_usage">使用中に発生した問題</string>
     <string name="txt_uninstall">アンインストール</string>
     <string name="survey_1">機能が動作しない</string>
     <string name="survey_2">広告が多すぎる</string>
@@ -29,28 +22,18 @@
     <string name="open_settings">設定を開く</string>
     <string name="force_update_message">新しいバージョンがあります。続けるにはアプリを更新してください。</string>
     <string name="update_now">今すぐ更新</string>
-    <string name="update_later">後で</string>
     <string name="feedback">フィードバック</string>
     <string name="share_with_friend">友達と共有</string>
     <string name="let_me_recommend">このアプリをおすすめ</string>
     <string name="share_to">共有先</string>
     <string name="we_re_better_than_ever">アプリはさらに使いやすくなっています</string>
-    <string name="dont_miss">アンインストールする前に、設定済みのツールや設定を残すことをご検討ください。</string>
-    <string name="over92">多くのユーザーが、長く使える便利なアプリだと感じています。</string>
     <string name="get_started">@string/cast_get_started</string>
     <string name="next">@string/cast_next</string>
-    <string name="txt_continue">@string/cast_continue_</string>
-    <string name="txt_denie">@string/cast_txt_denie</string>
     <string name="close">@string/cast_close_</string>
-    <string name="txt_cancel">@string/cast_pin_dialog_cancel</string>
     <string name="no_internet_title">@string/cast_no_internet_connection</string>
     <string name="setting">@string/cast_setting</string>
     <string name="rate">@string/cast_rate</string>
     <string name="privacy_policy">@string/cast_privacy_policy</string>
-    <string name="feature_does_not_working">@string/survey_1</string>
     <string name="too_many_ads">@string/survey_2</string>
-    <string name="i_don_t_need_it">@string/survey_3</string>
-    <string name="other">@string/survey_4</string>
-    <string name="uninstall_text">@string/txt_uninstall</string>
     <string name="start">@string/get_started</string>
 </resources>

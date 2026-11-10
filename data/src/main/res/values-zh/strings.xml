@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">错误！</string>
+    <string name="notifications_channel">录屏通知</string>
+    <string name="notifications_stop">停止</string>
+    <string name="recording_started_title">正在录屏</string>
+    <string name="recording_started_text">屏幕录制进行中</string>
+    <string name="recording_finished_title">录制已完成</string>
+    <string name="recording_finished_text">屏幕录制完成</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Wystąpił nieoczekiwany błąd.\nPrzepraszamy za niedogodności.</string>
+    <string name="restart_app">Uruchom ponownie aplikację</string>
+    <string name="close_app">Zamknij aplikację</string>
+    <string name="error_details">Szczegóły błędu</string>
+    <string name="error_details_title">Szczegóły błędu</string>
+    <string name="error_details_close">Zamknij</string>
+    <string name="error_details_copy">Kopiuj do schowka</string>
+    <string name="error_details_copied">Skopiowano do schowka</string>
+    <string name="error_details_clipboard_label">Informacje o błędzie</string>
+    <string name="error_share">Udostępnij błąd</string>
+</resources>

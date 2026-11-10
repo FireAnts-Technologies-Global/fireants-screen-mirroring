@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">¡Error!</string>
+    <string name="notifications_channel">Notificaciones de grabación</string>
+    <string name="notifications_stop">Detener</string>
+    <string name="recording_started_title">Grabando pantalla</string>
+    <string name="recording_started_text">Grabación de pantalla en curso</string>
+    <string name="recording_finished_title">Grabación finalizada</string>
+    <string name="recording_finished_text">Grabación de pantalla completada</string>
+</resources>

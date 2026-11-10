@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Hata!</string>
+    <string name="notifications_channel">Kayıt bildirimleri</string>
+    <string name="notifications_stop">Durdur</string>
+    <string name="recording_started_title">Ekran kaydediliyor</string>
+    <string name="recording_started_text">Ekran kaydı devam ediyor</string>
+    <string name="recording_finished_title">Kayıt tamamlandı</string>
+    <string name="recording_finished_text">Ekran kaydı tamamlandı</string>
+</resources>

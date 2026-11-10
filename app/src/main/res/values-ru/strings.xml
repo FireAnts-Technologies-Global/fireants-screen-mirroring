@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="ads_are_about_to_be_shown">Скоро появится реклама...</string>
     <string name="please_select_language">Выберите язык</string>
-    <string name="txt_request_record_permission">Для работы приложения требуется разрешение на запись экрана</string>
     <string name="txt_thanks_you_for_rating">Спасибо за вашу оценку!</string>
     <string name="onboarding_title_1">Трансляция экрана телефона</string>
     <string name="onboarding_des_1">Смотрите содержимое телефона на большом экране.</string>
@@ -12,13 +11,7 @@
     <string name="onboarding_des_3">Передавайте любимые фотографии и видео с телефона на телевизор.</string>
     <string name="onboarding_title_4">Смотрите свои каналы</string>
     <string name="onboarding_des_4">Импортируйте файл M3U или ссылку на плейлист, чтобы смотреть каналы.</string>
-    <string name="text_restart_app">Перезапустить приложение</string>
-    <string name="crash_info_title">Информация о сбое</string>
     <string name="ad_config_invalid_message">Недопустимая конфигурация рекламы. Проверьте ad_config.json.</string>
-    <string name="content_confirm_uninstall">Почему вы удаляете приложение?</string>
-    <string name="try_again">Повторить попытку</string>
-    <string name="still_want_to_uninstall">Вы всё ещё хотите удалить приложение?</string>
-    <string name="issues_encountered_during_usage">Проблемы, возникшие при использовании</string>
     <string name="txt_uninstall">Удалить</string>
     <string name="survey_1">Функция не работает</string>
     <string name="survey_2">Слишком много рекламы</string>
@@ -29,28 +22,18 @@
     <string name="open_settings">Открыть настройки</string>
     <string name="force_update_message">Доступна новая версия. Обновите приложение, чтобы продолжить.</string>
     <string name="update_now">Обновить сейчас</string>
-    <string name="update_later">Может быть позже</string>
     <string name="feedback">Отзыв</string>
     <string name="share_with_friend">Поделиться с друзьями</string>
     <string name="let_me_recommend">Порекомендовать приложение</string>
     <string name="share_to">Поделиться с</string>
     <string name="we_re_better_than_ever">Приложение становится всё лучше</string>
-    <string name="dont_miss">Перед удалением подумайте, стоит ли сохранить настроенные инструменты и параметры.</string>
-    <string name="over92">Многие пользователи считают приложение полезным даже спустя долгое время.</string>
     <string name="get_started">@string/cast_get_started</string>
     <string name="next">@string/cast_next</string>
-    <string name="txt_continue">@string/cast_continue_</string>
-    <string name="txt_denie">@string/cast_txt_denie</string>
     <string name="close">@string/cast_close_</string>
-    <string name="txt_cancel">@string/cast_pin_dialog_cancel</string>
     <string name="no_internet_title">@string/cast_no_internet_connection</string>
     <string name="setting">@string/cast_setting</string>
     <string name="rate">@string/cast_rate</string>
     <string name="privacy_policy">@string/cast_privacy_policy</string>
-    <string name="feature_does_not_working">@string/survey_1</string>
     <string name="too_many_ads">@string/survey_2</string>
-    <string name="i_don_t_need_it">@string/survey_3</string>
-    <string name="other">@string/survey_4</string>
-    <string name="uninstall_text">@string/txt_uninstall</string>
     <string name="start">@string/get_started</string>
 </resources>

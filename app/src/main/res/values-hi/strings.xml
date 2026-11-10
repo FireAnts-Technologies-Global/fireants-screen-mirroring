@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="ads_are_about_to_be_shown">विज्ञापन जल्द दिखाए जाएंगे...</string>
     <string name="please_select_language">अपनी भाषा चुनें</string>
-    <string name="txt_request_record_permission">ऐप चलाने के लिए स्क्रीन रिकॉर्डिंग की अनुमति आवश्यक है</string>
     <string name="txt_thanks_you_for_rating">रेटिंग देने के लिए धन्यवाद!</string>
     <string name="onboarding_title_1">फ़ोन की स्क्रीन मिरर करें</string>
     <string name="onboarding_des_1">अपने फ़ोन की सामग्री बड़ी स्क्रीन पर देखें।</string>
@@ -12,13 +11,7 @@
     <string name="onboarding_des_3">अपने पसंदीदा फ़ोटो और वीडियो फ़ोन से टीवी पर साझा करें।</string>
     <string name="onboarding_title_4">अपने चैनल देखें</string>
     <string name="onboarding_des_4">चैनल देखने के लिए M3U फ़ाइल या प्लेलिस्ट लिंक आयात करें।</string>
-    <string name="text_restart_app">ऐप पुनः प्रारंभ करें</string>
-    <string name="crash_info_title">क्रैश जानकारी</string>
     <string name="ad_config_invalid_message">विज्ञापन कॉन्फ़िगरेशन अमान्य है। ad_config.json जाँचें।</string>
-    <string name="content_confirm_uninstall">आप ऐप क्यों हटा रहे हैं?</string>
-    <string name="try_again">फिर से कोशिश करें</string>
-    <string name="still_want_to_uninstall">क्या आप अब भी ऐप हटाना चाहते हैं?</string>
-    <string name="issues_encountered_during_usage">उपयोग के दौरान आई समस्याएँ</string>
     <string name="txt_uninstall">अनइंस्टॉल करें</string>
     <string name="survey_1">एक सुविधा काम नहीं कर रही</string>
     <string name="survey_2">बहुत अधिक विज्ञापन</string>
@@ -29,28 +22,18 @@
     <string name="open_settings">सेटिंग खोलें</string>
     <string name="force_update_message">नया संस्करण उपलब्ध है। जारी रखने के लिए ऐप अपडेट करें।</string>
     <string name="update_now">अभी अपडेट करें</string>
-    <string name="update_later">शायद बाद में</string>
     <string name="feedback">प्रतिक्रिया</string>
     <string name="share_with_friend">दोस्तों के साथ साझा करें</string>
     <string name="let_me_recommend">इस ऐप की अनुशंसा करें</string>
     <string name="share_to">यहाँ साझा करें</string>
     <string name="we_re_better_than_ever">ऐप लगातार बेहतर हो रहा है</string>
-    <string name="dont_miss">ऐप हटाने से पहले, अपने सेट किए हुए टूल और सेटिंग्स को बनाए रखने पर विचार करें।</string>
-    <string name="over92">कई उपयोगकर्ताओं को यह ऐप लंबे समय तक उपयोगी लगता है।</string>
     <string name="get_started">@string/cast_get_started</string>
     <string name="next">@string/cast_next</string>
-    <string name="txt_continue">@string/cast_continue_</string>
-    <string name="txt_denie">@string/cast_txt_denie</string>
     <string name="close">@string/cast_close_</string>
-    <string name="txt_cancel">@string/cast_pin_dialog_cancel</string>
     <string name="no_internet_title">@string/cast_no_internet_connection</string>
     <string name="setting">@string/cast_setting</string>
     <string name="rate">@string/cast_rate</string>
     <string name="privacy_policy">@string/cast_privacy_policy</string>
-    <string name="feature_does_not_working">@string/survey_1</string>
     <string name="too_many_ads">@string/survey_2</string>
-    <string name="i_don_t_need_it">@string/survey_3</string>
-    <string name="other">@string/survey_4</string>
-    <string name="uninstall_text">@string/txt_uninstall</string>
     <string name="start">@string/get_started</string>
 </resources>

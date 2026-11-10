@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Error!</string>
+    <string name="notifications_channel">Mga notification sa pag-record</string>
+    <string name="notifications_stop">Ihinto</string>
+    <string name="recording_started_title">Nire-record ang screen</string>
+    <string name="recording_started_text">Kasalukuyang nagre-record ng screen</string>
+    <string name="recording_finished_title">Tapos na ang pag-record</string>
+    <string name="recording_finished_text">Kumpleto na ang pag-record ng screen</string>
+</resources>

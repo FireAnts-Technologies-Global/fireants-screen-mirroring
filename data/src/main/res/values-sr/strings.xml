@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Грешка!</string>
+    <string name="notifications_channel">Обавештења о снимању</string>
+    <string name="notifications_stop">Заустави</string>
+    <string name="recording_started_title">Снимање екрана</string>
+    <string name="recording_started_text">Снимање екрана је у току</string>
+    <string name="recording_finished_title">Снимање је завршено</string>
+    <string name="recording_finished_text">Снимање екрана је довршено</string>
+</resources>

@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="ads_are_about_to_be_shown">Iklan akan segera ditampilkan...</string>
     <string name="please_select_language">Pilih bahasa Anda</string>
     <string name="get_started">Mulai</string>
     <string name="next">Berikutnya</string>
-    <string name="txt_continue">Lanjutkan</string>
-    <string name="txt_request_record_permission">Izin perekaman diperlukan agar aplikasi dapat berfungsi</string>
-    <string name="txt_denie">Anda perlu memberikan izin untuk menggunakan fitur ini</string>
     <string name="txt_thanks_you_for_rating">Terima kasih atas penilaian Anda!</string>
     <string name="onboarding_title_1">Cerminkan Layar Ponsel</string>
     <string name="onboarding_des_1">Lihat isi ponsel Anda di layar besar.</string>
@@ -16,15 +13,8 @@
     <string name="onboarding_des_3">Bagikan foto dan video favorit dari ponsel ke TV.</string>
     <string name="onboarding_title_4">Tonton Saluran Anda</string>
     <string name="onboarding_des_4">Impor file M3U atau tautan daftar putar untuk menonton saluran.</string>
-    <string name="text_restart_app">Mulai Ulang Aplikasi</string>
-    <string name="crash_info_title">Informasi Kerusakan</string>
     <string name="close">Tutup</string>
     <string name="ad_config_invalid_message">Konfigurasi iklan tidak valid. Periksa ad_config.json.</string>
-    <string name="content_confirm_uninstall">Mengapa Anda menghapus aplikasi ini?</string>
-    <string name="try_again">Coba Lagi</string>
-    <string name="still_want_to_uninstall">Tetap ingin menghapus aplikasi?</string>
-    <string name="issues_encountered_during_usage">Masalah yang ditemui saat menggunakan aplikasi</string>
-    <string name="txt_cancel">Batal</string>
     <string name="txt_uninstall">Hapus Instalasi</string>
     <string name="survey_1">Fitur tidak berfungsi</string>
     <string name="survey_2">Terlalu banyak iklan</string>
@@ -36,7 +26,6 @@
     <string name="open_settings">Buka Pengaturan</string>
     <string name="force_update_message">Versi baru tersedia. Perbarui aplikasi untuk melanjutkan.</string>
     <string name="update_now">Perbarui Sekarang</string>
-    <string name="update_later">Nanti Saja</string>
     <string name="setting">Pengaturan</string>
     <string name="rate">Beri Nilai</string>
     <string name="feedback">Masukan</string>
@@ -45,12 +34,6 @@
     <string name="let_me_recommend">Rekomendasikan aplikasi ini</string>
     <string name="share_to">Bagikan ke</string>
     <string name="we_re_better_than_ever">Aplikasi ini terus menjadi lebih baik</string>
-    <string name="feature_does_not_working">Fitur tidak berfungsi</string>
     <string name="too_many_ads">Terlalu banyak iklan</string>
-    <string name="i_don_t_need_it">Saya tidak membutuhkannya</string>
-    <string name="other">Lainnya</string>
-    <string name="uninstall_text">Hapus Instalasi</string>
-    <string name="dont_miss">Sebelum menghapus aplikasi, pertimbangkan untuk menyimpan alat dan pengaturan yang telah Anda siapkan.</string>
-    <string name="over92">Banyak pengguna tetap merasa aplikasi ini berguna dalam jangka panjang.</string>
     <string name="start">Mulai</string>
 </resources>

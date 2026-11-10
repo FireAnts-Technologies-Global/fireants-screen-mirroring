@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">May hindi inaasahang error.\nPaumanhin sa abala.</string>
+    <string name="restart_app">I-restart ang app</string>
+    <string name="close_app">Isara ang app</string>
+    <string name="error_details">Mga detalye ng error</string>
+    <string name="error_details_title">Mga detalye ng error</string>
+    <string name="error_details_close">Isara</string>
+    <string name="error_details_copy">Kopyahin sa clipboard</string>
+    <string name="error_details_copied">Nakopya sa clipboard</string>
+    <string name="error_details_clipboard_label">Impormasyon ng error</string>
+    <string name="error_share">Ibahagi ang error</string>
+</resources>

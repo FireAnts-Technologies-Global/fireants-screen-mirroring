@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Дошло је до неочекиване грешке.\nИзвињавамо се због непријатности.</string>
+    <string name="restart_app">Поново покрени апликацију</string>
+    <string name="close_app">Затвори апликацију</string>
+    <string name="error_details">Детаљи грешке</string>
+    <string name="error_details_title">Детаљи грешке</string>
+    <string name="error_details_close">Затвори</string>
+    <string name="error_details_copy">Копирај у привремену меморију</string>
+    <string name="error_details_copied">Копирано у привремену меморију</string>
+    <string name="error_details_clipboard_label">Информације о грешци</string>
+    <string name="error_share">Подели грешку</string>
+</resources>

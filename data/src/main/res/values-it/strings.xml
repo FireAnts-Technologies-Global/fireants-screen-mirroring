@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Errore!</string>
+    <string name="notifications_channel">Notifiche di registrazione</string>
+    <string name="notifications_stop">Interrompi</string>
+    <string name="recording_started_title">Registrazione schermo</string>
+    <string name="recording_started_text">Registrazione dello schermo in corso</string>
+    <string name="recording_finished_title">Registrazione completata</string>
+    <string name="recording_finished_text">Registrazione dello schermo completata</string>
+</resources>

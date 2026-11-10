@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Došlo je do neočekivane pogreške.\nIspričavamo se zbog neugodnosti.</string>
+    <string name="restart_app">Ponovno pokreni aplikaciju</string>
+    <string name="close_app">Zatvori aplikaciju</string>
+    <string name="error_details">Pojedinosti o pogrešci</string>
+    <string name="error_details_title">Pojedinosti o pogrešci</string>
+    <string name="error_details_close">Zatvori</string>
+    <string name="error_details_copy">Kopiraj u međuspremnik</string>
+    <string name="error_details_copied">Kopirano u međuspremnik</string>
+    <string name="error_details_clipboard_label">Informacije o pogrešci</string>
+    <string name="error_share">Podijeli pogrešku</string>
+</resources>

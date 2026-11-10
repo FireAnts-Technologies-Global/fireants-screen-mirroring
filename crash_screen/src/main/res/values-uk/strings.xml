@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Сталася неочікувана помилка.\nПерепрошуємо за незручності.</string>
+    <string name="restart_app">Перезапустити застосунок</string>
+    <string name="close_app">Закрити застосунок</string>
+    <string name="error_details">Докладно про помилку</string>
+    <string name="error_details_title">Докладно про помилку</string>
+    <string name="error_details_close">Закрити</string>
+    <string name="error_details_copy">Копіювати в буфер обміну</string>
+    <string name="error_details_copied">Скопійовано в буфер обміну</string>
+    <string name="error_details_clipboard_label">Інформація про помилку</string>
+    <string name="error_share">Поділитися помилкою</string>
+</resources>

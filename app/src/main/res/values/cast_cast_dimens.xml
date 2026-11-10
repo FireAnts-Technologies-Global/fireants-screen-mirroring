@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <dimen name="cast_cast_space_4">@dimen/_3sdp</dimen>
     <dimen name="cast_cast_space_8">@dimen/_7sdp</dimen>
     <dimen name="cast_cast_space_12">@dimen/_10sdp</dimen>
     <dimen name="cast_cast_space_16">@dimen/_13sdp</dimen>
@@ -10,32 +9,17 @@
     <dimen name="cast_cast_radius_16">@dimen/_13sdp</dimen>
     <dimen name="cast_cast_radius_18">@dimen/_15sdp</dimen>
     <dimen name="cast_cast_radius_22">@dimen/_18sdp</dimen>
-    <dimen name="cast_cast_icon_button_size">@dimen/_37sdp</dimen>
     <dimen name="cast_cast_toolbar_icon_size">@dimen/_15sdp</dimen>
     <dimen name="cast_cast_status_height">@dimen/_171sdp</dimen>
     <dimen name="cast_cast_signal_size">@dimen/_97sdp</dimen>
-    <dimen name="cast_cast_device_row_height">@dimen/_45sdp</dimen>
-    <dimen name="cast_cast_action_height">@dimen/_41sdp</dimen>
     <dimen name="cast_cast_dialog_width">@dimen/_267sdp</dimen>
-    <dimen name="cast_cast_dialog_action_height">@dimen/_37sdp</dimen>
     <dimen name="cast_cast_dialog_input_empty_height">@dimen/_37sdp</dimen>
     <dimen name="cast_cast_dialog_input_entered_height">@dimen/_38sdp</dimen>
     <dimen name="cast_cast_text_12">@dimen/_10sdp</dimen>
-    <dimen name="cast_cast_text_13">@dimen/_11sdp</dimen>
-    <dimen name="cast_cast_text_14">@dimen/_12sdp</dimen>
-    <dimen name="cast_cast_text_15">@dimen/_13sdp</dimen>
     <dimen name="cast_cast_text_16">@dimen/_13sdp</dimen>
-    <dimen name="cast_cast_text_19">@dimen/_16sdp</dimen>
-    <dimen name="cast_cast_text_22">@dimen/_18sdp</dimen>
-    <dimen name="cast_media_tile_photo_height">@dimen/_93sdp</dimen>
-    <dimen name="cast_media_tile_video_height">@dimen/_150sdp</dimen>
     <dimen name="cast_media_tile_radius">@dimen/_10sdp</dimen>
-    <dimen name="cast_media_grid_spacing">@dimen/_10sdp</dimen>
     <dimen name="cast_media_grid_horizontal_padding">@dimen/_13sdp</dimen>
-    <dimen name="cast_media_nav_height">@dimen/_50sdp</dimen>
-    <dimen name="cast_media_nav_item_height">@dimen/_37sdp</dimen>
     <dimen name="cast_media_preview_radius">@dimen/_18sdp</dimen>
-    <dimen name="cast_media_preview_button_height">@dimen/_41sdp</dimen>
     <dimen name="cast_media_device_row_height">@dimen/_47sdp</dimen>
     <dimen name="cast_media_device_icon_tile">@dimen/_33sdp</dimen>
     <dimen name="cast_media_device_icon">@dimen/_20sdp</dimen>

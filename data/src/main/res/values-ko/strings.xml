@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">오류!</string>
+    <string name="notifications_channel">녹화 알림</string>
+    <string name="notifications_stop">중지</string>
+    <string name="recording_started_title">화면 녹화 중</string>
+    <string name="recording_started_text">화면 녹화 진행 중</string>
+    <string name="recording_finished_title">녹화 완료</string>
+    <string name="recording_finished_text">화면 녹화가 완료되었습니다</string>
+</resources>

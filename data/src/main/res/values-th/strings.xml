@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">ข้อผิดพลาด!</string>
+    <string name="notifications_channel">การแจ้งเตือนการบันทึก</string>
+    <string name="notifications_stop">หยุด</string>
+    <string name="recording_started_title">กำลังบันทึกหน้าจอ</string>
+    <string name="recording_started_text">กำลังบันทึกหน้าจอ</string>
+    <string name="recording_finished_title">บันทึกเสร็จแล้ว</string>
+    <string name="recording_finished_text">บันทึกหน้าจอเสร็จสมบูรณ์</string>
+</resources>

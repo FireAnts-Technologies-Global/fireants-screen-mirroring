@@ -6,16 +6,17 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import com.hyper.castwave.R
+import com.hyper.castwave.casting.mirroring.ScreenMirrorManager
 import com.hyper.castwave.domain.model.MediaItem
 import com.hyper.castwave.domain.model.MediaType
 import com.hyper.castwave.domain.repository.CastSessionRepository
 import com.hyper.castwave.domain.usecase.DisconnectDeviceUseCase
-import com.hyper.castwave.casting.mirroring.ScreenMirrorManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -117,6 +118,7 @@ class CastForegroundService : Service() {
 
     private fun buildNotification(deviceName: String) = NotificationCompat.Builder(this, CHANNEL_ID)
         .setSmallIcon(R.drawable.cast_ic_cast)
+        .setLargeIcon(BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher))
         .setContentTitle(getString(R.string.cast_notification_casting_title, deviceName))
         .setContentText(getString(R.string.cast_notification_casting_content))
         .setContentIntent(openAppPendingIntent())

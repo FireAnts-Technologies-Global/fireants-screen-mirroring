@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Er is een onverwachte fout opgetreden.\nSorry voor het ongemak.</string>
+    <string name="restart_app">App opnieuw starten</string>
+    <string name="close_app">App sluiten</string>
+    <string name="error_details">Foutgegevens</string>
+    <string name="error_details_title">Foutgegevens</string>
+    <string name="error_details_close">Sluiten</string>
+    <string name="error_details_copy">Kopiëren naar klembord</string>
+    <string name="error_details_copied">Gekopieerd naar klembord</string>
+    <string name="error_details_clipboard_label">Foutinformatie</string>
+    <string name="error_share">Fout delen</string>
+</resources>

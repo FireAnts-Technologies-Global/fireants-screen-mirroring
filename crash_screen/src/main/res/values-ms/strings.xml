@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Ralat yang tidak dijangka telah berlaku.\nMaaf atas kesulitan ini.</string>
+    <string name="restart_app">Mulakan Semula Aplikasi</string>
+    <string name="close_app">Tutup Aplikasi</string>
+    <string name="error_details">Butiran ralat</string>
+    <string name="error_details_title">Butiran ralat</string>
+    <string name="error_details_close">Tutup</string>
+    <string name="error_details_copy">Salin ke papan klip</string>
+    <string name="error_details_copied">Disalin ke papan klip</string>
+    <string name="error_details_clipboard_label">Maklumat ralat</string>
+    <string name="error_share">Kongsi ralat</string>
+</resources>

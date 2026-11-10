@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">त्रुटि!</string>
+    <string name="notifications_channel">रिकॉर्डिंग सूचनाएँ</string>
+    <string name="notifications_stop">रोकें</string>
+    <string name="recording_started_title">स्क्रीन रिकॉर्ड हो रही है</string>
+    <string name="recording_started_text">स्क्रीन रिकॉर्डिंग जारी है</string>
+    <string name="recording_finished_title">रिकॉर्डिंग पूरी हुई</string>
+    <string name="recording_finished_text">स्क्रीन रिकॉर्डिंग पूरी हुई</string>
+</resources>

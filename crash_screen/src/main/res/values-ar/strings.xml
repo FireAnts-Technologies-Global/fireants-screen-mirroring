@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">حدث خطأ غير متوقع.\nنأسف للإزعاج.</string>
+    <string name="restart_app">إعادة تشغيل التطبيق</string>
+    <string name="close_app">إغلاق التطبيق</string>
+    <string name="error_details">تفاصيل الخطأ</string>
+    <string name="error_details_title">تفاصيل الخطأ</string>
+    <string name="error_details_close">إغلاق</string>
+    <string name="error_details_copy">نسخ إلى الحافظة</string>
+    <string name="error_details_copied">تم النسخ إلى الحافظة</string>
+    <string name="error_details_clipboard_label">معلومات الخطأ</string>
+    <string name="error_share">مشاركة الخطأ</string>
+</resources>

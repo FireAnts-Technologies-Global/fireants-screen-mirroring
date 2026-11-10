@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Ett oväntat fel inträffade.\nVi ber om ursäkt för besväret.</string>
+    <string name="restart_app">Starta om appen</string>
+    <string name="close_app">Stäng appen</string>
+    <string name="error_details">Felinformation</string>
+    <string name="error_details_title">Felinformation</string>
+    <string name="error_details_close">Stäng</string>
+    <string name="error_details_copy">Kopiera till urklipp</string>
+    <string name="error_details_copied">Kopierat till urklipp</string>
+    <string name="error_details_clipboard_label">Felmeddelande</string>
+    <string name="error_share">Dela fel</string>
+</resources>

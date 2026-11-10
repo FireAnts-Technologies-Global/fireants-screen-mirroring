@@ -1,10 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:ns0="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="cast_Base.Theme.CastToTV" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color -->
         <item name="colorOnPrimary">@color/cast_white</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:windowLightNavigationBar" ns0:targetApi="27">true</item>
         <item name="colorOnSecondary">@color/cast_white</item>
         <!-- Window background -->
         <item name="android:windowBackground">#F4F4F4</item>
@@ -17,47 +18,23 @@
         <item name="android:windowNoTitle">true</item>
         <!-- Optional: Disable layout animations -->
         <item name="android:animateLayoutChanges">false</item>
-
         <item name="android:includeFontPadding">false</item>
     </style>
-
     <style name="cast_MySeekBar" parent="Widget.AppCompat.SeekBar">
         <item name="android:progressBackgroundTint">@color/cast_color_9A9A9A</item>
         <item name="android:progressTint">@color/cast_color_0452F7</item>
         <item name="android:thumbTint">@color/cast_color_51A2FE</item>
     </style>
-
-    <style name="cast_ThemeBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/cast_StyleBottomSheetDialog</item>
-    </style>
-
-    <style name="cast_StyleBottomSheetDialog" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@android:color/transparent</item>
-    </style>
-
-    <style name="cast_image_corner_12">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/_10sdp</item>
-    </style>
-
     <style name="cast_ThemeDialog" parent="android:Theme.Holo.Dialog">
         <item name="android:windowMinWidthMajor">85%</item>
         <item name="android:windowMinWidthMinor">85%</item>
         <item name="android:backgroundDimAmount">0.5</item>
     </style>
-
-    <style name="cast_ThemeDialogFullscreen" parent="android:Theme.Holo.Dialog">
-        <item name="android:backgroundDimAmount">0.5</item>
-        <item name="android:windowMinWidthMajor">100%</item>
-    </style>
-
     <style name="cast_BaseDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
-
     <style name="cast_RadioButtonMain" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">#9E9E9E</item>
         <item name="colorControlActivated">#303030</item>
     </style>
-
 </resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Ошибка!</string>
+    <string name="notifications_channel">Уведомления о записи</string>
+    <string name="notifications_stop">Остановить</string>
+    <string name="recording_started_title">Запись экрана</string>
+    <string name="recording_started_text">Идёт запись экрана</string>
+    <string name="recording_finished_title">Запись завершена</string>
+    <string name="recording_finished_text">Запись экрана завершена</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Fout!</string>
+    <string name="notifications_channel">Opnamemeldingen</string>
+    <string name="notifications_stop">Stoppen</string>
+    <string name="recording_started_title">Scherm opnemen</string>
+    <string name="recording_started_text">Schermopname bezig</string>
+    <string name="recording_finished_title">Opname voltooid</string>
+    <string name="recording_finished_text">Schermopname voltooid</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">เกิดข้อผิดพลาดที่ไม่คาดคิด\nขออภัยในความไม่สะดวก</string>
+    <string name="restart_app">รีสตาร์ทแอป</string>
+    <string name="close_app">ปิดแอป</string>
+    <string name="error_details">รายละเอียดข้อผิดพลาด</string>
+    <string name="error_details_title">รายละเอียดข้อผิดพลาด</string>
+    <string name="error_details_close">ปิด</string>
+    <string name="error_details_copy">คัดลอกไปยังคลิปบอร์ด</string>
+    <string name="error_details_copied">คัดลอกไปยังคลิปบอร์ดแล้ว</string>
+    <string name="error_details_clipboard_label">ข้อมูลข้อผิดพลาด</string>
+    <string name="error_share">แชร์ข้อผิดพลาด</string>
+</resources>

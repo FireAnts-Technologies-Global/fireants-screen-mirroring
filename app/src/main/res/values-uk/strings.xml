@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="ads_are_about_to_be_shown">Незабаром буде показано рекламу...</string>
     <string name="please_select_language">Виберіть мову</string>
     <string name="get_started">Почати</string>
     <string name="next">Далі</string>
-    <string name="txt_continue">Продовжити</string>
-    <string name="txt_request_record_permission">Для роботи застосунку потрібен дозвіл на запис екрана</string>
-    <string name="txt_denie">Щоб користуватися цією функцією, потрібно надати дозвіл</string>
     <string name="txt_thanks_you_for_rating">Дякуємо за вашу оцінку!</string>
     <string name="onboarding_title_1">Трансляція екрана телефона</string>
     <string name="onboarding_des_1">Переглядайте вміст телефона на великому екрані.</string>
@@ -16,15 +13,8 @@
     <string name="onboarding_des_3">Діліться улюбленими фотографіями та відео з телефона на телевізорі.</string>
     <string name="onboarding_title_4">Перегляд каналів</string>
     <string name="onboarding_des_4">Імпортуйте файл M3U або посилання на список відтворення, щоб дивитися канали.</string>
-    <string name="text_restart_app">Перезапустити застосунок</string>
-    <string name="crash_info_title">Інформація про збій</string>
     <string name="close">Закрити</string>
     <string name="ad_config_invalid_message">Недійсна конфігурація реклами. Перевірте ad_config.json.</string>
-    <string name="content_confirm_uninstall">Чому ви видаляєте застосунок?</string>
-    <string name="try_again">Спробувати ще раз</string>
-    <string name="still_want_to_uninstall">Ви все ще хочете видалити застосунок?</string>
-    <string name="issues_encountered_during_usage">Проблеми, що виникли під час використання</string>
-    <string name="txt_cancel">Скасувати</string>
     <string name="txt_uninstall">Видалити</string>
     <string name="survey_1">Функція не працює</string>
     <string name="survey_2">Забагато реклами</string>
@@ -36,7 +26,6 @@
     <string name="open_settings">Відкрити налаштування</string>
     <string name="force_update_message">Доступна нова версія. Оновіть застосунок, щоб продовжити.</string>
     <string name="update_now">Оновити зараз</string>
-    <string name="update_later">Можливо, пізніше</string>
     <string name="setting">Налаштування</string>
     <string name="rate">Оцінити</string>
     <string name="feedback">Відгук</string>
@@ -45,12 +34,6 @@
     <string name="let_me_recommend">Рекомендувати цей застосунок</string>
     <string name="share_to">Поділитися з</string>
     <string name="we_re_better_than_ever">Застосунок стає ще кращим</string>
-    <string name="feature_does_not_working">Функція не працює</string>
     <string name="too_many_ads">Забагато реклами</string>
-    <string name="i_don_t_need_it">Мені це не потрібно</string>
-    <string name="other">Інше</string>
-    <string name="uninstall_text">Видалити</string>
-    <string name="dont_miss">Перш ніж видалити застосунок, подумайте, чи варто зберегти вже налаштовані інструменти й параметри.</string>
-    <string name="over92">Багато користувачів і надалі вважають застосунок корисним.</string>
     <string name="start">Почати</string>
 </resources>

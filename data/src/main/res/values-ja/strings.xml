@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">エラー！</string>
+    <string name="notifications_channel">録画通知</string>
+    <string name="notifications_stop">停止</string>
+    <string name="recording_started_title">画面を録画中</string>
+    <string name="recording_started_text">画面録画中</string>
+    <string name="recording_finished_title">録画が完了しました</string>
+    <string name="recording_finished_text">画面録画が完了しました</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Fel!</string>
+    <string name="notifications_channel">Inspelningsaviseringar</string>
+    <string name="notifications_stop">Stoppa</string>
+    <string name="recording_started_title">Spelar in skärmen</string>
+    <string name="recording_started_text">Skärminspelning pågår</string>
+    <string name="recording_finished_title">Inspelningen är klar</string>
+    <string name="recording_finished_text">Skärminspelningen är klar</string>
+</resources>

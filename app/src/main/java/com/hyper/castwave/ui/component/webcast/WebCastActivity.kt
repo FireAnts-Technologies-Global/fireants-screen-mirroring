@@ -6,6 +6,7 @@ import android.media.projection.MediaProjectionManager
 import android.view.LayoutInflater
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import com.hyper.castwave.R
 import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.databinding.CastActivityWebCastBinding
@@ -66,6 +67,13 @@ class WebCastActivity : BaseActivity<CastActivityWebCastBinding>() {
         mBinding.tvIpWifi.text = state.ipUrl
         mBinding.tvStartScreenLabel.text = getString(
             if (state.isMirroring) R.string.cast_screen_mirror_stop else R.string.cast_screen_mirror_start,
+        )
+        mBinding.tvStartScreenLabel.setTextColor(
+            ContextCompat.getColor(
+                this,
+                if (state.isMirroring) android.R.color.black
+                else android.R.color.white
+            )
         )
         mBinding.tvStartScreen.setBackgroundResource(
             if (state.isMirroring) {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Kesalahan!</string>
+    <string name="notifications_channel">Notifikasi perekaman</string>
+    <string name="notifications_stop">Berhenti</string>
+    <string name="recording_started_title">Merekam layar</string>
+    <string name="recording_started_text">Perekaman layar sedang berlangsung</string>
+    <string name="recording_finished_title">Perekaman selesai</string>
+    <string name="recording_finished_text">Perekaman layar selesai</string>
+</resources>

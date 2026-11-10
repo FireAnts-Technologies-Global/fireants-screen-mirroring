@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <dimen name="cast_home_photo_height">@dimen/_120sdp</dimen>
     <dimen name="cast_home_photo_fade_height">@dimen/_38sdp</dimen>
@@ -11,7 +12,6 @@
     <dimen name="cast_home_nav_height">@dimen/_60sdp</dimen>
     <dimen name="cast_home_nav_item_height">@dimen/_39sdp</dimen>
     <dimen name="cast_home_nav_gap">@dimen/_7sdp</dimen>
-    <dimen name="cast_home_button_height">@dimen/_37sdp</dimen>
     <dimen name="cast_home_icon_tile_size">@dimen/_28sdp</dimen>
     <dimen name="cast_home_radius_button">@dimen/_10sdp</dimen>
     <dimen name="cast_home_radius_section">@dimen/_12sdp</dimen>

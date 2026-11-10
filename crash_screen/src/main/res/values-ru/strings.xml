@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred_explanation">Произошла непредвиденная ошибка.\nПриносим извинения за неудобства.</string>
+    <string name="restart_app">Перезапустить приложение</string>
+    <string name="close_app">Закрыть приложение</string>
+    <string name="error_details">Сведения об ошибке</string>
+    <string name="error_details_title">Сведения об ошибке</string>
+    <string name="error_details_close">Закрыть</string>
+    <string name="error_details_copy">Скопировать в буфер обмена</string>
+    <string name="error_details_copied">Скопировано в буфер обмена</string>
+    <string name="error_details_clipboard_label">Информация об ошибке</string>
+    <string name="error_share">Поделиться ошибкой</string>
+</resources>
