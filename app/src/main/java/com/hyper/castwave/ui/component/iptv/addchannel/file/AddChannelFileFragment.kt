@@ -1,12 +1,12 @@
 package com.hyper.castwave.ui.component.iptv.addchannel.file
 
 import android.net.Uri
-import android.provider.OpenableColumns
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.hyper.castwave.R
+import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.databinding.CastFragmentAddChannelFileBinding
 import com.hyper.castwave.ui.bases.BaseFragment
 import com.hyper.castwave.ui.bases.ext.showToastById
@@ -16,7 +16,6 @@ import com.hyper.castwave.ui.component.iptv.addchannel.helper.ValidationHelper
 import com.hyper.castwave.ui.component.iptv.addchannel.viewmodel.AddChannelViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.util.Locale
 
 class AddChannelFileFragment : BaseFragment<CastFragmentAddChannelFileBinding>() {
     private val viewModel: AddChannelViewModel by activityViewModels()
@@ -54,7 +53,12 @@ class AddChannelFileFragment : BaseFragment<CastFragmentAddChannelFileBinding>()
                 lifecycleScope.launch {
                     delay(400)
                     showLoading(false)
-                    ImportStateHelper.showSuccessDialog(this@AddChannelFileFragment, channelCount)
+                    AdsManager.loadAndShowInterImportSuccessfulChannels(requireActivity()) {
+                        ImportStateHelper.showSuccessDialog(
+                            this@AddChannelFileFragment,
+                            channelCount
+                        )
+                    }
                 }
             },
             onError = { message ->

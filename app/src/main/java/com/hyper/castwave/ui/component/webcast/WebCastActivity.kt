@@ -8,8 +8,9 @@ import android.view.LayoutInflater
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.hyper.castwave.R
-import com.hyper.castwave.ui.bases.BaseActivity
+import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.databinding.CastActivityWebCastBinding
+import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.ext.maybeShowRateAfterFirstWebMirror
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,7 +26,7 @@ class WebCastActivity : BaseActivity<CastActivityWebCastBinding>() {
     private val projectionLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult(),
     ) { result ->
-        if (result.resultCode != Activity.RESULT_OK) return@registerForActivityResult
+        if (result.resultCode != RESULT_OK) return@registerForActivityResult
         val data = result.data ?: return@registerForActivityResult
         viewModel.start(result.resultCode, data)
     }
@@ -53,7 +54,11 @@ class WebCastActivity : BaseActivity<CastActivityWebCastBinding>() {
             if (viewModel.uiState.value.isMirroring) {
                 viewModel.stop()
             } else {
-                requestProjectionConsent()
+                AdsManager.loadAndShowRewardScreenMirroring(
+                    activity = this,
+                    onUserEarnedReward = { requestProjectionConsent() },
+                    onFail = { requestProjectionConsent() },
+                )
             }
         }
     }
@@ -78,7 +83,7 @@ class WebCastActivity : BaseActivity<CastActivityWebCastBinding>() {
 
     private fun requestProjectionConsent() {
         val projectionManager =
-            getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
+            getSystemService(MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
         projectionLauncher.launch(projectionManager.createScreenCaptureIntent())
     }
 

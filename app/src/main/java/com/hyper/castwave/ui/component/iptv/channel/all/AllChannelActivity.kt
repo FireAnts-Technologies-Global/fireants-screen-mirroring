@@ -5,18 +5,21 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hyper.castwave.R
-import com.hyper.castwave.databinding.CastActivityAllChannelBinding
+import com.hyper.castwave.ads.AdRemoteConfig
+import com.hyper.castwave.ads.banner_channels_collage
 import com.hyper.castwave.data.iptv.model.TVChannel
-import com.hyper.castwave.ui.component.iptv.IptvBaseActivity
-import com.hyper.castwave.ui.component.iptv.dialog.DeleteChannelDialog
-import com.hyper.castwave.ui.component.iptv.dialog.EditChannelDialog
 import com.hyper.castwave.data.iptv.model.TVChannelSourceType
-import com.hyper.castwave.ui.component.iptv.IptvAppConstants
+import com.hyper.castwave.databinding.CastActivityAllChannelBinding
+import com.hyper.castwave.ui.bases.BannerConfig
 import com.hyper.castwave.ui.bases.ext.showToastById
+import com.hyper.castwave.ui.component.iptv.IptvAppConstants
+import com.hyper.castwave.ui.component.iptv.IptvBaseActivity
+import com.hyper.castwave.ui.component.iptv.IptvRoutes
 import com.hyper.castwave.ui.component.iptv.channel.all.adapter.ChannelAdapter
 import com.hyper.castwave.ui.component.iptv.channel.all.dialog.EditChannelPopup
+import com.hyper.castwave.ui.component.iptv.dialog.DeleteChannelDialog
+import com.hyper.castwave.ui.component.iptv.dialog.EditChannelDialog
 import com.hyper.castwave.ui.component.iptv.viewmodel.IptvHomeViewModel
-import com.hyper.castwave.ui.component.iptv.IptvRoutes
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -24,6 +27,9 @@ import kotlinx.coroutines.launch
 class AllChannelActivity : IptvBaseActivity<CastActivityAllChannelBinding>() {
 
     override var isHasShowAddWhenBack = true
+
+    override val bannerConfig: BannerConfig
+        get() = BannerConfig(AdRemoteConfig.banner_channels_collage, isCollapse = true)
 
     private val viewModel: IptvHomeViewModel by viewModels()
     private lateinit var channelAdapter: ChannelAdapter

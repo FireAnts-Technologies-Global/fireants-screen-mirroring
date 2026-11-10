@@ -12,13 +12,19 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.anrstudio.ads.ads.wrapper.ApNativeAd
 import com.hyper.castwave.R
+import com.hyper.castwave.ads.AdsManager
+import com.hyper.castwave.ads.populateNativeAdView
 import com.hyper.castwave.databinding.CastFragmentHomeBinding
 import com.hyper.castwave.databinding.CastItemHomeFeatureBinding
 import com.hyper.castwave.domain.model.MediaType
 import com.hyper.castwave.navigation.AppNavigator
 import com.hyper.castwave.ui.bases.BaseFragment
 import com.hyper.castwave.ui.bases.ext.click
+import com.hyper.castwave.ui.bases.ext.goneView
+import com.hyper.castwave.ui.bases.ext.isNetwork
+import com.hyper.castwave.ui.bases.ext.visibleView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -54,11 +60,14 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
     override fun observerData() {
         super.observerData()
         observeUiState()
+        observeHomeAd()
         mBinding.root.post { checkPermissions() }
     }
 
     override fun initViews() {
         super.initViews()
+        showHomeAdLoading()
+        AdsManager.loadNativeHome(requireActivity(), R.layout.layout_native_ad_medium)
         bindFeatureCard(
             itemBinding = mBinding.cardFeaturePhoto,
             iconRes = R.drawable.home_photo,
@@ -97,6 +106,49 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
             cornerRadius = 10f * resources.displayMetrics.density
         }
         itemBinding.tvFeatureTitle.setText(titleRes)
+    }
+
+    private fun observeHomeAd() {
+        AdsManager.nativeHomeAdStateLive.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                AdsManager.NativeAdLoadState.IDLE,
+                AdsManager.NativeAdLoadState.LOADING -> showHomeAdLoading()
+
+                AdsManager.NativeAdLoadState.LOADED -> Unit
+                AdsManager.NativeAdLoadState.FAILED -> hideHomeAd()
+            }
+        }
+        AdsManager.nativeHomeAdLive.observe(viewLifecycleOwner) { ad ->
+            if (ad != null) renderHomeAd(ad)
+        }
+    }
+
+    private fun showHomeAdLoading() {
+        mBinding.flAds.visibleView()
+        mBinding.flAdContent.goneView()
+        mBinding.shimmerAds.shimmerNativeMedium.visibleView()
+        mBinding.shimmerAds.shimmerNativeMedium.startShimmer()
+    }
+
+    private fun hideHomeAd() {
+        mBinding.shimmerAds.shimmerNativeMedium.stopShimmer()
+        mBinding.flAdContent.goneView()
+        mBinding.flAds.goneView()
+    }
+
+    private fun renderHomeAd(ad: ApNativeAd) {
+        if (!requireContext().isNetwork()) {
+            hideHomeAd()
+            return
+        }
+        mBinding.flAds.visibleView()
+        mBinding.flAdContent.visibleView()
+        populateNativeAdView(
+            requireActivity(),
+            ad,
+            mBinding.flAdContent,
+            mBinding.shimmerAds.shimmerNativeMedium,
+        )
     }
 
     private fun observeUiState() {

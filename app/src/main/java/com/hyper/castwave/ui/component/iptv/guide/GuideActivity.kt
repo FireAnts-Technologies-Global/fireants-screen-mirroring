@@ -1,11 +1,9 @@
 package com.hyper.castwave.ui.component.iptv.guide
 
-import com.hyper.castwave.ads.AdsManager
-import com.hyper.castwave.ads.AdRemoteConfig
-import com.hyper.castwave.ads.inter_back
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.hyper.castwave.R
+import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.data.iptv.model.TVChannelSourceType
 import com.hyper.castwave.databinding.CastActivityGuideBinding
 import com.hyper.castwave.ui.component.iptv.IptvAppConstants
@@ -57,7 +55,7 @@ class GuideActivity : IptvBaseActivity<CastActivityGuideBinding>() {
 
     private fun setupTopAppBar() {
         mBinding.icBack.setOnClickListener {
-            AdsManager.loadAndShowInterstitial(this@GuideActivity, AdRemoteConfig.inter_back) {
+            AdsManager.loadAndShowInterBack(this@GuideActivity) {
                 finish()
             }
         }

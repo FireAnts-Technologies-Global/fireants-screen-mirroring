@@ -1,20 +1,17 @@
 package com.hyper.castwave.ui.component.iptv
 
-import com.hyper.castwave.ads.AdsManager
-import com.hyper.castwave.ads.AdRemoteConfig
-import com.hyper.castwave.ads.banner_all
-import com.hyper.castwave.ads.inter_back
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 import com.hyper.castwave.R
+import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.app.GlobalApp
-import com.hyper.castwave.ui.bases.BaseActivityWithBanner
 import com.hyper.castwave.ui.bases.BannerConfig
+import com.hyper.castwave.ui.bases.BaseActivityWithBanner
+import com.hyper.castwave.ui.bases.ext.isNetwork
+import com.hyper.castwave.ui.bases.ext.openSettingWifi
 import com.hyper.castwave.ui.component.iptv.dialog.NoInternetDialog
 import com.hyper.castwave.ui.component.iptv.dialog.NoInternetDialog.Companion.TAG_NO_INTERNET_DIALOG
 import com.hyper.castwave.utils.ConnectionLiveData
-import com.hyper.castwave.ui.bases.ext.isNetwork
-import com.hyper.castwave.ui.bases.ext.openSettingWifi
 import javax.inject.Inject
 
 /** IPTV-specific connectivity/back actions on the application's shared ANR base. */
@@ -29,8 +26,7 @@ abstract class IptvBaseActivity<VB : ViewDataBinding> : BaseActivityWithBanner<V
     private val internetListener by lazy { ConnectionLiveData(this) }
 
     override val bannerConfig: BannerConfig
-        get() = BannerConfig(AdRemoteConfig.banner_all.copy(
-            reloadIntervalSeconds = 20), false)
+        get() = BannerConfig()
 
     override fun shouldShowBanner() = super.shouldShowBanner() && !GlobalApp.isInPIP
 
@@ -46,7 +42,7 @@ abstract class IptvBaseActivity<VB : ViewDataBinding> : BaseActivityWithBanner<V
     override fun onActivityBackPressed() {
         if (supportFragmentManager.backStackEntryCount == 0) {
             if (isHasShowAddWhenBack) {
-                AdsManager.loadAndShowInterstitial(this, AdRemoteConfig.inter_back) { finish() }
+                AdsManager.loadAndShowInterBack(this) { finish() }
             } else finish()
         } else supportFragmentManager.popBackStackImmediate()
     }

@@ -5,6 +5,7 @@ import android.os.CountDownTimer
 import com.anrstudio.ads.admob.Admob
 import com.anrstudio.ads.ads.ANRAdSdk
 import com.anrstudio.ads.funtion.AdCallback
+import com.bumptech.glide.Glide
 import com.hyper.castwave.R
 import com.hyper.castwave.ads.AdRemoteConfig
 import com.hyper.castwave.ads.AdUnitConfig
@@ -15,7 +16,6 @@ import com.hyper.castwave.ads.banner_splash
 import com.hyper.castwave.ads.inter_splash
 import com.hyper.castwave.app.AppConstants
 import com.hyper.castwave.app.GlobalApp
-import com.hyper.castwave.databinding.ActivitySplashBinding
 import com.hyper.castwave.ui.bases.BannerConfig
 import com.hyper.castwave.ui.bases.BaseActivityWithBanner
 import com.hyper.castwave.ui.bases.ConsentHandler
@@ -23,7 +23,6 @@ import com.hyper.castwave.ui.bases.StatusBarConfig
 import com.hyper.castwave.ui.bases.ext.goneView
 import com.hyper.castwave.ui.bases.ext.isNetwork
 import com.hyper.castwave.utils.Routes
-import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")
@@ -106,7 +105,7 @@ class SplashActivity : BaseActivityWithBanner<ActivitySplashBinding>(), RemoteCo
             mBinding.frBanner.goneView()
         }
         AdRemoteConfig.initialize(this, RemoteConfigUtils.getAdRemoteConfig())
-        loadNativeLanguage(this, appSharedPref.firstLanguage, R.layout.layout_native_language)
+        loadNativeLanguage(this, R.layout.layout_native_language)
 
         if (AdRemoteConfig.inter_splash.isEnable && isNetwork(this@SplashActivity)) {
             Admob.getInstance().setOpenActivityAfterShowInterAds(false)

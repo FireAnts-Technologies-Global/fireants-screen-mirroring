@@ -1,21 +1,22 @@
 package com.hyper.castwave.ui.component.iptv.addchannel
 
-import com.hyper.castwave.ads.AdsManager
-import com.hyper.castwave.ads.AdRemoteConfig
-import com.hyper.castwave.ads.inter_back
+import android.os.Build
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import android.os.Build
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.hyper.castwave.R
-import com.hyper.castwave.databinding.CastActivityAddChannelBinding
+import com.hyper.castwave.ads.AdRemoteConfig
+import com.hyper.castwave.ads.AdsManager
+import com.hyper.castwave.ads.banner_import_channels_collage
 import com.hyper.castwave.data.iptv.model.TVChannelSourceType
+import com.hyper.castwave.databinding.CastActivityAddChannelBinding
+import com.hyper.castwave.ui.bases.BannerConfig
 import com.hyper.castwave.ui.component.iptv.IptvBaseActivity
 import com.hyper.castwave.ui.component.iptv.addchannel.file.AddChannelFileFragment
 import com.hyper.castwave.ui.component.iptv.addchannel.url.AddChannelUrlFragment
@@ -31,7 +32,8 @@ class AddChannelActivity : IptvBaseActivity<CastActivityAddChannelBinding>() {
 
     override var isHasShowAddWhenBack = true
 
-
+    override val bannerConfig: BannerConfig
+        get() = BannerConfig(AdRemoteConfig.banner_import_channels_collage, isCollapse = true)
 
     private lateinit var pagerAdapter: AddChannelPagerAdapter
     private var onPageChangeCallback: ViewPager2.OnPageChangeCallback? = null
@@ -74,7 +76,7 @@ class AddChannelActivity : IptvBaseActivity<CastActivityAddChannelBinding>() {
 
     private fun setupTopAppBar() {
         mBinding.icBack.setOnClickListener {
-            AdsManager.loadAndShowInterstitial(this@AddChannelActivity, AdRemoteConfig.inter_back) {
+            AdsManager.loadAndShowInterBack(this@AddChannelActivity) {
                 finish()
             }
         }

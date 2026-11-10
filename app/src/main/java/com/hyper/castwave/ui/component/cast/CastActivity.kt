@@ -1,25 +1,24 @@
 package com.hyper.castwave.ui.component.cast
 
-import com.hyper.castwave.ads.AdsManager
-import com.hyper.castwave.ads.AdRemoteConfig
-import com.hyper.castwave.ads.banner_all
-import com.hyper.castwave.ads.inter_back
-import com.hyper.castwave.ui.bases.ext.animateClick
 import android.content.Intent
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
-import android.view.animation.LinearInterpolator
 import android.view.WindowManager
+import android.view.animation.LinearInterpolator
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hyper.castwave.R
-import com.hyper.castwave.navigation.AppNavigator
-import com.hyper.castwave.ui.bases.BaseActivity
+import com.hyper.castwave.ads.AdRemoteConfig
+import com.hyper.castwave.ads.AdsManager
+import com.hyper.castwave.ads.banner_searching_devices
 import com.hyper.castwave.databinding.CastActivityCastBinding
 import com.hyper.castwave.domain.model.CastDevice
+import com.hyper.castwave.navigation.AppNavigator
+import com.hyper.castwave.ui.bases.BaseActivity
+import com.hyper.castwave.ui.bases.ext.animateClick
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -50,7 +49,12 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
     )
 
     fun loadBanner() {
-        AdsManager.loadBanner(this, AdRemoteConfig.banner_all, mBinding.frAdsBanner, false)
+        AdsManager.loadBanner(
+            this,
+            AdRemoteConfig.banner_searching_devices,
+            mBinding.frAdsBanner,
+            false
+        )
     }
 
     private var pinDialog: PinDialog? = null
@@ -91,7 +95,7 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
         mBinding.rlBrowserCast.setOnClickListener {
             navigator.openWebCast(this)        }
         mBinding.btnBack.animateClick {
-            AdsManager.loadAndShowInterstitial(this@CastActivity, AdRemoteConfig.inter_back) {
+            AdsManager.loadAndShowInterBack(this@CastActivity) {
                 onBackPressed()
             }
         }

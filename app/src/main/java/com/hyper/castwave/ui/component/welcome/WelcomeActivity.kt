@@ -22,7 +22,6 @@ class WelcomeActivity : BaseActivity<ActivityWelcomeBinding>() {
         super.initViews()
         showWelcomeAdLoading()
         AdsManager.loadNativeWelcome(this, R.layout.layout_native_welcome)
-        AdsManager.loadInterWelcome(this)
     }
 
     override fun observeData() {
@@ -44,7 +43,7 @@ class WelcomeActivity : BaseActivity<ActivityWelcomeBinding>() {
     override fun onClickViews() {
         super.onClickViews()
         mBinding.btnStart.click {
-            AdsManager.showInterWelcome(this) {
+            AdsManager.loadAndShowInterWelcome(this) {
                 finish()
             }
         }

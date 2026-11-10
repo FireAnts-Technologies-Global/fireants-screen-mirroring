@@ -1,22 +1,17 @@
 {
-  "inter_splash": {
-    "id": "ca-app-pub-3940256099942544/1033173712",
-    "isEnable": true,
-    "enable_ua_check": false
-  },
   "banner_splash": {
-    "id": "ca-app-pub-3940256099942544/9214589741",
+    "id": "ca-app-pub-7988764211742191/3450847657",
     "isEnable": true,
     "reloadIntervalSeconds": 30,
     "enable_ua_check": false
   },
-  "open_resume": {
-    "id": "ca-app-pub-3940256099942544/9257395921",
-    "isEnable": false,
+  "inter_splash": {
+    "id": "ca-app-pub-7988764211742191/1946194299",
+    "isEnable": true,
     "enable_ua_check": false
   },
-  "native_language_1": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
+  "native_language_1.1": {
+    "id": "ca-app-pub-7988764211742191/2437148887",
     "isEnable": true,
     "colorCTA": "default",
     "heightCTA": 45,
@@ -29,8 +24,8 @@
     ],
     "enable_ua_check": false
   },
-  "native_language_1_click": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
+  "native_language_1.2": {
+    "id": "ca-app-pub-7988764211742191/1058498936",
     "isEnable": true,
     "colorCTA": "default",
     "heightCTA": 45,
@@ -43,64 +38,8 @@
     ],
     "enable_ua_check": false
   },
-  "native_language_2": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "native_language_2_click": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "native_onboarding_1_1": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "native_onboarding_2_1": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "native_onboarding_1_4": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
+  "native_onboarding_fullscreen_1.1": {
+    "id": "ca-app-pub-7988764211742191/4871740533",
     "isEnable": true,
     "colorCTA": "default",
     "heightCTA": 45,
@@ -113,8 +52,8 @@
     ],
     "enable_ua_check": true
   },
-  "native_onboarding_2_4": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
+  "native_onboarding_fullscreen_1.2": {
+    "id": "ca-app-pub-7988764211742191/5993250512",
     "isEnable": true,
     "colorCTA": "default",
     "heightCTA": 45,
@@ -127,8 +66,8 @@
     ],
     "enable_ua_check": true
   },
-  "native_onboarding_fullscreen_1_1": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
+  "native_onboarding_4": {
+    "id": "ca-app-pub-7988764211742191/7006949280",
     "isEnable": true,
     "colorCTA": "default",
     "heightCTA": 45,
@@ -141,8 +80,18 @@
     ],
     "enable_ua_check": false
   },
-  "native_onboarding_fullscreen_2_1": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
+  "inter_onboarding_4": {
+    "id": "ca-app-pub-7988764211742191/8236270474",
+    "isEnable": true,
+    "enable_ua_check": false
+  },
+  "inter_welcome_back": {
+    "id": "ca-app-pub-7988764211742191/3297649460",
+    "isEnable": true,
+    "enable_ua_check": false
+  },
+  "native_welcome_back": {
+    "id": "ca-app-pub-7988764211742191/3106077777",
     "isEnable": true,
     "colorCTA": "default",
     "heightCTA": 45,
@@ -155,91 +104,14 @@
     ],
     "enable_ua_check": false
   },
-  "native_onboarding_fullscreen_1_3": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "native_onboarding_fullscreen_2_3": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "banner_home": {
-    "id": "ca-app-pub-3940256099942544/9214589741",
-    "isEnable": true,
-    "reloadIntervalSeconds": 30,
-    "enable_ua_check": false
-  },
-  "native_survey": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "native_confirm_uninstall": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "native_welcome": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
-    "isEnable": true,
-    "colorCTA": "default",
-    "heightCTA": 45,
-    "positionCTA": "BOTTOM",
-    "components": [
-      "icon_headline",
-      "body",
-      "media",
-      "cta"
-    ],
-    "enable_ua_check": false
-  },
-  "inter_welcome": {
-    "id": "ca-app-pub-3940256099942544/1033173712",
+  "inter_home": {
+    "id": "ca-app-pub-7988764211742191/6320553570",
     "isEnable": true,
     "enable_ua_check": false
   },
   "native_home": {
-    "id": "ca-app-pub-3940256099942544/2247696110",
+    "id": "ca-app-pub-7988764211742191/2907922170",
     "isEnable": true,
-    "enable_ua_check": true,
     "colorCTA": "default",
     "heightCTA": 45,
     "positionCTA": "BOTTOM",
@@ -248,18 +120,78 @@
       "body",
       "media",
       "cta"
-    ]
-  },
-  "banner_all": {
-    "id": "",
-    "isEnable": false
-  },
-  "inter_home": {
-    "id": "",
-    "isEnable": false
+    ],
+    "enable_ua_check": false
   },
   "inter_back": {
-    "id": "",
-    "isEnable": false
+    "id": "ca-app-pub-7988764211742191/5143203274",
+    "isEnable": true,
+    "enable_ua_check": false
+  },
+  "banner_searching_devices": {
+    "id": "ca-app-pub-7988764211742191/9288342744",
+    "isEnable": true,
+    "reloadIntervalSeconds": 30,
+    "enable_ua_check": false
+  },
+  "rewarded_screen_mirroring": {
+    "id": "ca-app-pub-7988764211742191/2736531788",
+    "isEnable": true,
+    "enable_ua_check": false
+  },
+  "banner_cast_image_collage": {
+    "id": "ca-app-pub-7988764211742191/1409852724",
+    "isEnable": true,
+    "reloadIntervalSeconds": 30,
+    "enable_ua_check": false
+  },
+  "banner_cast_video_collage": {
+    "id": "ca-app-pub-7988764211742191/7783689386",
+    "isEnable": true,
+    "reloadIntervalSeconds": 30,
+    "enable_ua_check": false
+  },
+  "banner_channels_collage": {
+    "id": "ca-app-pub-7988764211742191/3666470079",
+    "isEnable": true,
+    "reloadIntervalSeconds": 30,
+    "enable_ua_check": false
+  },
+  "banner_import_channels_collage": {
+    "id": "ca-app-pub-7988764211742191/3461300993",
+    "isEnable": true,
+    "reloadIntervalSeconds": 30,
+    "enable_ua_check": false
+  },
+  "inter_import_successful_channels": {
+    "id": "ca-app-pub-7988764211742191/9753191268",
+    "isEnable": true,
+    "enable_ua_check": false
+  },
+  "banner_player": {
+    "id": "ca-app-pub-7988764211742191/8440109591",
+    "isEnable": true,
+    "reloadIntervalSeconds": 30,
+    "enable_ua_check": false
+  },
+  "native_how_to_use": {
+    "id": "ca-app-pub-7988764211742191/9643565968",
+    "isEnable": true,
+    "colorCTA": "default",
+    "heightCTA": 45,
+    "positionCTA": "BOTTOM",
+    "components": [
+      "icon_headline",
+      "body",
+      "media",
+      "cta"
+    ],
+    "enable_ua_check": false
+  },
+  "banner_change_language": {
+    "id": "ca-app-pub-7988764211742191/4224320967",
+    "isEnable": true,
+    "reloadIntervalSeconds": 30,
+    "enable_ua_check": false
   }
 }

@@ -1,45 +1,44 @@
 package com.hyper.castwave.ui.component.media
 
-import com.hyper.castwave.ads.AdsManager
-import com.hyper.castwave.ads.AdRemoteConfig
-import com.hyper.castwave.ads.banner_all
-import com.hyper.castwave.ads.inter_back
-import com.hyper.castwave.ui.bases.ext.animateClick
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.Toast
-import android.graphics.Color
-import android.graphics.Typeface
-import android.net.Uri
 import androidx.activity.addCallback
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.hyper.castwave.R
+import com.hyper.castwave.ads.AdRemoteConfig
+import com.hyper.castwave.ads.AdsManager
+import com.hyper.castwave.ads.banner_cast_image_collage
+import com.hyper.castwave.ads.banner_cast_video_collage
+import com.hyper.castwave.databinding.CastActivityMediaPickerBinding
+import com.hyper.castwave.domain.model.MediaTab
+import com.hyper.castwave.domain.model.MediaType
 import com.hyper.castwave.navigation.AppNavigator
 import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.StatusBarConfig
-import com.hyper.castwave.databinding.CastActivityMediaPickerBinding
-import com.hyper.castwave.domain.model.MediaType
-import com.hyper.castwave.domain.model.MediaTab
-import com.hyper.castwave.ui.component.dialog.LoadingDialog
+import com.hyper.castwave.ui.bases.ext.animateClick
 import com.hyper.castwave.ui.component.cast.CastUiState
 import com.hyper.castwave.ui.component.cast.CastViewModel
 import com.hyper.castwave.ui.component.cast.DeviceAdapter
 import com.hyper.castwave.ui.component.cast.PinDialog
+import com.hyper.castwave.ui.component.dialog.LoadingDialog
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import androidx.core.view.isVisible
 
 @AndroidEntryPoint
 class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
 
     override val statusBarConfig = StatusBarConfig(
-        barColor = android.graphics.Color.rgb(234, 242, 255),
+        barColor = Color.rgb(234, 242, 255),
         lightIcons = true,
     )
 
@@ -128,7 +127,11 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     }
 
     fun loadBanner(){
-        AdsManager.loadBanner(this, AdRemoteConfig.banner_all, mBinding.frAdsBanner, false)
+        val config = if (mediaType == MediaType.VIDEO)
+            AdRemoteConfig.banner_cast_video_collage
+        else
+            AdRemoteConfig.banner_cast_image_collage
+        AdsManager.loadBannerCollapsible(this, config, mBinding.frAdsBanner)
     }
 
     private fun setupTopBar() {
@@ -230,7 +233,7 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
 
     private fun setupClicks() {
         mBinding.topBar.imgBack.animateClick {
-            AdsManager.loadAndShowInterstitial(this@MediaPickerActivity, AdRemoteConfig.inter_back){
+            AdsManager.loadAndShowInterBack(this@MediaPickerActivity) {
                 onBackPressed()
             }
         }

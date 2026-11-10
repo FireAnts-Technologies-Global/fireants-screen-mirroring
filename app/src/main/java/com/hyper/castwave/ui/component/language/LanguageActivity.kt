@@ -1,14 +1,16 @@
 package com.hyper.castwave.ui.component.language
 
 import com.anrstudio.ads.ads.wrapper.ApNativeAd
+import com.anrstudio.config.utils.setOnAdminAdToggleListener
 import com.hyper.castwave.R
+import com.hyper.castwave.ads.AdRemoteConfig
 import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.ads.AdsManager.loadNativeLanguageClick
 import com.hyper.castwave.ads.RemoteConfigUtils
+import com.hyper.castwave.ads.banner_change_language
 import com.hyper.castwave.ads.populateNativeAdView
 import com.hyper.castwave.app.AppConstants
 import com.hyper.castwave.app.AppConstants.DEFAULT_TIME_DELAY_SHOW_LANGUAGE_DONE_BUTTON
-import com.hyper.castwave.databinding.ActivityLanguageBinding
 import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.NavigationBarConfig
 import com.hyper.castwave.ui.bases.ext.click
@@ -64,7 +66,6 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
             if (!fromSetting) {
                 loadNativeLanguageClick(
                     this,
-                    appSharedPref.firstLanguage,
                     R.layout.layout_native_language_click
                 )
             }
@@ -76,8 +77,6 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
         super.observeData()
         if (!fromSetting) {
             listenLanguageAd()
-        } else {
-            hideLanguageAd()
         }
     }
 
@@ -113,11 +112,19 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
 
     private fun initAds() {
         if (fromSetting) {
-            hideLanguageAd()
+            mBinding.flAdContent.goneView()
+            mBinding.shimmerAds.shimmerNativeLarge.stopShimmer()
+            mBinding.shimmerAds.shimmerNativeLarge.goneView()
+            mBinding.flAds.visibleView()
+            AdsManager.loadBanner(
+                this,
+                AdRemoteConfig.banner_change_language,
+                mBinding.flAds,
+                isCollapse = false,
+            )
         } else {
             AdsManager.loadNativeOnboarding4(
                 this,
-                appSharedPref.firstOnBoarding,
                 R.layout.layout_native_onboarding
             )
         }
@@ -217,9 +224,9 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
     }
 
     private fun forceEnableShowAd() {
-//        mBinding.tvTitle.setOnAdminAdToggleListener {
-//            Routes.startSplashActivity(this@LanguageActivity)
-//            finish()
-//        }
+        mBinding.tvTitle.setOnAdminAdToggleListener {
+            Routes.startSplashActivity(this@LanguageActivity)
+            finish()
+        }
     }
 }

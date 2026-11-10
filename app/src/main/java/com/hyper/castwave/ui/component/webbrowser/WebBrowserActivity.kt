@@ -1,9 +1,5 @@
 package com.hyper.castwave.ui.component.webbrowser
 
-import com.hyper.castwave.ads.AdsManager
-import com.hyper.castwave.ads.AdRemoteConfig
-import com.hyper.castwave.ads.inter_home
-import com.hyper.castwave.ui.bases.ext.animateClick
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -17,23 +13,25 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hyper.castwave.R
-import com.hyper.castwave.navigation.AppNavigator
-import com.hyper.castwave.ui.bases.BaseActivity
+import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.databinding.CastActivityWebBrowserBinding
 import com.hyper.castwave.domain.model.CastDevice
-import com.hyper.castwave.ui.component.dialog.LoadingDialog
+import com.hyper.castwave.navigation.AppNavigator
+import com.hyper.castwave.ui.bases.BaseActivity
+import com.hyper.castwave.ui.bases.ext.animateClick
 import com.hyper.castwave.ui.component.cast.CastUiState
 import com.hyper.castwave.ui.component.cast.CastViewModel
 import com.hyper.castwave.ui.component.cast.DeviceAdapter
 import com.hyper.castwave.ui.component.cast.PinDialog
+import com.hyper.castwave.ui.component.dialog.LoadingDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import androidx.core.view.isVisible
 
 @AndroidEntryPoint
 class WebBrowserActivity : BaseActivity<CastActivityWebBrowserBinding>() {
@@ -422,7 +420,7 @@ class WebBrowserActivity : BaseActivity<CastActivityWebBrowserBinding>() {
                     delay(500)
 
 
-                    AdsManager.loadAndShowInterstitial(this@WebBrowserActivity, AdRemoteConfig.inter_home) {
+                    AdsManager.loadAndShowInterHome(this@WebBrowserActivity) {
                         navigator.openVideoControl(this@WebBrowserActivity)
                     }
                 }

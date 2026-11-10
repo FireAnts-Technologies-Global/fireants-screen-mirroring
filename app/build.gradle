@@ -55,7 +55,7 @@ android {
 
         release {
             buildConfigField "String", "email_feedback", "\"glorymobile88@gmail.com\""
-            manifestPlaceholders = [app_id: "ca-app-pub-3940256099942544~3347511713"]
+            manifestPlaceholders = [app_id: "ca-app-pub-7988764211742191~5049714832"]
             buildConfigField "Boolean", "build_debug", "false"
             buildConfigField(BOOLEAN, DEV_MODE, FALSE)
             shrinkResources true

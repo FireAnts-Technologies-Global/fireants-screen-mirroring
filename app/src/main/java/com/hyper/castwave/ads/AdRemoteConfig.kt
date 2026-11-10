@@ -139,78 +139,72 @@ data class AdRemoteConfig(
         return adUnitConfig
     }
 
-    val inter_splash: AdUnitConfig
-        get() = getAdUnit("inter_splash")
-
     val banner_splash: AdUnitConfig
         get() = getAdUnit("banner_splash")
 
-    val open_resume: AdUnitConfig
-        get() = getAdUnit("open_resume")
+    val inter_splash: AdUnitConfig
+        get() = getAdUnit("inter_splash")
 
-    val native_language_1: AdUnitConfig
-        get() = getAdUnit("native_language_1")
+    val native_language_1_1: AdUnitConfig
+        get() = getAdUnit("native_language_1.1")
 
-    val native_language_1_click: AdUnitConfig
-        get() = getAdUnit("native_language_1_click")
-
-    val native_language_2: AdUnitConfig
-        get() = getAdUnit("native_language_2")
-
-    val native_language_2_click: AdUnitConfig
-        get() = getAdUnit("native_language_2_click")
-
-    val native_onboarding_1_1: AdUnitConfig
-        get() = getAdUnit("native_onboarding_1_1")
-
-    val native_onboarding_2_1: AdUnitConfig
-        get() = getAdUnit("native_onboarding_2_1")
-
-    val native_onboarding_1_4: AdUnitConfig
-        get() = getAdUnit("native_onboarding_1_4")
-
-    val native_onboarding_2_4: AdUnitConfig
-        get() = getAdUnit("native_onboarding_2_4")
+    val native_language_1_2: AdUnitConfig
+        get() = getAdUnit("native_language_1.2")
 
     val native_onboarding_fullscreen_1_1: AdUnitConfig
-        get() = getAdUnit("native_onboarding_fullscreen_1_1")
+        get() = getAdUnit("native_onboarding_fullscreen_1.1")
 
-    val native_onboarding_fullscreen_2_1: AdUnitConfig
-        get() = getAdUnit("native_onboarding_fullscreen_2_1")
+    val native_onboarding_fullscreen_1_2: AdUnitConfig
+        get() = getAdUnit("native_onboarding_fullscreen_1.2")
 
-    val native_onboarding_fullscreen_1_3: AdUnitConfig
-        get() = getAdUnit("native_onboarding_fullscreen_1_3")
+    val native_onboarding_4: AdUnitConfig
+        get() = getAdUnit("native_onboarding_4")
 
-    val native_onboarding_fullscreen_2_3: AdUnitConfig
-        get() = getAdUnit("native_onboarding_fullscreen_2_3")
+    val inter_onboarding_4: AdUnitConfig
+        get() = getAdUnit("inter_onboarding_4")
 
-    val inter_onboarding: AdUnitConfig
-        get() = getAdUnit("inter_onboarding")
+    val inter_welcome_back: AdUnitConfig
+        get() = getAdUnit("inter_welcome_back")
 
-    val banner_home: AdUnitConfig
-        get() = getAdUnit("banner_home")
-
-    val banner_all: AdUnitConfig
-        get() = getAdUnit("banner_all")
+    val native_welcome_back: AdUnitConfig
+        get() = getAdUnit("native_welcome_back")
 
     val inter_home: AdUnitConfig
         get() = getAdUnit("inter_home")
 
-    val inter_back: AdUnitConfig
-        get() = getAdUnit("inter_back")
-
     val native_home: AdUnitConfig
         get() = getAdUnit("native_home")
 
-    val native_survey: AdUnitConfig
-        get() = getAdUnit("native_survey")
+    val inter_back: AdUnitConfig
+        get() = getAdUnit("inter_back")
 
-    val native_confirm_uninstall: AdUnitConfig
-        get() = getAdUnit("native_confirm_uninstall")
+    val banner_searching_devices: AdUnitConfig
+        get() = getAdUnit("banner_searching_devices")
 
-    val native_welcome: AdUnitConfig
-        get() = getAdUnit("native_welcome")
+    val rewarded_screen_mirroring: AdUnitConfig
+        get() = getAdUnit("rewarded_screen_mirroring")
 
-    val inter_welcome: AdUnitConfig
-        get() = getAdUnit("inter_welcome")
+    val banner_cast_image_collage: AdUnitConfig
+        get() = getAdUnit("banner_cast_image_collage")
+
+    val banner_cast_video_collage: AdUnitConfig
+        get() = getAdUnit("banner_cast_video_collage")
+
+    val banner_channels_collage: AdUnitConfig
+        get() = getAdUnit("banner_channels_collage")
+
+    val banner_import_channels_collage: AdUnitConfig
+        get() = getAdUnit("banner_import_channels_collage")
+
+    val inter_import_successful_channels: AdUnitConfig
+        get() = getAdUnit("inter_import_successful_channels")
+
+    val banner_player: AdUnitConfig
+        get() = getAdUnit("banner_player")
+
+    val native_how_to_use: AdUnitConfig
+        get() = getAdUnit("native_how_to_use")
+
+    val banner_change_language: AdUnitConfig
+        get() = getAdUnit("banner_change_language")
 }

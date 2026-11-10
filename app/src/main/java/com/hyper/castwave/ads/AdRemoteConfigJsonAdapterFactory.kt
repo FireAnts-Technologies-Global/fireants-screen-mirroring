@@ -55,7 +55,7 @@ class AdRemoteConfigJsonAdapterFactory : JsonAdapter.Factory {
                 var enableUaCheck = false
                 var reloadIntervalSeconds: Int? = null
                 var colorCTA = "default"
-                var heightCTA = 40
+                var heightCTA = 45
                 var positionCTA = "BOTTOM"
                 var components: List<String> = listOf("icon_headline", "body", "media", "cta")
                 reader.beginObject()
@@ -69,7 +69,6 @@ class AdRemoteConfigJsonAdapterFactory : JsonAdapter.Factory {
                         "heightCTA" -> heightCTA = readHeightValue(reader)
                         "positionCTA" -> positionCTA =
                             safeNextString(reader, "BOTTOM").uppercase(Locale.US)
-
                         "components" -> components = readComponentsList(reader)
                         else -> reader.skipValue()
                     }
@@ -110,18 +109,16 @@ class AdRemoteConfigJsonAdapterFactory : JsonAdapter.Factory {
                     JsonReader.Token.NUMBER -> reader.nextInt()
                     JsonReader.Token.STRING -> {
                         val value = reader.nextString()
-                        if (value.equals("default", ignoreCase = true)) 40 else value.toIntOrNull()
-                            ?: 40
+                        if (value.equals("default", ignoreCase = true)) 45 else value.toIntOrNull()
+                            ?: 45
                     }
-
                     JsonReader.Token.NULL -> {
                         reader.nextNull<Unit>()
-                        40
+                        45
                     }
-
                     else -> {
                         reader.skipValue()
-                        40
+                        45
                     }
                 }
             }
@@ -133,7 +130,6 @@ class AdRemoteConfigJsonAdapterFactory : JsonAdapter.Factory {
                         reader.nextNull<Unit>()
                         fallback
                     }
-
                     else -> {
                         reader.skipValue()
                         fallback

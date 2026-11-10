@@ -12,10 +12,7 @@ import com.hyper.castwave.ads.AdRemoteConfig
 import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.ads.RemoteConfigUtils
 import com.hyper.castwave.ads.native_onboarding_fullscreen_1_1
-import com.hyper.castwave.ads.native_onboarding_fullscreen_1_3
-import com.hyper.castwave.ads.native_onboarding_fullscreen_2_1
-import com.hyper.castwave.ads.native_onboarding_fullscreen_2_3
-import com.hyper.castwave.databinding.ActivityOnboardingBinding
+import com.hyper.castwave.ads.native_onboarding_fullscreen_1_2
 import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.NavigationBarConfig
 import com.hyper.castwave.ui.bases.ext.isNetwork
@@ -54,26 +51,22 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
                 return@postDelayed
             }
 
-            if (appSharedPref.firstOnBoarding)
-                AdRemoteConfig.native_onboarding_fullscreen_1_1 else AdRemoteConfig.native_onboarding_fullscreen_2_1
+
             if (ANRAdSdk.getInstance()
                     .shouldDisplayNativeOnboardingFull1
             ) {
                 AdsManager.loadNativeOnboardingFullAfterPage1(
                     this,
-                    appSharedPref.firstOnBoarding,
                     R.layout.layout_native_onboarding_full
                 )
             }
 
-            if (appSharedPref.firstOnBoarding)
-                AdRemoteConfig.native_onboarding_fullscreen_1_3 else AdRemoteConfig.native_onboarding_fullscreen_2_3
+
             if (ANRAdSdk.getInstance()
                     .shouldDisplayNativeOnboardingFull2
             ) {
                 AdsManager.loadNativeOnboardingFullAfterPage3(
                     this,
-                    appSharedPref.firstOnBoarding,
                     R.layout.layout_native_onboarding_full
                 )
             }
@@ -186,13 +179,11 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
 
     private fun addNativeFullPageIfEligible(placement: NativeFullPlacement) {
         val config = when (placement) {
-            NativeFullPlacement.AFTER_PAGE_1 ->
-                if (appSharedPref.firstOnBoarding) AdRemoteConfig.native_onboarding_fullscreen_1_1
-                else AdRemoteConfig.native_onboarding_fullscreen_2_1
+            NativeFullPlacement.AFTER_PAGE_1 -> AdRemoteConfig.native_onboarding_fullscreen_1_1
 
-            NativeFullPlacement.AFTER_PAGE_2 ->
-                if (appSharedPref.firstOnBoarding) AdRemoteConfig.native_onboarding_fullscreen_1_3
-                else AdRemoteConfig.native_onboarding_fullscreen_2_3
+
+            NativeFullPlacement.AFTER_PAGE_2 -> AdRemoteConfig.native_onboarding_fullscreen_1_2
+
         }
         val shouldDisplay = when (placement) {
             NativeFullPlacement.AFTER_PAGE_1 -> ANRAdSdk.getInstance()
@@ -216,9 +207,11 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
     }
 
     private fun startNextActivity() {
-        appSharedPref.firstOnBoarding = false
-        Routes.startMainActivity(this)
-        finish()
+        AdsManager.loadAndShowInterOnboarding4(this) {
+            appSharedPref.firstOnBoarding = false
+            Routes.startMainActivity(this)
+            finish()
+        }
     }
 
     override fun onBackPressed() {

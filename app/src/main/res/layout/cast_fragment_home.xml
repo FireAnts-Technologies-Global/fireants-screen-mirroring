@@ -278,6 +278,26 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/flAds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp">
+
+                    <FrameLayout
+                        android:id="@+id/flAdContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/shimmerAds"
+                        layout="@layout/layout_shimmer_native_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 

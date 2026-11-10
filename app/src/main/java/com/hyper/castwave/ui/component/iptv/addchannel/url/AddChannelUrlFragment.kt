@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.hyper.castwave.R
+import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.databinding.CastFragmentAddChannelUrlBinding
 import com.hyper.castwave.ui.bases.BaseFragment
 import com.hyper.castwave.ui.bases.ext.isTikTokLink
@@ -60,11 +61,13 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
                 lifecycleScope.launch {
                     delay(400)
                     showLoading(false)
-                    ImportStateHelper.showSuccessDialog(
-                        this@AddChannelUrlFragment,
-                        channelCount,
-                        groupCount
-                    )
+                    AdsManager.loadAndShowInterImportSuccessfulChannels(requireActivity()) {
+                        ImportStateHelper.showSuccessDialog(
+                            this@AddChannelUrlFragment,
+                            channelCount,
+                            groupCount,
+                        )
+                    }
                 }
             },
             onError = { message ->

@@ -1,9 +1,5 @@
 package com.hyper.castwave.ui.component.iptv.player
 
-import com.hyper.castwave.ads.AdsManager
-import com.hyper.castwave.ads.AdRemoteConfig
-import com.hyper.castwave.ads.inter_back
-import androidx.mediarouter.app.MediaRouteButton
 import android.app.PictureInPictureParams
 import android.content.Intent
 import android.content.pm.ActivityInfo
@@ -20,57 +16,62 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.core.net.toUri
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.media3.common.MediaItem
+import androidx.media3.common.PlaybackException
+import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DefaultDataSource
 import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
+import androidx.media3.ui.PlayerView
+import androidx.mediarouter.app.MediaRouteButton
 import com.hyper.castwave.R
-import com.hyper.castwave.databinding.CastActivityPlayListBinding
+import com.hyper.castwave.ads.AdRemoteConfig
+import com.hyper.castwave.ads.AdsManager
+import com.hyper.castwave.ads.banner_player
+import com.hyper.castwave.app.GlobalApp.Companion.isInPIP
 import com.hyper.castwave.data.iptv.model.DataState
 import com.hyper.castwave.data.iptv.model.TVChannel
-import com.hyper.castwave.ui.component.iptv.IptvBaseActivity
+import com.hyper.castwave.databinding.CastActivityPlayListBinding
+import com.hyper.castwave.ui.bases.BannerConfig
 import com.hyper.castwave.ui.bases.StatusBarConfig
-import com.hyper.castwave.ui.bases.ext.observeFlow
-import com.hyper.castwave.ui.bases.ext.parcelable
-import com.hyper.castwave.ui.component.iptv.player.adapter.TVChannelAdapter
-import com.hyper.castwave.ui.component.iptv.player.viewmodel.ChannelViewModel
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import androidx.core.net.toUri
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.core.widget.doOnTextChanged
-import androidx.media3.common.PlaybackException
-import androidx.media3.common.Player
-import androidx.media3.ui.PlayerView
 import com.hyper.castwave.ui.bases.ext.click
 import com.hyper.castwave.ui.bases.ext.goneView
+import com.hyper.castwave.ui.bases.ext.isNetwork
 import com.hyper.castwave.ui.bases.ext.isVisible
+import com.hyper.castwave.ui.bases.ext.observeFlow
+import com.hyper.castwave.ui.bases.ext.parcelable
 import com.hyper.castwave.ui.bases.ext.showToastById
 import com.hyper.castwave.ui.bases.ext.visibleView
 import com.hyper.castwave.ui.component.iptv.IptvAppConstants
-import com.hyper.castwave.app.GlobalApp.Companion.isInPIP
-import com.hyper.castwave.ui.bases.ext.isNetwork
-import com.hyper.castwave.ui.component.iptv.player.viewmodel.ChannelEvent
+import com.hyper.castwave.ui.component.iptv.IptvAppConstants.EXTRA_SHOW_ADS_WHEN_BACK
+import com.hyper.castwave.ui.component.iptv.IptvBaseActivity
 import com.hyper.castwave.ui.component.iptv.dialog.VideoEndDialog
 import com.hyper.castwave.ui.component.iptv.dialog.VideoEndDialog.Companion.TAG_VIDEO_END_DIALOG
 import com.hyper.castwave.ui.component.iptv.dialog.VideoErrorDialog
 import com.hyper.castwave.ui.component.iptv.dialog.VideoErrorDialog.Companion.TAG_VIDEO_ERROR_DIALOG
 import com.hyper.castwave.ui.component.iptv.dialog.VideoTimerDialog
 import com.hyper.castwave.ui.component.iptv.dialog.VideoTimerDialog.Companion.TAG_VIDEO_TIMER_DIALOG
-import com.hyper.castwave.ui.component.iptv.IptvAppConstants.EXTRA_SHOW_ADS_WHEN_BACK
-import com.hyper.castwave.ui.component.iptv.viewmodel.IptvHomeViewModel
+import com.hyper.castwave.ui.component.iptv.player.adapter.TVChannelAdapter
+import com.hyper.castwave.ui.component.iptv.player.viewmodel.ChannelEvent
+import com.hyper.castwave.ui.component.iptv.player.viewmodel.ChannelViewModel
 import com.hyper.castwave.ui.component.iptv.util.CalendarUtil.TIME_ONE_SECOND
 import com.hyper.castwave.ui.component.iptv.util.CastHelper
+import com.hyper.castwave.ui.component.iptv.viewmodel.IptvHomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import java.util.Calendar
 
@@ -81,6 +82,9 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
     VideoTimerDialog.VideoTimerDialogListener {
 
     override fun getLayoutActivity() = R.layout.cast_activity_play_list
+
+    override val bannerConfig: BannerConfig
+        get() = BannerConfig(AdRemoteConfig.banner_player, isCollapse = false)
 
     override val statusBarConfig = StatusBarConfig(
         barColor = Color.rgb(234, 242, 255),
@@ -267,7 +271,7 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
     override fun observeData() {
         super.observeData()
 
-        lifecycleScope.launch() {
+        lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 observeFlow(channelViewModel.dataTVChannelState) {
                     updateDataChannelState(it)
@@ -1091,7 +1095,7 @@ class PlayListActivity : IptvBaseActivity<CastActivityPlayListBinding>(),
     }
 
     override fun onActivityBackPressed() {
-        AdsManager.loadAndShowInterstitial(this@PlayListActivity, AdRemoteConfig.inter_back) {
+        AdsManager.loadAndShowInterBack(this@PlayListActivity) {
             if (isHasShowAddWhenBack) {
                 releasePlayer()
                 castHelper?.release()
