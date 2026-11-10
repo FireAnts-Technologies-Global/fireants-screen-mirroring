@@ -32,12 +32,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <include
+            <com.hyper.castwave.ui.component.custom.FigmaTopBarView
                 android:id="@+id/topBar"
-                layout="@layout/cast_layout_topbar"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="-5dp"
+                app:figmaTopBarBackStyle="media"
+                app:figmaTopBarVariant="centeredActions"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View

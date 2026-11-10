@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FigmaTopBarView">
+        <attr name="figmaTopBarVariant" format="enum">
+            <enum name="compactTitle" value="0" />
+            <enum name="standard" value="1" />
+            <enum name="centered" value="2" />
+            <enum name="centeredActions" value="3" />
+            <enum name="transparent" value="4" />
+        </attr>
+        <attr name="figmaTopBarTitle" format="string" />
+        <attr name="figmaTopBarBackDescription" format="string" />
+        <attr name="figmaTopBarBackIcon" format="reference" />
+        <attr name="figmaTopBarBackStyle" format="enum">
+            <enum name="cast" value="0" />
+            <enum name="howToUse" value="1" />
+            <enum name="importStyle" value="2" />
+            <enum name="media" value="3" />
+        </attr>
+    </declare-styleable>
+</resources>

@@ -16,6 +16,7 @@ import com.hyper.castwave.ads.banner_splash
 import com.hyper.castwave.ads.inter_splash
 import com.hyper.castwave.app.AppConstants
 import com.hyper.castwave.app.GlobalApp
+import com.hyper.castwave.databinding.ActivitySplashBinding
 import com.hyper.castwave.ui.bases.BannerConfig
 import com.hyper.castwave.ui.bases.BaseActivityWithBanner
 import com.hyper.castwave.ui.bases.ConsentHandler

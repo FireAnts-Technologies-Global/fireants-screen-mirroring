@@ -11,6 +11,7 @@ import com.hyper.castwave.ads.banner_change_language
 import com.hyper.castwave.ads.populateNativeAdView
 import com.hyper.castwave.app.AppConstants
 import com.hyper.castwave.app.AppConstants.DEFAULT_TIME_DELAY_SHOW_LANGUAGE_DONE_BUTTON
+import com.hyper.castwave.databinding.ActivityLanguageBinding
 import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.NavigationBarConfig
 import com.hyper.castwave.ui.bases.ext.click

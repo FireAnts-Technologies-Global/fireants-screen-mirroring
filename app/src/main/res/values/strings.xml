@@ -12,14 +12,14 @@
     <string name="txt_later" translatable="false"><u>Later</u></string>
     <string name="txt_rate_5_star" translatable="false">If you enjoy this app, please consider giving it a 5-star rating in the store.</string>
     <string name="txt_do_you_like_our_app" translatable="false">Do you like our app?</string>
-    <string name="onboarding_title_1">Stay in control</string>
-    <string name="onboarding_des_1">Manage the app experience with clear settings and a simple setup flow.</string>
-    <string name="onboarding_title_2">Fast and reliable</string>
-    <string name="onboarding_des_2">Launch quickly, keep key actions close, and reduce friction during first use.</string>
-    <string name="onboarding_title_3">Privacy-aware by default</string>
-    <string name="onboarding_des_3">Consent, updates, and core app states are handled in one consistent flow.</string>
-    <string name="onboarding_title_4">Ready when you are</string>
-    <string name="onboarding_des_4">Finish setup and start exploring the app with everything prepared.</string>
+    <string name="onboarding_title_1">Mirror Your Phone Screen</string>
+    <string name="onboarding_des_1">See what’s on your phone on the big screen.</string>
+    <string name="onboarding_title_2">Connect to Your TV</string>
+    <string name="onboarding_des_2">Join the same Wi-Fi network on both devices, then select your TV.</string>
+    <string name="onboarding_title_3">Cast Photos &amp; Videos</string>
+    <string name="onboarding_des_3">Share your favorite photos and videos from your phone to your TV.</string>
+    <string name="onboarding_title_4">Watch Your Channels</string>
+    <string name="onboarding_des_4">Import an M3U file or playlist link to watch your channels.</string>
 
     <string name="applying_selected_language" translatable="false">Applying selected language...</string>
     <string name="text_restart_app">Restart App</string>

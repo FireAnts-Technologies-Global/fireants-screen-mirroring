@@ -123,6 +123,7 @@
                             android:fontFamily="@font/medium"
                             android:gravity="center"
                             android:paddingHorizontal="@dimen/_16sdp"
+                            android:textColor="@color/white"
                             android:paddingVertical="@dimen/_10sdp"
                             android:text="@string/next"
                             android:textAllCaps="false"

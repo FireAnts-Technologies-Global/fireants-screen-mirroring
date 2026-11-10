@@ -54,7 +54,7 @@ class GuideActivity : IptvBaseActivity<CastActivityGuideBinding>() {
     }
 
     private fun setupTopAppBar() {
-        mBinding.icBack.setOnClickListener {
+        mBinding.topAppBar.setOnBackClickListener {
             AdsManager.loadAndShowInterBack(this@GuideActivity) {
                 finish()
             }

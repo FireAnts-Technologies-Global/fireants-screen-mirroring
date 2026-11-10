@@ -12,7 +12,6 @@ import com.hyper.castwave.databinding.CastActivityHowToUseBinding
 import com.hyper.castwave.databinding.CastItemHowToUseStepBinding
 import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.StatusBarConfig
-import com.hyper.castwave.ui.bases.ext.click
 import com.hyper.castwave.ui.bases.ext.goneView
 import com.hyper.castwave.ui.bases.ext.isNetwork
 import com.hyper.castwave.ui.bases.ext.visibleView
@@ -79,7 +78,7 @@ class HowToUseActivity : BaseActivity<CastActivityHowToUseBinding>() {
 
     override fun onClickViews() {
         super.onClickViews()
-        mBinding.btnBack.click { finish() }
+        mBinding.toolbar.setOnBackClickListener { finish() }
     }
 
     private fun showAdLoading() {

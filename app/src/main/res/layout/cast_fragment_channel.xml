@@ -7,19 +7,15 @@
             android:layout_height="match_parent"
         android:background="@drawable/cast_bg_home_screen">
 
-        <TextView
+        <com.hyper.castwave.ui.component.custom.FigmaTopBarView
             android:id="@+id/header"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="24dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="55dp"
-            android:fontFamily="@font/inter_bold"
-            android:gravity="center_vertical"
-            android:includeFontPadding="false"
-            android:text="@string/cast_channels_header_title"
-            android:textColor="@color/cast_home_text_primary"
-            android:textSize="20sp"
+            app:figmaTopBarTitle="@string/cast_channels_header_title"
+            app:figmaTopBarVariant="compactTitle"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout

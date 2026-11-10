@@ -75,7 +75,7 @@ class AddChannelActivity : IptvBaseActivity<CastActivityAddChannelBinding>() {
     }
 
     private fun setupTopAppBar() {
-        mBinding.icBack.setOnClickListener {
+        mBinding.topAppBar.setOnBackClickListener {
             AdsManager.loadAndShowInterBack(this@AddChannelActivity) {
                 finish()
             }

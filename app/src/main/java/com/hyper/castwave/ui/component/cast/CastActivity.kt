@@ -5,7 +5,6 @@ import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
-import android.view.animation.LinearInterpolator
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
@@ -18,7 +17,6 @@ import com.hyper.castwave.databinding.CastActivityCastBinding
 import com.hyper.castwave.domain.model.CastDevice
 import com.hyper.castwave.navigation.AppNavigator
 import com.hyper.castwave.ui.bases.BaseActivity
-import com.hyper.castwave.ui.bases.ext.animateClick
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -94,23 +92,22 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
     private fun setupClicks() {
         mBinding.rlBrowserCast.setOnClickListener {
             navigator.openWebCast(this)        }
-        mBinding.btnBack.animateClick {
+        mBinding.toolbar.setBackIconSize(resources.getDimensionPixelSize(R.dimen.cast_cast_toolbar_icon_size))
+        mBinding.toolbar.setOnBackClickListener(animated = true) {
             AdsManager.loadAndShowInterBack(this@CastActivity) {
                 onBackPressed()
             }
         }
 
-        mBinding.btnRefresh.setOnClickListener {
-            val icon = mBinding.imgRefresh
-            icon.animate().cancel()
-            icon.rotation = 0f
-            icon.animate()
-                .rotationBy(360f)
-                .setDuration(500)
-                .setInterpolator(LinearInterpolator())
-                .start()
-            viewModel.refresh()
-        }
+        mBinding.toolbar.setEndAction(
+            R.drawable.cast_ic_figma_refresh,
+            getString(R.string.cast_refresh),
+            {
+                mBinding.toolbar.animateEndActionIconBy(360f, 500L)
+                viewModel.refresh()
+            },
+            R.drawable.cast_bg_cast_toolbar_button,
+        )
 
         mBinding.tvActionError.setOnClickListener {
             when (viewModel.uiState.value) {

@@ -36,7 +36,12 @@
         <activity
             android:name=".ui.component.splash.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Splash" />
+            android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name="com.hyper.castwave.ui.component.main.MainActivity"
@@ -46,10 +51,6 @@
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 

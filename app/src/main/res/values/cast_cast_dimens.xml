@@ -11,6 +11,7 @@
     <dimen name="cast_cast_radius_18">18dp</dimen>
     <dimen name="cast_cast_radius_22">22dp</dimen>
     <dimen name="cast_cast_icon_button_size">44dp</dimen>
+    <dimen name="cast_cast_toolbar_icon_size">24dp</dimen>
     <dimen name="cast_cast_status_height">205dp</dimen>
     <dimen name="cast_cast_signal_size">116dp</dimen>
     <dimen name="cast_cast_device_row_height">54dp</dimen>

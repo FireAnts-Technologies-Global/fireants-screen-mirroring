@@ -9,17 +9,13 @@
         android:layout_height="match_parent"
         android:background="@drawable/cast_settings_background">
 
-        <TextView
+        <com.hyper.castwave.ui.component.custom.FigmaTopBarView
             android:id="@+id/tvSettingsHeader"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginTop="49dp"
-            android:fontFamily="@font/inter_bold"
-            android:gravity="center_vertical"
-            android:includeFontPadding="false"
-            android:text="@string/cast_home_screen_mirroring"
-            android:textColor="@color/cast_settings_text_primary"
-            android:textSize="20sp"
+            app:figmaTopBarTitle="@string/cast_home_screen_mirroring"
+            app:figmaTopBarVariant="compactTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

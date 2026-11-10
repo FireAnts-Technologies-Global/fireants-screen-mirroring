@@ -25,7 +25,6 @@ import com.hyper.castwave.domain.model.MediaType
 import com.hyper.castwave.navigation.AppNavigator
 import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.StatusBarConfig
-import com.hyper.castwave.ui.bases.ext.animateClick
 import com.hyper.castwave.ui.component.cast.CastUiState
 import com.hyper.castwave.ui.component.cast.CastViewModel
 import com.hyper.castwave.ui.component.cast.DeviceAdapter
@@ -135,46 +134,19 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     }
 
     private fun setupTopBar() {
-        mBinding.topBar.imgBack.visibility = View.VISIBLE
-        mBinding.topBar.tvTitle.visibility = View.VISIBLE
-        mBinding.topBar.root.setBackgroundColor(Color.TRANSPARENT)
-        mBinding.topBar.root.setPadding(dp(16), dp(8), dp(16), dp(8))
-        mBinding.topBar.tvTitle.text = getString(
+        mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.CENTERED_ACTIONS)
+        mBinding.topBar.setBackIconSize(dp(24))
+        mBinding.topBar.setTitle(
+            getString(
             if (mediaType == MediaType.VIDEO) R.string.cast_media_title_videos else R.string.cast_media_title_photos
+            )
         )
-        mBinding.topBar.tvTitle.setTextColor(getColor(R.color.cast_cast_primary_text))
-        mBinding.topBar.tvTitle.typeface = androidx.core.content.res.ResourcesCompat.getFont(
-            this,
-            R.font.inter_bold,
-        )
-        mBinding.topBar.tvTitle.textSize = 22f
-        mBinding.topBar.tvTitle.setPadding(0, 0, 0, 0)
-        (mBinding.topBar.tvTitle.layoutParams as android.widget.RelativeLayout.LayoutParams).apply {
-            marginStart = dp(52)
-            marginEnd = dp(52)
-        }.also { mBinding.topBar.tvTitle.layoutParams = it }
-        mBinding.topBar.imgBack.apply {
-            layoutParams = android.widget.RelativeLayout.LayoutParams(dp(44), dp(44)).apply {
-                addRule(android.widget.RelativeLayout.ALIGN_PARENT_START)
-                addRule(android.widget.RelativeLayout.CENTER_VERTICAL)
+        mBinding.topBar.setOnBackClickListener(animated = true) {
+            AdsManager.loadAndShowInterBack(this@MediaPickerActivity) {
+                onBackPressed()
             }
-            setImageResource(R.drawable.cast_ic_figma_back)
-            background = getDrawable(R.drawable.cast_bg_media_back)
-            setPadding(dp(10), dp(10), dp(10), dp(10))
         }
-        mBinding.topBar.imgCast.apply {
-            layoutParams = android.widget.RelativeLayout.LayoutParams(dp(44), dp(44)).apply {
-                addRule(android.widget.RelativeLayout.ALIGN_PARENT_END)
-                addRule(android.widget.RelativeLayout.CENTER_VERTICAL)
-            }
-            background = getDrawable(R.drawable.cast_bg_media_cast_button)
-            setPadding(dp(10), dp(10), dp(10), dp(10))
-            setImageResource(R.drawable.cast_ic_home_cast_white)
-        }
-        mBinding.topBar.imgSwap.visibility = View.GONE
-        mBinding.topBar.imgCast.visibility = View.VISIBLE
-        mBinding.topBar.lnActionHome.visibility = View.GONE
-        mBinding.topBar.tvTitleHome.visibility = View.GONE
+        showCastAction()
     }
 
     private fun setupDevicesPanel() {
@@ -232,14 +204,6 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     }
 
     private fun setupClicks() {
-        mBinding.topBar.imgBack.animateClick {
-            AdsManager.loadAndShowInterBack(this@MediaPickerActivity) {
-                onBackPressed()
-            }
-        }
-        mBinding.topBar.imgCast.setOnClickListener {
-            if (hasAvailableDevices()) toggleDevicesPanel() else navigator.openCastScreen(this)
-        }
         mBinding.viewOverlay.setOnClickListener {
             hideDevicesPanel()
         }
@@ -254,6 +218,17 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         else -> false
     }
 
+    private fun showCastAction() {
+        mBinding.topBar.setEndAction(
+            R.drawable.cast_ic_home_cast_white,
+            getString(R.string.cast_cast_title),
+            {
+                if (hasAvailableDevices()) toggleDevicesPanel() else navigator.openCastScreen(this)
+            },
+            R.drawable.cast_bg_media_cast_button,
+        )
+    }
+
     private fun toggleDevicesPanel() {
         if (mBinding.flDevices.isVisible) {
             hideDevicesPanel()
@@ -263,7 +238,7 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     }
 
     private fun showDevicesPanel() {
-        mBinding.topBar.tvTitle.text = getString(R.string.cast_cast_title)
+        mBinding.topBar.setTitle(getString(R.string.cast_cast_title))
         val panel = mBinding.flDevices
 
         mBinding.viewOverlay.visibility = View.VISIBLE
@@ -321,9 +296,9 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         mBinding.tvEmpty.visibility = View.GONE
         mBinding.mediaTypeSelector.visibility = View.GONE
         mBinding.previewContainer.visibility = View.VISIBLE
-        mBinding.topBar.imgCast.visibility = View.GONE
-        mBinding.topBar.tvTitle.text = getString(R.string.cast_media_cast_photo)
-        mBinding.topBar.tvTitle.gravity = android.view.Gravity.CENTER_VERTICAL or android.view.Gravity.START
+        mBinding.topBar.clearEndAction()
+        mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.STANDARD)
+        mBinding.topBar.setTitle(getString(R.string.cast_media_cast_photo))
         Glide.with(this).load(Uri.parse(item.uri)).centerCrop().into(mBinding.imgPhotoPreview)
     }
 
@@ -331,8 +306,8 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         previewItem = null
         Glide.with(this).clear(mBinding.imgPhotoPreview)
         mBinding.previewContainer.visibility = View.GONE
-        mBinding.topBar.imgCast.visibility = View.VISIBLE
-        mBinding.topBar.tvTitle.gravity = android.view.Gravity.CENTER
+        showCastAction()
+        mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.CENTERED_ACTIONS)
         resetTopBarTitle()
         val state = viewModel.uiState.value
         mBinding.recyclerView.visibility = if (state is MediaUiState.Content) View.VISIBLE else View.GONE
@@ -350,8 +325,10 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     }
 
     private fun resetTopBarTitle() {
-        mBinding.topBar.tvTitle.text = getString(
+        mBinding.topBar.setTitle(
+            getString(
             if (currentTab == MediaTab.VIDEOS) R.string.cast_media_title_videos else R.string.cast_media_title_photos
+            )
         )
     }
 
@@ -381,7 +358,7 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
             is CastUiState.Connected -> true
             else -> false
         }
-        mBinding.topBar.imgCast.setImageResource(R.drawable.cast_ic_home_cast_white)
+        mBinding.topBar.setEndActionIcon(R.drawable.cast_ic_home_cast_white)
         if (state !is CastUiState.PinRequired) dismissPinDialog()
         when (state) {
 

@@ -13,6 +13,7 @@ import com.hyper.castwave.ads.AdsManager
 import com.hyper.castwave.ads.RemoteConfigUtils
 import com.hyper.castwave.ads.native_onboarding_fullscreen_1_1
 import com.hyper.castwave.ads.native_onboarding_fullscreen_1_2
+import com.hyper.castwave.databinding.ActivityOnboardingBinding
 import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.NavigationBarConfig
 import com.hyper.castwave.ui.bases.ext.isNetwork
@@ -133,7 +134,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
                 title = R.string.onboarding_title_1,
                 description = R.string.onboarding_des_1,
                 textButton = R.string.next,
-                imageResId = R.drawable.ic_vietnamese,
+                imageResId = R.drawable.ob_1,
                 positionIndicator = 0,
                 isHasNativeOnPage1 = true
             )
@@ -146,7 +147,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
                 title = R.string.onboarding_title_2,
                 description = R.string.onboarding_des_2,
                 textButton = R.string.next,
-                imageResId = R.drawable.ic_vietnamese,
+                imageResId = R.drawable.ob_2,
                 positionIndicator = 1
             )
         )
@@ -158,7 +159,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
                 title = R.string.onboarding_title_3,
                 description = R.string.onboarding_des_3,
                 textButton = R.string.next,
-                imageResId = R.drawable.ic_vietnamese,
+                imageResId = R.drawable.ob_3,
                 positionIndicator = 2,
 
                 )
@@ -169,7 +170,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
                 title = R.string.onboarding_title_4,
                 description = R.string.onboarding_des_4,
                 textButton = R.string.next,
-                imageResId = R.drawable.ic_vietnamese,
+                imageResId = R.drawable.ob_4,
                 positionIndicator = 3,
                 isHasNativeOnPage4 = true
             )

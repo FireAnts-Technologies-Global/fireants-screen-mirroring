@@ -26,70 +26,15 @@
             app:layout_constraintBottom_toTopOf="@id/frAdsBanner"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.hyper.castwave.ui.component.custom.FigmaTopBarView
                 android:id="@+id/toolbar"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="8dp"
+                app:figmaTopBarTitle="@string/cast_cast_title"
+                app:figmaTopBarVariant="centeredActions"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <FrameLayout
-                    android:id="@+id/btnBack"
-                    android:layout_width="@dimen/cast_cast_icon_button_size"
-                    android:layout_height="@dimen/cast_cast_icon_button_size"
-                    android:background="@drawable/cast_bg_cast_toolbar_button"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@null"
-                        android:src="@drawable/cast_ic_figma_back" />
-                </FrameLayout>
-
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_bold"
-                    android:gravity="center"
-                    android:includeFontPadding="false"
-                    android:text="@string/cast_cast_title"
-                    android:textColor="@color/cast_cast_primary_text"
-                    android:textSize="@dimen/cast_cast_text_22"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btnRefresh"
-                    app:layout_constraintStart_toEndOf="@id/btnBack"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <FrameLayout
-                    android:id="@+id/btnRefresh"
-                    android:layout_width="@dimen/cast_cast_icon_button_size"
-                    android:layout_height="@dimen/cast_cast_icon_button_size"
-                    android:background="@drawable/cast_bg_cast_toolbar_button"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imgRefresh"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/cast_refresh"
-                        android:src="@drawable/cast_ic_figma_refresh" />
-                </FrameLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
