@@ -16,6 +16,7 @@ import com.hyper.castwave.ui.bases.BaseActivity
 import com.hyper.castwave.ui.bases.NavigationBarConfig
 import com.hyper.castwave.ui.bases.ext.click
 import com.hyper.castwave.ui.bases.ext.goneView
+import com.hyper.castwave.ui.bases.ext.invisibleView
 import com.hyper.castwave.ui.bases.ext.isNetwork
 import com.hyper.castwave.ui.bases.ext.visibleView
 import com.hyper.castwave.ui.component.language.adapter.LanguageAdapter
