@@ -21,7 +21,7 @@ android {
         versionName "1.0.0"
 
         def formattedDate = new Date().format('MM.dd.yyyy')
-        archivesBaseName = "ANRStudio_Base_Project_v${versionName}_v${versionCode}_${formattedDate}"
+        archivesBaseName = "Screen_Mirroring_v${versionName}_v${versionCode}_${formattedDate}"
 
         buildConfigField "String", "ANR_STUDIO_VERSION", "\"$anr_ads_sdk\""
         buildConfigField "String", "PLAY_SERVICES_ADS_VERSION", "\"$play_services_ads_version\""
