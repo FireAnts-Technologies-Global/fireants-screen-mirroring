@@ -1,7 +1,6 @@
 package com.hyper.castwave.ui.component.language
 
 import com.anrstudio.ads.ads.wrapper.ApNativeAd
-import com.anrstudio.config.utils.setOnAdminAdToggleListener
 import com.hyper.castwave.R
 import com.hyper.castwave.ads.AdRemoteConfig
 import com.hyper.castwave.ads.AdsManager
@@ -225,9 +224,9 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
     }
 
     private fun forceEnableShowAd() {
-        mBinding.tvTitle.setOnAdminAdToggleListener {
-            Routes.startSplashActivity(this@LanguageActivity)
-            finish()
-        }
+//        mBinding.tvTitle.setOnAdminAdToggleListener {
+//            Routes.startSplashActivity(this@LanguageActivity)
+//            finish()
+//        }
     }
 }
