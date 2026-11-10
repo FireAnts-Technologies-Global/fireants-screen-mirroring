@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imgBack"
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:visibility="gone"
@@ -25,7 +25,7 @@
         android:layout_centerVertical="true"
         android:fontFamily="@font/cast_poppins_bold"
         android:text="@string/cast_home_title"
-        android:textSize="@dimen/_17ssp" />
+        android:textSize="@dimen/_14sdp" />
 
     <LinearLayout
         android:id="@+id/lnActionHome"
@@ -63,7 +63,7 @@
         android:ellipsize="end"
         android:gravity="center"
         android:textColor="@color/cast_white"
-        android:textSize="@dimen/_13ssp"
+        android:textSize="@dimen/_11sdp"
         tools:text="Cast" />
 
     <ImageView
@@ -77,8 +77,8 @@
 
     <ImageView
         android:id="@+id/imgCast"
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
         android:visibility="visible"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"

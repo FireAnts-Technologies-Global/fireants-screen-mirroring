@@ -32,7 +32,7 @@
                 android:id="@+id/animLoading"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_80sdp"
-                android:elevation="8dp"
+                android:elevation="@dimen/_7sdp"
                 android:padding="@dimen/_16sdp"
                 app:layout_constraintDimensionRatio="1:0.6"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +92,7 @@
                 android:backgroundTint="@color/color_button"
                 android:fontFamily="@font/inter_semibold"
                 android:gravity="center"
-                android:minHeight="49dp"
+                android:minHeight="@dimen/_41sdp"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/update_now"
@@ -100,7 +100,7 @@
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:cornerRadius="12dp"
+                app:cornerRadius="@dimen/_10sdp"
                 app:layout_constraintTop_toBottomOf="@id/txtForceUpdateDescription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

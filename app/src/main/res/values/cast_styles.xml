@@ -17,14 +17,14 @@
 
     <style name="cast_MediaTab">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_height">@dimen/_37sdp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:background">@drawable/cast_bg_media_nav_item_selected</item>
         <item name="android:fontFamily">@font/inter_regular</item>
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/cast_cast_secondary_text</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
     </style>
 
     <style name="cast_text_regular">
@@ -45,124 +45,124 @@
         <item name="android:fontFamily">@font/cast_bold</item>
     </style>
     <style name="cast_text_regular_24" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_24ssp</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
     </style>
     <style name="cast_text_regular_22" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
     </style>
     <style name="cast_text_regular_20" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textSize">@dimen/_17sdp</item>
     </style>
     <style name="cast_text_regular_18" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
     </style>
     <style name="cast_text_regular_16" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
     </style>
     <style name="cast_text_regular_14" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
     <style name="cast_text_regular_12" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
     </style>
     <style name="cast_text_regular_10" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
     </style>
     <style name="cast_text_regular_8" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textSize">@dimen/_7sdp</item>
     </style>
     <style name="cast_text_regular_6" parent="cast_text_regular">
-        <item name="android:textSize">@dimen/_6ssp</item>
+        <item name="android:textSize">@dimen/_5sdp</item>
     </style>
     <style name="cast_text_medium_24" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_24ssp</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
     </style>
     <style name="cast_text_medium_22" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
     </style>
     <style name="cast_text_medium_20" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textSize">@dimen/_17sdp</item>
     </style>
     <style name="cast_text_medium_18" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
     </style>
     <style name="cast_text_medium_16" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
     </style>
     <style name="cast_text_medium_14" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
     <style name="cast_text_medium_12" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
     </style>
     <style name="cast_text_medium_10" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
     </style>
     <style name="cast_text_medium_8" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textSize">@dimen/_7sdp</item>
     </style>
     <style name="cast_text_medium_6" parent="cast_text_medium">
-        <item name="android:textSize">@dimen/_6ssp</item>
+        <item name="android:textSize">@dimen/_5sdp</item>
     </style>
     <style name="cast_text_semi_bold_24" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_24ssp</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
     </style>
     <style name="cast_text_semi_bold_22" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
     </style>
     <style name="cast_text_semi_bold_20" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textSize">@dimen/_17sdp</item>
     </style>
     <style name="cast_text_semi_bold_18" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
     </style>
     <style name="cast_text_semi_bold_16" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
     </style>
     <style name="cast_text_semi_bold_14" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
     <style name="cast_text_semi_bold_12" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
     </style>
     <style name="cast_text_semi_bold_10" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
     </style>
     <style name="cast_text_semi_bold_8" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textSize">@dimen/_7sdp</item>
     </style>
     <style name="cast_text_semi_bold_6" parent="cast_text_semi_bold">
-        <item name="android:textSize">@dimen/_6ssp</item>
+        <item name="android:textSize">@dimen/_5sdp</item>
     </style>
     <style name="cast_text_bold_24" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_24ssp</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
     </style>
     <style name="cast_text_bold_22" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
     </style>
     <style name="cast_text_bold_20" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textSize">@dimen/_17sdp</item>
     </style>
     <style name="cast_text_bold_18" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
     </style>
     <style name="cast_text_bold_16" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
     </style>
     <style name="cast_text_bold_14" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
     <style name="cast_text_bold_12" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
     </style>
     <style name="cast_text_bold_10" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
     </style>
     <style name="cast_text_bold_8" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textSize">@dimen/_7sdp</item>
     </style>
     <style name="cast_text_bold_6" parent="cast_text_bold">
-        <item name="android:textSize">@dimen/_6ssp</item>
+        <item name="android:textSize">@dimen/_5sdp</item>
     </style>
 
 </resources>

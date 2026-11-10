@@ -37,7 +37,7 @@
 
     <style name="cast_image_corner_12">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">12dp</item>
+        <item name="cornerSize">@dimen/_10sdp</item>
     </style>
 
     <style name="cast_ThemeDialog" parent="android:Theme.Holo.Dialog">

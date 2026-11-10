@@ -7,7 +7,7 @@
         android:startColor="@color/cast_cast_action_start"
         android:type="linear" />
     <stroke
-        android:width="0.25dp"
+        android:width="@dimen/sdp_custom_0_25"
         android:color="#00FFFFFF" />
-    <corners android:radius="8dp" />
+    <corners android:radius="@dimen/_7sdp" />
 </shape>

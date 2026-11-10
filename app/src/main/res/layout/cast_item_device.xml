@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="@dimen/_7sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rlCast"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="@dimen/_45sdp"
         android:background="@drawable/cast_bg_cast_device"
         android:clickable="true"
         android:focusable="true"
-        android:padding="8dp"
+        android:padding="@dimen/_7sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:id="@+id/flDeviceIcon"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:background="@drawable/cast_bg_cast_device_icon_tile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/imgCast"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
                 android:layout_gravity="center"
                 android:contentDescription="@null"
                 android:src="@drawable/cast_ic_figma_tv" />
@@ -38,8 +38,8 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_7sdp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/flConnectStatus"
@@ -55,7 +55,7 @@
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:textColor="@color/cast_cast_primary_text"
-                android:textSize="14sp"
+                android:textSize="@dimen/_12sdp"
                 tools:text="Living room TV" />
 
             <TextView
@@ -67,14 +67,14 @@
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:textColor="@color/cast_cast_secondary_text"
-                android:textSize="12sp"
+                android:textSize="@dimen/_10sdp"
                 tools:text="192.168.1.24" />
         </LinearLayout>
 
         <FrameLayout
             android:id="@+id/flConnectStatus"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">

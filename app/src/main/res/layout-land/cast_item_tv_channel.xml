@@ -6,28 +6,28 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cvContent"
         android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
         android:background="@drawable/cast_bg_player_channel_card"
-        android:padding="8dp">
+        android:padding="@dimen/_7sdp">
 
         <com.genesys.shape.view.ShapeImageView
             android:id="@+id/ivThumbnail"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:contentDescription="@null"
             android:scaleType="centerCrop"
             android:src="@drawable/cast_bg_channel_thumb"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shape_radius="8dp"
+            app:shape_radius="@dimen/_7sdp"
             app:shape_solidColor="@color/cast_white" />
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmerThumbnail"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
             app:layout_constraintEnd_toEndOf="@id/ivThumbnail"
@@ -43,7 +43,7 @@
             android:id="@+id/channelInfo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/_7sdp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,13 +60,13 @@
                 android:includeFontPadding="false"
                 android:maxLines="2"
                 android:textColor="@color/cast_cast_primary_text"
-                android:textSize="13sp"
+                android:textSize="@dimen/_11sdp"
                 tools:text="Football Match" />
             <FrameLayout
                 android:id="@+id/btnWatchNow"
-                android:layout_width="83dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="4dp"
+                android:layout_width="@dimen/_69sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginStart="@dimen/_3sdp"
                 android:background="@drawable/cast_bg_channel_watch_now"
                 android:clickable="true"
                 android:focusable="true">
@@ -78,7 +78,7 @@
                     android:includeFontPadding="false"
                     android:text="@string/cast_watch_now"
                     android:textColor="@color/cast_white"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/_10sdp" />
             </FrameLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

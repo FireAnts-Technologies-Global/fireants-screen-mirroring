@@ -9,8 +9,8 @@
         <!-- Empty Icon -->
         <ImageView
             android:id="@+id/ivEmptyIcon"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
             android:src="@drawable/cast_ic_search_not_found"
             android:contentDescription="Empty channels"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,9 +25,9 @@
             android:layout_height="wrap_content"
             android:text="@string/cast_no_channels_available"
             android:textColor="@color/cast_white"
-            android:textSize="14sp"
+            android:layout_marginTop="@dimen/_13sdp"
             android:fontFamily="@font/cast_semi_bold"
-            android:layout_marginTop="16dp"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintTop_toBottomOf="@id/ivEmptyIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -39,9 +39,9 @@
             android:layout_height="wrap_content"
             android:text="@string/cast_import_playlist_to_discover_new_channels"
             android:textColor="@color/cast_white"
-            android:textSize="12sp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:fontFamily="@font/cast_regular"
-            android:layout_marginTop="4dp"
+            android:textSize="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/tvEmptyTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -53,16 +53,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:paddingStart="@dimen/_17sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_17sdp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackgroundBorderless"
             app:shape_solidColor="@color/cast_main_text_color"
-            app:shape_radius="52dp"
-            android:layout_marginTop="24dp"
+            android:paddingBottom="@dimen/_8sdp"
+            app:shape_radius="@dimen/_43sdp"
             app:layout_constraintTop_toBottomOf="@id/tvEmptySubtitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,8 +70,8 @@
             app:layout_constraintVertical_bias="0.0">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
                 android:src="@drawable/cast_ic_add"
                 android:contentDescription="Add" />
 
@@ -80,9 +80,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cast_add_channel"
                 android:textColor="@color/cast_white"
-                android:textSize="14sp"
+                android:layout_marginStart="@dimen/_7sdp"
                 android:fontFamily="@font/cast_semi_bold"
-                android:layout_marginStart="8dp" />
+                android:textSize="@dimen/_12sdp" />
 
         </com.genesys.shape.layout.ShapeLinearLayout>
 

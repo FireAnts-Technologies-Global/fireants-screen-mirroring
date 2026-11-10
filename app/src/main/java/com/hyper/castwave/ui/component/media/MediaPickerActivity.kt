@@ -32,6 +32,7 @@ import com.hyper.castwave.ui.component.cast.PinDialog
 import com.hyper.castwave.ui.component.dialog.LoadingDialog
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import com.intuit.sdp.R as SdpR
 
 @AndroidEntryPoint
 class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
@@ -135,7 +136,7 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
 
     private fun setupTopBar() {
         mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.CENTERED_ACTIONS)
-        mBinding.topBar.setBackIconSize(dp(24))
+        mBinding.topBar.setBackIconSize(resources.getDimensionPixelSize(SdpR.dimen._14sdp))
         mBinding.topBar.setTitle(
             getString(
             if (mediaType == MediaType.VIDEO) R.string.cast_media_title_videos else R.string.cast_media_title_photos
@@ -189,8 +190,8 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         }
         
         currentItemDecoration?.let { mBinding.recyclerView.removeItemDecoration(it) }
-        
-        val spacing = dp(12)
+
+        val spacing = resources.getDimensionPixelSize(SdpR.dimen._10sdp)
         val newDecoration = GridSpacingItemDecoration(spanCount, spacing, includeEdge = false)
         mBinding.recyclerView.addItemDecoration(newDecoration)
         currentItemDecoration = newDecoration
@@ -337,8 +338,6 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
         MediaType.VIDEO -> MediaTab.VIDEOS
         MediaType.AUDIO -> MediaTab.AUDIO
     }
-
-    private fun dp(value: Int): Int = (value * resources.displayMetrics.density).toInt()
 
     private fun renderState(state: MediaUiState) {
             if (state is MediaUiState.Loading || viewModel.isCasting.value) showLoadingDialog() else loadingDialog?.dismiss()

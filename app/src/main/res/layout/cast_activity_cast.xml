@@ -29,7 +29,7 @@
             <com.hyper.castwave.ui.component.custom.FigmaTopBarView
                 android:id="@+id/toolbar"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 app:figmaTopBarTitle="@string/cast_cast_title"
                 app:figmaTopBarVariant="centeredActions"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,9 +49,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingHorizontal="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp">
+                    android:paddingHorizontal="@dimen/_13sdp"
+                    android:paddingTop="@dimen/_13sdp"
+                    android:paddingBottom="@dimen/_13sdp">
 
                     <!-- Searching and empty/error content share one card position. -->
                     <FrameLayout
@@ -69,13 +69,13 @@
                                 android:layout_width="@dimen/cast_cast_signal_size"
                                 android:layout_height="@dimen/cast_cast_signal_size"
                                 android:layout_gravity="top|center_horizontal"
-                                android:layout_marginTop="12dp"
+                                android:layout_marginTop="@dimen/_10sdp"
                                 android:background="@drawable/cast_bg_cast_signal">
 
                                 <ImageView
                                     android:id="@+id/imgSearching"
-                                    android:layout_width="84dp"
-                                    android:layout_height="84dp"
+                                    android:layout_width="@dimen/_70sdp"
+                                    android:layout_height="@dimen/_70sdp"
                                     android:layout_gravity="center"
                                     android:contentDescription="@null"
                                     android:scaleType="fitCenter"
@@ -87,8 +87,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="top"
-                                android:layout_marginHorizontal="12dp"
-                                android:layout_marginTop="136dp"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_113sdp"
                                 android:fontFamily="@font/inter_bold"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
@@ -101,12 +101,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="top"
-                                android:layout_marginHorizontal="12dp"
-                                android:layout_marginTop="163dp"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_136sdp"
                                 android:fontFamily="@font/inter_regular"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
-                                android:lineSpacingExtra="2dp"
+                                android:lineSpacingExtra="@dimen/_2sdp"
                                 android:maxLines="2"
                                 android:text="@string/cast_title_br1"
                                 android:textColor="@color/cast_cast_secondary_text"
@@ -117,16 +117,16 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/emptyDeviceContainer"
                             android:layout_width="match_parent"
-                            android:layout_height="262dp"
+                            android:layout_height="@dimen/_218sdp"
                             android:background="@android:color/transparent"
                             android:visibility="gone"
                             tools:visibility="visible">
 
                             <ImageView
                                 android:id="@+id/imgNoDevice"
-                                android:layout_width="72dp"
-                                android:layout_height="72dp"
-                                android:layout_marginTop="34dp"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:layout_marginTop="@dimen/_28sdp"
                                 android:contentDescription="@null"
                                 android:scaleType="fitCenter"
                                 android:src="@drawable/cast_img_state_no_device"
@@ -138,8 +138,8 @@
                                 android:id="@+id/tvTitleError"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="12dp"
-                                android:layout_marginTop="136dp"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_113sdp"
                                 android:fontFamily="@font/inter_bold"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
@@ -154,12 +154,12 @@
                                 android:id="@+id/tvMessageError"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="12dp"
-                                android:layout_marginTop="163dp"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_136sdp"
                                 android:fontFamily="@font/inter_regular"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
-                                android:lineSpacingExtra="2dp"
+                                android:lineSpacingExtra="@dimen/_2sdp"
                                 android:maxLines="2"
                                 android:text="@string/cast_please_check_your_wifi_connection_devices"
                                 android:textColor="@color/cast_cast_secondary_text"
@@ -171,8 +171,8 @@
                             <FrameLayout
                                 android:id="@+id/tvActionError"
                                 android:layout_width="match_parent"
-                                android:layout_height="49dp"
-                                android:layout_marginTop="213dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_marginTop="@dimen/_178sdp"
                                 android:background="@drawable/cast_bg_cast_action"
                                 android:clickable="true"
                                 android:focusable="true"
@@ -189,15 +189,15 @@
                                     android:includeFontPadding="false"
                                     android:text="@string/cast_refresh"
                                     android:textColor="@color/cast_white"
-                                    android:textSize="14sp" />
+                                    android:textSize="@dimen/_12sdp" />
                             </FrameLayout>
 
                             <!-- Kept for the existing settings callback; not shown in the selected states. -->
                             <FrameLayout
                                 android:id="@+id/btnOpenWirelessDisplay"
                                 android:layout_width="match_parent"
-                                android:layout_height="49dp"
-                                android:layout_marginTop="270dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_marginTop="@dimen/_225sdp"
                                 android:background="@drawable/cast_bg_cast_action"
                                 android:clickable="true"
                                 android:focusable="true"
@@ -212,7 +212,7 @@
                                     android:fontFamily="@font/inter_bold"
                                     android:text="@string/cast_open_wireless_display"
                                     android:textColor="@color/cast_white"
-                                    android:textSize="14sp" />
+                                    android:textSize="@dimen/_12sdp" />
                             </FrameLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </FrameLayout>
@@ -221,12 +221,12 @@
                         android:id="@+id/tvStatus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/_7sdp"
                         android:fontFamily="@font/inter_bold"
                         android:includeFontPadding="false"
                         android:text="@string/cast_cast_available_devices"
                         android:textColor="@color/cast_cast_secondary_text"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/_11sdp"
                         android:visibility="gone"
                         tools:visibility="visible" />
 
@@ -234,7 +234,7 @@
                         android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/_7sdp"
                         android:nestedScrollingEnabled="false"
                         android:overScrollMode="never"
                         android:visibility="gone"
@@ -246,34 +246,34 @@
                         android:id="@+id/tvAlternativeConnect"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/_7sdp"
                         android:fontFamily="@font/inter_bold"
                         android:includeFontPadding="false"
                         android:text="@string/cast_cast_alternative_connection"
                         android:textColor="@color/cast_cast_secondary_text"
-                        android:textSize="13sp" />
+                        android:textSize="@dimen/_11sdp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/rlBrowserCast"
                         android:layout_width="match_parent"
-                        android:layout_height="69dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_height="@dimen/_58sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
                         android:background="@drawable/cast_bg_cast_device"
                         android:clickable="true"
                         android:focusable="true"
-                        android:padding="8dp">
+                        android:padding="@dimen/_7sdp">
 
                         <FrameLayout
                             android:id="@+id/flWebIcon"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
                             android:background="@drawable/cast_bg_cast_device_icon_tile"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
                             <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
+                                android:layout_width="@dimen/_17sdp"
+                                android:layout_height="@dimen/_17sdp"
                                 android:layout_gravity="center"
                                 android:contentDescription="@null"
                                 android:src="@drawable/cast_ic_figma_browser" />
@@ -282,7 +282,7 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
+                            android:layout_marginStart="@dimen/_7sdp"
                             android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/imgWebArrow"
@@ -295,7 +295,7 @@
                                 android:includeFontPadding="false"
                                 android:text="@string/cast_web_browser"
                                 android:textColor="@color/cast_cast_primary_text"
-                                android:textSize="14sp" />
+                                android:textSize="@dimen/_12sdp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -303,13 +303,13 @@
                                 android:includeFontPadding="false"
                                 android:text="@string/cast_cast_web_browser_subtitle"
                                 android:textColor="@color/cast_cast_secondary_text"
-                                android:textSize="12sp" />
+                                android:textSize="@dimen/_10sdp" />
                         </LinearLayout>
 
                         <ImageView
                             android:id="@+id/imgWebArrow"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
                             android:contentDescription="@null"
                             android:src="@drawable/cast_ic_figma_chevron"
                             app:layout_constraintBottom_toBottomOf="parent"

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
-    android:paddingHorizontal="16dp"
-    android:paddingVertical="12dp">
+    android:paddingHorizontal="@dimen/_13sdp"
+    android:paddingVertical="@dimen/_10sdp">
 
     <com.genesys.shape.view.ShapeImageView
         android:id="@+id/imgVideoThumb"
@@ -15,7 +15,7 @@
         android:scaleType="centerCrop"
         android:padding="@dimen/_12sdp"
         android:src="@drawable/cast_img_thumb"
-        app:shape_radius="12dp"
+        app:shape_radius="@dimen/_10sdp"
         app:shape_solidColor="@color/cast_cast_panel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
             android:fontFamily="@font/inter_semibold"
             android:maxLines="1"
             android:textColor="@color/cast_home_text_primary"
-            android:textSize="14sp"
+            android:textSize="@dimen/_12sdp"
             tools:text="Sample Video TitSample Video TitlSample Video TitlSample Video TitlSample Video TitlSample Video Titlle" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:fontFamily="@font/inter_regular"
             android:maxLines="1"
             android:textColor="@color/cast_home_text_secondary"
-            android:textSize="12sp"
+            android:textSize="@dimen/_10sdp"
             tools:text="1080p • MP4" />
     </LinearLayout>
 

@@ -7,7 +7,7 @@
     <FrameLayout
         android:id="@+id/flThumbnail"
         android:layout_width="0dp"
-        android:layout_height="112dp"
+        android:layout_height="@dimen/_93sdp"
         app:layout_constraintDimensionRatio="H,101:112"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,25 +23,25 @@
         <TextView
             android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
-            android:layout_height="23dp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_gravity="top|end"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/_7sdp"
             android:background="@drawable/cast_bg_media_duration"
             android:fontFamily="@font/inter_regular"
             android:gravity="center"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_7sdp"
             android:textColor="@color/cast_cast_surface"
-            android:textSize="12sp"
+            android:textSize="@dimen/_10sdp"
             android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imgPlay"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
             android:background="@drawable/cast_bg_media_play"
-            android:padding="13dp"
+            android:padding="@dimen/_11sdp"
             android:src="@drawable/cast_ic_play"
             android:visibility="gone" />
 
@@ -54,8 +54,8 @@
 
         <ImageView
             android:id="@+id/imgCastingIcon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
             android:layout_gravity="center"
             android:src="@drawable/cast_ic_cast"
             android:visibility="gone" />
@@ -65,12 +65,12 @@
         android:id="@+id/tvName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/_3sdp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:paddingHorizontal="4dp"
+        android:paddingHorizontal="@dimen/_3sdp"
         android:textColor="@color/cast_cast_primary_text"
-        android:textSize="11sp"
+        android:textSize="@dimen/_9sdp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

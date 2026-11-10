@@ -11,10 +11,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingTop="24dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="24dp">
+            android:paddingStart="@dimen/_13sdp"
+            android:paddingTop="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_20sdp">
 
             <!-- Step 1 -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,13 +25,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/cast_bg_guide_step_card"
-                android:padding="12dp"
+                android:padding="@dimen/_10sdp"
                 >
 
                 <FrameLayout
                     android:id="@+id/step1Number"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
                     android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -45,19 +45,19 @@
                         android:fontFamily="@font/inter_semibold"
                         android:text="1"
                         android:textColor="@color/cast_cast_accent"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/_12sdp" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/tvStep1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:fontFamily="@font/inter_regular"
-                    android:lineSpacingExtra="2dp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
                     android:text="@string/cast_guide_file_new_step1_text"
                     android:textColor="@color/cast_home_text_primary"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_13sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/step1Number"
                     app:layout_constraintTop_toTopOf="@id/step1Number" />
@@ -74,13 +74,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/step1Container"
                 android:background="@drawable/cast_bg_guide_step_card"
-                android:padding="12dp"
+                android:padding="@dimen/_10sdp"
                 >
 
                 <FrameLayout
                     android:id="@+id/step2Number"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
                     android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -94,19 +94,19 @@
                         android:fontFamily="@font/inter_semibold"
                         android:text="2"
                         android:textColor="@color/cast_cast_accent"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/_12sdp" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/tvStep2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:fontFamily="@font/inter_regular"
-                    android:lineSpacingExtra="2dp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
                     android:text="@string/cast_guide_file_new_step2_text"
                     android:textColor="@color/cast_home_text_primary"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_13sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/step2Number"
@@ -124,13 +124,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/step2Container"
                 android:background="@drawable/cast_bg_guide_step_card"
-                android:padding="12dp"
+                android:padding="@dimen/_10sdp"
                 >
 
                 <FrameLayout
                     android:id="@+id/step3Number"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
                     android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -144,19 +144,19 @@
                         android:fontFamily="@font/inter_semibold"
                         android:text="3"
                         android:textColor="@color/cast_cast_accent"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/_12sdp" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/tvStep3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:fontFamily="@font/inter_regular"
-                    android:lineSpacingExtra="2dp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
                     android:text="@string/cast_guide_file_new_step3_text"
                     android:textColor="@color/cast_home_text_primary"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_13sdp"
                     app:layout_constraintBottom_toBottomOf="@+id/step3Number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/step3Number"
@@ -174,13 +174,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/step3Container"
                 android:background="@drawable/cast_bg_guide_step_card"
-                android:padding="12dp"
+                android:padding="@dimen/_10sdp"
                 >
 
                 <FrameLayout
                     android:id="@+id/step4Number"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
                     android:background="@drawable/cast_bg_guide_step_badge"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -194,19 +194,19 @@
                         android:fontFamily="@font/inter_semibold"
                         android:text="4"
                         android:textColor="@color/cast_cast_accent"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/_12sdp" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/tvStep4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:fontFamily="@font/inter_regular"
-                    android:lineSpacingExtra="2dp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
                     android:text="@string/cast_guide_file_new_step4_text"
                     android:textColor="@color/cast_home_text_primary"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_13sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/step4Number"
                     app:layout_constraintTop_toTopOf="@id/step4Number" />

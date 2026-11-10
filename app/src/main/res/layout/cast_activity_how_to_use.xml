@@ -12,8 +12,8 @@
         <com.hyper.castwave.ui.component.custom.FigmaTopBarView
             android:id="@+id/toolbar"
             android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="47dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_39sdp"
             app:figmaTopBarBackDescription="@string/cast_how_to_use_guide_back"
             app:figmaTopBarBackStyle="howToUse"
             app:figmaTopBarTitle="@string/cast_how_to_use_title"
@@ -28,9 +28,9 @@
             android:clipToPadding="false"
             android:fillViewport="false"
             android:overScrollMode="never"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingHorizontal="@dimen/_13sdp"
+            android:paddingTop="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_13sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,53 +44,53 @@
                 <LinearLayout
                     android:id="@+id/quickStartBanner"
                     android:layout_width="match_parent"
-                    android:layout_height="132dp"
+                    android:layout_height="@dimen/_110sdp"
                     android:background="@drawable/cast_how_to_use_banner"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="@dimen/_13sdp">
 
                     <LinearLayout
-                        android:layout_width="184dp"
-                        android:layout_height="100dp"
+                        android:layout_width="@dimen/_153sdp"
+                        android:layout_height="@dimen/_83sdp"
                         android:gravity="center_vertical"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="15dp"
+                            android:layout_height="@dimen/_13sdp"
                             android:fontFamily="@font/inter_bold"
                             android:includeFontPadding="false"
                             android:text="@string/cast_how_to_use_guide_quick_start"
                             android:textColor="@color/cast_white"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
-                            android:layout_width="184dp"
-                            android:layout_height="54dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_width="@dimen/_153sdp"
+                            android:layout_height="@dimen/_45sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
                             android:fontFamily="@font/inter_bold"
                             android:includeFontPadding="false"
                             android:lineSpacingExtra="0dp"
                             android:text="@string/cast_how_to_use_guide_from_phone_to_tv"
                             android:textColor="@color/cast_white"
-                            android:textSize="22sp" />
+                            android:textSize="@dimen/_18sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="15dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
                             android:fontFamily="@font/inter_regular"
                             android:includeFontPadding="false"
                             android:text="@string/cast_how_to_use_guide_caption"
                             android:textColor="@color/cast_white"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/_10sdp" />
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="88dp"
-                        android:layout_marginStart="12dp"
+                        android:layout_width="@dimen/_83sdp"
+                        android:layout_height="@dimen/_73sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:contentDescription="@null"
                         android:scaleType="fitCenter"
                         android:src="@drawable/cast_how_to_use_phone_to_tv" />
@@ -100,22 +100,22 @@
                     android:id="@+id/step1"
                     layout="@layout/cast_item_how_to_use_step"
                     android:layout_width="match_parent"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="12dp" />
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_marginTop="@dimen/_10sdp" />
 
                 <include
                     android:id="@+id/step2"
                     layout="@layout/cast_item_how_to_use_step"
                     android:layout_width="match_parent"
-                    android:layout_height="88dp"
-                    android:layout_marginTop="12dp" />
+                    android:layout_height="@dimen/_73sdp"
+                    android:layout_marginTop="@dimen/_10sdp" />
 
                 <include
                     android:id="@+id/step3"
                     layout="@layout/cast_item_how_to_use_step"
                     android:layout_width="match_parent"
-                    android:layout_height="88dp"
-                    android:layout_marginTop="12dp" />
+                    android:layout_height="@dimen/_73sdp"
+                    android:layout_marginTop="@dimen/_10sdp" />
 
                 <FrameLayout
                     android:id="@+id/flAds"

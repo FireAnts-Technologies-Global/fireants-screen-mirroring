@@ -8,9 +8,9 @@
     android:background="#B3111111">
     
     <com.genesys.shape.layout.ShapeLinearLayout
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="40dp"
-        app:shape_radius="16dp"
+        android:paddingHorizontal="@dimen/_33sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        app:shape_radius="@dimen/_13sdp"
         app:shape_solidColor="#232323"
         android:orientation="vertical"
         android:gravity="center"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cast_loading"
-            android:textSize="18sp"
+            android:textSize="@dimen/_15sdp"
             android:fontFamily="@font/cast_medium"
             android:textColor="@color/cast_main_text_color"/>
         

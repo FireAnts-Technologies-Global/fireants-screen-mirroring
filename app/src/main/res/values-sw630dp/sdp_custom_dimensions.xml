@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sdp_custom_0_25">0.437500dp</dimen>
+    <dimen name="sdp_custom_0_3">0.525000dp</dimen>
+    <dimen name="sdp_custom_0_75">1.312500dp</dimen>
+    <dimen name="sdp_custom_1_5">2.625000dp</dimen>
+    <dimen name="sdp_custom_31_937622">55.890839dp</dimen>
+    <dimen name="sdp_custom_32_0625">56.109375dp</dimen>
+    <dimen name="sdp_custom_1024">1792.000000dp</dimen>
+</resources>

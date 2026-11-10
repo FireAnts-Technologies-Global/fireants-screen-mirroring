@@ -13,7 +13,7 @@
             android:clipToPadding="false"
             android:fillViewport="true"
             android:overScrollMode="never"
-            android:paddingBottom="12dp"
+            android:paddingBottom="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="@dimen/_37sdp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
@@ -67,33 +67,33 @@
                                 android:fontFamily="@font/bold"
                                 android:includeFontPadding="false"
                                 android:textColor="@color/cast_home_text_primary"
-                                android:textSize="16sp"
+                                android:textSize="@dimen/_13sdp"
                                 tools:text="No TV connected" />
 
                             <TextView
                                 android:id="@+id/tvConnectionSubtitle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="@dimen/_3sdp"
                                 android:fontFamily="@font/regular"
                                 android:includeFontPadding="false"
                                 android:textColor="#475467"
-                                android:textSize="12sp"
+                                android:textSize="@dimen/_10sdp"
                                 tools:text="Choose a device to get started" />
                         </LinearLayout>
 
                         <TextView
                             android:id="@+id/btnConnectionAction"
                             android:layout_width="wrap_content"
-                            android:layout_height="44dp"
+                            android:layout_height="@dimen/_37sdp"
                             android:background="@drawable/cast_bg_home_connection_action"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
                             android:includeFontPadding="false"
-                            android:minWidth="85dp"
-                            android:paddingHorizontal="12dp"
+                            android:minWidth="@dimen/_71sdp"
+                            android:paddingHorizontal="@dimen/_10sdp"
                             android:textColor="@color/cast_color_nav_selected"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/_12sdp"
                             tools:text="Connect" />
                     </LinearLayout>
 
@@ -107,7 +107,7 @@
                         android:focusable="true"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="16dp">
+                        android:paddingHorizontal="@dimen/_13sdp">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -122,23 +122,23 @@
                                 android:includeFontPadding="false"
                                 android:text="Screen Mirroring"
                                 android:textColor="#FFFFFF"
-                                android:textSize="18sp" />
+                                android:textSize="@dimen/_15sdp" />
 
                             <TextView
                                 android:id="@+id/tvCastBannerDesc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="@dimen/_3sdp"
                                 android:fontFamily="@font/inter_regular"
                                 android:includeFontPadding="false"
                                 android:textColor="#FFFFFF"
-                                android:textSize="12sp"
+                                android:textSize="@dimen/_10sdp"
                                 tools:text="Share your phone screen on TV" />
                         </LinearLayout>
 
                         <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
+                            android:layout_width="@dimen/_37sdp"
+                            android:layout_height="@dimen/_37sdp"
                             android:contentDescription="@null"
                             android:src="@drawable/home_mirror" />
                     </LinearLayout>
@@ -153,20 +153,20 @@
                         android:focusable="true"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="12dp">
+                        android:paddingHorizontal="@dimen/_10sdp">
 
                         <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
                             android:background="@drawable/cast_bg_home_tutorial_icon"
                             android:contentDescription="@null"
-                            android:padding="8dp"
+                            android:padding="@dimen/_7sdp"
                             android:src="@drawable/home_video" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:layout_weight="1"
                             android:orientation="vertical">
 
@@ -177,23 +177,23 @@
                                 android:includeFontPadding="false"
                                 android:text="Tutorial"
                                 android:textColor="@color/cast_home_text_tutorial"
-                                android:textSize="15sp" />
+                                android:textSize="@dimen/_13sdp" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="@dimen/_3sdp"
                                 android:fontFamily="@font/inter_regular"
                                 android:includeFontPadding="false"
                                 android:text="Learn how to connect and cast to your TV"
                                 android:textColor="@color/cast_home_text_tutorial_secondary"
-                                android:textSize="12sp" />
+                                android:textSize="@dimen/_10sdp" />
                         </LinearLayout>
 
                         <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="12dp"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:contentDescription="@null"
                             android:src="@drawable/ic_chevron_right_figma" />
                     </LinearLayout>
@@ -204,21 +204,21 @@
                         android:layout_marginTop="@dimen/cast_home_gap"
                         android:background="@drawable/cast_bg_home_section"
                         android:orientation="vertical"
-                        android:padding="8dp">
+                        android:padding="@dimen/_7sdp">
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="18dp"
+                            android:layout_height="@dimen/_15sdp"
                             android:fontFamily="@font/inter_bold"
                             android:includeFontPadding="false"
                             android:text="Cast Media"
                             android:textColor="@color/cast_home_text_primary"
-                            android:textSize="15sp" />
+                            android:textSize="@dimen/_13sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/cast_home_feature_row_height"
-                            android:layout_marginTop="8dp"
+                            android:layout_marginTop="@dimen/_7sdp"
                             android:orientation="horizontal">
 
                             <include
@@ -233,7 +233,7 @@
                                 layout="@layout/cast_item_home_feature"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginStart="8dp"
+                                android:layout_marginStart="@dimen/_7sdp"
                                 android:layout_weight="1" />
                         </LinearLayout>
                     </LinearLayout>
@@ -244,21 +244,21 @@
                         android:layout_marginTop="@dimen/cast_home_gap"
                         android:background="@drawable/cast_bg_home_section"
                         android:orientation="vertical"
-                        android:padding="8dp">
+                        android:padding="@dimen/_7sdp">
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="18dp"
+                            android:layout_height="@dimen/_15sdp"
                             android:fontFamily="@font/inter_bold"
                             android:includeFontPadding="false"
                             android:text="Cast Web &amp; Channels"
                             android:textColor="@color/cast_home_text_primary"
-                            android:textSize="15sp" />
+                            android:textSize="@dimen/_13sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/cast_home_feature_row_height"
-                            android:layout_marginTop="8dp"
+                            android:layout_marginTop="@dimen/_7sdp"
                             android:orientation="horizontal">
 
                             <include
@@ -273,7 +273,7 @@
                                 layout="@layout/cast_item_home_feature"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginStart="8dp"
+                                android:layout_marginStart="@dimen/_7sdp"
                                 android:layout_weight="1" />
                         </LinearLayout>
                     </LinearLayout>

@@ -3,21 +3,21 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="279dp"
+        android:layout_height="@dimen/_233sdp"
         android:background="@drawable/cast_bg_channel_empty_card"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/_17sdp"
+        android:paddingTop="@dimen/_17sdp"
+        android:paddingBottom="@dimen/_13sdp">
 
         <FrameLayout
-            android:layout_width="116dp"
-            android:layout_height="116dp"
+            android:layout_width="@dimen/_97sdp"
+            android:layout_height="@dimen/_97sdp"
             android:background="@drawable/cast_bg_channels_empty_ring">
             <ImageView
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
@@ -27,33 +27,33 @@
         <TextView
             android:id="@+id/tvEmptyTitle"
             android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="@dimen/_19sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/inter_bold"
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="@string/cast_playlists_empty_title"
             android:textColor="@color/cast_home_text_primary"
-            android:textSize="19sp" />
+            android:textSize="@dimen/_16sdp" />
 
         <TextView
             android:id="@+id/tvEmptySubtitle"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/inter_regular"
             android:gravity="center"
             android:includeFontPadding="false"
             android:maxLines="1"
             android:text="@string/cast_channels_empty_subtitle"
             android:textColor="@color/cast_home_text_secondary"
-            android:textSize="12sp" />
+            android:textSize="@dimen/_10sdp" />
 
         <LinearLayout
             android:id="@+id/btnAddChannel"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="@dimen/_41sdp"
+            android:layout_marginTop="@dimen/_13sdp"
             android:background="@drawable/cast_bg_channel_add_button"
             android:clickable="true"
             android:focusable="true"
@@ -61,8 +61,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
                 android:contentDescription="@null"
                 android:src="@drawable/cast_ic_add_figma"
                 android:tint="@color/cast_white" />
@@ -70,12 +70,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="@dimen/_7sdp"
                 android:fontFamily="@font/inter_bold"
                 android:includeFontPadding="false"
                 android:text="@string/cast_playlists_add_action"
                 android:textColor="@color/cast_white"
-                android:textSize="14sp" />
+                android:textSize="@dimen/_12sdp" />
         </LinearLayout>
     </LinearLayout>
 </layout>

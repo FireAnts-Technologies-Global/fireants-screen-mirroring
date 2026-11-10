@@ -8,14 +8,14 @@
     android:focusable="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingTop="12dp"
-    android:paddingBottom="12dp">
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingBottom="@dimen/_10sdp">
 
     <ImageView
         android:id="@+id/imgFeatureIcon"
         android:layout_width="@dimen/cast_home_icon_tile_size"
         android:layout_height="@dimen/cast_home_icon_tile_size"
-        android:padding="4dp"
+        android:padding="@dimen/_3sdp"
         android:contentDescription="@null"
         tools:src="@drawable/cast_ic_home_feature_photo" />
 
@@ -23,12 +23,12 @@
         android:id="@+id/tvFeatureTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/_3sdp"
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:includeFontPadding="false"
         android:textColor="@color/cast_home_text_primary"
-        android:textSize="12sp"
+        android:textSize="@dimen/_10sdp"
         tools:text="Cast Photos" />
 
     <TextView
@@ -39,8 +39,8 @@
         android:textColor="#475467"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:lineSpacingExtra="4dp"
+        android:lineSpacingExtra="@dimen/_3sdp"
         android:visibility="gone"
-        android:textSize="12sp"
+        android:textSize="@dimen/_10sdp"
         tools:text="Show your photos and albums on big screens." />
 </LinearLayout>

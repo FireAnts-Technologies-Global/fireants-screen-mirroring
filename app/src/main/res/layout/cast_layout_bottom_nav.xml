@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/cast_bg_bottom_nav"
     android:minHeight="@dimen/cast_home_nav_height"
-    android:paddingHorizontal="12dp">
+    android:paddingHorizontal="@dimen/_10sdp">
 
     <include
         android:id="@+id/tabHome"

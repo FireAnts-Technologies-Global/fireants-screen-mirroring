@@ -15,8 +15,8 @@
             android:scaleType="centerCrop" />
         <com.genesys.shape.view.ShapeImageView
             android:id="@+id/img_splash"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/_83sdp"
+            android:layout_height="@dimen/_83sdp"
             android:layout_centerInParent="true"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
             android:max="100"
             android:progressDrawable="@drawable/bg_progress_splash"
             app:layout_constraintBottom_toTopOf="@id/fr_banner"
-            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteX="@dimen/_30sdp"
             tools:progress="24" />
 
         <FrameLayout

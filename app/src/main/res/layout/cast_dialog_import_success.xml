@@ -1,16 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/cast_import_scrim">
-    <LinearLayout android:layout_width="312dp" android:layout_height="237dp" android:layout_gravity="center" android:translationY="-24dp" android:background="@drawable/cast_bg_import_success_card"
-        android:gravity="center_horizontal" android:orientation="vertical" android:padding="20dp">
-        <ImageView android:layout_width="72dp" android:layout_height="72dp" android:contentDescription="@null" android:src="@drawable/cast_img_import_success" />
-        <TextView android:layout_width="wrap_content" android:layout_height="24dp" android:layout_marginTop="12dp" android:fontFamily="@font/inter_bold"
-            android:gravity="center" android:includeFontPadding="false" android:text="@string/cast_import_success_title" android:textColor="@color/cast_home_text_primary" android:textSize="20sp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="16dp" android:layout_marginTop="12dp" android:fontFamily="@font/inter_regular"
-            android:gravity="center" android:includeFontPadding="false" android:text="@string/cast_import_success_description" android:textColor="@color/cast_home_text_secondary" android:textSize="13sp" />
-        <FrameLayout android:id="@+id/btnViewChannels" android:layout_width="match_parent" android:layout_height="49dp" android:layout_marginTop="12dp"
+
+    <LinearLayout
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_198sdp"
+        android:layout_gravity="center"
+        android:background="@drawable/cast_bg_import_success_card"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/_17sdp"
+        android:translationY="@dimen/_minus20sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:contentDescription="@null"
+            android:src="@drawable/cast_img_import_success" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/cast_import_success_title"
+            android:textColor="@color/cast_home_text_primary"
+            android:textSize="@dimen/_17sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/cast_import_success_description"
+            android:textColor="@color/cast_home_text_secondary"
+            android:textSize="@dimen/_11sdp" />
+
+        <FrameLayout
+            android:id="@+id/btnViewChannels"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_41sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/cast_bg_import_primary" android:clickable="true" android:focusable="true">
             <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="center" android:fontFamily="@font/inter_bold"
-                android:gravity="center" android:includeFontPadding="false" android:text="@string/cast_view_channels" android:textColor="@color/cast_white" android:textSize="14sp" />
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/cast_view_channels"
+                android:textColor="@color/cast_white"
+                android:textSize="@dimen/_12sdp" />
         </FrameLayout>
     </LinearLayout>
 </FrameLayout>

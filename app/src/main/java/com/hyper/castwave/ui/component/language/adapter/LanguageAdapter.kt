@@ -1,15 +1,14 @@
 package com.hyper.castwave.ui.component.language.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.hyper.castwave.databinding.ItemLanguageBinding
 import com.hyper.castwave.ui.component.language.data.LanguageModel
-import com.bumptech.glide.Glide
 
 class LanguageAdapter(
     private val context: Context,
@@ -37,7 +36,6 @@ class LanguageAdapter(
             if (binding.rbLanguageSelected.isChecked != isSelected) {
                 binding.rbLanguageSelected.isChecked = isSelected
             }
-            binding.item.strokeColor = if (isSelected) Color.BLACK else Color.TRANSPARENT
         }
     }
 

@@ -19,7 +19,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:paddingHorizontal="@dimen/space_horizontal_common"
                 app:layout_constraintBottom_toTopOf="@id/layoutAds"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -27,8 +26,9 @@
                     android:id="@+id/imgOnboarding"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:scaleType="centerCrop"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/ic_vietnamese"
+                    android:src="@drawable/ob_1"
                     app:layout_constraintBottom_toTopOf="@id/tvTitle"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,6 +136,7 @@
                         android:id="@+id/onAction2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/_12sdp"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

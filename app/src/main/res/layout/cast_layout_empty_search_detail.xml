@@ -5,13 +5,13 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingHorizontal="24dp"
-    android:paddingVertical="24dp">
+    android:paddingHorizontal="@dimen/_20sdp"
+    android:paddingVertical="@dimen/_20sdp">
 
     <ImageView
         android:id="@+id/ivDetailEmptyIcon"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
         android:contentDescription="@null"
         android:src="@drawable/cast_ic_search_empty"
         app:tint="@color/cast_cast_accent" />
@@ -20,23 +20,23 @@
         android:id="@+id/tvDetailEmptyTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/_13sdp"
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:includeFontPadding="false"
         android:text="@string/cast_no_result_found"
         android:textColor="@color/cast_home_text_primary"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_13sdp" />
 
     <TextView
         android:id="@+id/tvDetailEmptySubtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/inter_regular"
         android:gravity="center"
         android:includeFontPadding="false"
         android:text="@string/cast_try_adjusting_your_search"
         android:textColor="@color/cast_home_text_secondary"
-        android:textSize="13sp" />
+        android:textSize="@dimen/_11sdp" />
 </LinearLayout>

@@ -12,8 +12,8 @@
         <com.hyper.castwave.ui.component.custom.FigmaTopBarView
             android:id="@+id/tvSettingsHeader"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="49dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginTop="@dimen/_41sdp"
             app:figmaTopBarTitle="@string/cast_home_screen_mirroring"
             app:figmaTopBarVariant="compactTitle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,9 +25,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="vertical"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingHorizontal="@dimen/_13sdp"
+            android:paddingTop="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_13sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,31 +37,31 @@
                 android:id="@+id/layout_setting_language"
                 layout="@layout/cast_item_setting_option"
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
+                android:layout_height="@dimen/_55sdp"
                 android:tag="language" />
 
             <include
                 android:id="@+id/layout_setting_privacy"
                 layout="@layout/cast_item_setting_option"
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:tag="privacy" />
 
             <include
                 android:id="@+id/layout_setting_rate"
                 layout="@layout/cast_item_setting_option"
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:tag="rate" />
 
             <include
                 android:id="@+id/layout_setting_share"
                 layout="@layout/cast_item_setting_option"
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:tag="share" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

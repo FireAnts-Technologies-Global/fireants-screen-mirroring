@@ -6,8 +6,8 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.os.SystemClock
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
-import android.view.View
 import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
 import android.widget.FrameLayout
@@ -17,6 +17,7 @@ import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import com.hyper.castwave.R
+import com.intuit.sdp.R as SdpR
 
 /** Shared XML-backed top bar for navigation headers that follow the Figma app-bar patterns. */
 class FigmaTopBarView @JvmOverloads constructor(
@@ -101,11 +102,12 @@ class FigmaTopBarView @JvmOverloads constructor(
             } else 0
         setPaddingRelative(horizontalPadding, verticalPadding, horizontalPadding, verticalPadding)
 
-        titleView.textSize = when {
-            currentBackStyle == BackStyle.HOW_TO_USE -> 19f
-            variant == Variant.CENTERED || variant == Variant.CENTERED_ACTIONS -> 22f
-            else -> 20f
+        val titleSizeRes = when {
+            currentBackStyle == BackStyle.HOW_TO_USE -> SdpR.dimen._13sdp
+            variant == Variant.CENTERED || variant == Variant.CENTERED_ACTIONS -> SdpR.dimen._18sdp
+            else -> SdpR.dimen._17sdp
         }
+        titleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(titleSizeRes))
         titleView.typeface = ResourcesCompat.getFont(
             context,
             if (currentBackStyle == BackStyle.HOW_TO_USE) R.font.inter_bold else R.font.inter_bold,

@@ -3,27 +3,27 @@
     <LinearLayout
         android:id="@+id/btnAddPlaylist"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginBottom="12dp"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/cast_bg_channels_add_row"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
         android:orientation="horizontal">
         <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
             android:contentDescription="@null"
             android:src="@drawable/cast_ic_add_figma"
             android:tint="@color/cast_color_nav_selected" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/_7sdp"
             android:fontFamily="@font/inter_semibold"
             android:includeFontPadding="false"
             android:text="@string/cast_playlists_add_action"
             android:textColor="@color/cast_color_nav_selected"
-            android:textSize="13sp" />
+            android:textSize="@dimen/_11sdp" />
     </LinearLayout>
 </layout>

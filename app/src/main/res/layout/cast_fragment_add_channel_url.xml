@@ -6,46 +6,108 @@
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView" android:layout_width="0dp" android:layout_height="0dp"
             android:clipToPadding="false" android:fillViewport="true" android:overScrollMode="never"
-            android:paddingHorizontal="16dp" android:paddingBottom="16dp"
+            android:paddingHorizontal="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_13sdp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                <TextView android:id="@+id/tvPlaylistNameLabel" android:layout_width="match_parent" android:layout_height="16dp"
+
+                <TextView
+                    android:id="@+id/tvPlaylistNameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_13sdp"
                     android:fontFamily="@font/inter_bold" android:includeFontPadding="false" android:text="@string/cast_name"
-                    android:textColor="@color/cast_home_text_primary" android:textSize="13sp" />
-                <FrameLayout android:id="@+id/containerPlaylistName" android:layout_width="match_parent" android:layout_height="50dp"
-                    android:layout_marginTop="12dp" android:background="@drawable/cast_bg_import_input" android:paddingHorizontal="16dp">
+                    android:textColor="@color/cast_home_text_primary"
+                    android:textSize="@dimen/_11sdp" />
+
+                <FrameLayout
+                    android:id="@+id/containerPlaylistName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/cast_bg_import_input"
+                    android:paddingHorizontal="@dimen/_13sdp">
                     <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPlaylistName"
                         android:layout_width="match_parent" android:layout_height="match_parent" android:background="@android:color/transparent"
                         android:fontFamily="@font/inter_regular" android:gravity="center_vertical" android:hint="@string/cast_enter_playlist_name_hint"
                         android:includeFontPadding="false" android:inputType="text" android:maxLines="1" android:padding="0dp"
-                        android:textColor="@color/cast_home_text_primary" android:textColorHint="@color/cast_color_tab_inactive" android:textSize="13sp" />
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/icClearPlaylistName" android:layout_width="20dp" android:layout_height="20dp"
-                        android:layout_gravity="end|center_vertical" android:clickable="true" android:focusable="true" android:padding="2dp"
+                        android:textColor="@color/cast_home_text_primary"
+                        android:textColorHint="@color/cast_color_tab_inactive"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/icClearPlaylistName"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_gravity="end|center_vertical"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/_2sdp"
                         android:src="@drawable/cast_ic_close" android:visibility="gone" app:tint="@color/cast_home_text_secondary" />
                 </FrameLayout>
-                <TextView android:id="@+id/tvPlaylistUrlLabel" android:layout_width="match_parent" android:layout_height="16dp"
-                    android:layout_marginTop="12dp" android:fontFamily="@font/inter_bold" android:includeFontPadding="false"
-                    android:text="@string/cast_playlist_link" android:textColor="@color/cast_home_text_primary" android:textSize="13sp" />
-                <FrameLayout android:id="@+id/containerPlaylistUrl" android:layout_width="match_parent" android:layout_height="50dp"
-                    android:layout_marginTop="12dp" android:background="@drawable/cast_bg_import_input" android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/tvPlaylistUrlLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/inter_bold"
+                    android:includeFontPadding="false"
+                    android:text="@string/cast_playlist_link"
+                    android:textColor="@color/cast_home_text_primary"
+                    android:textSize="@dimen/_11sdp" />
+
+                <FrameLayout
+                    android:id="@+id/containerPlaylistUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/cast_bg_import_input"
+                    android:paddingHorizontal="@dimen/_13sdp">
                     <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPlaylistUrl"
                         android:layout_width="match_parent" android:layout_height="match_parent" android:background="@android:color/transparent"
                         android:fontFamily="@font/inter_regular" android:gravity="center_vertical" android:hint="@string/cast_paste_url_here"
                         android:includeFontPadding="false" android:inputType="textUri" android:maxLines="1" android:padding="0dp"
-                        android:textColor="@color/cast_home_text_primary" android:textColorHint="@color/cast_color_tab_inactive" android:textSize="13sp" />
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/icClearPlaylistUrl" android:layout_width="20dp" android:layout_height="20dp"
-                        android:layout_gravity="end|center_vertical" android:clickable="true" android:focusable="true" android:padding="2dp"
+                        android:textColor="@color/cast_home_text_primary"
+                        android:textColorHint="@color/cast_color_tab_inactive"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/icClearPlaylistUrl"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_gravity="end|center_vertical"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/_2sdp"
                         android:src="@drawable/cast_ic_close" android:visibility="gone" app:tint="@color/cast_home_text_secondary" />
                 </FrameLayout>
-                <FrameLayout android:id="@+id/btnAddPlaylist" android:layout_width="match_parent" android:layout_height="49dp"
-                    android:layout_marginTop="12dp" android:background="@drawable/cast_bg_import_primary" android:clickable="true" android:focusable="true">
+
+                <FrameLayout
+                    android:id="@+id/btnAddPlaylist"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_41sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/cast_bg_import_primary"
+                    android:clickable="true"
+                    android:focusable="true">
                     <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="center"
                         android:gravity="center" android:orientation="horizontal">
-                        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:contentDescription="@null" android:src="@drawable/cast_ic_add_figma" app:tint="@color/cast_white" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"
+
+                        <ImageView
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/cast_ic_add_figma"
+                            app:tint="@color/cast_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_7sdp"
                             android:fontFamily="@font/inter_bold" android:includeFontPadding="false" android:text="@string/cast_add_playlist"
-                            android:textColor="@color/cast_white" android:textSize="14sp" />
+                            android:textColor="@color/cast_white"
+                            android:textSize="@dimen/_12sdp" />
                     </LinearLayout>
                 </FrameLayout>
             </LinearLayout>

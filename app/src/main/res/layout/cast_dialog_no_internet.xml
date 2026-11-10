@@ -16,7 +16,7 @@
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 app:cardCornerRadius="@dimen/cast_border_dialog"
                 app:cardBackgroundColor="@color/cast_cast_surface"
-                app:cardElevation="8dp"
+                app:cardElevation="@dimen/_7sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

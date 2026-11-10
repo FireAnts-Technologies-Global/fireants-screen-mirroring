@@ -7,15 +7,15 @@
     android:gravity="center"
     android:layout_marginHorizontal="@dimen/_1sdp"
     android:background="@drawable/cast_tab_item_background_selector"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp">
+    android:paddingStart="@dimen/_13sdp"
+    android:paddingTop="@dimen/_7sdp"
+    android:paddingEnd="@dimen/_13sdp"
+    android:paddingBottom="@dimen/_7sdp">
 
     <ImageView
         android:id="@+id/iv_tab_icon"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="@dimen/_17sdp"
         android:src="@drawable/cast_ic_tab_all"
         android:contentDescription="@string/cast_home" />
 
@@ -24,9 +24,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="All"
-        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="@dimen/_5sdp"
         android:textColor="#B3B3B3"
-        android:layout_marginStart="6dp"
+        android:textSize="@dimen/_10sdp"
         android:fontFamily="@font/cast_bold" />
 
 </LinearLayout>

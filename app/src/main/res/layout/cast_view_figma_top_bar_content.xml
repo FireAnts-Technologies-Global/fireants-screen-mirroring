@@ -6,8 +6,8 @@
 
     <FrameLayout
         android:id="@+id/topBarBackButton"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_37sdp"
+        android:layout_height="@dimen/_37sdp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/topBarBackIcon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
             android:layout_gravity="center"
             android:contentDescription="@null"
             android:src="@drawable/cast_ic_figma_back" />
@@ -33,7 +33,7 @@
         android:includeFontPadding="false"
         android:maxLines="1"
         android:textColor="@color/cast_cast_primary_text"
-        android:textSize="20sp"
+        android:textSize="@dimen/_17sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/topBarEndAction"
         app:layout_constraintStart_toEndOf="@id/topBarBackButton"
@@ -41,8 +41,8 @@
 
     <FrameLayout
         android:id="@+id/topBarEndAction"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_37sdp"
+        android:layout_height="@dimen/_37sdp"
         android:clickable="false"
         android:focusable="false"
         android:visibility="invisible"
@@ -52,8 +52,8 @@
 
         <ImageView
             android:id="@+id/topBarEndIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
             android:layout_gravity="center"
             android:contentDescription="@null"
             android:visibility="gone" />

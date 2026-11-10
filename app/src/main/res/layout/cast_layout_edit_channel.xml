@@ -3,14 +3,14 @@
     <com.genesys.shape.layout.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         app:shape_solidColor="@color/cast_cast_surface"
-        app:shape_radius="16dp"
+        android:elevation="@dimen/_7sdp"
         android:orientation="vertical"
         android:gravity="start"
         app:shape_strokeColor="@color/cast_cast_border"
-        app:shape_strokeSize="1dp"
-        android:elevation="8dp"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp"
+        android:paddingHorizontal="@dimen/_13sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        app:shape_radius="@dimen/_13sdp"
+        app:shape_strokeSize="@dimen/_1sdp"
         android:layout_height="wrap_content">
 
 
@@ -23,24 +23,24 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/cast_ic_drawable"
                 app:tint="@color/cast_cast_accent" />
 
             <TextView
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/_3sdp"
                 android:textColor="@color/cast_home_text_primary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
+                android:textSize="@dimen/_11sdp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="@string/cast_edit_channel"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/_13sdp"
             android:id="@+id/layout_delete"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
@@ -50,17 +50,17 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/cast_ic_delete"
                 app:tint="#C62828" />
 
             <TextView
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/_3sdp"
                 android:textColor="#C62828"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
+                android:textSize="@dimen/_11sdp"
                 android:maxLines="1"
                 android:fontFamily="@font/inter_semibold"
                 android:text="@string/cast_delete_channel"/>

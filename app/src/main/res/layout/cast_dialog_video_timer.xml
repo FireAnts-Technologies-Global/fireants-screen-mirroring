@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -9,9 +8,9 @@
 
         <com.genesys.shape.layout.ShapeRelativeLayout
             android:paddingBottom="@dimen/_20sdp"
-            app:shape_radius="12dp"
+            app:shape_radius="@dimen/_10sdp"
             app:shape_strokeColor="@color/cast_cast_border"
-            app:shape_strokeSize="1dp"
+            app:shape_strokeSize="@dimen/_1sdp"
 
             app:shape_solidColor="@color/cast_cast_surface"
             android:layout_width="match_parent"
@@ -70,17 +69,17 @@
                     android:gravity="center"
                     android:layout_marginTop="@dimen/_12sdp"
                     android:paddingVertical="@dimen/_4sdp"
-                    android:paddingHorizontal="16sp"
+                    android:paddingHorizontal="@dimen/_13sdp"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvDes">
 
                     <com.genesys.shape.layout.ShapeLinearLayout
-                        android:paddingVertical="14sp"
-                        android:layout_marginEnd="20dp"
-                        app:shape_radius="20sp"
-                        app:shape_strokeSize="1dp"
+                        android:layout_marginEnd="@dimen/_17sdp"
+                        android:paddingVertical="@dimen/_12sdp"
+                        app:shape_radius="@dimen/_17sdp"
+                        app:shape_strokeSize="@dimen/_1sdp"
                         app:shape_solidColor="@color/cast_cast_surface"
                         app:shape_strokeColor="@color/cast_cast_border"
                         android:layout_weight="1"
@@ -101,7 +100,7 @@
                             android:id="@+id/npHour"
                             android:layout_width="@dimen/_64sdp"
                             android:layout_height="@dimen/_120sdp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="@dimen/_8sdp"
                             app:np_dividerColor="#00000000"
                             app:np_dividerLength="@dimen/_24sdp"
                             app:np_formatter="%02d"
@@ -110,8 +109,8 @@
                             app:np_orientation="vertical"
                             app:np_textColor="@color/cast_textSecondary"
                             app:np_selectedTextColor="@color/cast_cast_accent"
-                            app:np_selectedTextSize="@dimen/_20ssp"
-                            app:np_textSize="@dimen/_20ssp"
+                            app:np_selectedTextSize="@dimen/_17sdp"
+                            app:np_textSize="@dimen/_17sdp"
                             app:np_value="8"
                             app:np_width="@dimen/_56sdp"
                             app:np_wrapSelectorWheel="true" />
@@ -121,9 +120,9 @@
 
 
                     <com.genesys.shape.layout.ShapeLinearLayout
-                        android:paddingVertical="14sp"
-                        app:shape_radius="20sp"
-                        app:shape_strokeSize="1dp"
+                        android:paddingVertical="@dimen/_12sdp"
+                        app:shape_radius="@dimen/_17sdp"
+                        app:shape_strokeSize="@dimen/_1sdp"
                         app:shape_solidColor="@color/cast_cast_surface"
                         app:shape_strokeColor="@color/cast_cast_border"
                         android:layout_width="0dp"
@@ -142,7 +141,7 @@
 
                         <com.hyper.castwave.ui.component.custom.numberpicker.NumberPicker
                             android:id="@+id/npMinute"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="@dimen/_8sdp"
                             android:layout_width="@dimen/_64sdp"
                             android:layout_height="@dimen/_120sdp"
                             app:np_dividerColor="#00000000"
@@ -152,11 +151,11 @@
                             app:np_dividerLength="@dimen/_24sdp"
                             app:np_orientation="vertical"
                             app:np_selectedTextColor="@color/cast_cast_accent"
-                            app:np_selectedTextSize="@dimen/_20ssp"
+                            app:np_selectedTextSize="@dimen/_17sdp"
                             app:np_textColor="@color/cast_textSecondary"
                             app:np_value="30"
                             app:np_width="@dimen/_56sdp"
-                            app:np_textSize="@dimen/_20ssp"
+                            app:np_textSize="@dimen/_17sdp"
                             app:np_wrapSelectorWheel="true" />
 
 
@@ -188,8 +187,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/cast_button_height_small"
                     android:layout_marginHorizontal="@dimen/_12sdp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="@dimen/_17sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
                     android:background="@drawable/cast_bg_dialog_secondary_action"
                     android:ellipsize="end"
                     android:gravity="center"

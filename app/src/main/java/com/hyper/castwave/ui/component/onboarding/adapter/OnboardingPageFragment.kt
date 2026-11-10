@@ -165,7 +165,7 @@ class OnboardingPageFragment : BaseFragment<FragmentOnboardingPageBinding>() {
     }
 
     private fun updateLayout() {
-        Glide.with(this).load(onboardingItem.imageResId).into(mBinding.imgOnboarding)
+        Glide.with(this).load(onboardingItem.imageResId).centerCrop().into(mBinding.imgOnboarding)
         mBinding.tvTitle.text = getString(onboardingItem.title)
         mBinding.tvDes.text = getString(onboardingItem.description)
 

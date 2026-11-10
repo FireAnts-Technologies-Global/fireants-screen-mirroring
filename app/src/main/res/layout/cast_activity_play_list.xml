@@ -68,17 +68,17 @@
                 android:id="@+id/toolbar"
                 android:visibility="visible"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
-                android:layout_marginTop="3dp"
-                android:paddingHorizontal="16dp"
+                android:layout_height="@dimen/_37sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:paddingHorizontal="@dimen/_13sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <FrameLayout
                     android:id="@+id/btnToolbarBack"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="@dimen/_37sdp"
+                    android:layout_height="@dimen/_37sdp"
                     android:background="@drawable/cast_bg_player_back_button"
                     android:clickable="true"
                     android:focusable="true"
@@ -87,8 +87,8 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
                         android:layout_gravity="center"
                         android:contentDescription="@null"
                         android:src="@drawable/cast_ic_figma_back" />
@@ -104,18 +104,18 @@
                     android:includeFontPadding="false"
                     android:maxLines="1"
                     android:textColor="@color/cast_cast_primary_text"
-                    android:textSize="20sp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/toolbarSpacer"
-                    android:layout_marginStart="12dp"
+                    android:textSize="@dimen/_17sdp"
                     app:layout_constraintStart_toEndOf="@id/btnToolbarBack"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Football_Match" />
 
                 <View
                     android:id="@+id/toolbarSpacer"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="@dimen/_27sdp"
+                    android:layout_height="@dimen/_27sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -125,11 +125,11 @@
             <androidx.media3.ui.PlayerView
                 android:id="@+id/playerView"
                 android:layout_width="0dp"
-                android:layout_height="184dp"
+                android:layout_height="@dimen/_153sdp"
                 android:background="@drawable/cast_bg_player_video_frame"
                 android:clipToOutline="true"
-                android:layout_marginTop="24dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:keepScreenOn="true"
                 app:controller_layout_id="@layout/cast_view_exo_controller"
                 app:surface_type="texture_view"
@@ -140,8 +140,8 @@
 
             <ImageButton
                 android:id="@+id/btnPlayOverlay"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/cast_play_video"
                 android:src="@drawable/cast_ic_player_play_overlay"
@@ -153,10 +153,10 @@
 
             <ImageButton
                 android:id="@+id/btnFullScreenPersistent"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="24dp"
+                android:layout_width="@dimen/_37sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
                 android:background="@drawable/cast_bg_player_control_button"
                 android:contentDescription="@string/cast_fullscreen"
                 android:src="@drawable/cast_ic_player_fullscreen"
@@ -204,8 +204,8 @@
                 android:id="@+id/layoutChanel"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:paddingHorizontal="16dp"
-                android:paddingTop="12dp"
+                android:paddingHorizontal="@dimen/_13sdp"
+                android:paddingTop="@dimen/_10sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -221,8 +221,8 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:contentDescription="@null"
                         android:visibility="gone"
                         android:src="@drawable/cast_ic_playlist_more_channels" />
@@ -235,17 +235,17 @@
                         android:includeFontPadding="false"
                         android:text="@string/cast_more_channel"
                         android:textColor="@color/cast_cast_primary_text"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/_13sdp" />
 
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/searchBar"
                     android:layout_width="0dp"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:background="@drawable/cast_bg_player_search"
-                    android:paddingHorizontal="12dp"
+                    android:paddingHorizontal="@dimen/_10sdp"
                     android:paddingVertical="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -253,8 +253,8 @@
 
                     <ImageView
                         android:id="@+id/icSearch"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
                         android:contentDescription="@null"
                         android:src="@drawable/cast_ic_search"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -266,7 +266,7 @@
                         android:id="@+id/etSearch"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="@dimen/_7sdp"
                         android:background="@android:color/transparent"
                         android:ellipsize="end"
                         android:fontFamily="@font/inter_regular"
@@ -279,7 +279,7 @@
                         android:singleLine="true"
                         android:textColor="@color/cast_cast_primary_text"
                         android:textColorHint="@color/cast_cast_secondary_text"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/_10sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/icSearch"
@@ -291,10 +291,10 @@
                     android:id="@+id/rcvChannel"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:clipToPadding="false"
                     android:orientation="vertical"
-                    android:paddingBottom="16dp"
+                    android:paddingBottom="@dimen/_13sdp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -306,7 +306,7 @@
                     android:id="@+id/layoutEmpty"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/_13sdp"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     android:visibility="gone"
@@ -347,8 +347,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/cast_cast_surface"
-                android:paddingHorizontal="12dp"
-                android:paddingTop="12dp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1"
@@ -365,8 +365,8 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:contentDescription="@null"
                         android:visibility="gone"
                         android:src="@drawable/cast_ic_playlist_more_channels" />
@@ -379,17 +379,17 @@
                         android:includeFontPadding="false"
                         android:text="@string/cast_more_channel"
                         android:textColor="@color/cast_cast_primary_text"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/_13sdp" />
 
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/searchBarFull"
                     android:layout_width="0dp"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/cast_bg_player_search"
-                    android:paddingHorizontal="12dp"
+                    android:paddingHorizontal="@dimen/_10sdp"
                     android:paddingVertical="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -397,8 +397,8 @@
 
                     <ImageView
                         android:id="@+id/icSearchFull"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
                         android:contentDescription="@null"
                         android:src="@drawable/cast_ic_search"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -410,7 +410,7 @@
                         android:id="@+id/etSearchFull"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="@dimen/_7sdp"
                         android:background="@android:color/transparent"
                         android:ellipsize="end"
                         android:fontFamily="@font/inter_regular"
@@ -423,7 +423,7 @@
                         android:singleLine="true"
                         android:textColor="@color/cast_cast_primary_text"
                         android:textColorHint="@color/cast_cast_secondary_text"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/_10sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/icSearchFull"
@@ -435,10 +435,10 @@
                     android:id="@+id/rcvChannelFull"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:clipToPadding="false"
                     android:orientation="vertical"
-                    android:paddingBottom="16dp"
+                    android:paddingBottom="@dimen/_13sdp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -450,7 +450,7 @@
                     android:id="@+id/layoutEmptyFull"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"

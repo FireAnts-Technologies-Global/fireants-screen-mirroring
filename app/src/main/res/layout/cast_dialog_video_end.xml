@@ -11,9 +11,9 @@
             android:layout_height="match_parent">
 
             <com.genesys.shape.layout.ShapeRelativeLayout
-                app:shape_radius="22dp"
+                app:shape_radius="@dimen/_18sdp"
                 app:shape_solidColor="@color/cast_cast_surface"
-                app:shape_strokeSize="1dp"
+                app:shape_strokeSize="@dimen/_1sdp"
                 app:shape_strokeColor="@color/cast_cast_border"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                         android:layout_height="wrap_content">
 
                         <com.genesys.shape.view.ShapeTextView
-                            app:shape_radius="12dp"
+                            app:shape_radius="@dimen/_10sdp"
                             app:shape_solidColor="@color/cast_cast_panel"
                             android:id="@+id/btnCancel"
                             android:layout_weight="1"

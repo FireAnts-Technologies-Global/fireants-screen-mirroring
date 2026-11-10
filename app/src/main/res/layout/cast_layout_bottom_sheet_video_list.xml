@@ -14,12 +14,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
-        android:paddingHorizontal="16dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="12dp"
+        android:paddingHorizontal="@dimen/_13sdp"
+        android:paddingTop="@dimen/_7sdp"
+        android:paddingBottom="@dimen/_10sdp"
         android:text="@string/cast_found_videos"
         android:textColor="@color/cast_home_text_primary"
-        android:textSize="16sp" />
+        android:textSize="@dimen/_13sdp" />
 
     <View
         android:layout_width="match_parent"

@@ -9,9 +9,9 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imv_back"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:padding="16dp"
+            android:layout_width="@dimen/_47sdp"
+            android:layout_height="@dimen/_47sdp"
+            android:padding="@dimen/_13sdp"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/_8sdp"
             android:text="@string/setting"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="@id/imv_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
                     android:layout_toEndOf="@id/imv_language"
                     android:text="@string/language"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_10sdp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -82,7 +82,7 @@
                     android:layout_toEndOf="@id/imv_rate"
                     android:text="@string/rate"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_10sdp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -106,7 +106,7 @@
                     android:layout_toEndOf="@id/imv_feedback"
                     android:text="@string/feedback"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_10sdp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -130,7 +130,7 @@
                     android:layout_toEndOf="@id/imv_share"
                     android:text="@string/share_with_friend"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_10sdp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -153,7 +153,7 @@
                     android:layout_toEndOf="@id/imv_policy"
                     android:text="@string/privacy_policy"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_10sdp" />
             </RelativeLayout>
 
         </RelativeLayout>

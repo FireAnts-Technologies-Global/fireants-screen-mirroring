@@ -5,12 +5,12 @@
     android:layout_height="wrap_content"
     android:background="@drawable/cast_bg_pin_dialog"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/_13sdp">
 
     <ImageView
         android:id="@+id/imgPinArtwork"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
         android:layout_gravity="center_horizontal"
         android:contentDescription="@null"
         android:scaleType="fitCenter"
@@ -20,32 +20,32 @@
         android:id="@+id/tvPinTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/inter_bold"
         android:gravity="center"
         android:includeFontPadding="false"
         android:text="@string/cast_pin_dialog_title"
         android:textColor="@color/cast_cast_primary_text"
-        android:textSize="19sp"
+        android:textSize="@dimen/_16sdp"
         tools:text="Enter verification code" />
 
     <TextView
         android:id="@+id/tvPinSubtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/inter_regular"
         android:gravity="center"
         android:includeFontPadding="false"
         android:textColor="@color/cast_cast_secondary_text"
-        android:textSize="13sp"
+        android:textSize="@dimen/_11sdp"
         tools:text="Enter the code shown on your TV." />
 
     <EditText
         android:id="@+id/etPin"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/cast_bg_pin_dialog_input_empty"
         android:fontFamily="@font/inter_regular"
         android:gravity="center_vertical"
@@ -55,23 +55,23 @@
         android:inputType="number"
         android:importantForAutofill="no"
         android:maxLength="6"
-        android:paddingHorizontal="12dp"
+        android:paddingHorizontal="@dimen/_10sdp"
         android:singleLine="true"
         android:textColor="@color/cast_cast_input_text"
         android:textColorHint="@color/cast_cast_secondary_text"
-        android:textSize="15sp"
+        android:textSize="@dimen/_13sdp"
         tools:ignore="TextFields" />
 
     <TextView
         android:id="@+id/tvPinError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/_3sdp"
         android:fontFamily="@font/inter_regular"
         android:gravity="center"
         android:includeFontPadding="false"
         android:textColor="@color/cast_color_error"
-        android:textSize="12sp"
+        android:textSize="@dimen/_10sdp"
         android:visibility="gone"
         tools:text="Please enter the PIN"
         tools:visibility="visible" />
@@ -79,8 +79,8 @@
     <LinearLayout
         android:id="@+id/dialogActions"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:orientation="horizontal">
 
         <TextView
@@ -96,11 +96,11 @@
             android:includeFontPadding="false"
             android:text="@string/cast_pin_dialog_cancel"
             android:textColor="@color/cast_cast_button_secondary_text"
-            android:textSize="14sp" />
+            android:textSize="@dimen/_12sdp" />
 
         <Space
-            android:layout_width="8dp"
-            android:layout_height="1dp" />
+            android:layout_width="@dimen/_7sdp"
+            android:layout_height="@dimen/_1sdp" />
 
         <TextView
             android:id="@+id/btnPinConfirm"
@@ -115,7 +115,7 @@
             android:includeFontPadding="false"
             android:text="@string/cast_pin_dialog_confirm"
             android:textColor="@color/cast_cast_input_text"
-            android:textSize="14sp" />
+            android:textSize="@dimen/_12sdp" />
 
     </LinearLayout>
 

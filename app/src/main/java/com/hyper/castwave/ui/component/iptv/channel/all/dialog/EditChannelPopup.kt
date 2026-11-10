@@ -1,17 +1,17 @@
 package com.hyper.castwave.ui.component.iptv.channel.all.dialog
 
 import android.content.Context
-import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.PopupWindow
+import androidx.core.graphics.drawable.toDrawable
 import androidx.databinding.DataBindingUtil
 import com.hyper.castwave.R
-import com.hyper.castwave.databinding.CastLayoutEditChannelBinding
 import com.hyper.castwave.data.iptv.model.TVChannel
-import androidx.core.graphics.drawable.toDrawable
+import com.hyper.castwave.databinding.CastLayoutEditChannelBinding
+import com.intuit.sdp.R as SdpR
 
 class EditChannelPopup(
     context: Context,
@@ -68,11 +68,7 @@ class EditChannelPopup(
         val popupWidth = binding.root.measuredWidth
         val xOffset = anchorWidth - popupWidth
 
-        val gap = TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            4f,
-            anchorView.context.resources.displayMetrics
-        ).toInt()
+        val gap = anchorView.resources.getDimensionPixelSize(SdpR.dimen._3sdp)
 
         popupWindow?.showAsDropDown(anchorView, xOffset, gap, Gravity.END)
     }

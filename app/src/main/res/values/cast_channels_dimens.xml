@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="cast_channels_tab_height">56dp</dimen>
-    <dimen name="cast_playlists_tab_height">48dp</dimen>
+    <dimen name="cast_channels_tab_height">@dimen/_47sdp</dimen>
+    <dimen name="cast_playlists_tab_height">@dimen/_40sdp</dimen>
 </resources>

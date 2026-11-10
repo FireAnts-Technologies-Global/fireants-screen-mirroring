@@ -5,17 +5,17 @@
     <com.genesys.shape.layout.ShapeConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        app:shape_radius="32dp"
+        android:padding="@dimen/_17sdp"
+        app:shape_radius="@dimen/_27sdp"
         app:shape_solidColor="#202020"
-        app:shape_strokeSize="1dp"
+        app:shape_strokeSize="@dimen/_1sdp"
         app:shape_strokeColor="#525252"
         >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icClose"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -32,7 +32,7 @@
             android:text="@string/cast_edit_playlist"
             android:textAlignment="center"
             android:textColor="@color/cast_white"
-            android:textSize="18sp"
+            android:textSize="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,11 +41,11 @@
             android:id="@+id/tvPlaylistNameLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/cast_semi_bold"
             android:text="@string/cast_playlist_name"
             android:textColor="@color/cast_white"
-            android:textSize="16sp"
+            android:textSize="@dimen/_13sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
@@ -54,15 +54,15 @@
             android:id="@+id/inputContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:minHeight="48dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:minHeight="@dimen/_40sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPlaylistNameLabel"
-            app:shape_radius="12dp"
+            app:shape_radius="@dimen/_10sdp"
             app:shape_solidColor="@android:color/transparent"
             app:shape_strokeColor="#707070"
-            app:shape_strokeSize="1dp">
+            app:shape_strokeSize="@dimen/_1sdp">
 
             <com.genesys.shape.view.ShapeEditText
                 android:id="@+id/etPlaylistName"
@@ -72,14 +72,14 @@
                 android:hint="@string/cast_playlist_1"
                 android:imeOptions="actionDone"
                 android:inputType="text"
-                android:minHeight="48dp"
-                android:paddingStart="16dp"
-                android:paddingTop="12dp"
-                android:paddingEnd="40dp"
-                android:paddingBottom="12dp"
+                android:minHeight="@dimen/_40sdp"
+                android:paddingStart="@dimen/_13sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_33sdp"
+                android:paddingBottom="@dimen/_10sdp"
                 android:textColor="@color/cast_white"
                 android:textColorHint="#707070"
-                android:textSize="16sp"
+                android:textSize="@dimen/_13sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/icClearInput"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -90,13 +90,13 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/icClearInput"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginEnd="12dp"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:padding="4dp"
+                android:padding="@dimen/_3sdp"
                 android:src="@drawable/cast_ic_close"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -110,19 +110,19 @@
             android:id="@+id/btnSave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:gravity="center"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/_40sdp"
             android:orientation="horizontal"
-            android:paddingVertical="14dp"
+            android:paddingVertical="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/inputContainer"
-            app:shape_radius="50dp"
+            app:shape_radius="@dimen/_42sdp"
             app:shape_solidColor="@color/cast_main_text_color">
 
             <TextView
@@ -131,7 +131,7 @@
                 android:fontFamily="@font/cast_bold"
                 android:text="@string/cast_save"
                 android:textColor="@color/cast_black"
-                android:textSize="18sp" />
+                android:textSize="@dimen/_15sdp" />
 
         </com.genesys.shape.layout.ShapeLinearLayout>
     </com.genesys.shape.layout.ShapeConstraintLayout>

@@ -5,17 +5,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_marginBottom="12dp"
+        android:layout_height="@dimen/_57sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/cast_bg_channels_list_card"
         android:clickable="true"
         android:focusable="true"
-        android:padding="12dp">
+        android:padding="@dimen/_10sdp">
 
         <FrameLayout
             android:id="@+id/folderContainer"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="@dimen/_37sdp"
+            android:layout_height="@dimen/_37sdp"
             android:background="@drawable/cast_bg_channels_playlist_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +23,8 @@
 
             <ImageView
                 android:id="@+id/ivCategoryIcon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
                 android:layout_gravity="center"
                 android:contentDescription="@null"
                 android:src="@drawable/cast_ic_playlist_folder_figma" />
@@ -34,7 +34,7 @@
             android:id="@+id/llTextContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@id/folderContainer"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,26 +44,26 @@
             <TextView
                 android:id="@+id/tvCategoryName"
                 android:layout_width="match_parent"
-                android:layout_height="17dp"
+                android:layout_height="@dimen/_14sdp"
                 android:ellipsize="end"
                 android:fontFamily="@font/inter_bold"
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:textColor="@color/cast_home_text_primary"
-                android:textSize="14sp"
+                android:textSize="@dimen/_12sdp"
                 tools:text="Sports" />
 
             <TextView
                 android:id="@+id/tvChannelCount"
                 android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:ellipsize="end"
                 android:fontFamily="@font/inter_regular"
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:textColor="@color/cast_home_text_secondary"
-                android:textSize="12sp"
+                android:textSize="@dimen/_10sdp"
                 tools:text="26 channels" />
         </LinearLayout>
 

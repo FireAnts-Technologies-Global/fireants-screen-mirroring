@@ -5,28 +5,28 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="82dp"
-        android:layout_marginBottom="12dp"
+        android:layout_height="@dimen/_68sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/cast_bg_channels_list_card"
-        android:padding="8dp">
+        android:padding="@dimen/_7sdp">
 
         <com.genesys.shape.view.ShapeImageView
             android:id="@+id/ivThumbnail"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="@dimen/_53sdp"
+            android:layout_height="@dimen/_53sdp"
             android:contentDescription="@null"
             android:scaleType="centerCrop"
             android:src="@drawable/cast_bg_channel_thumb"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shape_radius="8dp"
+            app:shape_radius="@dimen/_7sdp"
             app:shape_solidColor="@color/cast_home_panel" />
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmerThumbnail"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="@dimen/_53sdp"
+            android:layout_height="@dimen/_53sdp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
             app:layout_constraintEnd_toEndOf="@id/ivThumbnail"
@@ -43,7 +43,7 @@
             android:id="@+id/channelInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -61,14 +61,14 @@
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:textColor="@color/cast_home_text_primary"
-                android:textSize="14sp"
+                android:textSize="@dimen/_12sdp"
                 tools:text="Football Match" />
 
             <FrameLayout
                 android:id="@+id/btnWatchNow"
-                android:layout_width="83dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="4dp"
+                android:layout_width="@dimen/_69sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginStart="@dimen/_3sdp"
                 android:background="@drawable/cast_bg_channels_watch_now"
                 android:clickable="true"
                 android:focusable="true">
@@ -81,7 +81,7 @@
                     android:includeFontPadding="false"
                     android:text="@string/cast_watch_now"
                     android:textColor="@color/cast_white"
-                    android:textSize="11sp" />
+                    android:textSize="@dimen/_9sdp" />
             </FrameLayout>
         </LinearLayout>
 

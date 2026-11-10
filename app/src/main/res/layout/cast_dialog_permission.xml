@@ -20,7 +20,7 @@
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:textColor="@color/cast_home_text_primary"
-        android:textSize="18sp" />
+        android:textSize="@dimen/_15sdp" />
 
     <TextView
         android:id="@+id/tvPermissionMessage"
@@ -31,7 +31,7 @@
         android:gravity="center"
         android:lineSpacingExtra="@dimen/_2sdp"
         android:textColor="@color/cast_home_text_secondary"
-        android:textSize="14sp" />
+        android:textSize="@dimen/_12sdp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,11 +49,11 @@
             android:gravity="center"
             android:paddingVertical="@dimen/_12sdp"
             android:textColor="@color/cast_home_text_primary"
-            android:textSize="14sp" />
+            android:textSize="@dimen/_12sdp" />
 
         <Space
             android:layout_width="@dimen/_12sdp"
-            android:layout_height="1dp" />
+            android:layout_height="@dimen/_1sdp" />
 
         <TextView
             android:id="@+id/btnPermissionAllow"
@@ -65,7 +65,7 @@
             android:gravity="center"
             android:paddingVertical="@dimen/_12sdp"
             android:textColor="@color/cast_white"
-            android:textSize="14sp" />
+            android:textSize="@dimen/_12sdp" />
 
     </LinearLayout>
 

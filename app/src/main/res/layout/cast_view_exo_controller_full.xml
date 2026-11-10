@@ -18,22 +18,22 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <View
-            android:layout_width="64dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="@dimen/_53sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/cast_bg_player_controller_toolbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btnCloseFull"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="@android:color/transparent"
-            android:padding="8dp"
+            android:padding="@dimen/_7sdp"
             android:scaleType="centerInside"
             android:src="@drawable/cast_ic_close"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,8 +79,8 @@
 
         <ImageButton
             android:id="@+id/btnFavoriteFull"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="@dimen/_37sdp"
+            android:layout_height="@dimen/_37sdp"
             android:padding="@dimen/_10sdp"
             android:background="@android:color/transparent"
             android:src="@drawable/cast_ic_favorite"
@@ -91,14 +91,14 @@
 
         <ImageButton
             android:id="@+id/btnListFull"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:padding="8dp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="@android:color/transparent"
             android:src="@drawable/cast_ic_list"
             android:scaleType="centerInside"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="12dp"
+            android:padding="@dimen/_7sdp"
             app:layout_constraintStart_toEndOf="@id/btnCloseFull"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -106,20 +106,20 @@
 
     <ImageButton
         android:id="@+id/btnPrevFull"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_37sdp"
+        android:layout_height="@dimen/_37sdp"
         android:background="@drawable/cast_bg_player_control_button"
         android:src="@drawable/cast_ic_player_seek_back"
         android:scaleType="centerInside"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnToggleFull"
-        android:layout_marginEnd="12dp" />
+        android:layout_marginEnd="@dimen/_10sdp" />
 
     <ImageButton
         android:id="@+id/btnToggleFull"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="@dimen/_47sdp"
+        android:layout_height="@dimen/_47sdp"
         android:background="@drawable/cast_bg_player_control_button"
         android:contentDescription="Play/Pause"
         android:scaleType="centerInside"
@@ -131,15 +131,15 @@
 
     <ImageButton
         android:id="@+id/btnNextFull"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_37sdp"
+        android:layout_height="@dimen/_37sdp"
         android:scaleType="centerInside"
         android:background="@drawable/cast_bg_player_control_button"
         android:src="@drawable/cast_ic_player_seek_forward"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnToggleFull"
-        android:layout_marginStart="12dp" />
+        android:layout_marginStart="@dimen/_10sdp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutBottomFull"
@@ -151,10 +151,10 @@
         <androidx.media3.ui.DefaultTimeBar
             android:id="@id/exo_progress"
             android:layout_width="0dp"
-            android:layout_height="28dp"
-            android:layout_marginHorizontal="16dp"
+            android:layout_height="@dimen/_23sdp"
+            android:layout_marginHorizontal="@dimen/_13sdp"
             app:bar_gravity="center"
-            app:bar_height="4dp"
+            app:bar_height="@dimen/_3sdp"
             app:buffered_color="#FFFFFFFF"
             app:played_color="#FFFFFFFF"
             app:scrubber_disabled_size="0dp"
@@ -292,10 +292,10 @@
 
         <LinearLayout
             android:id="@+id/btnFullScreenFull"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="24dp"
+            android:layout_width="@dimen/_37sdp"
+            android:layout_height="@dimen/_37sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:background="@drawable/cast_bg_player_control_button"
             android:orientation="vertical"
             android:gravity="center"
@@ -303,8 +303,8 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/cast_ic_player_fullscreen"/>
 
             <TextView

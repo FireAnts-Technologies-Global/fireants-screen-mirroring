@@ -11,18 +11,18 @@
         android:focusable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:padding="@dimen/_10sdp">
 
         <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/_33sdp"
+            android:layout_height="@dimen/_33sdp"
             android:background="@drawable/cast_settings_icon_tile"
             android:importantForAccessibility="no">
 
             <ImageView
                 android:id="@+id/imgSettingIcon"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
                 android:layout_gravity="center"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter" />
@@ -32,16 +32,16 @@
             android:id="@+id/tvSettingLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:layout_weight="1"
             android:fontFamily="@font/inter_bold"
             android:includeFontPadding="false"
             android:textColor="@color/cast_settings_text_primary"
-            android:textSize="15sp" />
+            android:textSize="@dimen/_13sdp" />
 
         <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
             android:contentDescription="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/cast_settings_icon_chevron" />

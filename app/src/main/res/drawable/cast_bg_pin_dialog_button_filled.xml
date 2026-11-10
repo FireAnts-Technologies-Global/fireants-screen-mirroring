@@ -4,5 +4,5 @@
         android:angle="0"
         android:endColor="@color/cast_cast_action_end"
         android:startColor="@color/cast_cast_action_start" />
-    <corners android:radius="12dp" />
+    <corners android:radius="@dimen/_10sdp" />
 </shape>

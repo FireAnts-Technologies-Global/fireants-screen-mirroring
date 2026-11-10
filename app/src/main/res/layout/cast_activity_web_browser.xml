@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/cast_bg_devices"
-        android:elevation="8dp"
+        android:elevation="@dimen/_7sdp"
         android:visibility="gone"
         android:padding="@dimen/_12sdp"
         android:layout_marginHorizontal="@dimen/_12sdp"
@@ -65,7 +65,7 @@
         android:background="@color/cast_cast_surface"
         android:elevation="@dimen/_4sdp"
         android:orientation="horizontal"
-        android:paddingHorizontal="8dp"
+        android:paddingHorizontal="@dimen/_7sdp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView

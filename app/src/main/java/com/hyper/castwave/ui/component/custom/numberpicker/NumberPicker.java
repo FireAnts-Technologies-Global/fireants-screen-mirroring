@@ -16,9 +16,7 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.NumberKeyListener;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.util.SparseArray;
-import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.LayoutInflater.Filter;
@@ -42,7 +40,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.hyper.castwave.R;
-import com.hyper.castwave.ui.component.custom.numberpicker.Scroller;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -87,11 +84,9 @@ public class NumberPicker extends LinearLayout {
     /**
      * The default unscaled height of the divider.
      */
-    private static final int UNSCALED_DEFAULT_DIVIDER_THICKNESS = 2;
     /**
      * The default unscaled distance between the dividers.
      */
-    private static final int UNSCALED_DEFAULT_DIVIDER_DISTANCE = 48;
     /**
      * Constant for unspecified size.
      */
@@ -115,11 +110,9 @@ public class NumberPicker extends LinearLayout {
     /**
      * The default max height of this widget.
      */
-    private static final int DEFAULT_MAX_HEIGHT = 180;
     /**
      * The default min width of this widget.
      */
-    private static final int DEFAULT_MIN_WIDTH = 64;
     /**
      * The default align of text.
      */
@@ -131,7 +124,6 @@ public class NumberPicker extends LinearLayout {
     /**
      * The default size of text.
      */
-    private static final float DEFAULT_TEXT_SIZE = 25f;
     /**
      * The default line spacing multiplier of text.
      */
@@ -223,7 +215,7 @@ public class NumberPicker extends LinearLayout {
     /**
      * The size of the selected text.
      */
-    private float mSelectedTextSize = DEFAULT_TEXT_SIZE;
+    private float mSelectedTextSize;
     /**
      * Flag whether the selected text should strikethroughed.
      */
@@ -247,7 +239,7 @@ public class NumberPicker extends LinearLayout {
     /**
      * The size of the text.
      */
-    private float mTextSize = DEFAULT_TEXT_SIZE;
+    private float mTextSize;
     /**
      * Flag whether the text should strikethroughed.
      */
@@ -371,11 +363,11 @@ public class NumberPicker extends LinearLayout {
     /**
      * @see ViewConfiguration#getScaledTouchSlop()
      */
-    private int mTouchSlop;
+    private final int mTouchSlop;
     /**
      * @see ViewConfiguration#getScaledMinimumFlingVelocity()
      */
-    private int mMinimumFlingVelocity;
+    private final int mMinimumFlingVelocity;
     /**
      * @see ViewConfiguration#getScaledMaximumFlingVelocity()
      */
@@ -403,7 +395,7 @@ public class NumberPicker extends LinearLayout {
     /**
      * The thickness of the divider.
      */
-    private int mDividerLength;
+    private final int mDividerLength;
     /**
      * The thickness of the divider.
      */
@@ -439,7 +431,7 @@ public class NumberPicker extends LinearLayout {
     /**
      * Flag whether the selector wheel should hidden until the picker has focus.
      */
-    private boolean mHideWheelUntilFocused;
+    private final boolean mHideWheelUntilFocused;
     /**
      * The orientation of this widget.
      */
@@ -475,7 +467,7 @@ public class NumberPicker extends LinearLayout {
     /**
      * The context of this widget.
      */
-    private Context mContext;
+    private final Context mContext;
     /**
      * The number formatter for current locale.
      */
@@ -483,7 +475,7 @@ public class NumberPicker extends LinearLayout {
     /**
      * The view configuration of this widget.
      */
-    private ViewConfiguration mViewConfiguration;
+    private final ViewConfiguration mViewConfiguration;
     /**
      * The amount of space between items.
      */
@@ -518,6 +510,8 @@ public class NumberPicker extends LinearLayout {
     public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
         mContext = context;
+        mSelectedTextSize = getResources().getDimension(com.intuit.sdp.R.dimen._21sdp);
+        mTextSize = mSelectedTextSize;
         mNumberFormatter = NumberFormat.getInstance();
 
         final TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.NumberPicker, defStyle, 0);
@@ -534,9 +528,8 @@ public class NumberPicker extends LinearLayout {
             setDividerColor(mDividerColor);
         }
 
-        final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        final int defDividerDistance = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, UNSCALED_DEFAULT_DIVIDER_DISTANCE, displayMetrics);
-        final int defDividerThickness = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, UNSCALED_DEFAULT_DIVIDER_THICKNESS, displayMetrics);
+        final int defDividerDistance = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._40sdp);
+        final int defDividerThickness = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._2sdp);
         mDividerDistance = attributes.getDimensionPixelSize(R.styleable.NumberPicker_np_dividerDistance, defDividerDistance);
         mDividerLength = attributes.getDimensionPixelSize(R.styleable.NumberPicker_np_dividerLength, 0);
         mDividerThickness = attributes.getDimensionPixelSize(R.styleable.NumberPicker_np_dividerThickness, defDividerThickness);
@@ -558,13 +551,13 @@ public class NumberPicker extends LinearLayout {
 
         mSelectedTextAlign = attributes.getInt(R.styleable.NumberPicker_np_selectedTextAlign, mSelectedTextAlign);
         mSelectedTextColor = attributes.getColor(R.styleable.NumberPicker_np_selectedTextColor, mSelectedTextColor);
-        mSelectedTextSize = attributes.getDimension(R.styleable.NumberPicker_np_selectedTextSize, spToPx(mSelectedTextSize));
+        mSelectedTextSize = attributes.getDimension(R.styleable.NumberPicker_np_selectedTextSize, getResources().getDimension(com.intuit.sdp.R.dimen._21sdp));
         mSelectedTextStrikeThru = attributes.getBoolean(R.styleable.NumberPicker_np_selectedTextStrikeThru, mSelectedTextStrikeThru);
         mSelectedTextUnderline = attributes.getBoolean(R.styleable.NumberPicker_np_selectedTextUnderline, mSelectedTextUnderline);
         mSelectedTypeface = Typeface.create(attributes.getString(R.styleable.NumberPicker_np_selectedTypeface), Typeface.NORMAL);
         mTextAlign = attributes.getInt(R.styleable.NumberPicker_np_textAlign, mTextAlign);
         mTextColor = attributes.getColor(R.styleable.NumberPicker_np_textColor, mTextColor);
-        mTextSize = attributes.getDimension(R.styleable.NumberPicker_np_textSize, spToPx(mTextSize));
+        mTextSize = attributes.getDimension(R.styleable.NumberPicker_np_textSize, getResources().getDimension(com.intuit.sdp.R.dimen._21sdp));
         mTextStrikeThru = attributes.getBoolean(R.styleable.NumberPicker_np_textStrikeThru, mTextStrikeThru);
         mTextUnderline = attributes.getBoolean(R.styleable.NumberPicker_np_textUnderline, mTextUnderline);
         mTypeface = Typeface.create(attributes.getString(R.styleable.NumberPicker_np_typeface), Typeface.NORMAL);
@@ -2225,20 +2218,8 @@ public class NumberPicker extends LinearLayout {
         return mNumberFormatter.format(value);
     }
 
-    private float dpToPx(float dp) {
-        return dp * getResources().getDisplayMetrics().density;
-    }
-
     private float pxToDp(float px) {
         return px / getResources().getDisplayMetrics().density;
-    }
-
-    private float spToPx(float sp) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, getResources().getDisplayMetrics());
-    }
-
-    private float pxToSp(float px) {
-        return px / getResources().getDisplayMetrics().scaledDensity;
     }
 
     private Formatter stringToFormatter(final String formatter) {
@@ -2257,13 +2238,13 @@ public class NumberPicker extends LinearLayout {
     private void setWidthAndHeight() {
         if (isHorizontalMode()) {
             mMinHeight = SIZE_UNSPECIFIED;
-            mMaxHeight = (int) dpToPx(DEFAULT_MIN_WIDTH);
-            mMinWidth = (int) dpToPx(DEFAULT_MAX_HEIGHT);
+            mMaxHeight = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._53sdp);
+            mMinWidth = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._150sdp);
             mMaxWidth = SIZE_UNSPECIFIED;
         } else {
             mMinHeight = SIZE_UNSPECIFIED;
-            mMaxHeight = (int) dpToPx(DEFAULT_MAX_HEIGHT);
-            mMinWidth = (int) dpToPx(DEFAULT_MIN_WIDTH);
+            mMaxHeight = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._150sdp);
+            mMinWidth = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._53sdp);
             mMaxWidth = SIZE_UNSPECIFIED;
         }
     }
@@ -2500,7 +2481,7 @@ public class NumberPicker extends LinearLayout {
 
     public void setSelectedTextSize(float textSize) {
         mSelectedTextSize = textSize;
-        mSelectedText.setTextSize(pxToSp(mSelectedTextSize));
+        mSelectedText.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, mSelectedTextSize);
     }
 
     public void setSelectedTextSize(@DimenRes int dimenId) {
@@ -2541,7 +2522,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     public float getTextSize() {
-        return spToPx(mTextSize);
+        return mTextSize;
     }
 
     public void setTextSize(float textSize) {
@@ -2651,15 +2632,15 @@ public class NumberPicker extends LinearLayout {
         /**
          * The view is not scrolling.
          */
-        public static int SCROLL_STATE_IDLE = 0;
+        int SCROLL_STATE_IDLE = 0;
         /**
          * The user is scrolling using touch, and his finger is still on the screen.
          */
-        public static int SCROLL_STATE_TOUCH_SCROLL = 1;
+        int SCROLL_STATE_TOUCH_SCROLL = 1;
         /**
          * The user had previously been scrolling using touch and performed a fling.
          */
-        public static int SCROLL_STATE_FLING = 2;
+        int SCROLL_STATE_FLING = 2;
 
         /**
          * Callback invoked while the number picker scroll state has changed.
@@ -2670,11 +2651,11 @@ public class NumberPicker extends LinearLayout {
          *                    {@link #SCROLL_STATE_TOUCH_SCROLL} or
          *                    {@link #SCROLL_STATE_IDLE}.
          */
-        public void onScrollStateChange(NumberPicker view, @ScrollState int scrollState);
+        void onScrollStateChange(NumberPicker view, @ScrollState int scrollState);
 
         @IntDef({SCROLL_STATE_IDLE, SCROLL_STATE_TOUCH_SCROLL, SCROLL_STATE_FLING})
         @Retention(RetentionPolicy.SOURCE)
-        public @interface ScrollState {
+        @interface ScrollState {
         }
     }
 
@@ -2689,7 +2670,7 @@ public class NumberPicker extends LinearLayout {
          * @param value The currently selected value.
          * @return A formatted string representation.
          */
-        public String format(int value);
+        String format(int value);
     }
 
     /**
@@ -2832,7 +2813,7 @@ public class NumberPicker extends LinearLayout {
                     return "";
                 }
                 String result = String.valueOf(dest.subSequence(0, dstart)) + filtered + dest.subSequence(dend, dest.length());
-                String str = String.valueOf(result).toLowerCase();
+                String str = result.toLowerCase();
                 for (String val : mDisplayedValues) {
                     String valLowerCase = val.toLowerCase();
                     if (valLowerCase.startsWith(str)) {

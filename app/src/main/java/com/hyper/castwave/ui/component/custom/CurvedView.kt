@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
+import com.intuit.sdp.R as SdpR
 
 /**
  * @author : CuongNK
@@ -26,7 +27,7 @@ class CurvedView(context: Context?, attrs: AttributeSet?) :
     private fun init() {
         paint.color = Color.parseColor("#D3D3D3")
         paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 5f
+        paint.strokeWidth = resources.getDimension(SdpR.dimen._4sdp)
         paint.isAntiAlias = true
     }
 

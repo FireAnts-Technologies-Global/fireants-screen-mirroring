@@ -2,42 +2,135 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
         <androidx.core.widget.NestedScrollView android:id="@+id/scrollView" android:layout_width="0dp" android:layout_height="0dp"
-            android:clipToPadding="false" android:fillViewport="true" android:overScrollMode="never" android:paddingHorizontal="16dp"
-            android:paddingBottom="16dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:paddingHorizontal="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_13sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                <LinearLayout android:id="@+id/uploadZone" android:layout_width="match_parent" android:layout_height="139dp" android:background="@drawable/cast_bg_import_upload_zone"
-                    android:clickable="true" android:focusable="true" android:gravity="center" android:orientation="vertical" android:padding="20dp">
-                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:contentDescription="@null" android:src="@drawable/cast_img_import_upload" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="18dp" android:layout_marginTop="8dp" android:fontFamily="@font/inter_bold"
-                        android:includeFontPadding="false" android:text="@string/cast_choose_m3u_file" android:textColor="@color/cast_home_text_primary" android:textSize="15sp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="15dp" android:layout_marginTop="8dp" android:fontFamily="@font/inter_regular"
-                        android:includeFontPadding="false" android:text="@string/cast_supported_m3u_formats" android:textColor="@color/cast_home_text_secondary" android:textSize="12sp" />
+
+                <LinearLayout
+                    android:id="@+id/uploadZone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_116sdp"
+                    android:background="@drawable/cast_bg_import_upload_zone"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_17sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/cast_img_import_upload" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/inter_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/cast_choose_m3u_file"
+                        android:textColor="@color/cast_home_text_primary"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_13sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/cast_supported_m3u_formats"
+                        android:textColor="@color/cast_home_text_secondary"
+                        android:textSize="@dimen/_10sdp" />
                 </LinearLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/selectedFileCard" android:layout_width="match_parent" android:layout_height="60dp"
-                    android:layout_marginTop="12dp" android:background="@drawable/cast_bg_import_file_row" android:paddingHorizontal="12dp" android:visibility="gone" tools:visibility="visible">
-                    <ImageView android:id="@+id/fileIconContainer" android:layout_width="20dp" android:layout_height="20dp" android:contentDescription="@null"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/selectedFileCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/cast_bg_import_file_row"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/fileIconContainer"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:contentDescription="@null"
                         android:src="@drawable/cast_ic_import_file_outline" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" />
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginEnd="8dp"
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
                         android:orientation="vertical" app:layout_constraintStart_toEndOf="@id/fileIconContainer" app:layout_constraintEnd_toStartOf="@id/btnDeleteFile"
                         app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent">
                         <TextView android:id="@+id/tvSelectedFileName" android:layout_width="match_parent" android:layout_height="wrap_content" android:ellipsize="end"
-                            android:fontFamily="@font/inter_bold" android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/cast_home_text_primary" android:textSize="13sp" tools:text="sports_channels.m3u" />
-                        <TextView android:id="@+id/tvSelectedFileSize" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"
-                            android:fontFamily="@font/inter_regular" android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/cast_home_text_secondary" android:textSize="12sp" tools:text="2.4 MB" />
+                            android:fontFamily="@font/inter_bold"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textColor="@color/cast_home_text_primary"
+                            android:textSize="@dimen/_11sdp"
+                            tools:text="sports_channels.m3u" />
+
+                        <TextView
+                            android:id="@+id/tvSelectedFileSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textColor="@color/cast_home_text_secondary"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="2.4 MB" />
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/btnDeleteFile" android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/cast_bg_import_remove"
+
+                    <FrameLayout
+                        android:id="@+id/btnDeleteFile"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:background="@drawable/cast_bg_import_remove"
                         android:clickable="true" android:contentDescription="@string/cast_remove_file" android:focusable="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent">
-                        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_gravity="center" android:contentDescription="@null" android:src="@drawable/cast_ic_import_remove" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@null"
+                            android:src="@drawable/cast_ic_import_remove" />
                     </FrameLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <FrameLayout android:id="@+id/btnAddPlaylist" android:layout_width="match_parent" android:layout_height="49dp" android:layout_marginTop="12dp"
+
+                <FrameLayout
+                    android:id="@+id/btnAddPlaylist"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_41sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:background="@drawable/cast_bg_import_primary" android:clickable="true" android:enabled="false" android:focusable="true">
                     <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="center" android:gravity="center" android:orientation="horizontal">
-                        <ImageView android:id="@+id/icAddPlaylistPlus" android:layout_width="16dp" android:layout_height="16dp" android:layout_marginEnd="8dp"
+
+                        <ImageView
+                            android:id="@+id/icAddPlaylistPlus"
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:layout_marginEnd="@dimen/_7sdp"
                             android:contentDescription="@null" android:src="@drawable/cast_ic_add_figma" app:tint="@color/cast_white" />
                         <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:fontFamily="@font/inter_bold"
-                            android:gravity="center" android:includeFontPadding="false" android:text="@string/cast_add_playlist" android:textColor="@color/cast_white" android:textSize="14sp" />
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="@string/cast_add_playlist"
+                            android:textColor="@color/cast_white"
+                            android:textSize="@dimen/_12sdp" />
                     </LinearLayout>
                 </FrameLayout>
             </LinearLayout>
