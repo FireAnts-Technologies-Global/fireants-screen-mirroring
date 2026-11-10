@@ -1,6 +1,6 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.repository.ScreenMirrorRepository
+import com.hyper.castwave.domain.repository.ScreenMirrorRepository
 import javax.inject.Inject
 
 class StopScreenMirrorUseCase @Inject constructor(

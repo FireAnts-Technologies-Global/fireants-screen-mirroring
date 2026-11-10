@@ -1,4 +1,4 @@
-package com.anrstudio.template.domain.model
+package com.hyper.castwave.domain.model
 
 sealed interface DataResult<out T> {
     data class Success<T>(val data: T) : DataResult<T>

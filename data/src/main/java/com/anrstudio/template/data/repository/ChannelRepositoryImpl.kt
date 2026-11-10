@@ -1,8 +1,8 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
-import com.anrstudio.template.domain.model.Channel
-import com.anrstudio.template.domain.model.ChannelType
-import com.anrstudio.template.domain.repository.ChannelRepository
+import com.hyper.castwave.domain.model.Channel
+import com.hyper.castwave.domain.model.ChannelType
+import com.hyper.castwave.domain.repository.ChannelRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 

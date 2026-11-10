@@ -97,7 +97,7 @@
                             android:textColor="@color/cast_home_text_primary"
                             android:text="@string/cast_hour"/>
 
-                        <com.anrstudio.template.ui.component.custom.numberpicker.NumberPicker
+                        <com.hyper.castwave.ui.component.custom.numberpicker.NumberPicker
                             android:id="@+id/npHour"
                             android:layout_width="@dimen/_64sdp"
                             android:layout_height="@dimen/_120sdp"
@@ -140,7 +140,7 @@
                             android:textColor="@color/cast_home_text_primary"
                             android:text="@string/cast_minute"/>
 
-                        <com.anrstudio.template.ui.component.custom.numberpicker.NumberPicker
+                        <com.hyper.castwave.ui.component.custom.numberpicker.NumberPicker
                             android:id="@+id/npMinute"
                             android:layout_marginTop="10dp"
                             android:layout_width="@dimen/_64sdp"

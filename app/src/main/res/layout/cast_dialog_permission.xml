@@ -39,7 +39,7 @@
         android:layout_marginTop="@dimen/_12sdp"
         android:orientation="horizontal">
 
-        <com.anrstudio.template.ui.component.custom.GradientTextView
+        <com.hyper.castwave.ui.component.custom.GradientTextView
             android:id="@+id/btnPermissionDeny"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

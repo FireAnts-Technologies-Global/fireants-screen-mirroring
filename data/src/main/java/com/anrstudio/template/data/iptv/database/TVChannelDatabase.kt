@@ -1,13 +1,13 @@
-package com.anrstudio.template.data.iptv.database
+package com.hyper.castwave.data.iptv.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.anrstudio.template.data.iptv.database.dao.ChannelDao
-import com.anrstudio.template.data.iptv.model.TVChannel
-import com.anrstudio.template.data.iptv.model.TVChannelGroup
-import com.anrstudio.template.data.iptv.model.TVChannelSource
+import com.hyper.castwave.data.iptv.database.dao.ChannelDao
+import com.hyper.castwave.data.iptv.model.TVChannel
+import com.hyper.castwave.data.iptv.model.TVChannelGroup
+import com.hyper.castwave.data.iptv.model.TVChannelSource
 
 @Database(
     entities = [

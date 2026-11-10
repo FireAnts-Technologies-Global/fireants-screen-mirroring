@@ -1,4 +1,4 @@
-package com.anrstudio.template
+package com.hyper.castwave
 
 import org.junit.Assert.*
 import org.junit.Test

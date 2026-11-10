@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">ANR Studio Base</string>
+    <string name="app_name" translatable="false">CastWave - Screen Mirroring</string>
     <string name="language" translatable="false">Language</string>
     <string name="ads_are_about_to_be_shown">Ads are about to be shown...</string>
     <string name="please_select_language">Choose your language</string>

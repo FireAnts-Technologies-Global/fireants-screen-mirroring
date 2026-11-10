@@ -1,10 +1,10 @@
-package com.anrstudio.template.data.iptv.database.manager
+package com.hyper.castwave.data.iptv.database.manager
 
-import com.anrstudio.template.data.iptv.database.repository.ChannelDaoRepository
-import com.anrstudio.template.data.iptv.model.TVChannel
-import com.anrstudio.template.data.iptv.model.TVChannelGroup
-import com.anrstudio.template.data.iptv.model.TVChannelSource
-import com.anrstudio.template.data.iptv.pref.AppSharedPref
+import com.hyper.castwave.data.iptv.database.repository.ChannelDaoRepository
+import com.hyper.castwave.data.iptv.model.TVChannel
+import com.hyper.castwave.data.iptv.model.TVChannelGroup
+import com.hyper.castwave.data.iptv.model.TVChannelSource
+import com.hyper.castwave.data.iptv.pref.AppSharedPref
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

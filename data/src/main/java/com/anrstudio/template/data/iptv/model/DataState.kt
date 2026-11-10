@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.iptv.model
+package com.hyper.castwave.data.iptv.model
 
 import androidx.annotation.Keep
 

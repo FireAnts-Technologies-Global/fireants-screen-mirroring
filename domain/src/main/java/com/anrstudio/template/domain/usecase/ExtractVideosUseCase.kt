@@ -1,7 +1,7 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.model.ExtractedVideo
-import com.anrstudio.template.domain.repository.VideoExtractorRepository
+import com.hyper.castwave.domain.model.ExtractedVideo
+import com.hyper.castwave.domain.repository.VideoExtractorRepository
 import javax.inject.Inject
 
 class ExtractVideosUseCase @Inject constructor(

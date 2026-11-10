@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.iptv.network
+package com.hyper.castwave.data.iptv.network
 
 import okhttp3.ResponseBody
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.screenmirror;
+package com.hyper.castwave.data.screenmirror;
 
 
 import java.io.IOException;

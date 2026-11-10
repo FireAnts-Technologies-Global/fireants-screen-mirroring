@@ -1,7 +1,7 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.model.DataResult
-import com.anrstudio.template.domain.repository.PlaybackControlRepository
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.repository.PlaybackControlRepository
 import javax.inject.Inject
 
 class ControlPlaybackUseCase @Inject constructor(

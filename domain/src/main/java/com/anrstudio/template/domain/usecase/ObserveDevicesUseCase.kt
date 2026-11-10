@@ -1,7 +1,7 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.model.CastDevice
-import com.anrstudio.template.domain.repository.CastDeviceRepository
+import com.hyper.castwave.domain.model.CastDevice
+import com.hyper.castwave.domain.repository.CastDeviceRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

@@ -14,7 +14,7 @@ android {
     compileSdk compile_sdk_version
 
     defaultConfig {
-        applicationId "com.anrstudio.template"
+        applicationId "com.hyper.castwave"
         minSdkVersion min_sdk_version
         targetSdk target_sdk_version
         versionCode 100
@@ -95,7 +95,7 @@ android {
             ]
         }
     }
-    namespace 'com.anrstudio.template'
+    namespace 'com.hyper.castwave'
 }
 
 dependencies {

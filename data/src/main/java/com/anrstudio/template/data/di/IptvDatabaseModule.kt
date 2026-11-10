@@ -1,14 +1,14 @@
-package com.anrstudio.template.data.di
+package com.hyper.castwave.data.di
 
 import android.content.Context
 import androidx.room.Room
-import com.anrstudio.template.data.iptv.database.TVChannelDatabase
-import com.anrstudio.template.data.iptv.database.TVChannelDatabase.Companion.DATABASE_TV_CHANNEL_NAME
-import com.anrstudio.template.data.iptv.database.dao.ChannelDao
-import com.anrstudio.template.data.iptv.database.repository.ChannelDaoRepository
-import com.anrstudio.template.data.iptv.database.repository.ChannelDaoRepositoryInterface
-import com.anrstudio.template.data.iptv.pref.AppSharedPref
-import com.anrstudio.template.data.iptv.pref.AppSharedPreferencesApp
+import com.hyper.castwave.data.iptv.database.TVChannelDatabase
+import com.hyper.castwave.data.iptv.database.TVChannelDatabase.Companion.DATABASE_TV_CHANNEL_NAME
+import com.hyper.castwave.data.iptv.database.dao.ChannelDao
+import com.hyper.castwave.data.iptv.database.repository.ChannelDaoRepository
+import com.hyper.castwave.data.iptv.database.repository.ChannelDaoRepositoryInterface
+import com.hyper.castwave.data.iptv.pref.AppSharedPref
+import com.hyper.castwave.data.iptv.pref.AppSharedPreferencesApp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

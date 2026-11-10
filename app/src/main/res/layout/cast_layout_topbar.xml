@@ -16,7 +16,7 @@
         android:visibility="gone"
         android:src="@drawable/cast_ic_back" />
 
-    <com.anrstudio.template.ui.component.custom.GradientTextView
+    <com.hyper.castwave.ui.component.custom.GradientTextView
         android:layout_width="wrap_content"
         android:id="@+id/tvTitleHome"
         android:layout_height="wrap_content"

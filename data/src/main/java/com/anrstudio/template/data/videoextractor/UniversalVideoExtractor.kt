@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.videoextractor
+package com.hyper.castwave.data.videoextractor
 
 import android.content.Context
 import android.util.SparseArray
@@ -6,7 +6,7 @@ import android.webkit.WebView
 import at.huber.youtubeExtractor.VideoMeta
 import at.huber.youtubeExtractor.YouTubeExtractor
 import at.huber.youtubeExtractor.YtFile
-import com.anrstudio.template.domain.model.ExtractedVideo
+import com.hyper.castwave.domain.model.ExtractedVideo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

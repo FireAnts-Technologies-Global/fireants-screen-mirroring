@@ -1,6 +1,6 @@
-package com.anrstudio.template.domain.repository
+package com.hyper.castwave.domain.repository
 
-import com.anrstudio.template.domain.model.Channel
+import com.hyper.castwave.domain.model.Channel
 
 interface ChannelRepository {
     fun getChannels(): List<Channel>

@@ -1,9 +1,9 @@
-package com.anrstudio.template.data.iptv.database.repository
+package com.hyper.castwave.data.iptv.database.repository
 
-import com.anrstudio.template.data.iptv.database.dao.ChannelDao
-import com.anrstudio.template.data.iptv.model.TVChannel
-import com.anrstudio.template.data.iptv.model.TVChannelGroup
-import com.anrstudio.template.data.iptv.model.TVChannelSource
+import com.hyper.castwave.data.iptv.database.dao.ChannelDao
+import com.hyper.castwave.data.iptv.model.TVChannel
+import com.hyper.castwave.data.iptv.model.TVChannelGroup
+import com.hyper.castwave.data.iptv.model.TVChannelSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext

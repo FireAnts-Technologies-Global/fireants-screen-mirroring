@@ -1,6 +1,6 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.repository.MediaRepository
+import com.hyper.castwave.domain.repository.MediaRepository
 import javax.inject.Inject
 
 class ToggleFavoriteUseCase @Inject constructor(

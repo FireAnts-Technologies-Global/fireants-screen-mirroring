@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
 import com.connectsdk.device.ConnectableDevice
 import javax.inject.Inject

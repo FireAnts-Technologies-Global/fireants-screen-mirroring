@@ -1,4 +1,4 @@
-package com.anrstudio.template.domain.repository
+package com.hyper.castwave.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 

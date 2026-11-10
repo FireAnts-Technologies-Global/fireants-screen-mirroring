@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.di
+package com.hyper.castwave.data.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.anrstudio.template.domain.model
+package com.hyper.castwave.domain.model
 
 data class MediaItem(
     val id: String,

@@ -1,7 +1,7 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.model.PlaybackState
-import com.anrstudio.template.domain.repository.PlaybackControlRepository
+import com.hyper.castwave.domain.model.PlaybackState
+import com.hyper.castwave.domain.repository.PlaybackControlRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

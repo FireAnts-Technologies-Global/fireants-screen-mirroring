@@ -1,7 +1,7 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.model.DataResult
-import com.anrstudio.template.domain.repository.CastDeviceRepository
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.repository.CastDeviceRepository
 import javax.inject.Inject
 
 class ConnectDeviceUseCase @Inject constructor(

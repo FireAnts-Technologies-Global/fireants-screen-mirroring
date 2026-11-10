@@ -6,46 +6,46 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
-
-
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-        android:name="com.anrstudio.template.app.GlobalApp"
+        android:name="com.hyper.castwave.app.GlobalApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/full_backup_content"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/cast_network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:networkSecurityConfig="@xml/cast_network_security_config"
-        tools:replace="android:dataExtractionRules,android:fullBackupContent,android:networkSecurityConfig"
-        android:theme="@style/Theme.Main">
+        android:theme="@style/Theme.Main"
+        tools:replace="android:dataExtractionRules,android:fullBackupContent,android:networkSecurityConfig">
 
         <activity
             android:name=".ui.component.splash.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Splash">
-
-        </activity>
+            android:theme="@style/Theme.Splash" />
 
         <activity
-            android:name="com.anrstudio.template.ui.component.main.MainActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV"
+            android:name="com.hyper.castwave.ui.component.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -54,14 +54,14 @@
         </activity>
 
         <activity
-            android:name="com.anrstudio.template.ui.component.language.LanguageActivity"
+            android:name="com.hyper.castwave.ui.component.language.LanguageActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name="com.anrstudio.template.ui.component.onboarding.OnBoardingActivity"
+            android:name="com.hyper.castwave.ui.component.onboarding.OnBoardingActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
@@ -81,73 +81,106 @@
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivity" />
 
+        <activity
+            android:name="com.hyper.castwave.ui.component.howtouse.HowToUseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.cast.CastActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.iptv.addchannel.AddChannelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.iptv.player.PlayListActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.iptv.channel.all.AllChannelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.iptv.guide.GuideActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.media.MediaPickerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.webcast.WebCastActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.webbrowser.WebBrowserActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <activity
+            android:name="com.hyper.castwave.ui.component.videocontrol.VideoControlActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/cast_Base.Theme.CastToTV" />
+
+        <service
+            android:name="com.hyper.castwave.casting.service.CastForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback|mediaProjection" />
+
+        <service
+            android:name="com.hyper.castwave.data.screenmirror.ScreenRecorder"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="${app_id}" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
             android:value="@string/facebook_client_token" />
+
         <meta-data
             android:name="com.facebook.sdk.AutoInitEnabled"
             android:value="true" />
+
         <meta-data
             android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
             android:value="true" />
+
         <meta-data
             android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled"
             android:value="true" />
 
-<activity android:name="com.anrstudio.template.ui.component.howtouse.HowToUseActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" />
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="com.hyper.castwave.casting.CastOptionsProvider" />
 
-
-<activity android:name="com.anrstudio.template.ui.component.cast.CastActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" />
-
-<activity android:name="com.anrstudio.template.ui.component.iptv.addchannel.AddChannelActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" />
-
-<activity android:name="com.anrstudio.template.ui.component.iptv.player.PlayListActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" android:supportsPictureInPicture="true" android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
-
-<activity android:name="com.anrstudio.template.ui.component.iptv.channel.all.AllChannelActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" />
-
-<activity android:name="com.anrstudio.template.ui.component.iptv.guide.GuideActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" />
-
-<activity android:name="com.anrstudio.template.ui.component.media.MediaPickerActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait">
-
-        </activity>
-
-
-<activity android:name="com.anrstudio.template.ui.component.webcast.WebCastActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait">
-
-        </activity>
-
-<activity android:name="com.anrstudio.template.ui.component.webbrowser.WebBrowserActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" />
-
-
-<activity android:name="com.anrstudio.template.ui.component.videocontrol.VideoControlActivity"
-            android:theme="@style/cast_Base.Theme.CastToTV" android:exported="false" android:screenOrientation="portrait" />
-
-
-<service android:name="com.anrstudio.template.casting.service.CastForegroundService" android:exported="false" android:foregroundServiceType="mediaPlayback|mediaProjection" />
-
-
-<service android:name="com.anrstudio.template.data.screenmirror.ScreenRecorder" android:exported="false" android:foregroundServiceType="mediaProjection" />
-
-
-
-<meta-data android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME" android:value="com.anrstudio.template.casting.CastOptionsProvider" />
     </application>
-
 
 </manifest>

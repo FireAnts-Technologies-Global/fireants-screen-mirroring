@@ -1,4 +1,4 @@
-package com.anrstudio.template
+package com.hyper.castwave
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry

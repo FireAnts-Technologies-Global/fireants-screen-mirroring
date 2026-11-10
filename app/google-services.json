@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:123456789012:android:0123456789abcdef012345",
         "android_client_info": {
-          "package_name": "com.anrstudio.template"
+          "package_name": "com.hyper.castwave"
         }
       },
       "oauth_client": [],
@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:123456789012:android:fedcba9876543210012345",
         "android_client_info": {
-          "package_name": "com.anrstudio.template.dev"
+          "package_name": "com.hyper.castwave.dev"
         }
       },
       "oauth_client": [],

@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.iptv.database.dao
+package com.hyper.castwave.data.iptv.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,9 +6,9 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.anrstudio.template.data.iptv.model.TVChannel
-import com.anrstudio.template.data.iptv.model.TVChannelGroup
-import com.anrstudio.template.data.iptv.model.TVChannelSource
+import com.hyper.castwave.data.iptv.model.TVChannel
+import com.hyper.castwave.data.iptv.model.TVChannelGroup
+import com.hyper.castwave.data.iptv.model.TVChannelSource
 import kotlinx.coroutines.flow.Flow
 
 @Dao

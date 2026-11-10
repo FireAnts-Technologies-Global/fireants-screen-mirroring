@@ -1,7 +1,7 @@
-package com.anrstudio.template.domain.usecase
+package com.hyper.castwave.domain.usecase
 
-import com.anrstudio.template.domain.model.Channel
-import com.anrstudio.template.domain.repository.ChannelRepository
+import com.hyper.castwave.domain.model.Channel
+import com.hyper.castwave.domain.repository.ChannelRepository
 import javax.inject.Inject
 
 class GetChannelsUseCase @Inject constructor(

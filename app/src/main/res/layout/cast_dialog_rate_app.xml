@@ -97,7 +97,7 @@
                     android:textColor="@color/cast_home_text_primary"
                     android:textSize="16sp" />
 
-                <com.anrstudio.template.ui.component.custom.CustomRatingBar
+                <com.hyper.castwave.ui.component.custom.CustomRatingBar
                     android:layout_marginTop="12dp"
                     android:textColor="@color/cast_white"
                     android:layout_marginHorizontal="20dp"

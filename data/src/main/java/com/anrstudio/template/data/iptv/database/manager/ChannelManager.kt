@@ -1,10 +1,10 @@
-package com.anrstudio.template.data.iptv.database.manager
+package com.hyper.castwave.data.iptv.database.manager
 
 import android.util.Log
-import com.anrstudio.template.data.iptv.database.repository.ChannelDaoRepository
-import com.anrstudio.template.data.iptv.model.ChannelOnline
-import com.anrstudio.template.data.iptv.model.TVChannel
-import com.anrstudio.template.data.iptv.model.TVChannelGroup
+import com.hyper.castwave.data.iptv.database.repository.ChannelDaoRepository
+import com.hyper.castwave.data.iptv.model.ChannelOnline
+import com.hyper.castwave.data.iptv.model.TVChannel
+import com.hyper.castwave.data.iptv.model.TVChannelGroup
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import okhttp3.OkHttpClient

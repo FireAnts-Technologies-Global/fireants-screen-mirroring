@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
 import android.content.ComponentName
 import android.content.Context
@@ -6,10 +6,10 @@ import android.content.Intent
 import android.content.ServiceConnection
 import android.os.IBinder
 import androidx.core.content.ContextCompat
-import com.anrstudio.template.data.screenmirror.MjpegServer
-import com.anrstudio.template.data.screenmirror.NetworkUtils
-import com.anrstudio.template.data.screenmirror.ScreenRecorder
-import com.anrstudio.template.domain.repository.ScreenMirrorRepository
+import com.hyper.castwave.data.screenmirror.MjpegServer
+import com.hyper.castwave.data.screenmirror.NetworkUtils
+import com.hyper.castwave.data.screenmirror.ScreenRecorder
+import com.hyper.castwave.domain.repository.ScreenMirrorRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

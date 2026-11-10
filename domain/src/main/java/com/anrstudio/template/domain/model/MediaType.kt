@@ -1,3 +1,3 @@
-package com.anrstudio.template.domain.model
+package com.hyper.castwave.domain.model
 
 enum class MediaType { IMAGE, VIDEO, AUDIO }

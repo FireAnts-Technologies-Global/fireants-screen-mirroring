@@ -1,14 +1,14 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
 import android.content.Context
 import android.util.Log
 import androidx.mediarouter.media.MediaRouteSelector
 import androidx.mediarouter.media.MediaRouter
-import com.anrstudio.template.domain.model.CastDevice
-import com.anrstudio.template.domain.model.ConnectionState
-import com.anrstudio.template.domain.model.DataResult
-import com.anrstudio.template.domain.model.DeviceType
-import com.anrstudio.template.domain.repository.CastDeviceRepository
+import com.hyper.castwave.domain.model.CastDevice
+import com.hyper.castwave.domain.model.ConnectionState
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.model.DeviceType
+import com.hyper.castwave.domain.repository.CastDeviceRepository
 import com.connectsdk.device.ConnectableDevice
 import com.connectsdk.device.ConnectableDeviceListener
 import com.connectsdk.discovery.DiscoveryManager

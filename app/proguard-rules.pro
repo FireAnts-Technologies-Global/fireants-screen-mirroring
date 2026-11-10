@@ -64,8 +64,8 @@
 
 # Keep classes that use reflection-based adapters (KotlinJsonAdapterFactory)
 # AdRemoteConfig uses KotlinJsonAdapterFactory, so we need to keep it
--keep class com.anrstudio.template.ads.AdRemoteConfig { *; }
--keep class com.anrstudio.template.ads.AdRemoteConfig$Companion { *; }
+-keep class com.hyper.castwave.ads.AdRemoteConfig { *; }
+-keep class com.hyper.castwave.ads.AdRemoteConfig$Companion { *; }
 
 # =====================
 # Other libs
@@ -75,5 +75,5 @@
 -keepclassmembers class androidx.lifecycle.ViewModel { *; }
 -keepnames class androidx.lifecycle.LiveData { *; }
 
--keep class com.anrstudio.template.ads.AdUnitConfig
--keep class com.anrstudio.template.data.model.ForceUpdateConfig
+-keep class com.hyper.castwave.ads.AdUnitConfig
+-keep class com.hyper.castwave.data.model.ForceUpdateConfig

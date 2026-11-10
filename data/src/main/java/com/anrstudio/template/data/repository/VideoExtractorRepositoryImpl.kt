@@ -1,9 +1,9 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
 import android.content.Context
-import com.anrstudio.template.data.videoextractor.UniversalVideoExtractor
-import com.anrstudio.template.domain.model.ExtractedVideo
-import com.anrstudio.template.domain.repository.VideoExtractorRepository
+import com.hyper.castwave.data.videoextractor.UniversalVideoExtractor
+import com.hyper.castwave.domain.model.ExtractedVideo
+import com.hyper.castwave.domain.repository.VideoExtractorRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.suspendCancellableCoroutine
 import javax.inject.Inject

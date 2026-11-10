@@ -219,7 +219,7 @@
                 android:textSize="@dimen/_11sdp"
                 app:layout_constraintTop_toBottomOf="@id/clVolumeControl" />
 
-            <com.anrstudio.template.ui.component.custom.GradientTextView
+            <com.hyper.castwave.ui.component.custom.GradientTextView
                 android:id="@+id/btnDisconnect"
                 android:background="@drawable/cast_bg_cancel"
                 android:gravity="center"

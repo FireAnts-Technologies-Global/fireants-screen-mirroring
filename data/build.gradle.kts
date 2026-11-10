@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.anrstudio.template.data"
+    namespace = "com.hyper.castwave.data"
     compileSdk = 36
 
     defaultConfig {

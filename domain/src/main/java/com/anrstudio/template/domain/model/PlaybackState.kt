@@ -1,4 +1,4 @@
-package com.anrstudio.template.domain.model
+package com.hyper.castwave.domain.model
 
 data class PlaybackState(
     val isPlaying: Boolean = false,

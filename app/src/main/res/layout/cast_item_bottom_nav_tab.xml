@@ -14,7 +14,7 @@
         android:contentDescription="@null"
         tools:src="@drawable/cast_ic_tab_home_selected" />
 
-    <com.anrstudio.template.ui.component.custom.GradientTextView
+    <com.hyper.castwave.ui.component.custom.GradientTextView
         android:id="@+id/tvTabLabelGradient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

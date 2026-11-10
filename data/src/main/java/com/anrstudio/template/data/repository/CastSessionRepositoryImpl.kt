@@ -1,15 +1,15 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
 import android.content.Context
 import android.media.MediaExtractor
 import android.media.MediaFormat
 import android.net.Uri
 import android.util.Log
-import com.anrstudio.template.data.server.UnifiedMediaServer
-import com.anrstudio.template.domain.model.DataResult
-import com.anrstudio.template.domain.model.MediaItem
-import com.anrstudio.template.domain.model.MediaType
-import com.anrstudio.template.domain.repository.CastSessionRepository
+import com.hyper.castwave.data.server.UnifiedMediaServer
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.model.MediaItem
+import com.hyper.castwave.domain.model.MediaType
+import com.hyper.castwave.domain.repository.CastSessionRepository
 import com.connectsdk.service.DLNAService
 import com.connectsdk.service.capability.MediaPlayer
 import com.connectsdk.service.command.ServiceCommandError

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="adjust_token" translatable="false">123456789</string>
-    <string name="facebook_app_id" translatable="false">123456789</string>
-    <string name="facebook_client_token" translatable="false">123456789</string>
+    <string name="adjust_token" translatable="false">4wc32pyqxnnk</string>
+    <string name="facebook_app_id" translatable="false">2313425266170441</string>
+    <string name="facebook_client_token" translatable="false">44ef5a34d54ad2602f151f6fd38d9fe6</string>
 </resources>

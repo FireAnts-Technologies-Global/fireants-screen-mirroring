@@ -100,7 +100,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <com.anrstudio.template.ui.component.custom.MediaTypeSelector
+            <com.hyper.castwave.ui.component.custom.MediaTypeSelector
                 android:id="@+id/mediaTypeSelector"
                 android:layout_width="0dp"
                 android:layout_height="60dp"

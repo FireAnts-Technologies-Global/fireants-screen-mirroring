@@ -1,12 +1,12 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
 import android.content.ContentUris
 import android.content.Context
 import android.provider.MediaStore
-import com.anrstudio.template.domain.model.DataResult
-import com.anrstudio.template.domain.model.MediaItem
-import com.anrstudio.template.domain.model.MediaType
-import com.anrstudio.template.domain.repository.MediaRepository
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.model.MediaItem
+import com.hyper.castwave.domain.model.MediaType
+import com.hyper.castwave.domain.repository.MediaRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

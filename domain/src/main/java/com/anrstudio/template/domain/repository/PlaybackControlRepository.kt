@@ -1,7 +1,7 @@
-package com.anrstudio.template.domain.repository
+package com.hyper.castwave.domain.repository
 
-import com.anrstudio.template.domain.model.DataResult
-import com.anrstudio.template.domain.model.PlaybackState
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.model.PlaybackState
 import kotlinx.coroutines.flow.Flow
 
 interface PlaybackControlRepository {

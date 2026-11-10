@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.screenmirror;
+package com.hyper.castwave.data.screenmirror;
 
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
 
@@ -38,7 +38,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 
-import com.anrstudio.template.data.R;
+import com.hyper.castwave.data.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;

@@ -1,6 +1,6 @@
-package com.anrstudio.template.domain.repository
+package com.hyper.castwave.domain.repository
 
-import com.anrstudio.template.domain.model.ExtractedVideo
+import com.hyper.castwave.domain.model.ExtractedVideo
 
 interface VideoExtractorRepository {
     suspend fun extractVideos(url: String): List<ExtractedVideo>

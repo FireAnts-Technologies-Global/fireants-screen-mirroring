@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.iptv.model
+package com.hyper.castwave.data.iptv.model
 
 import android.os.Parcelable
 import androidx.annotation.Keep
@@ -6,7 +6,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.anrstudio.template.data.iptv.database.manager.ChannelManager.Companion.UNKNOW_FROUP_NAME
+import com.hyper.castwave.data.iptv.database.manager.ChannelManager.Companion.UNKNOW_FROUP_NAME
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 

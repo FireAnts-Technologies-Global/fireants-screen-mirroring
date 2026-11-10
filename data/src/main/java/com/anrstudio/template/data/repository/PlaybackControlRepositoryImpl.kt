@@ -1,9 +1,9 @@
-package com.anrstudio.template.data.repository
+package com.hyper.castwave.data.repository
 
 import android.content.Context
-import com.anrstudio.template.domain.model.DataResult
-import com.anrstudio.template.domain.model.PlaybackState
-import com.anrstudio.template.domain.repository.PlaybackControlRepository
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.model.PlaybackState
+import com.hyper.castwave.domain.repository.PlaybackControlRepository
 import com.google.android.gms.cast.MediaLoadRequestData
 import com.google.android.gms.cast.MediaStatus
 import com.google.android.gms.cast.framework.CastContext
@@ -223,7 +223,7 @@ class PlaybackControlRepositoryImpl @Inject constructor(
             currentPosition = client.approximateStreamPosition,
             duration = mediaInfo?.streamDuration ?: 0L,
             mediaInfo = mediaInfo?.let {
-                com.anrstudio.template.domain.model.MediaInfo(
+                com.hyper.castwave.domain.model.MediaInfo(
                     title = it.metadata?.getString(com.google.android.gms.cast.MediaMetadata.KEY_TITLE)
                         ?: "Unknown",
                     thumbnailUrl = it.metadata?.images?.firstOrNull()?.url?.toString(),

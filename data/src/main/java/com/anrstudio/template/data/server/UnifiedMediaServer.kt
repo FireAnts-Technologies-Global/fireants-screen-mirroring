@@ -1,10 +1,10 @@
-package com.anrstudio.template.data.server
+package com.hyper.castwave.data.server
 
 import android.content.Context
 import android.net.Uri
 import android.provider.OpenableColumns
 import android.util.Log
-import com.anrstudio.template.data.screenmirror.HlsStore
+import com.hyper.castwave.data.screenmirror.HlsStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fi.iki.elonen.NanoHTTPD
 import fi.iki.elonen.NanoHTTPD.Response

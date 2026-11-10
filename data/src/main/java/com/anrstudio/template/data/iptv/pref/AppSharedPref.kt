@@ -1,4 +1,4 @@
-package com.anrstudio.template.data.iptv.pref
+package com.hyper.castwave.data.iptv.pref
 
 import android.content.SharedPreferences
 

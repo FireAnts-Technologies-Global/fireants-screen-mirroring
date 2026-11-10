@@ -1,8 +1,8 @@
-package com.anrstudio.template.domain.repository
+package com.hyper.castwave.domain.repository
 
-import com.anrstudio.template.domain.model.CastDevice
-import com.anrstudio.template.domain.model.ConnectionState
-import com.anrstudio.template.domain.model.DataResult
+import com.hyper.castwave.domain.model.CastDevice
+import com.hyper.castwave.domain.model.ConnectionState
+import com.hyper.castwave.domain.model.DataResult
 import kotlinx.coroutines.flow.Flow
 
 interface CastDeviceRepository {
