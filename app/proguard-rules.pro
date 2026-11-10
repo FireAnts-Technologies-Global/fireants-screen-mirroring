@@ -77,3 +77,29 @@
 
 -keep class com.hyper.castwave.ads.AdUnitConfig
 -keep class com.hyper.castwave.data.model.ForceUpdateConfig
+
+# =====================
+# Facebook SDK (pulled in transitively, crash fix for JSONObject<init>)
+# =====================
+-keep class com.facebook.** { *; }
+-keepnames class com.facebook.** { *; }
+-keepclassmembers class com.facebook.** { *; }
+-keep interface com.facebook.** { *; }
+-dontwarn com.facebook.**
+
+# Keep JSON classes (Facebook SDK + ANRAdSdk use reflection)
+-keep class org.json.** { *; }
+-dontwarn org.json.**
+
+# =====================
+# AdMob / Google Play Services (keep ad network adapters)
+# =====================
+-keep class com.google.android.gms.ads.** { *; }
+-keep class com.google.ads.mediation.** { *; }
+-dontwarn com.google.android.gms.ads.**
+
+# =====================
+# ANR Ads SDK (uses reflection for config models)
+# =====================
+-keep class com.anrstudio.** { *; }
+-dontwarn com.anrstudio.**
