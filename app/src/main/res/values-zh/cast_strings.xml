@@ -140,7 +140,7 @@
     <string name="cast_playlist_invalid_format">播放列表格式无效。</string>
     <string name="cast_recent">最近</string>
     <string name="cast_removed_from_favorites">已从收藏夹移除。</string>
-    <string name="cast_sleep_timer_value">剩余时间 %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">剩余时间 %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">停止投屏</string>
     <string name="cast_tiktok_link">由于法律原因，无法使用 TikTok 链接</string>
     <string name="cast_txt_add_favorite_success">已添加到收藏夹。</string>
@@ -247,4 +247,8 @@
     <string name="cast_home_web_channels_section">投放网页和频道</string>
     <string name="cast_tab_all">全部</string>
     <string name="cast_play_pause">播放或暂停</string>
+    <string name="cast_media_cast_video">投射视频</string>
+    <string name="cast_unable_to_play">无法播放</string>
+    <string name="cast_error_while_casting">投射时出错：%s</string>
+    <string name="cast_default_video_name">视频 %d</string>
 </resources>

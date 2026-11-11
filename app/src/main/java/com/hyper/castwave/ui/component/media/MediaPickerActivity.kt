@@ -118,9 +118,14 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     private fun setupViews() {
         window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.statusBarColor = getColor(R.color.cast_cast_background_start)
+        Log.d("MediaPicker", "setupViews: mediaType=$mediaType pickedUri=$pickedUri")
         loadBanner()
         setupTopBar()
         setupDevicesPanel()
+        mBinding.btnCastPhoto.text = getString(
+            if (mediaType == MediaType.VIDEO) R.string.cast_media_cast_video
+            else R.string.cast_media_cast_photo
+        )
         showPhotoPreview(buildPickedMediaItem(pickedUri))
     }
 
@@ -149,7 +154,11 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
     private fun setupTopBar() {
         mBinding.topBar.setVariant(com.hyper.castwave.ui.component.custom.FigmaTopBarView.Variant.CENTERED_ACTIONS)
         mBinding.topBar.setBackIconSize(resources.getDimensionPixelSize(SdpR.dimen._14sdp))
-        mBinding.topBar.setTitle(getString(R.string.cast_media_cast_photo))
+        val titleRes = if (mediaType == MediaType.VIDEO)
+            R.string.cast_media_cast_video
+        else
+            R.string.cast_media_cast_photo
+        mBinding.topBar.setTitle(getString(titleRes))
         mBinding.topBar.setOnBackClickListener(animated = true) {
             AdsManager.loadAndShowInterBack(this@MediaPickerActivity) {
                 onBackPressed()

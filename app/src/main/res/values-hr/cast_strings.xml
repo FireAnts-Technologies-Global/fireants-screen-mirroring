@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Neispravan format popisa za reprodukciju.</string>
     <string name="cast_recent">Nedavno</string>
     <string name="cast_removed_from_favorites">Uklonjeno iz favorita.</string>
-    <string name="cast_sleep_timer_value">Preostalo vrijeme %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Preostalo vrijeme %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Zaustavi emitiranje</string>
     <string name="cast_tiktok_link">Zbog pravnih problema ne možete koristiti TikTok vezu</string>
     <string name="cast_txt_add_favorite_success">Dodano u favorite.</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">Sve</string>
     <string name="cast_play_pause">Reproduciraj ili pauziraj</string>
     <string name="cast_media_prepare_failed">Priprema medija za emitiranje nije uspjela</string>
+    <string name="cast_media_cast_video">Emitiraj videozapis</string>
+    <string name="cast_unable_to_play">Nije moguće reproducirati</string>
+    <string name="cast_error_while_casting">Pogreška prilikom emitiranja: %s</string>
+    <string name="cast_default_video_name">Videozapis %d</string>
 </resources>

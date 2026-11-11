@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">プレイリストの形式が無効です。</string>
     <string name="cast_recent">最近</string>
     <string name="cast_removed_from_favorites">お気に入りから削除されました。</string>
-    <string name="cast_sleep_timer_value">残り時間 %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">残り時間 %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">キャストを停止</string>
     <string name="cast_tiktok_link">法的な問題により、TikTokリンクは使用できません。</string>
     <string name="cast_txt_add_favorite_success">お気に入りに追加されました。</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">すべて</string>
     <string name="cast_play_pause">再生または一時停止</string>
     <string name="cast_media_prepare_failed">キャストするメディアを準備できませんでした</string>
+    <string name="cast_media_cast_video">動画をキャスト</string>
+    <string name="cast_unable_to_play">再生できません</string>
+    <string name="cast_error_while_casting">キャスト中にエラーが発生しました: %s</string>
+    <string name="cast_default_video_name">動画 %d</string>
 </resources>

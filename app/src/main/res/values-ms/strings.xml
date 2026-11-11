@@ -50,4 +50,5 @@
     <string name="unknown_file">Fail tidak diketahui</string>
     <string name="default_playlist_name">Senarai main %1$d</string>
     <string name="send_feedback_chooser_title">Hantar maklum balas</string>
+    <string name="loading_ads">Memuatkan iklan</string>
 </resources>

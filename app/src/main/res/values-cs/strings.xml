@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name" translatable="false">CastWave - Screen Mirroring</string>
+    <string name="language" translatable="false">Language</string>
+    <string name="ads_are_about_to_be_shown">Brzy se zobrazí reklamy...</string>
+    <string name="please_select_language">Vyberte jazyk</string>
+    <string name="get_started">Začít</string>
+    <string name="next">Další</string>
+    <string name="txt_thanks_you_for_rating">Děkujeme za vaše hodnocení!</string>
+    <string name="txt_later" translatable="false">
+        <u>Later</u>
+    </string>
+    <string name="txt_rate_5_star" translatable="false">If you enjoy this app, please consider giving it a 5-star rating in the store.</string>
+    <string name="txt_do_you_like_our_app" translatable="false">Do you like our app?</string>
+    <string name="onboarding_title_1">Zrcadlení obrazovky telefonu</string>
+    <string name="onboarding_des_1">Sledujte obsah svého telefonu na velké obrazovce.</string>
+    <string name="onboarding_title_2">Připojení k televizoru</string>
+    <string name="onboarding_des_2">Připojte obě zařízení ke stejné síti Wi-Fi a vyberte svůj televizor.</string>
+    <string name="onboarding_title_3">Odesílání fotografií a videí</string>
+    <string name="onboarding_des_3">Sdílejte své oblíbené fotografie a videa z telefonu do televizoru.</string>
+    <string name="onboarding_title_4">Sledujte své kanály</string>
+    <string name="onboarding_des_4">Importujte soubor M3U nebo odkaz na seznam skladeb a sledujte své kanály.</string>
+    <string name="applying_selected_language" translatable="false">Applying selected language...</string>
+    <string name="close">Zavřít</string>
+    <string name="ad_config_invalid_message">Neplatná konfigurace reklamy. Zkontrolujte prosím ad_config.json.</string>
+    <string name="txt_uninstall">Odinstalovat</string>
+    <string name="survey_1">Funkce nefunguje</string>
+    <string name="survey_2">Příliš mnoho reklam</string>
+    <string name="survey_3">Nepotřebuji to</string>
+    <string name="survey_4">Jiné</string>
+    <string name="loading_label">Načítání</string>
+    <string name="no_internet_title">Žádné připojení k internetu</string>
+    <string name="no_internet_message">Chcete-li pokračovat v používání aplikace, zkontrolujte nastavení sítě.</string>
+    <string name="open_settings">Otevřít nastavení</string>
+    <string name="force_update_message">K dispozici je nová verze. Aktualizujte aplikaci pro pokračování.</string>
+    <string name="update_now">Aktualizovat nyní</string>
+    <string name="setting">Nastavení</string>
+    <string name="rate">Hodnotit</string>
+    <string name="feedback">Zpětná vazba</string>
+    <string name="share_with_friend">Sdílet s přáteli</string>
+    <string name="privacy_policy">Zásady ochrany osobních údajů</string>
+    <string name="let_me_recommend">Doporučuji tuto aplikaci</string>
+    <string name="share_to">Sdílet do</string>
+    <string name="we_re_better_than_ever">Aplikace se neustále zlepšuje</string>
+    <string name="too_many_ads">Příliš mnoho reklam</string>
+    <string name="start">Spustit</string>
+    <string name="privacy_policy_url_not_configured">Adresa URL zásad ochrany osobních údajů není nakonfigurována</string>
+    <string name="no_app_available_to_open_link">K otevření tohoto odkazu není k dispozici žádná aplikace</string>
+    <string name="unable_to_open_privacy_policy">Zásady ochrany osobních údajů nelze otevřít</string>
+    <string name="import_error_no_channels_playlist">V seznamu skladeb nebyly nalezeny žádné kanály</string>
+    <string name="import_error_url">Import z adresy URL se nezdařil</string>
+    <string name="import_error_stream">Import streamu se nezdařil</string>
+    <string name="import_error_read_file">Čtení souboru se nezdařilo</string>
+    <string name="import_error_no_channels_file">V souboru nebyly nalezeny žádné kanály</string>
+    <string name="import_error_file">Import souboru se nezdařil</string>
+    <string name="import_error_no_videos">Nebyla vybrána žádná videa</string>
+    <string name="import_error_device">Import ze zařízení se nezdařil</string>
+    <string name="unknown_file">Neznámý soubor</string>
+    <string name="default_playlist_name">Seznam skladeb %1$d</string>
+    <string name="send_feedback_chooser_title">Odeslat zpětnou vazbu</string>
+    <string name="loading_ads">Načítání reklam</string>
+</resources>
+

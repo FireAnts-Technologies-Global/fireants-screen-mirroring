@@ -93,7 +93,7 @@ class CastForegroundService : Service() {
         val result = castSessionRepository.castMedia(
             MediaItem(
                 id = "mirror",
-                name = "Screen Mirror",
+                name = getString(R.string.cast_home_screen_mirroring),
                 uri = hlsUrl,
                 thumbnailUri = "",
                 type = MediaType.VIDEO,
@@ -125,6 +125,8 @@ class CastForegroundService : Service() {
         .addAction(0, getString(R.string.cast_notification_stop_casting), stopPendingIntent())
         .setOngoing(true)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
+        .setCategory(NotificationCompat.CATEGORY_CALL)
+        .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
         .setDefaults(NotificationCompat.DEFAULT_ALL)
         .build()
 
@@ -142,6 +144,8 @@ class CastForegroundService : Service() {
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val manager = getSystemService(NotificationManager::class.java)
+            runCatching { manager.deleteNotificationChannel("cast_session_channel") }
             val channel = NotificationChannel(
                 CHANNEL_ID,
                 getString(R.string.cast_notification_channel_name),
@@ -149,8 +153,10 @@ class CastForegroundService : Service() {
             ).apply {
                 description = getString(R.string.cast_notification_channel_desc)
                 enableVibration(true)
+                setBypassDnd(false)
+                lockscreenVisibility = android.app.Notification.VISIBILITY_PUBLIC
             }
-            getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
+            manager.createNotificationChannel(channel)
         }
     }
 
@@ -171,6 +177,6 @@ class CastForegroundService : Service() {
         private const val MIN_SEGMENTS = 3
         private const val SEGMENT_WAIT_TIMEOUT_MS = 30_000L
         private const val NOTIFICATION_ID = 1001
-        private const val CHANNEL_ID = "cast_session_channel"
+        private const val CHANNEL_ID = "cast_session_channel_v2"
     }
 }

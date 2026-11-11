@@ -50,4 +50,5 @@
     <string name="unknown_file">不明なファイル</string>
     <string name="default_playlist_name">プレイリスト %1$d</string>
     <string name="send_feedback_chooser_title">フィードバックを送信</string>
+    <string name="loading_ads">広告を読み込み中</string>
 </resources>

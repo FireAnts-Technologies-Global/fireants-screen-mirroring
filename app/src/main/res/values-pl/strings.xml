@@ -50,4 +50,5 @@
     <string name="unknown_file">Nieznany plik</string>
     <string name="default_playlist_name">Lista odtwarzania %1$d</string>
     <string name="send_feedback_chooser_title">Wyślij opinię</string>
+    <string name="loading_ads">Wczytywanie reklam</string>
 </resources>

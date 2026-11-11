@@ -50,4 +50,5 @@
     <string name="unknown_file">ملف غير معروف</string>
     <string name="default_playlist_name">قائمة التشغيل %1$d</string>
     <string name="send_feedback_chooser_title">إرسال ملاحظات</string>
+    <string name="loading_ads">جارٍ تحميل الإعلانات</string>
 </resources>

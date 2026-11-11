@@ -50,4 +50,5 @@
     <string name="unknown_file">ไฟล์ที่ไม่รู้จัก</string>
     <string name="default_playlist_name">เพลย์ลิสต์ %1$d</string>
     <string name="send_feedback_chooser_title">ส่งความคิดเห็น</string>
+    <string name="loading_ads">กำลังโหลดโฆษณา</string>
 </resources>

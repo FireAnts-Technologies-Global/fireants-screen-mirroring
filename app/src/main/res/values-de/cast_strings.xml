@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Ungültiges Wiedergabelistenformat.</string>
     <string name="cast_recent">Zuletzt</string>
     <string name="cast_removed_from_favorites">Aus Favoriten entfernt.</string>
-    <string name="cast_sleep_timer_value">Verbleibende Zeit %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Verbleibende Zeit %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Übertragung stoppen</string>
     <string name="cast_tiktok_link">Aufgrund rechtlicher Probleme können Sie den TikTok-Link nicht verwenden</string>
     <string name="cast_txt_add_favorite_success">Zu Favoriten hinzugefügt.</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">Alle</string>
     <string name="cast_play_pause">Wiedergabe oder Pause</string>
     <string name="cast_media_prepare_failed">Medieninhalt konnte nicht zum Streamen vorbereitet werden</string>
+    <string name="cast_media_cast_video">Video übertragen</string>
+    <string name="cast_unable_to_play">Wiedergabe nicht möglich</string>
+    <string name="cast_error_while_casting">Fehler beim Übertragen: %s</string>
+    <string name="cast_default_video_name">Video %d</string>
 </resources>

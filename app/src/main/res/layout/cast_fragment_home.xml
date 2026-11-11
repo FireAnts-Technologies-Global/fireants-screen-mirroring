@@ -68,6 +68,10 @@
                                 android:includeFontPadding="false"
                                 android:textColor="@color/cast_home_text_primary"
                                 android:textSize="@dimen/_13sdp"
+                                android:ellipsize="marquee"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
                                 tools:text="No TV connected" />
 
                             <TextView

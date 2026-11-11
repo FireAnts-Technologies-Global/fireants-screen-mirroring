@@ -50,4 +50,5 @@
     <string name="unknown_file">Nepoznata datoteka</string>
     <string name="default_playlist_name">Popis za reprodukciju %1$d</string>
     <string name="send_feedback_chooser_title">Pošalji povratne informacije</string>
+    <string name="loading_ads">Učitavanje oglasa</string>
 </resources>

@@ -54,7 +54,7 @@
                 android:gravity="center"
                 android:padding="@dimen/_8sdp"
                 app:layout_constraintTop_toBottomOf="@+id/animLoading"
-                app:loadingText="Loading ads" />
+                app:loadingText="@string/loading_ads" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </eightbitlab.com.blurview.BlurView>

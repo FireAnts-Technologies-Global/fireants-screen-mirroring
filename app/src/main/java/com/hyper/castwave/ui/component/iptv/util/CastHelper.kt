@@ -135,7 +135,7 @@ class CastHelper(
                     PlaybackException.ERROR_CODE_PARSING_CONTAINER_MALFORMED ->
                         context.getString(R.string.cast_playlist_invalid_format)
 
-                    else -> error.message ?: "Không thể phát"
+                    else -> error.message ?: context.getString(R.string.cast_unable_to_play)
                 }
                 if (!isInPictureInPictureMode && currentPlayer == player) {
                     if (type == "Cast") {
@@ -283,7 +283,12 @@ class CastHelper(
         } catch (e: Exception) {
             Timber.tag(TAG).e(e, "Error switching to CastPlayer: ${e.message}")
             onCastLoading?.invoke(false)
-            onPlayerError?.invoke("Lỗi khi cast: ${e.message}")
+            onPlayerError?.invoke(
+                context.getString(
+                    R.string.cast_error_while_casting,
+                    e.message ?: ""
+                )
+            )
         }
     }
 

@@ -50,4 +50,5 @@
     <string name="unknown_file">Невідомий файл</string>
     <string name="default_playlist_name">Список відтворення %1$d</string>
     <string name="send_feedback_chooser_title">Надіслати відгук</string>
+    <string name="loading_ads">Завантаження реклами</string>
 </resources>

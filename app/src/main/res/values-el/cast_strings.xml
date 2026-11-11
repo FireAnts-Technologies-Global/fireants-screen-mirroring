@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Μη έγκυρη μορφή λίστας αναπαραγωγής.</string>
     <string name="cast_recent">Πρόσφατα</string>
     <string name="cast_removed_from_favorites">Αφαιρέθηκε από τα αγαπημένα.</string>
-    <string name="cast_sleep_timer_value">Υπολειπόμενος χρόνος %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Υπολειπόμενος χρόνος %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Διακοπή μετάδοσης</string>
     <string name="cast_tiktok_link">Λόγω νομικών ζητημάτων δεν μπορείτε να χρησιμοποιήσετε σύνδεσμο TikTok</string>
     <string name="cast_txt_add_favorite_success">Προστέθηκε στα αγαπημένα.</string>

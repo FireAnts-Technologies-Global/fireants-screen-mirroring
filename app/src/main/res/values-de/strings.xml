@@ -50,4 +50,5 @@
     <string name="unknown_file">Unbekannte Datei</string>
     <string name="default_playlist_name">Playlist %1$d</string>
     <string name="send_feedback_chooser_title">Feedback senden</string>
+    <string name="loading_ads">Anzeigen werden geladen</string>
 </resources>

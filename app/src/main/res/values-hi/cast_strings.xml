@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">प्लेलिस्ट का प्रारूप अमान्य है।</string>
     <string name="cast_recent">हाल ही के</string>
     <string name="cast_removed_from_favorites">पसंदीदा से हटाया गया।</string>
-    <string name="cast_sleep_timer_value">शेष समय %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">शेष समय %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">कास्ट बंद करें</string>
     <string name="cast_tiktok_link">कानूनी मुद्दों के कारण आप टिकटॉक लिंक का उपयोग नहीं कर सकते</string>
     <string name="cast_txt_add_favorite_success">पसंदीदा में जोड़ा गया।</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">सभी</string>
     <string name="cast_play_pause">चलाएँ या रोकें</string>
     <string name="cast_media_prepare_failed">कास्ट करने के लिए मीडिया तैयार नहीं हो सका</string>
+    <string name="cast_media_cast_video">वीडियो कास्ट करें</string>
+    <string name="cast_unable_to_play">चलाने में असमर्थ</string>
+    <string name="cast_error_while_casting">कास्ट करते समय त्रुटि: %s</string>
+    <string name="cast_default_video_name">वीडियो %d</string>
 </resources>

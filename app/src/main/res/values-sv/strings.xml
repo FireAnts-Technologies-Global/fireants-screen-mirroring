@@ -50,4 +50,5 @@
     <string name="unknown_file">Okänd fil</string>
     <string name="default_playlist_name">Spellista %1$d</string>
     <string name="send_feedback_chooser_title">Skicka feedback</string>
+    <string name="loading_ads">Läser in annonser</string>
 </resources>

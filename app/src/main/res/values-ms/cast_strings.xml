@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Format senarai main tidak sah.</string>
     <string name="cast_recent">Terbaru</string>
     <string name="cast_removed_from_favorites">Dikeluarkan daripada kegemaran.</string>
-    <string name="cast_sleep_timer_value">Masa tinggal %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Masa tinggal %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Hentikan hantar</string>
     <string name="cast_tiktok_link">Disebabkan isu undang-undang, anda tidak boleh menggunakan pautan TikTok</string>
     <string name="cast_txt_add_favorite_success">Ditambah ke kegemaran.</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">Semua</string>
     <string name="cast_play_pause">Main atau jeda</string>
     <string name="cast_media_prepare_failed">Media tidak dapat disediakan untuk penghantaran</string>
+    <string name="cast_media_cast_video">Hantar video</string>
+    <string name="cast_unable_to_play">Tidak dapat memainkan</string>
+    <string name="cast_error_while_casting">Ralat semasa menghantar: %s</string>
+    <string name="cast_default_video_name">Video %d</string>
 </resources>

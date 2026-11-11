@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Soittolistan muoto on virheellinen.</string>
     <string name="cast_recent">Viimeisimmät</string>
     <string name="cast_removed_from_favorites">Poistettu suosikeista.</string>
-    <string name="cast_sleep_timer_value">Jäljellä oleva aika %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Jäljellä oleva aika %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Lopeta suoratoisto</string>
     <string name="cast_tiktok_link">Lakisääteisten ongelmien vuoksi et voi käyttää TikTok-linkkiä</string>
     <string name="cast_txt_add_favorite_success">Lisätty suosikkeihin.</string>

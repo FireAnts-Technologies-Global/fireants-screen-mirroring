@@ -3,6 +3,7 @@ package com.hyper.castwave.ui.component.iptv.addchannel.viewmodel
 import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
+import com.hyper.castwave.R
 import com.hyper.castwave.data.iptv.database.manager.ChannelDataManager
 import com.hyper.castwave.data.iptv.model.ChannelOnline
 import com.hyper.castwave.data.iptv.model.DataState
@@ -100,7 +101,8 @@ class AddChannelViewModel @Inject constructor(
                 }
 
                 val channels = videoUris.mapIndexed { index, uri ->
-                    val videoName = getVideoNameFromUri(context, uri) ?: "Video ${index + 1}"
+                    val videoName = getVideoNameFromUri(context, uri)
+                        ?: context.getString(R.string.cast_default_video_name, index + 1)
                     ChannelOnline(
                         name = videoName,
                         url = uri.toString(),

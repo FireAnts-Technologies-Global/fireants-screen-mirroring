@@ -50,4 +50,5 @@
     <string name="unknown_file">Неизвестный файл</string>
     <string name="default_playlist_name">Плейлист %1$d</string>
     <string name="send_feedback_chooser_title">Отправить отзыв</string>
+    <string name="loading_ads">Загрузка рекламы</string>
 </resources>

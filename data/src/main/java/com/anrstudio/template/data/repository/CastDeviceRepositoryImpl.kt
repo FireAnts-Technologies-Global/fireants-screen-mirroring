@@ -4,11 +4,6 @@ import android.content.Context
 import android.util.Log
 import androidx.mediarouter.media.MediaRouteSelector
 import androidx.mediarouter.media.MediaRouter
-import com.hyper.castwave.domain.model.CastDevice
-import com.hyper.castwave.domain.model.ConnectionState
-import com.hyper.castwave.domain.model.DataResult
-import com.hyper.castwave.domain.model.DeviceType
-import com.hyper.castwave.domain.repository.CastDeviceRepository
 import com.connectsdk.device.ConnectableDevice
 import com.connectsdk.device.ConnectableDeviceListener
 import com.connectsdk.discovery.DiscoveryManager
@@ -24,6 +19,11 @@ import com.google.android.gms.cast.CastStatusCodes
 import com.google.android.gms.cast.framework.CastContext
 import com.google.android.gms.cast.framework.CastSession
 import com.google.android.gms.cast.framework.SessionManagerListener
+import com.hyper.castwave.domain.model.CastDevice
+import com.hyper.castwave.domain.model.ConnectionState
+import com.hyper.castwave.domain.model.DataResult
+import com.hyper.castwave.domain.model.DeviceType
+import com.hyper.castwave.domain.repository.CastDeviceRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -253,9 +253,12 @@ class CastDeviceRepositoryImpl @Inject constructor(
 
     override suspend fun disconnect() {
         withContext(Dispatchers.Main) {
+            val smartTvDevice = smartTvSessionStore.selectedDevice
             smartTvSessionStore.selectedDevice = null
-            castContext.sessionManager.endCurrentSession(true)
+            runCatching { smartTvDevice?.device?.disconnect() }
+            runCatching { castContext.sessionManager.endCurrentSession(true) }
             _connectionState.value = ConnectionState.Disconnected
+            refreshDevices()
         }
     }
 

@@ -50,4 +50,5 @@
     <string name="unknown_file">Hindi kilalang file</string>
     <string name="default_playlist_name">Playlist %1$d</string>
     <string name="send_feedback_chooser_title">Magpadala ng feedback</string>
+    <string name="loading_ads">Naglo-load ng mga ad</string>
 </resources>

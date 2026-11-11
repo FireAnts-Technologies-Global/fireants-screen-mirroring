@@ -38,21 +38,24 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
 
     private val viewModel: HomeViewModel by viewModels()
 
-    private var pendingMediaType: MediaType? = null
-
     private val notificationPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
         if (!granted) showNotificationRationale()
     }
 
-    private val pickVisualMediaLauncher = registerForActivityResult(
+    private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.PickVisualMedia(),
     ) { uri ->
-        val type = pendingMediaType ?: return@registerForActivityResult
-        pendingMediaType = null
         uri ?: return@registerForActivityResult
-        navigator.openMediaPicker(requireContext(), type, uri)
+        navigator.openMediaPicker(requireContext(), MediaType.IMAGE, uri)
+    }
+
+    private val pickVideoLauncher = registerForActivityResult(
+        ActivityResultContracts.PickVisualMedia(),
+    ) { uri ->
+        uri ?: return@registerForActivityResult
+        navigator.openMediaPicker(requireContext(), MediaType.VIDEO, uri)
     }
 
     override fun getLayoutFragment(): Int = R.layout.cast_fragment_home
@@ -67,6 +70,7 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
     override fun initViews() {
         super.initViews()
         showHomeAdLoading()
+        mBinding.tvConnectionTitle.isSelected = true
         AdsManager.loadNativeHome(requireActivity(), R.layout.layout_native_ad_medium)
         bindFeatureCard(
             itemBinding = mBinding.cardFeaturePhoto,
@@ -257,13 +261,19 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
     }
 
     private fun launchVisualMediaPicker(type: MediaType) {
-        pendingMediaType = type
-        val mediaType = when (type) {
-            MediaType.IMAGE -> ActivityResultContracts.PickVisualMedia.ImageOnly
-            MediaType.VIDEO -> ActivityResultContracts.PickVisualMedia.VideoOnly
-            MediaType.AUDIO -> ActivityResultContracts.PickVisualMedia.ImageAndVideo
+        when (type) {
+            MediaType.IMAGE -> pickImageLauncher.launch(
+                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+            )
+
+            MediaType.VIDEO -> pickVideoLauncher.launch(
+                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.VideoOnly)
+            )
+
+            MediaType.AUDIO -> pickImageLauncher.launch(
+                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageAndVideo)
+            )
         }
-        pickVisualMediaLauncher.launch(PickVisualMediaRequest(mediaType))
     }
 
     private fun showNotificationRationale() {

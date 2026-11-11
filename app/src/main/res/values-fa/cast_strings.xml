@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">فرمت لیست پخش نامعتبر است.</string>
     <string name="cast_recent">اخیر</string>
     <string name="cast_removed_from_favorites">از موارد دلخواه حذف شد.</string>
-    <string name="cast_sleep_timer_value">زمان باقی‌مانده %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">زمان باقی‌مانده %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">توقف پخش</string>
     <string name="cast_tiktok_link">به دلیل مسائل حقوقی نمی‌توانید از لینک تیک‌تاک استفاده کنید</string>
     <string name="cast_txt_add_favorite_success">به موارد دلخواه اضافه شد.</string>

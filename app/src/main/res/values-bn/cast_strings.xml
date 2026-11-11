@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">প্লেলিস্টের ফরম্যাট অবৈধ।</string>
     <string name="cast_recent">সাম্প্রতিক</string>
     <string name="cast_removed_from_favorites">প্রিয় তালিকা থেকে সরানো হয়েছে।</string>
-    <string name="cast_sleep_timer_value">বাকি সময় %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">বাকি সময় %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">কাস্ট বন্ধ করুন</string>
     <string name="cast_tiktok_link">আইনি সমস্যার কারণে আপনি টিকটক লিঙ্ক ব্যবহার করতে পারবেন না</string>
     <string name="cast_txt_add_favorite_success">প্রিয়তে যোগ করা হয়েছে।</string>

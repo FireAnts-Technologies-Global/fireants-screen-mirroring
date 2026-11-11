@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Nieprawidłowy format playlisty.</string>
     <string name="cast_recent">Ostatnie</string>
     <string name="cast_removed_from_favorites">Usunięto z ulubionych.</string>
-    <string name="cast_sleep_timer_value">Pozostały czas %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Pozostały czas %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Zatrzymaj przesyłanie</string>
     <string name="cast_tiktok_link">Ze względu na kwestie prawne nie możesz używać linków TikTok</string>
     <string name="cast_txt_add_favorite_success">Dodano do ulubionych.</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">Wszystkie</string>
     <string name="cast_play_pause">Odtwórz lub wstrzymaj</string>
     <string name="cast_media_prepare_failed">Nie udało się przygotować multimediów do przesłania</string>
+    <string name="cast_media_cast_video">Przesyłaj wideo</string>
+    <string name="cast_unable_to_play">Nie można odtworzyć</string>
+    <string name="cast_error_while_casting">Błąd podczas przesyłania: %s</string>
+    <string name="cast_default_video_name">Wideo %d</string>
 </resources>

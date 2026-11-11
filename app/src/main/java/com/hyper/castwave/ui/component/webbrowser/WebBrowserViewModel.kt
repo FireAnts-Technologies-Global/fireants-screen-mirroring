@@ -1,8 +1,7 @@
 package com.hyper.castwave.ui.component.webbrowser
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
-import com.hyper.castwave.ui.bases.BaseViewModel
+import com.hyper.castwave.casting.mirroring.ScreenMirrorManager
 import com.hyper.castwave.domain.model.CastDevice
 import com.hyper.castwave.domain.model.ConnectionState
 import com.hyper.castwave.domain.model.DataResult
@@ -14,7 +13,7 @@ import com.hyper.castwave.domain.usecase.ConnectDeviceUseCase
 import com.hyper.castwave.domain.usecase.ExtractVideosUseCase
 import com.hyper.castwave.domain.usecase.ObserveConnectionStateUseCase
 import com.hyper.castwave.domain.usecase.ObserveDevicesUseCase
-import com.hyper.castwave.casting.mirroring.ScreenMirrorManager
+import com.hyper.castwave.ui.bases.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -274,7 +273,7 @@ class WebBrowserViewModel @Inject constructor(
                         connectAndCast(item)
                     }
                     result.message.contains("Cast session error", ignoreCase = true) -> {
-                        var lastError = result
+                        var lastError: DataResult.Error = result
                         repeat(3) { attempt ->
                             delay(150)
                             when (val retry = castMediaUseCase(item)) {
@@ -287,7 +286,7 @@ class WebBrowserViewModel @Inject constructor(
                                 }
                             }
                         }
-                        _events.emit(WebBrowserEvent.ShowError(lastError.toString()))
+                        _events.emit(WebBrowserEvent.ShowError(lastError.message))
                     }
                     else -> {
                         _events.emit(WebBrowserEvent.ShowError(result.message))

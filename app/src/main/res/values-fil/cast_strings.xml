@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Hindi wastong format ng playlist.</string>
     <string name="cast_recent">Kamakailan</string>
     <string name="cast_removed_from_favorites">Inalis sa mga paborito.</string>
-    <string name="cast_sleep_timer_value">Natitirang oras %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Natitirang oras %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Ihinto ang cast</string>
     <string name="cast_tiktok_link">Dahil sa mga legal na isyu, hindi mo maaaring gamitin ang link ng Tiktok</string>
     <string name="cast_txt_add_favorite_success">Idinagdag sa mga paborito.</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">Lahat</string>
     <string name="cast_play_pause">I-play o i-pause</string>
     <string name="cast_media_prepare_failed">Hindi naihanda ang media para i-cast</string>
+    <string name="cast_media_cast_video">I-cast ang video</string>
+    <string name="cast_unable_to_play">Hindi ma-play</string>
+    <string name="cast_error_while_casting">Error habang nagka-cast: %s</string>
+    <string name="cast_default_video_name">Video %d</string>
 </resources>

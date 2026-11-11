@@ -50,4 +50,5 @@
     <string name="unknown_file">Непознат фајл</string>
     <string name="default_playlist_name">Плејлиста %1$d</string>
     <string name="send_feedback_chooser_title">Пошаљи повратне информације</string>
+    <string name="loading_ads">Учитавање огласа</string>
 </resources>

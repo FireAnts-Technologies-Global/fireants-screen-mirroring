@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">재생 목록 형식이 유효하지 않습니다.</string>
     <string name="cast_recent">최근</string>
     <string name="cast_removed_from_favorites">즐겨찾기에서 제거되었습니다.</string>
-    <string name="cast_sleep_timer_value">남은 시간 %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">남은 시간 %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">전송 중지</string>
     <string name="cast_tiktok_link">법적 문제로 인해 TikTok 링크를 사용할 수 없습니다</string>
     <string name="cast_txt_add_favorite_success">즐겨찾기에 추가되었습니다.</string>
@@ -246,4 +246,8 @@
     <string name="cast_tab_all">전체</string>
     <string name="cast_play_pause">재생 또는 일시정지</string>
     <string name="cast_media_prepare_failed">캐스팅할 미디어를 준비하지 못했습니다</string>
+    <string name="cast_media_cast_video">동영상 전송</string>
+    <string name="cast_unable_to_play">재생할 수 없습니다</string>
+    <string name="cast_error_while_casting">전송 중 오류 발생: %s</string>
+    <string name="cast_default_video_name">비디오 %d</string>
 </resources>

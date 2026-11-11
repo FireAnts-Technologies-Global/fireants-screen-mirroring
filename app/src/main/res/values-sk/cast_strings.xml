@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Neplatný formát zoznamu skladieb.</string>
     <string name="cast_recent">Nedávne</string>
     <string name="cast_removed_from_favorites">Odstránené z obľúbených.</string>
-    <string name="cast_sleep_timer_value">Zostávajúci čas %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Zostávajúci čas %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Zastaviť prenášanie</string>
     <string name="cast_tiktok_link">Z dôvodu právnych problémov nemôžete použiť odkaz na TikTok</string>
     <string name="cast_txt_add_favorite_success">Pridané do obľúbených.</string>

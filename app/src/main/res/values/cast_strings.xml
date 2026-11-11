@@ -36,6 +36,7 @@
     <string name="cast_permission_notification_title">Enable Notifications</string>
     <string name="cast_permission_notification_message">Allow Cast to TV to send notifications so you can see and manage your active cast session from anywhere.</string>
     <string name="cast_media_cast_photo">Cast photo</string>
+    <string name="cast_media_cast_video">Cast video</string>
     <string name="cast_media_photo_preview">Selected photo preview</string>
     <string name="cast_media_prepare_failed">Failed to prepare media for casting</string>
     <string name="cast_screen_mirror_start">Start Screen Mirror</string>
@@ -141,7 +142,7 @@
     <string name="cast_playlist_invalid_format">Playlist invalid format.</string>
     <string name="cast_recent">Recent</string>
     <string name="cast_removed_from_favorites">Removed from favorites.</string>
-    <string name="cast_sleep_timer_value">Remaining time %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Remaining time %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Stop cast</string>
     <string name="cast_tiktok_link">Due to legal issues you cannot use Tiktok link</string>
     <string name="cast_txt_add_favorite_success">Added to favorites.</string>
@@ -248,4 +249,7 @@
     <string name="cast_home_web_channels_section">Cast Web &amp; Channels</string>
     <string name="cast_tab_all">All</string>
     <string name="cast_play_pause">Play or pause</string>
+    <string name="cast_unable_to_play">Unable to play</string>
+    <string name="cast_error_while_casting">Error while casting: %s</string>
+    <string name="cast_default_video_name">Video %d</string>
 </resources>

@@ -114,7 +114,7 @@ class MediaPickerViewModel @Inject constructor(
                     result.message.contains("Not connected", ignoreCase = true) ->
                         connectAndCast(item)
                     result.message.contains("Cast session error", ignoreCase = true) -> {
-                        var lastError = result
+                        var lastError: DataResult.Error = result
                         repeat(3) {
                             delay(150)
                             when (val retry = castMediaUseCase(item)) {
@@ -125,7 +125,7 @@ class MediaPickerViewModel @Inject constructor(
                                 is DataResult.Error -> lastError = retry
                             }
                         }
-                        _events.emit(MediaEvent.ShowError(lastError.toString()))
+                        _events.emit(MediaEvent.ShowError(lastError.message))
                     }
                     else -> _events.emit(MediaEvent.ShowError(result.message))
                 }

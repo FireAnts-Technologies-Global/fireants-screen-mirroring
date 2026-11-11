@@ -117,7 +117,7 @@
     <string name="cast_playlist_invalid_format">Format daftar putar tidak valid.</string>
     <string name="cast_recent">Terbaru</string>
     <string name="cast_removed_from_favorites">Dihapus dari favorit.</string>
-    <string name="cast_sleep_timer_value">Waktu tersisa %02d:%02d:%02d</string>
+    <string name="cast_sleep_timer_value">Waktu tersisa %1$02d:%2$02d:%3$02d</string>
     <string name="cast_stop_cast">Hentikan transmisi</string>
     <string name="cast_tiktok_link">Karena masalah hukum, Anda tidak dapat menggunakan tautan Tiktok</string>
     <string name="cast_txt_add_favorite_success">Ditambahkan ke favorit.</string>
