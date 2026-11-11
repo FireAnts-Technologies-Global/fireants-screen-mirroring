@@ -36,4 +36,18 @@
     <string name="we_re_better_than_ever">Ứng dụng ngày càng tốt hơn</string>
     <string name="too_many_ads">Quá nhiều quảng cáo</string>
     <string name="start">Bắt đầu</string>
+    <string name="privacy_policy_url_not_configured">Chưa cấu hình URL Chính sách quyền riêng tư</string>
+    <string name="no_app_available_to_open_link">Không có ứng dụng nào có thể mở liên kết này</string>
+    <string name="unable_to_open_privacy_policy">Không thể mở Chính sách quyền riêng tư</string>
+    <string name="import_error_no_channels_playlist">Không tìm thấy kênh trong danh sách phát</string>
+    <string name="import_error_url">Không thể nhập từ URL</string>
+    <string name="import_error_stream">Không thể nhập luồng</string>
+    <string name="import_error_read_file">Không thể đọc tệp</string>
+    <string name="import_error_no_channels_file">Không tìm thấy kênh trong tệp</string>
+    <string name="import_error_file">Không thể nhập tệp</string>
+    <string name="import_error_no_videos">Chưa chọn video nào</string>
+    <string name="import_error_device">Không thể nhập từ thiết bị</string>
+    <string name="unknown_file">Tệp không xác định</string>
+    <string name="default_playlist_name">Danh sách phát %1$d</string>
+    <string name="send_feedback_chooser_title">Gửi phản hồi</string>
 </resources>

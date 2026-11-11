@@ -120,7 +120,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_bold"
                                 android:includeFontPadding="false"
-                                android:text="Screen Mirroring"
+                                android:text="@string/cast_home_screen_mirroring"
                                 android:textColor="#FFFFFF"
                                 android:textSize="@dimen/_15sdp" />
 
@@ -175,7 +175,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_semibold"
                                 android:includeFontPadding="false"
-                                android:text="Tutorial"
+                                android:text="@string/cast_how_to_use_title"
                                 android:textColor="@color/cast_home_text_tutorial"
                                 android:textSize="@dimen/_13sdp" />
 
@@ -185,7 +185,7 @@
                                 android:layout_marginTop="@dimen/_3sdp"
                                 android:fontFamily="@font/inter_regular"
                                 android:includeFontPadding="false"
-                                android:text="Learn how to connect and cast to your TV"
+                                android:text="@string/cast_home_tutorial_description"
                                 android:textColor="@color/cast_home_text_tutorial_secondary"
                                 android:textSize="@dimen/_10sdp" />
                         </LinearLayout>
@@ -211,7 +211,7 @@
                             android:layout_height="@dimen/_15sdp"
                             android:fontFamily="@font/inter_bold"
                             android:includeFontPadding="false"
-                            android:text="Cast Media"
+                            android:text="@string/cast_home_media_section"
                             android:textColor="@color/cast_home_text_primary"
                             android:textSize="@dimen/_13sdp" />
 
@@ -251,7 +251,7 @@
                             android:layout_height="@dimen/_15sdp"
                             android:fontFamily="@font/inter_bold"
                             android:includeFontPadding="false"
-                            android:text="Cast Web &amp; Channels"
+                            android:text="@string/cast_home_web_channels_section"
                             android:textColor="@color/cast_home_text_primary"
                             android:textSize="@dimen/_13sdp" />
 

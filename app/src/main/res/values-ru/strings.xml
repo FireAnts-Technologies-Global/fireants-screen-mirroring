@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">URL политики конфиденциальности не настроен</string>
+    <string name="no_app_available_to_open_link">Нет приложения для открытия этой ссылки</string>
+    <string name="unable_to_open_privacy_policy">Не удалось открыть политику конфиденциальности</string>
+    <string name="import_error_no_channels_playlist">В плейлисте не найдены каналы</string>
+    <string name="import_error_url">Не удалось импортировать по URL</string>
+    <string name="import_error_stream">Не удалось импортировать поток</string>
+    <string name="import_error_read_file">Не удалось прочитать файл</string>
+    <string name="import_error_no_channels_file">В файле не найдены каналы</string>
+    <string name="import_error_file">Не удалось импортировать файл</string>
+    <string name="import_error_no_videos">Видео не выбраны</string>
+    <string name="import_error_device">Не удалось импортировать с устройства</string>
+    <string name="unknown_file">Неизвестный файл</string>
+    <string name="default_playlist_name">Плейлист %1$d</string>
+    <string name="send_feedback_chooser_title">Отправить отзыв</string>
 </resources>

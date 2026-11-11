@@ -36,11 +36,7 @@ class CastActivity : BaseActivity<CastActivityCastBinding>() {
                 viewModel.disconnect()
                 shouldDisconnectAfterConnect = true
             } else {
-                if (isFromMediaPicker) {
-                    viewModel.connectDevice(device.id)
-                } else {
-                    openCastSettings()
-                }
+                viewModel.connectDevice(device.id)
             }
         },
         onDeviceLongClick = { device -> viewModel.requestPinForDevice(device.id) },

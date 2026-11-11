@@ -1,10 +1,10 @@
 package com.hyper.castwave.ui.component.iptv.addchannel.helper
 
 
-import android.view.View
-import android.widget.Toast
 import android.app.Dialog
 import android.view.LayoutInflater
+import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -83,7 +83,19 @@ object ImportStateHelper {
     }
 
     fun showErrorToast(fragment: Fragment, message: String) {
-        Toast.makeText(fragment.requireContext(), message, Toast.LENGTH_SHORT).show()
+        val context = fragment.requireContext()
+        val localizedMessage = when (message) {
+            "import_error_no_channels_playlist" -> context.getString(R.string.import_error_no_channels_playlist)
+            "import_error_url" -> context.getString(R.string.import_error_url)
+            "import_error_stream" -> context.getString(R.string.import_error_stream)
+            "import_error_read_file" -> context.getString(R.string.import_error_read_file)
+            "import_error_no_channels_file" -> context.getString(R.string.import_error_no_channels_file)
+            "import_error_file" -> context.getString(R.string.import_error_file)
+            "import_error_no_videos" -> context.getString(R.string.import_error_no_videos)
+            "import_error_device" -> context.getString(R.string.import_error_device)
+            else -> message
+        }
+        Toast.makeText(context, localizedMessage, Toast.LENGTH_SHORT).show()
     }
 }
 

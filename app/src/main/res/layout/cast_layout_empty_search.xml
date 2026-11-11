@@ -11,7 +11,7 @@
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
             android:src="@drawable/cast_ic_search_empty"
-            android:contentDescription="No search results"
+            android:contentDescription="@string/cast_no_result_found"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

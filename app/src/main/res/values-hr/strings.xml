@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">URL pravila privatnosti nije postavljen</string>
+    <string name="no_app_available_to_open_link">Nema aplikacije koja može otvoriti ovu poveznicu</string>
+    <string name="unable_to_open_privacy_policy">Nije moguće otvoriti pravila privatnosti</string>
+    <string name="import_error_no_channels_playlist">Na popisu za reprodukciju nema kanala</string>
+    <string name="import_error_url">Uvoz s URL-a nije uspio</string>
+    <string name="import_error_stream">Uvoz streama nije uspio</string>
+    <string name="import_error_read_file">Datoteku nije moguće pročitati</string>
+    <string name="import_error_no_channels_file">U datoteci nema kanala</string>
+    <string name="import_error_file">Uvoz datoteke nije uspio</string>
+    <string name="import_error_no_videos">Nije odabran nijedan videozapis</string>
+    <string name="import_error_device">Uvoz s uređaja nije uspio</string>
+    <string name="unknown_file">Nepoznata datoteka</string>
+    <string name="default_playlist_name">Popis za reprodukciju %1$d</string>
+    <string name="send_feedback_chooser_title">Pošalji povratne informacije</string>
 </resources>

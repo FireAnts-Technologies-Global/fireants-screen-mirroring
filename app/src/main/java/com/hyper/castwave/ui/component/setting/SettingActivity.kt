@@ -81,7 +81,11 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
     private fun openPrivacyPolicy() {
         val privacyPolicyUrl = AppConstants.LINK_PRIVACY_POLICY
         if (privacyPolicyUrl.isBlank()) {
-            Toast.makeText(this, "Privacy Policy URL is not configured", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                getString(R.string.privacy_policy_url_not_configured),
+                Toast.LENGTH_SHORT
+            ).show()
             return
         }
         try {
@@ -91,12 +95,20 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
                 startActivity(browserIntent)
                 disableAdsResume()
             } else {
-                Toast.makeText(this, "No app available to open this link", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    this,
+                    getString(R.string.no_app_available_to_open_link),
+                    Toast.LENGTH_SHORT
+                )
                     .show()
             }
         } catch (e: Exception) {
             Log.e("SettingActivity", "Error opening privacy policy", e)
-            Toast.makeText(this, "Unable to open Privacy Policy", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                getString(R.string.unable_to_open_privacy_policy),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -104,9 +116,14 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
         val intentFeedBack = Intent(Intent.ACTION_SEND)
         intentFeedBack.type = "text/email"
         intentFeedBack.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
-        intentFeedBack.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
+        intentFeedBack.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback))
         intentFeedBack.putExtra(Intent.EXTRA_TEXT, "" + "")
-        startActivity(Intent.createChooser(intentFeedBack, "Send Feedback:"))
+        startActivity(
+            Intent.createChooser(
+                intentFeedBack,
+                getString(R.string.send_feedback_chooser_title)
+            )
+        )
     }
 
     override fun onResume() {

@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.hyper.castwave.R
@@ -30,6 +31,9 @@ import com.hyper.castwave.ui.component.cast.DeviceAdapter
 import com.hyper.castwave.ui.component.cast.PinDialog
 import com.hyper.castwave.ui.component.dialog.LoadingDialog
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import com.intuit.sdp.R as SdpR
 
@@ -250,7 +254,44 @@ class MediaPickerActivity : BaseActivity<CastActivityMediaPickerBinding>() {
             state is CastUiState.Connected || (state is CastUiState.HasDevices && state.devices.any { it.isConnected })
         }
         hideDevicesPanel()
-        viewModel.onMediaItemClicked(item, isConnected)
+        lifecycleScope.launch {
+            showLoadingDialog()
+            val cachedFile = withContext(Dispatchers.IO) {
+                copyPickedUriToCache(Uri.parse(item.uri))
+            }
+            if (cachedFile == null) {
+                loadingDialog?.dismiss()
+                Toast.makeText(
+                    this@MediaPickerActivity,
+                    getString(R.string.cast_media_prepare_failed),
+                    Toast.LENGTH_SHORT,
+                ).show()
+                return@launch
+            }
+            val castable = item.copy(uri = Uri.fromFile(cachedFile).toString())
+            viewModel.onMediaItemClicked(castable, isConnected)
+        }
+    }
+
+    private fun copyPickedUriToCache(uri: Uri): java.io.File? {
+        return try {
+            val extension = when (mediaType) {
+                MediaType.IMAGE -> ".jpg"
+                MediaType.VIDEO -> ".mp4"
+                MediaType.AUDIO -> ".mp3"
+            }
+            val dir = java.io.File(cacheDir, "cast_picked").apply { mkdirs() }
+            val outFile = java.io.File(dir, "picked_${System.currentTimeMillis()}$extension")
+            contentResolver.openInputStream(uri)?.use { input ->
+                outFile.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+            } ?: return null
+            outFile
+        } catch (e: Exception) {
+            Log.e("MediaPicker", "copyPickedUriToCache failed", e)
+            null
+        }
     }
 
     private fun renderCastState(state: CastUiState) {

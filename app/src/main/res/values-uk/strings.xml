@@ -36,4 +36,18 @@
     <string name="we_re_better_than_ever">Застосунок стає ще кращим</string>
     <string name="too_many_ads">Забагато реклами</string>
     <string name="start">Почати</string>
+    <string name="privacy_policy_url_not_configured">URL політики конфіденційності не налаштовано</string>
+    <string name="no_app_available_to_open_link">Немає застосунку, щоб відкрити це посилання</string>
+    <string name="unable_to_open_privacy_policy">Не вдалося відкрити політику конфіденційності</string>
+    <string name="import_error_no_channels_playlist">У списку відтворення не знайдено каналів</string>
+    <string name="import_error_url">Не вдалося імпортувати з URL</string>
+    <string name="import_error_stream">Не вдалося імпортувати потік</string>
+    <string name="import_error_read_file">Не вдалося прочитати файл</string>
+    <string name="import_error_no_channels_file">У файлі не знайдено каналів</string>
+    <string name="import_error_file">Не вдалося імпортувати файл</string>
+    <string name="import_error_no_videos">Відео не вибрано</string>
+    <string name="import_error_device">Не вдалося імпортувати з пристрою</string>
+    <string name="unknown_file">Невідомий файл</string>
+    <string name="default_playlist_name">Список відтворення %1$d</string>
+    <string name="send_feedback_chooser_title">Надіслати відгук</string>
 </resources>

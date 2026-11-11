@@ -3,7 +3,6 @@ package com.hyper.castwave.ui.component.iptv.addchannel.viewmodel
 import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
-import android.util.Log
 import com.hyper.castwave.data.iptv.database.manager.ChannelDataManager
 import com.hyper.castwave.data.iptv.model.ChannelOnline
 import com.hyper.castwave.data.iptv.model.DataState
@@ -39,12 +38,12 @@ class AddChannelViewModel @Inject constructor(
             try {
                 val channels = M3UParser.parseM3U(url)
                 if (channels.isEmpty()) {
-                    _importState.update { DataState.Error("No channels found in playlist") }
+                    _importState.update { DataState.Error("import_error_no_channels_playlist") }
                     return@launch
                 }
                 processImport(playlistName, url, channels, TVChannelSourceType.URL)
             } catch (e: Exception) {
-                _importState.update { DataState.Error(e.message ?: "Failed to import from URL") }
+                _importState.update { DataState.Error("import_error_url") }
             }
         }
     }
@@ -62,7 +61,7 @@ class AddChannelViewModel @Inject constructor(
                 )
                 processImport(name, url, listOf(channel), TVChannelSourceType.STREAM)
             } catch (e: Exception) {
-                _importState.update { DataState.Error(e.message ?: "Failed to import stream") }
+                _importState.update { DataState.Error("import_error_stream") }
             }
         }
     }
@@ -73,20 +72,20 @@ class AddChannelViewModel @Inject constructor(
             try {
                 val content = readFileContent(context, fileUri)
                 if (content.isEmpty()) {
-                    _importState.update { DataState.Error("Failed to read file") }
+                    _importState.update { DataState.Error("import_error_read_file") }
                     return@launch
                 }
 
                 val channels = parseM3UContent(content)
                 if (channels.isEmpty()) {
-                    _importState.update { DataState.Error("No channels found in file") }
+                    _importState.update { DataState.Error("import_error_no_channels_file") }
                     return@launch
                 }
 
                 val filePath = FileHelper.getFileName(context, fileUri)
                 processImport(playlistName, filePath, channels, TVChannelSourceType.FILE)
             } catch (e: Exception) {
-                _importState.update { DataState.Error(e.message ?: "Failed to import from file") }
+                _importState.update { DataState.Error("import_error_file") }
             }
         }
     }
@@ -96,7 +95,7 @@ class AddChannelViewModel @Inject constructor(
             _importState.update { DataState.Loading }
             try {
                 if (videoUris.isEmpty()) {
-                    _importState.update { DataState.Error("No videos selected") }
+                    _importState.update { DataState.Error("import_error_no_videos") }
                     return@launch
                 }
 
@@ -113,7 +112,7 @@ class AddChannelViewModel @Inject constructor(
 
                 processImport(playlistName, "device://", channels, TVChannelSourceType.DEVICE)
             } catch (e: Exception) {
-                _importState.update { DataState.Error(e.message ?: "Failed to import from device") }
+                _importState.update { DataState.Error("import_error_device") }
             }
         }
     }

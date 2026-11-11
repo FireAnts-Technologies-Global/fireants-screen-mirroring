@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">لم يتم إعداد رابط سياسة الخصوصية</string>
+    <string name="no_app_available_to_open_link">لا يتوفر تطبيق لفتح هذا الرابط</string>
+    <string name="unable_to_open_privacy_policy">تعذّر فتح سياسة الخصوصية</string>
+    <string name="import_error_no_channels_playlist">لم يتم العثور على قنوات في قائمة التشغيل</string>
+    <string name="import_error_url">تعذّر الاستيراد من الرابط</string>
+    <string name="import_error_stream">تعذّر استيراد البث</string>
+    <string name="import_error_read_file">تعذّرت قراءة الملف</string>
+    <string name="import_error_no_channels_file">لم يتم العثور على قنوات في الملف</string>
+    <string name="import_error_file">تعذّر استيراد الملف</string>
+    <string name="import_error_no_videos">لم يتم اختيار فيديوهات</string>
+    <string name="import_error_device">تعذّر الاستيراد من الجهاز</string>
+    <string name="unknown_file">ملف غير معروف</string>
+    <string name="default_playlist_name">قائمة التشغيل %1$d</string>
+    <string name="send_feedback_chooser_title">إرسال ملاحظات</string>
 </resources>

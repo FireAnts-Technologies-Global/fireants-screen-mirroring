@@ -3,6 +3,7 @@ package com.hyper.castwave.ui.component.iptv.addchannel.helper
 import android.content.Context
 import android.net.Uri
 import android.provider.OpenableColumns
+import com.hyper.castwave.R
 import java.util.Locale
 
 object FileHelper {
@@ -14,7 +15,7 @@ object FileHelper {
                 if (it.moveToFirst()) {
                     val nameIndex = it.getColumnIndex(OpenableColumns.DISPLAY_NAME)
                     if (nameIndex != -1) {
-                        it.getString(nameIndex) ?: "Unknown"
+                        it.getString(nameIndex) ?: context.getString(R.string.unknown_file)
                     } else {
                         uri.toString()
                     }
@@ -23,7 +24,8 @@ object FileHelper {
                 }
             } ?: uri.toString()
         } catch (e: Exception) {
-            uri.path?.substringAfterLast("/", "Unknown") ?: "Unknown"
+            uri.path?.substringAfterLast("/", context.getString(R.string.unknown_file))
+                ?: context.getString(R.string.unknown_file)
         }
     }
 

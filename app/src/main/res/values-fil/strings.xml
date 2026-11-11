@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">Hindi naka-configure ang URL ng Patakaran sa Privacy</string>
+    <string name="no_app_available_to_open_link">Walang app na makakapagbukas sa link na ito</string>
+    <string name="unable_to_open_privacy_policy">Hindi mabuksan ang Patakaran sa Privacy</string>
+    <string name="import_error_no_channels_playlist">Walang channel sa playlist</string>
+    <string name="import_error_url">Hindi ma-import mula sa URL</string>
+    <string name="import_error_stream">Hindi ma-import ang stream</string>
+    <string name="import_error_read_file">Hindi mabasa ang file</string>
+    <string name="import_error_no_channels_file">Walang channel sa file</string>
+    <string name="import_error_file">Hindi ma-import ang file</string>
+    <string name="import_error_no_videos">Walang napiling video</string>
+    <string name="import_error_device">Hindi ma-import mula sa device</string>
+    <string name="unknown_file">Hindi kilalang file</string>
+    <string name="default_playlist_name">Playlist %1$d</string>
+    <string name="send_feedback_chooser_title">Magpadala ng feedback</string>
 </resources>

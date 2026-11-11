@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,7 +57,7 @@
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:maxLines="1"
-                        android:text="Category Name"
+                        android:text="@string/cast_channel_name"
                         android:textColor="@color/cast_home_text_primary"
                         android:textSize="@dimen/_17sdp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +72,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:text="0 channels"
+                        tools:text="0 channels"
                         android:textColor="@color/cast_home_text_secondary"
                         android:textSize="@dimen/_11sdp"
                         app:layout_constraintEnd_toEndOf="parent"

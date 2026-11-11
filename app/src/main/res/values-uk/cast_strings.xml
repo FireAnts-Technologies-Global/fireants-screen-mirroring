@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cast_home_tutorial_description">Дізнайтеся, як підключитися та транслювати на телевізор</string>
+    <string name="cast_home_media_section">Трансляція медіа</string>
+    <string name="cast_home_web_channels_section">Трансляція вебсторінок і каналів</string>
+    <string name="cast_tab_all">Усі</string>
+    <string name="cast_play_pause">Відтворити або призупинити</string>
+    <string name="cast_media_prepare_failed">Не вдалося підготувати медіа для трансляції</string>
+</resources>

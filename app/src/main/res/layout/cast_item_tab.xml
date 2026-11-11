@@ -23,7 +23,7 @@
         android:id="@+id/tv_tab_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All"
+        android:text="@string/cast_tab_all"
         android:layout_marginStart="@dimen/_5sdp"
         android:textColor="#B3B3B3"
         android:textSize="@dimen/_10sdp"

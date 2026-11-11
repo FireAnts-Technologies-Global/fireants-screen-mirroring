@@ -12,8 +12,7 @@
         <com.hyper.castwave.ui.component.custom.FigmaTopBarView
             android:id="@+id/toolbar"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_39sdp"
+            android:layout_height="wrap_content"
             app:figmaTopBarBackDescription="@string/cast_how_to_use_guide_back"
             app:figmaTopBarBackStyle="howToUse"
             app:figmaTopBarTitle="@string/cast_how_to_use_title"

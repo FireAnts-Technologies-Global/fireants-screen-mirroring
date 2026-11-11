@@ -36,4 +36,18 @@
     <string name="we_re_better_than_ever">Aplikasi ini terus menjadi lebih baik</string>
     <string name="too_many_ads">Terlalu banyak iklan</string>
     <string name="start">Mulai</string>
+    <string name="privacy_policy_url_not_configured">URL Kebijakan Privasi belum dikonfigurasi</string>
+    <string name="no_app_available_to_open_link">Tidak ada aplikasi untuk membuka tautan ini</string>
+    <string name="unable_to_open_privacy_policy">Kebijakan Privasi tidak dapat dibuka</string>
+    <string name="import_error_no_channels_playlist">Tidak ada saluran di daftar putar</string>
+    <string name="import_error_url">Gagal mengimpor dari URL</string>
+    <string name="import_error_stream">Gagal mengimpor streaming</string>
+    <string name="import_error_read_file">File tidak dapat dibaca</string>
+    <string name="import_error_no_channels_file">Tidak ada saluran di file</string>
+    <string name="import_error_file">Gagal mengimpor file</string>
+    <string name="import_error_no_videos">Belum ada video yang dipilih</string>
+    <string name="import_error_device">Gagal mengimpor dari perangkat</string>
+    <string name="unknown_file">File tidak dikenal</string>
+    <string name="default_playlist_name">Daftar putar %1$d</string>
+    <string name="send_feedback_chooser_title">Kirim masukan</string>
 </resources>

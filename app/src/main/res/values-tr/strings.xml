@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">Gizlilik Politikası URL’si yapılandırılmamış</string>
+    <string name="no_app_available_to_open_link">Bu bağlantıyı açabilecek uygulama yok</string>
+    <string name="unable_to_open_privacy_policy">Gizlilik Politikası açılamadı</string>
+    <string name="import_error_no_channels_playlist">Oynatma listesinde kanal bulunamadı</string>
+    <string name="import_error_url">URL’den içe aktarılamadı</string>
+    <string name="import_error_stream">Akış içe aktarılamadı</string>
+    <string name="import_error_read_file">Dosya okunamadı</string>
+    <string name="import_error_no_channels_file">Dosyada kanal bulunamadı</string>
+    <string name="import_error_file">Dosya içe aktarılamadı</string>
+    <string name="import_error_no_videos">Video seçilmedi</string>
+    <string name="import_error_device">Cihazdan içe aktarılamadı</string>
+    <string name="unknown_file">Bilinmeyen dosya</string>
+    <string name="default_playlist_name">Oynatma listesi %1$d</string>
+    <string name="send_feedback_chooser_title">Geri bildirim gönder</string>
 </resources>

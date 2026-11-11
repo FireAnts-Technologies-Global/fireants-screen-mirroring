@@ -29,7 +29,7 @@
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
-                android:text="Select a language"
+                android:text="@string/please_select_language"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_13sdp"
                 android:textColor="#000000"

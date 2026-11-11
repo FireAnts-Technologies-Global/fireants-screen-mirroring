@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">De URL van het privacybeleid is niet ingesteld</string>
+    <string name="no_app_available_to_open_link">Er is geen app beschikbaar om deze link te openen</string>
+    <string name="unable_to_open_privacy_policy">Het privacybeleid kan niet worden geopend</string>
+    <string name="import_error_no_channels_playlist">Geen zenders gevonden in de afspeellijst</string>
+    <string name="import_error_url">Importeren via URL is mislukt</string>
+    <string name="import_error_stream">Stream importeren is mislukt</string>
+    <string name="import_error_read_file">Bestand kan niet worden gelezen</string>
+    <string name="import_error_no_channels_file">Geen zenders gevonden in het bestand</string>
+    <string name="import_error_file">Bestand importeren is mislukt</string>
+    <string name="import_error_no_videos">Geen video’s geselecteerd</string>
+    <string name="import_error_device">Importeren vanaf apparaat is mislukt</string>
+    <string name="unknown_file">Onbekend bestand</string>
+    <string name="default_playlist_name">Afspeellijst %1$d</string>
+    <string name="send_feedback_chooser_title">Feedback verzenden</string>
 </resources>

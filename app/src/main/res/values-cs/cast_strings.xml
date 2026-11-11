@@ -207,4 +207,5 @@
     <string name="cast_close_">Zavřít</string>
     <string name="cast_fast_loading_stable_playback">Rychlé načítání, stabilní přehrávání</string>
     <string name="cast_no_ads_no_interruptions">Žádné reklamy, žádné přerušení</string>
+    <string name="cast_media_prepare_failed">Média se nepodařilo připravit k přehrávání</string>
 </resources>

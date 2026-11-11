@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">La URL de la política de privacidad no está configurada</string>
+    <string name="no_app_available_to_open_link">No hay ninguna aplicación disponible para abrir este enlace</string>
+    <string name="unable_to_open_privacy_policy">No se pudo abrir la política de privacidad</string>
+    <string name="import_error_no_channels_playlist">No se encontraron canales en la lista</string>
+    <string name="import_error_url">No se pudo importar desde la URL</string>
+    <string name="import_error_stream">No se pudo importar la transmisión</string>
+    <string name="import_error_read_file">No se pudo leer el archivo</string>
+    <string name="import_error_no_channels_file">No se encontraron canales en el archivo</string>
+    <string name="import_error_file">No se pudo importar el archivo</string>
+    <string name="import_error_no_videos">No se seleccionaron videos</string>
+    <string name="import_error_device">No se pudo importar desde el dispositivo</string>
+    <string name="unknown_file">Archivo desconocido</string>
+    <string name="default_playlist_name">Lista %1$d</string>
+    <string name="send_feedback_chooser_title">Enviar comentarios</string>
 </resources>

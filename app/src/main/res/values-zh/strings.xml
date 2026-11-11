@@ -36,4 +36,18 @@
     <string name="we_re_better_than_ever">应用不断改进</string>
     <string name="too_many_ads">广告太多</string>
     <string name="start">开始</string>
+    <string name="privacy_policy_url_not_configured">尚未配置隐私政策网址</string>
+    <string name="no_app_available_to_open_link">没有可用于打开此链接的应用</string>
+    <string name="unable_to_open_privacy_policy">无法打开隐私政策</string>
+    <string name="import_error_no_channels_playlist">播放列表中未找到频道</string>
+    <string name="import_error_url">无法从网址导入</string>
+    <string name="import_error_stream">无法导入串流</string>
+    <string name="import_error_read_file">无法读取文件</string>
+    <string name="import_error_no_channels_file">文件中未找到频道</string>
+    <string name="import_error_file">无法导入文件</string>
+    <string name="import_error_no_videos">未选择视频</string>
+    <string name="import_error_device">无法从设备导入</string>
+    <string name="unknown_file">未知文件</string>
+    <string name="default_playlist_name">播放列表 %1$d</string>
+    <string name="send_feedback_chooser_title">发送反馈</string>
 </resources>

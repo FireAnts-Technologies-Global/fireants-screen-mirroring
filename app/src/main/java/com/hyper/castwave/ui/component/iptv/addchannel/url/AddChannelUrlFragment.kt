@@ -46,7 +46,7 @@ class AddChannelUrlFragment : BaseFragment<CastFragmentAddChannelUrlBinding>() {
         var index = 1
         var newName: String
         do {
-            newName = "Playlist $index"
+            newName = getString(R.string.default_playlist_name, index)
             index++
         } while (existingNames.contains(newName))
         return newName

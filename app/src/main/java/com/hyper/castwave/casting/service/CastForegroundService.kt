@@ -124,7 +124,8 @@ class CastForegroundService : Service() {
         .setContentIntent(openAppPendingIntent())
         .addAction(0, getString(R.string.cast_notification_stop_casting), stopPendingIntent())
         .setOngoing(true)
-        .setPriority(NotificationCompat.PRIORITY_LOW)
+        .setPriority(NotificationCompat.PRIORITY_HIGH)
+        .setDefaults(NotificationCompat.DEFAULT_ALL)
         .build()
 
     private fun openAppPendingIntent(): PendingIntent = PendingIntent.getActivity(
@@ -144,9 +145,10 @@ class CastForegroundService : Service() {
             val channel = NotificationChannel(
                 CHANNEL_ID,
                 getString(R.string.cast_notification_channel_name),
-                NotificationManager.IMPORTANCE_LOW,
+                NotificationManager.IMPORTANCE_HIGH,
             ).apply {
                 description = getString(R.string.cast_notification_channel_desc)
+                enableVibration(true)
             }
             getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
         }

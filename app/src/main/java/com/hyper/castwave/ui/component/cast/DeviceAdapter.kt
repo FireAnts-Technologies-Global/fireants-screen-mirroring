@@ -3,10 +3,10 @@ package com.hyper.castwave.ui.component.cast
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.core.content.ContextCompat
 import com.hyper.castwave.R
 import com.hyper.castwave.databinding.CastItemDeviceBinding
 import com.hyper.castwave.domain.model.CastDevice
@@ -101,8 +101,8 @@ class DeviceAdapter(
                 )
             }
 
-            binding.root.setOnClickListener { if (!isConnecting) onDeviceClick(device) }
-            binding.root.setOnLongClickListener {
+            binding.rlCast.setOnClickListener { if (!isConnecting) onDeviceClick(device) }
+            binding.rlCast.setOnLongClickListener {
                 if (!isConnecting) onDeviceLongClick?.invoke(device)
                 onDeviceLongClick != null
             }

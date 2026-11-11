@@ -37,6 +37,7 @@
     <string name="cast_permission_notification_message">Allow Cast to TV to send notifications so you can see and manage your active cast session from anywhere.</string>
     <string name="cast_media_cast_photo">Cast photo</string>
     <string name="cast_media_photo_preview">Selected photo preview</string>
+    <string name="cast_media_prepare_failed">Failed to prepare media for casting</string>
     <string name="cast_screen_mirror_start">Start Screen Mirror</string>
     <string name="cast_screen_mirror_stop">Stop Mirror</string>
     <string name="cast_title_br1">Make sure your phone and TV are on the same Wi-Fi network.</string>
@@ -242,4 +243,9 @@
     <string name="cast_import_success_title">Import successful</string>
     <string name="cast_import_success_description">Your channels are ready to watch.</string>
     <string name="cast_view_channels">View channels</string>
+    <string name="cast_home_tutorial_description">Learn how to connect and cast to your TV</string>
+    <string name="cast_home_media_section">Cast Media</string>
+    <string name="cast_home_web_channels_section">Cast Web &amp; Channels</string>
+    <string name="cast_tab_all">All</string>
+    <string name="cast_play_pause">Play or pause</string>
 </resources>

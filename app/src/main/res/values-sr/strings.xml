@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">URL политике приватности није подешен</string>
+    <string name="no_app_available_to_open_link">Нема апликације која може да отвори ову везу</string>
+    <string name="unable_to_open_privacy_policy">Није могуће отворити политику приватности</string>
+    <string name="import_error_no_channels_playlist">На плејлисти нема канала</string>
+    <string name="import_error_url">Увоз са URL адресе није успео</string>
+    <string name="import_error_stream">Увоз стрима није успео</string>
+    <string name="import_error_read_file">Фајл није могуће прочитати</string>
+    <string name="import_error_no_channels_file">У фајлу нема канала</string>
+    <string name="import_error_file">Увоз фајла није успео</string>
+    <string name="import_error_no_videos">Није изабран ниједан видео</string>
+    <string name="import_error_device">Увоз са уређаја није успео</string>
+    <string name="unknown_file">Непознат фајл</string>
+    <string name="default_playlist_name">Плејлиста %1$d</string>
+    <string name="send_feedback_chooser_title">Пошаљи повратне информације</string>
 </resources>

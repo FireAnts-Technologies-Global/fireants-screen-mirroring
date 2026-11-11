@@ -45,4 +45,18 @@
     <string name="we_re_better_than_ever">The app keeps getting better</string>
     <string name="too_many_ads">Too many ads</string>
     <string name="start">Start</string>
+    <string name="privacy_policy_url_not_configured">Privacy Policy URL is not configured</string>
+    <string name="no_app_available_to_open_link">No app available to open this link</string>
+    <string name="unable_to_open_privacy_policy">Unable to open Privacy Policy</string>
+    <string name="import_error_no_channels_playlist">No channels found in playlist</string>
+    <string name="import_error_url">Failed to import from URL</string>
+    <string name="import_error_stream">Failed to import stream</string>
+    <string name="import_error_read_file">Failed to read file</string>
+    <string name="import_error_no_channels_file">No channels found in file</string>
+    <string name="import_error_file">Failed to import file</string>
+    <string name="import_error_no_videos">No videos selected</string>
+    <string name="import_error_device">Failed to import from device</string>
+    <string name="unknown_file">Unknown file</string>
+    <string name="default_playlist_name">Playlist %1$d</string>
+    <string name="send_feedback_chooser_title">Send feedback</string>
 </resources>

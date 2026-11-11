@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">プライバシーポリシーのURLが設定されていません</string>
+    <string name="no_app_available_to_open_link">このリンクを開けるアプリがありません</string>
+    <string name="unable_to_open_privacy_policy">プライバシーポリシーを開けません</string>
+    <string name="import_error_no_channels_playlist">プレイリストにチャンネルが見つかりません</string>
+    <string name="import_error_url">URLからインポートできませんでした</string>
+    <string name="import_error_stream">ストリームをインポートできませんでした</string>
+    <string name="import_error_read_file">ファイルを読み込めませんでした</string>
+    <string name="import_error_no_channels_file">ファイルにチャンネルが見つかりません</string>
+    <string name="import_error_file">ファイルをインポートできませんでした</string>
+    <string name="import_error_no_videos">動画が選択されていません</string>
+    <string name="import_error_device">デバイスからインポートできませんでした</string>
+    <string name="unknown_file">不明なファイル</string>
+    <string name="default_playlist_name">プレイリスト %1$d</string>
+    <string name="send_feedback_chooser_title">フィードバックを送信</string>
 </resources>

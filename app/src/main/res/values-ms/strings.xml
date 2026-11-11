@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">URL Dasar Privasi belum dikonfigurasikan</string>
+    <string name="no_app_available_to_open_link">Tiada aplikasi untuk membuka pautan ini</string>
+    <string name="unable_to_open_privacy_policy">Tidak dapat membuka Dasar Privasi</string>
+    <string name="import_error_no_channels_playlist">Tiada saluran dalam senarai main</string>
+    <string name="import_error_url">Tidak dapat mengimport daripada URL</string>
+    <string name="import_error_stream">Tidak dapat mengimport strim</string>
+    <string name="import_error_read_file">Fail tidak dapat dibaca</string>
+    <string name="import_error_no_channels_file">Tiada saluran dalam fail</string>
+    <string name="import_error_file">Tidak dapat mengimport fail</string>
+    <string name="import_error_no_videos">Tiada video dipilih</string>
+    <string name="import_error_device">Tidak dapat mengimport daripada peranti</string>
+    <string name="unknown_file">Fail tidak diketahui</string>
+    <string name="default_playlist_name">Senarai main %1$d</string>
+    <string name="send_feedback_chooser_title">Hantar maklum balas</string>
 </resources>

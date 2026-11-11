@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">URL:en till integritetspolicyn är inte konfigurerad</string>
+    <string name="no_app_available_to_open_link">Ingen app kan öppna den här länken</string>
+    <string name="unable_to_open_privacy_policy">Det gick inte att öppna integritetspolicyn</string>
+    <string name="import_error_no_channels_playlist">Inga kanaler hittades i spellistan</string>
+    <string name="import_error_url">Det gick inte att importera från URL</string>
+    <string name="import_error_stream">Det gick inte att importera strömmen</string>
+    <string name="import_error_read_file">Filen kunde inte läsas</string>
+    <string name="import_error_no_channels_file">Inga kanaler hittades i filen</string>
+    <string name="import_error_file">Det gick inte att importera filen</string>
+    <string name="import_error_no_videos">Inga videor valda</string>
+    <string name="import_error_device">Det gick inte att importera från enheten</string>
+    <string name="unknown_file">Okänd fil</string>
+    <string name="default_playlist_name">Spellista %1$d</string>
+    <string name="send_feedback_chooser_title">Skicka feedback</string>
 </resources>

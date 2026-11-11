@@ -36,4 +36,18 @@
     <string name="privacy_policy">@string/cast_privacy_policy</string>
     <string name="too_many_ads">@string/survey_2</string>
     <string name="start">@string/get_started</string>
+    <string name="privacy_policy_url_not_configured">गोपनीयता नीति का URL कॉन्फ़िगर नहीं है</string>
+    <string name="no_app_available_to_open_link">इस लिंक को खोलने के लिए कोई ऐप उपलब्ध नहीं है</string>
+    <string name="unable_to_open_privacy_policy">गोपनीयता नीति नहीं खोली जा सकी</string>
+    <string name="import_error_no_channels_playlist">प्लेलिस्ट में कोई चैनल नहीं मिला</string>
+    <string name="import_error_url">URL से आयात नहीं हो सका</string>
+    <string name="import_error_stream">स्ट्रीम आयात नहीं हो सकी</string>
+    <string name="import_error_read_file">फ़ाइल पढ़ी नहीं जा सकी</string>
+    <string name="import_error_no_channels_file">फ़ाइल में कोई चैनल नहीं मिला</string>
+    <string name="import_error_file">फ़ाइल आयात नहीं हो सकी</string>
+    <string name="import_error_no_videos">कोई वीडियो नहीं चुना गया</string>
+    <string name="import_error_device">डिवाइस से आयात नहीं हो सका</string>
+    <string name="unknown_file">अज्ञात फ़ाइल</string>
+    <string name="default_playlist_name">प्लेलिस्ट %1$d</string>
+    <string name="send_feedback_chooser_title">फ़ीडबैक भेजें</string>
 </resources>
