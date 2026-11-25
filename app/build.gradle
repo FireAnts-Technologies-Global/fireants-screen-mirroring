@@ -45,7 +45,6 @@ android {
             manifestPlaceholders = [app_id: "ca-app-pub-3940256099942544~3347511713"]
             buildConfigField "Boolean", "build_debug", "true"
             buildConfigField(BOOLEAN, DEV_MODE, TRUE)
-            versionNameSuffix '-dev'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             firebaseCrashlytics {

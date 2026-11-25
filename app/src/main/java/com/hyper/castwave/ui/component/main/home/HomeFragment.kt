@@ -225,16 +225,24 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
             openCastScreen()
         }
         mBinding.cardHowToUse.click {
-            navigator.openHowToUse(requireContext())
+            AdsManager.loadAndShowInterHome(requireActivity()) {
+                navigator.openHowToUse(requireContext())
+            }
         }
         mBinding.cardFeaturePhoto.root.click {
-            launchVisualMediaPicker(MediaType.IMAGE)
+            AdsManager.loadAndShowInterHome(requireActivity()) {
+                launchVisualMediaPicker(MediaType.IMAGE)
+            }
         }
         mBinding.cardFeatureVideo.root.click {
-            launchVisualMediaPicker(MediaType.VIDEO)
+            AdsManager.loadAndShowInterHome(requireActivity()) {
+                launchVisualMediaPicker(MediaType.VIDEO)
+            }
         }
         mBinding.cardFeatureImport.root.click {
-            (requireActivity() as? com.hyper.castwave.ui.component.main.MainActivity)?.openChannelsTab()
+            AdsManager.loadAndShowInterHome(requireActivity()) {
+                (requireActivity() as? com.hyper.castwave.ui.component.main.MainActivity)?.openChannelsTab()
+            }
         }
         mBinding.cardFeatureCast.root.click {
             openCastScreen()
@@ -242,7 +250,9 @@ class HomeFragment : BaseFragment<CastFragmentHomeBinding>() {
     }
 
     private fun openCastScreen() {
-        navigator.openCastScreen(requireContext())
+        AdsManager.loadAndShowInterHome(requireActivity()) {
+            navigator.openCastScreen(requireContext())
+        }
     }
 
     private fun checkPermissions() {

@@ -20,7 +20,7 @@ class HowToUseActivity : BaseActivity<CastActivityHowToUseBinding>() {
 
     override val statusBarConfig = StatusBarConfig(
         isVisible = true,
-        applyPadding = false,
+        applyPadding = true,
         barColor = Color.TRANSPARENT,
         lightIcons = true,
     )

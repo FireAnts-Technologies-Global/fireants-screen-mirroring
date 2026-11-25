@@ -53,19 +53,14 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
             }
 
 
-            if (ANRAdSdk.getInstance()
-                    .shouldDisplayNativeOnboardingFull1
-            ) {
+            if (ANRAdSdk.getInstance().shouldDisplayNativeOnboardingFull1) {
                 AdsManager.loadNativeOnboardingFullAfterPage1(
                     this,
                     R.layout.layout_native_onboarding_full
                 )
             }
 
-
-            if (ANRAdSdk.getInstance()
-                    .shouldDisplayNativeOnboardingFull2
-            ) {
+            if (ANRAdSdk.getInstance().shouldDisplayNativeOnboardingFull2) {
                 AdsManager.loadNativeOnboardingFullAfterPage3(
                     this,
                     R.layout.layout_native_onboarding_full
@@ -187,11 +182,8 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding>() {
 
         }
         val shouldDisplay = when (placement) {
-            NativeFullPlacement.AFTER_PAGE_1 -> ANRAdSdk.getInstance()
-                .shouldDisplayNativeOnboardingFull1
-
-            NativeFullPlacement.AFTER_PAGE_2 -> ANRAdSdk.getInstance()
-                .shouldDisplayNativeOnboardingFull2
+            NativeFullPlacement.AFTER_PAGE_1 -> ANRAdSdk.getInstance().shouldDisplayNativeOnboardingFull1
+            NativeFullPlacement.AFTER_PAGE_2 -> ANRAdSdk.getInstance().shouldDisplayNativeOnboardingFull2
         }
         val isPurchased = AppPurchase.getInstance().isPurchased(this)
         if (isNetwork(this) && config.isEnable && shouldDisplay && !isPurchased) {

@@ -26,9 +26,8 @@ class AppLifecycleObserver : DefaultLifecycleObserver {
             val isDisable = listActivityDisableResume.any { clazz ->
                 clazz.isInstance(currentActivity)
             }
-            if (!isDisable && ResumeAdsEntryRule.shouldShowWelcomeOnResume() && !AppOpenManager.getInstance().isInterstitialShowing && !AppPurchase.getInstance()
-                    .isPurchased(currentActivity.applicationContext) && ANRAdSdk.getInstance()
-                    .shouldDisplayInterWelcomeBack
+            if (!isDisable && ResumeAdsEntryRule.shouldShowWelcomeOnResume() && ANRAdSdk.getInstance().shouldDisplayInterWelcomeBack && !AppOpenManager.getInstance().isInterstitialShowing && !AppPurchase.getInstance()
+                    .isPurchased(currentActivity.applicationContext)
             ) {
                 Routes.startWelcomeActivity(currentActivity)
             }
