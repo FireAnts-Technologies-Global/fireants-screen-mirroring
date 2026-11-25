@@ -17,8 +17,8 @@ android {
         applicationId "com.hyper.castwave"
         minSdkVersion min_sdk_version
         targetSdk target_sdk_version
-        versionCode 101
-        versionName "1.0.1"
+        versionCode 102
+        versionName "1.0.2"
 
         def formattedDate = new Date().format('MM.dd.yyyy')
         archivesBaseName = "Screen_Mirroring_v${versionName}_v${versionCode}_${formattedDate}"
@@ -54,7 +54,7 @@ android {
 
         release {
             buildConfigField "String", "email_feedback", "\"glorymobile88@gmail.com\""
-            manifestPlaceholders = [app_id: "ca-app-pub-7988764211742191~5049714832"]
+            manifestPlaceholders = [app_id: "ca-app-pub-7988764211742191~9569790606"]
             buildConfigField "Boolean", "build_debug", "false"
             buildConfigField(BOOLEAN, DEV_MODE, FALSE)
             shrinkResources true
